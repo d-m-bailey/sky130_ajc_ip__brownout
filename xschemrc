@@ -67,7 +67,6 @@ set dircolor(devices$) red
 ###########################################################################
 #### If unset $USER_CONF_DIR/simulations is assumed (normally ~/.xschem/simulations) 
 # set netlist_dir $env(HOME)/.xschem/simulations
-#set netlist_dir $env(HOME)/chipalooza/sky130_ajc_ip__brownout/netlist
 set netlist_dir netlist
 
 #### if this is set to '1' netlists and simulations will go into a simulation/ folder
