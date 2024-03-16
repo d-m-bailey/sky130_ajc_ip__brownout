@@ -99,7 +99,7 @@ output timed_out
     if (!cnt_rsb) begin
       cnt <= 16'b1111111111111111;
     end else begin
-      cnt <= brout_filt_retimed ? 0 : timed_out ? cnt : force_short_oneshot ? (cnt & 16'b1111000000000000) + 13'b1111111111111 : cnt + 1;
+      cnt <= brout_filt_retimed ? 0 : timed_out ? cnt : force_short_oneshot ? (cnt & 16'b1111110000000000) + 16'b0000011111111111 : cnt + 1;
     end
   end
 

@@ -50,7 +50,7 @@ R003 isrc_sel dvss 1e9
 .save @m.xibrout.xiana.xirsmux.xmena.msky130_fd_pr__nfet_g5v0d10v5[id]
 
 .control
-tran 1u 1400u
+tran 10u 1400u
 plot brout_filt itest avdd ena vbg_1v2 vin_brout vin_vunder timed_out xibrout.xiana.dcomp xibrout.xiana.dcomp_filt
 plot i(Vavdd) i(Vdvdd)
 plot @m.xibrout.xiana.xirsmux.xmena.msky130_fd_pr__nfet_g5v0d10v5[id]
