@@ -84,6 +84,7 @@ plot brout_filt itest avdd ena vbg_1v2 vin_brout vin_vunder timed_out xibrout.xi
 plot i(Vavdd) i(Vdvdd)
 plot @m.xibrout.xiana.xirsmux.xmena.msky130_fd_pr__nfet_g5v0d10v5[id]
 plot out avdd vunder*0.75 ena*0.5
+plot osc 1.25*out 1.75*brout_filt
 .endc
 "}
 C {devices/vsource.sym} -680 -170 0 0 {name=Vavdd value="pwl (0 0 20u 0 400u avdd 700u avdd 900u 2 1000u 2 1200u avdd)" savecurrent=true}
