@@ -32,7 +32,6 @@ brownout brownout(
 .vunder(vunder),
 //DEBUG OUTPUTS
 .osc_ck(osc_ck),
-.osc_ck_256(osc_ck_256),
 .itest(itest),
 .brout_filt(brout_filt),
 .vin_brout(vin_brout),

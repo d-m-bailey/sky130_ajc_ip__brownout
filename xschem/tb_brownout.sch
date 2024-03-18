@@ -7,13 +7,11 @@ S {}
 E {}
 T {Copyright 2024 Ajacci, Ltd. Co.
 
-LICENSE:
-Apache License, Version 2.0
+LICENSE: Apache License, Version 2.0 with Addendum, see NOTICE
 
-DATE: 03/14/2024
+DATE: 03/14/2024   REVISION: 0
 
-DESCRIPTION:
-Brown-out detector testbench} -920 570 0 0 0.6 0.6 {}
+DESCRIPTION: Brown-out detector testbench} -480 20 0 0 0.4 0.4 {}
 N -210 -610 -200 -610 {
 lab=avdd}
 N -200 -660 -200 -610 {
@@ -46,11 +44,11 @@ N -210 -60 0 -60 {
 lab=ibg_200n}
 N 300 -280 630 -280 {
 lab=out}
-N 300 -220 470 -220 {
+N 300 -240 470 -240 {
 lab=itest}
 N 630 -280 630 -110 {
 lab=out}
-N 470 -220 470 -30 {
+N 470 -240 470 -50 {
 lab=itest}
 C {devices/vsource.sym} -750 -170 0 0 {name=Vavss value=0 savecurrent=false}
 C {devices/gnd.sym} -750 -140 0 0 {name=l1 lab=GND}
@@ -79,12 +77,15 @@ R003 isrc_sel dvss 1e9
 .save @m.xibrout.xiana.xirsmux.xmena.msky130_fd_pr__nfet_g5v0d10v5[id]
 
 .control
-tran 10u 1400u
+tran 10u 3m
 plot brout_filt itest avdd ena vbg_1v2 vin_brout vin_vunder timed_out xibrout.xiana.dcomp xibrout.xiana.dcomp_filt
 plot i(Vavdd) i(Vdvdd)
 plot @m.xibrout.xiana.xirsmux.xmena.msky130_fd_pr__nfet_g5v0d10v5[id]
 plot out avdd vunder*0.75 ena*0.5
-plot osc 1.25*out 1.75*brout_filt
+plot xibrout.osc_ena 1.25*out 1.75*brout_filt
+plot brout_filt xibrout.xiana.dcomp xibrout.xiana.dcomp_filt
+plot avdd 0.25*osc_ck 0.5*ena 0.75*brout_filt timed_out 1.25*out 1.5*vunder
+plot osc_ck*0.5 xibrout.xiana.xiosc.in xibrout.xiana.xiosc.m xibrout.osc_ena*0.25 brout_filt out*1.25
 .endc
 "}
 C {devices/vsource.sym} -680 -170 0 0 {name=Vavdd value="pwl (0 0 20u 0 400u avdd 700u avdd 900u 2 1000u 2 1200u avdd)" savecurrent=true}
@@ -130,13 +131,13 @@ C {devices/lab_pin.sym} -750 -50 1 0 {name=p2 sig_type=std_logic lab=dvss}
 C {devices/gnd.sym} -680 10 0 0 {name=l5 lab=GND}
 C {devices/lab_pin.sym} -680 -50 1 0 {name=p4 sig_type=std_logic lab=dvdd}
 C {devices/vsource.sym} -680 -20 0 0 {name=Vdvdd value=dvdd savecurrent=true}
-C {devices/res.sym} 470 0 0 0 {name=R1
+C {devices/res.sym} 470 -20 0 0 {name=R1
 value=1e6
 footprint=1206
 device=resistor
 m=1}
-C {devices/gnd.sym} 470 30 0 0 {name=l9 lab=GND}
-C {devices/lab_wire.sym} 460 -220 0 0 {name=p7 sig_type=std_logic lab=itest}
+C {devices/gnd.sym} 470 10 0 0 {name=l9 lab=GND}
+C {devices/lab_wire.sym} 460 -240 0 0 {name=p7 sig_type=std_logic lab=itest}
 C {devices/gnd.sym} 630 -50 0 0 {name=l8 lab=GND}
 C {devices/capa.sym} 630 -80 0 0 {name=C1
 m=1
@@ -151,18 +152,17 @@ C {devices/lab_pin.sym} 0 -240 0 0 {name=p20 lab=dvdd}
 C {devices/lab_pin.sym} 0 -220 0 0 {name=p22 lab=dvss}
 C {devices/lab_pin.sym} 300 -260 0 1 {name=p23 lab=osc_ck}
 C {devices/lab_pin.sym} 0 -200 0 0 {name=p24 lab=vbg_1v2}
-C {devices/lab_pin.sym} 300 -240 0 1 {name=p25 lab=osc_ck_256}
 C {devices/lab_pin.sym} 0 -180 0 0 {name=p26 lab=otrip[2:0]}
-C {devices/lab_pin.sym} 300 -200 0 1 {name=p28 lab=brout_filt}
+C {devices/lab_pin.sym} 300 -220 0 1 {name=p28 lab=brout_filt}
 C {devices/lab_pin.sym} 0 -140 0 0 {name=p30 lab=ena}
-C {devices/lab_pin.sym} 300 -180 0 1 {name=p32 lab=vin_brout}
+C {devices/lab_pin.sym} 300 -200 0 1 {name=p32 lab=vin_brout}
 C {devices/lab_pin.sym} 0 -120 0 0 {name=p33 lab=force_rc_osc}
 C {devices/lab_pin.sym} 0 -100 0 0 {name=p34 lab=force_short_oneshot}
-C {devices/lab_pin.sym} 300 -140 0 1 {name=p35 lab=timed_out}
+C {devices/lab_pin.sym} 300 -160 0 1 {name=p35 lab=timed_out}
 C {devices/lab_pin.sym} 0 -80 0 0 {name=p37 lab=isrc_sel}
 C {devices/lab_pin.sym} 0 -160 0 0 {name=p8 lab=vtrip[2:0]}
-C {devices/lab_pin.sym} 300 -160 0 1 {name=p10 lab=vin_vunder}
-C {devices/lab_pin.sym} 300 -120 0 1 {name=p13 lab=vunder}
+C {devices/lab_pin.sym} 300 -180 0 1 {name=p10 lab=vin_vunder}
+C {devices/lab_pin.sym} 300 -140 0 1 {name=p13 lab=vunder}
 C {devices/gnd.sym} -680 290 0 0 {name=l10 lab=GND}
 C {devices/vsource.sym} -680 260 0 0 {name=Vvotrip0 value="DC 0" savecurrent=true}
 C {devices/lab_pin.sym} -680 230 1 0 {name=p14 sig_type=std_logic lab=otrip[0]}
@@ -181,4 +181,3 @@ C {devices/lab_pin.sym} -1020 230 1 0 {name=p29 sig_type=std_logic lab=vtrip[1]}
 C {devices/gnd.sym} -1100 290 0 0 {name=l14 lab=GND}
 C {devices/vsource.sym} -1100 260 0 0 {name=Vvvtrip2 value="DC 0" savecurrent=true}
 C {devices/lab_pin.sym} -1100 230 1 0 {name=p31 sig_type=std_logic lab=vtrip[2]}
-C {devices/title-3.sym} -1460 1000 0 0 {name=l15 author="Ajacci, Ltd. Co." rev=1.0 lock=false title="Brown-out detector testbench"}

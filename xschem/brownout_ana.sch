@@ -7,13 +7,11 @@ S {}
 E {}
 T {Copyright 2024 Ajacci, Ltd. Co.
 
-LICENSE:
-Apache License, Version 2.0
+LICENSE: Apache License, Version 2.0 with Addendum, see NOTICE
 
-DATE: 03/14/2024
+DATE: 03/14/2024   REVISION: 0
 
-DESCRIPTION:
-Brown-out detector (analog section)} -830 560 0 0 0.8 0.8 {}
+DESCRIPTION: Brown-out detector (analog section)} -230 410 0 0 0.4 0.4 {}
 N 590 -60 700 -60 {
 lab=dcomp}
 N 930 -60 930 -30 {
@@ -71,7 +69,7 @@ C {devices/lab_pin.sym} 290 20 0 0 {name=p28 lab=vbg_1v2}
 C {devices/lab_pin.sym} 290 -20 0 0 {name=p11 lab=ena_avdd}
 C {res_xhigh_po.sym} 730 -60 3 0 {name=R1
 W=2
-L=2000
+L=1000
 model=res_xhigh_po
 spiceprefix=X
 mult=1}
@@ -108,7 +106,6 @@ C {devices/opin.sym} -380 420 0 0 {name=p44 lab=out}
 C {inv_4.sym} 1040 260 0 0 {name=xIinv3 VGND=dvss VNB=dvss VPB=dvdd VPWR=dvdd prefix=sky130_fd_sc_hd__ }
 C {inv_16.sym} 1160 260 0 0 {name=xIinv4 VGND=dvss VNB=dvss VPB=dvdd VPWR=dvdd prefix=sky130_fd_sc_hd__ }
 C {devices/opin.sym} 1200 260 0 0 {name=p45 lab=vunder}
-C {devices/title-3.sym} -1090 1030 0 0 {name=l1 author="Ajacci, Ltd. Co." rev=1.0 lock=false title="Brown-out Detector (Analog)"}
 C {sky130_fd_sc_hvl__lsbuflv2hv_1.sym} -760 -90 0 0 {name=xIlvls3[7:0] LVPWR=dvdd VGND=avss VNB=avss VPB=avdd VPWR=avdd prefix=sky130_fd_sc_hvl__ }
 C {devices/ipin.sym} -850 -90 2 1 {name=p46 lab=vtrip_decoded[7:0]}
 C {devices/lab_pin.sym} -670 -90 2 0 {name=p47 sig_type=std_logic lab=vtrip_decoded_avdd[7:0]}
@@ -120,7 +117,7 @@ C {devices/lab_pin.sym} 290 320 0 0 {name=p52 lab=vin_vunder}
 C {devices/lab_pin.sym} 290 360 0 0 {name=p53 lab=avss}
 C {devices/lab_pin.sym} 290 340 0 0 {name=p54 lab=vbg_1v2}
 C {devices/lab_pin.sym} 290 300 0 0 {name=p55 lab=ena_avdd}
-C {comparator.sym} 440 310 0 0 {name=xIcomp_brout1}
+C {comparator.sym} 440 310 0 0 {name=xIcomp_vunder}
 C {sky130_fd_sc_hvl__lsbufhv2lv_1.sym} 750 260 0 0 {name=xIlvls5 LVPWR=dvdd VGND=avss VNB=avss VPB=avdd VPWR=avdd prefix=sky130_fd_sc_hvl__ }
 C {devices/opin.sym} 590 -250 0 0 {name=p43 lab=vin_vunder}
 C {inv_4.sym} 920 260 0 0 {name=xIinv2 VGND=dvss VNB=dvss VPB=dvdd VPWR=dvdd prefix=sky130_fd_sc_hd__ }

@@ -7,19 +7,17 @@ S {}
 E {}
 T {Copyright 2024 Ajacci, Ltd. Co.
 
-LICENSE:
-Apache License, Version 2.0
+LICENSE: Apache License, Version 2.0 with Addendum, see NOTICE
 
-DATE: 03/14/2024
+DATE: 03/14/2024   REVISION: 0
 
-DESCRIPTION:
-Brownout detection circuit (analog & digital sections)} -1100 230 0 0 0.6 0.6 {}
+DESCRIPTION: Brownout detection circuit (analog & digital sections)} -570 180 0 0 0.4 0.4 {}
 C {xschem/brownout_ana.sym} 0 10 0 0 {name=xIana}
 C {devices/code.sym} -580 -40 0 0 {name=brownout_dig only_toplevel=false value="
 
 *XSPICE CO-SIM netlist
 .include brownout_dig.out.spice
-xibrownout_dig dvss dvdd brout_filt ena force_rc_osc force_short_oneshot osc_ck osc_ck_256 osc_ena 
+xibrownout_dig dvss dvdd brout_filt ena force_rc_osc force_short_oneshot osc_ck osc_ena 
 +otrip_0_ otrip_1_ otrip_2_
 +otrip_decoded_0_ otrip_decoded_1_ otrip_decoded_2_ otrip_decoded_3_ otrip_decoded_4_ otrip_decoded_5_ otrip_decoded_6_ otrip_decoded_7_
 +out_unbuf timed_out
@@ -38,7 +36,7 @@ C {devices/ipin.sym} -430 -260 2 1 {name=p8 lab=force_rc_osc}
 C {devices/ipin.sym} -430 -240 2 1 {name=p9 lab=force_short_oneshot}
 C {devices/ipin.sym} -430 -220 2 1 {name=p10 lab=isrc_sel}
 C {devices/ipin.sym} -430 -200 2 1 {name=p11 lab=ibg_200n}
-C {devices/lab_pin.sym} -150 -100 0 0 {name=p12 lab=otrip_decoded[7:0]}
+C {devices/lab_pin.sym} -150 -100 0 0 {name=p12 lab=otrip_decoded_7_,otrip_decoded_6_,otrip_decoded_5_,otrip_decoded_4_,otrip_decoded_3_,otrip_decoded_2_,otrip_decoded_1_,otrip_decoded_0_}
 C {devices/lab_pin.sym} 150 -100 0 1 {name=p13 lab=vin_brout}
 C {devices/lab_pin.sym} -150 -80 0 0 {name=p14 lab=vbg_1v2}
 C {devices/lab_pin.sym} -150 -60 0 0 {name=p15 lab=avdd}
@@ -58,7 +56,6 @@ C {devices/lab_pin.sym} 150 20 0 1 {name=p29 lab=out}
 C {devices/opin.sym} 180 -280 0 0 {name=p30 lab=vin_brout}
 C {devices/opin.sym} 180 -380 0 0 {name=p33 lab=out}
 C {devices/opin.sym} 180 -360 0 0 {name=p34 lab=osc_ck}
-C {devices/opin.sym} 180 -340 0 0 {name=p35 lab=osc_ck_256}
 C {devices/opin.sym} 180 -300 0 0 {name=p36 lab=brout_filt}
 C {devices/opin.sym} 180 -320 0 0 {name=p37 lab=itest}
 C {devices/opin.sym} 180 -240 0 0 {name=p39 lab=timed_out}
@@ -67,4 +64,3 @@ C {devices/lab_pin.sym} -150 80 0 0 {name=p40 lab=vtrip_decoded[7:0]}
 C {devices/ipin.sym} -430 -300 2 1 {name=p41 lab=vtrip[2:0]}
 C {devices/opin.sym} 180 -260 0 0 {name=p38 lab=vin_vunder}
 C {devices/opin.sym} 180 -220 0 0 {name=p31 lab=vunder}
-C {devices/title-3.sym} -1350 590 0 0 {name=l1 author="Ajacci, Ltd. Co." rev=1.0 lock=false title="Brown-out detector (analog & digital)"}

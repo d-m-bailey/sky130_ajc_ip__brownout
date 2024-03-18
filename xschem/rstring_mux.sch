@@ -7,13 +7,11 @@ S {}
 E {}
 T {Copyright 2024 Ajacci, Ltd. Co.
 
-LICENSE:
-Apache License, Version 2.0
+LICENSE: Apache License, Version 2.0 with Addendum, see NOTICE
 
-DATE: 03/14/2024
+DATE: 03/14/2024   REVISION: 0
 
-DESCRIPTION:
-Trip voltage and analog select mux} 290 1010 0 0 0.4 0.4 {}
+DESCRIPTION: Trip voltage and analog select mux} 290 1010 0 0 0.4 0.4 {}
 T {3.00V} 320 -680 0 0 0.4 0.4 {}
 T {2.90V} 320 -740 0 0 0.4 0.4 {}
 T {2.80V} 320 -800 0 0 0.4 0.4 {}
@@ -608,4 +606,3 @@ C {devices/opin.sym} 870 -150 2 1 {name=p11 lab=vout_vunder}
 C {devices/ipin.sym} 610 -460 2 1 {name=p12 lab=vtrip_decoded_avdd[7:0]}
 C {inv_1_avdd.sym} 650 -460 0 0 {name=xIinv1[7:0] VGND=avss VNB=avss VPB=avdd VPWR=avdd prefix=sky130_fd_sc_hvl__ }
 C {devices/lab_pin.sym} 690 -460 2 0 {name=p13 sig_type=std_logic lab=vtrip_decoded_b_avdd[7:0]}
-C {devices/title.sym} -370 1290 0 0 {name=l1 author="Ajacci, Ltd. Co."}

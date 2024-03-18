@@ -13,7 +13,6 @@ output out_unbuf,
 output logic [7:0] otrip_decoded,
 output logic [7:0] vtrip_decoded,
 //DEBUG OUTPUTS
-output logic osc_ck_256,
 output timed_out
 );
 
@@ -49,28 +48,15 @@ output timed_out
   assign osc_ena = force_rc_osc | (ena & (brout_filt | !out_unbuf));
   wire brout_filt_ena_rsb;
 
-  //BROUT_FILT RETIMER
-  reg brout_filt_retime_rsb_stg1, brout_filt_retime_rsb;
+  //BROUT_FILT RETIME
   assign brout_filt_ena_rsb = ena & brout_filt;
 
+  reg brout_filt_retimed;
   always @ (posedge osc_ck or negedge brout_filt_ena_rsb) begin
     if (!brout_filt_ena_rsb) begin
-      brout_filt_retime_rsb_stg1 <= 0;
-      brout_filt_retime_rsb <= 0;
-    end else begin
-      brout_filt_retime_rsb_stg1 <= 1;
-      brout_filt_retime_rsb <= brout_filt_retime_rsb_stg1;
-    end
-  end
-
-  reg brout_filt_retimed_stg1, brout_filt_retimed;
-  always @ (posedge osc_ck or negedge brout_filt_retime_rsb) begin
-    if (!brout_filt_retime_rsb) begin
-      brout_filt_retimed_stg1 <= 0;
       brout_filt_retimed <= 0;
     end else begin
-      brout_filt_retimed_stg1 <= brout_filt;
-      brout_filt_retimed <= brout_filt_retimed_stg1;
+      brout_filt_retimed <= brout_filt;
     end
   end
 
@@ -89,31 +75,17 @@ output timed_out
     end
   end
 
-  //16-BIT BROWN-OUT ONE-SHOT
-  reg [15:0] cnt;
+  //12-BIT BROWN-OUT ONE-SHOT
+  reg [11:0] cnt;
 
-  assign timed_out = (cnt == 16'b1111111111111111);
+  assign timed_out = (cnt == 12'b111111111111);
   assign out_unbuf = brout_filt_retimed ? 0 : timed_out;
 
   always @ (posedge osc_ck or negedge cnt_rsb) begin
     if (!cnt_rsb) begin
-      cnt <= 16'b1111111111111111;
+      cnt <= 12'b111111111111;
     end else begin
-      cnt <= brout_filt_retimed ? 0 : timed_out ? cnt : force_short_oneshot ? (cnt & 16'b1111110000000000) + 16'b0000011111111111 : cnt + 1;
-    end
-  end
-
-  //OUTPUT
-  //DEBUG osc_ck/256
-  reg [6:0] cnt_ck_256;
-
-  always @ (posedge osc_ck or negedge brout_filt_retime_rsb) begin
-    if (!brout_filt_retime_rsb) begin
-      cnt_ck_256 <= 0;
-      osc_ck_256 <= 0;
-    end else begin
-      cnt_ck_256 <= cnt_ck_256 + 1;
-      osc_ck_256 <= (cnt_ck_256 == 7'b1111111) ? !osc_ck_256 : osc_ck_256;
+      cnt <= brout_filt_retimed ? 0 : timed_out ? cnt : force_short_oneshot ? (cnt & 12'b111111000000) + 12'b000001111111 : cnt + 1;
     end
   end
 

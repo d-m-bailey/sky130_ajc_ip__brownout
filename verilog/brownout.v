@@ -24,7 +24,6 @@ output out,
 output vunder,
 //DEBUG OUTPUTS
 output osc_ck,
-output osc_ck_256,
 output real itest, //700nA bias current
 output brout_filt,
 output real vin_brout,
@@ -77,7 +76,6 @@ brownout_dig brownout_dig(
 .otrip_decoded(otrip_decoded),
 .vtrip_decoded(vtrip_decoded),
 //DEBUG OUTPUTS
-.osc_ck_256(osc_ck_256),
 .timed_out(timed_out)
 );
 
