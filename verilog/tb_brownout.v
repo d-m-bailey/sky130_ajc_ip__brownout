@@ -6,7 +6,8 @@ real vbg_1v2;
 logic [2:0] otrip;
 logic [2:0] vtrip;
 logic ena;
-logic force_rc_osc;
+logic force_ena_rc_osc;
+logic force_dis_rc_osc;
 logic force_short_oneshot;
 logic isrc_sel;
 real ibg_200n;
@@ -23,7 +24,8 @@ brownout brownout(
 .otrip(otrip),
 .vtrip(vtrip),
 .ena(ena), //debug
-.force_rc_osc(force_rc_osc), //debug
+.force_ena_rc_osc(force_ena_rc_osc), //debug
+.force_dis_rc_osc(force_dis_rc_osc), //debug
 .force_short_oneshot(force_short_oneshot), //debug, fast sim
 .isrc_sel(isrc_sel), //debug
 .ibg_200n(ibg_200n), //debug 200nA current
@@ -54,10 +56,13 @@ initial begin
   vtrip = 3'b111;
   //DEBUG INPUTS
   ena = 1'b0;
-  force_rc_osc = 1'b0;
+  force_ena_rc_osc = 1'b0;
+  force_dis_rc_osc = 1'b0;
   force_short_oneshot = 1'b0;
   isrc_sel = 1'b0;
   ibg_200n = 200e-9;
+  #1000
+  ena = 1'b1;
   #8000000
   avdd = 3.3;
   #8000000
@@ -65,6 +70,10 @@ initial begin
   #8000000
   avdd = 2.2;
   #8000000
+  avdd = 3.3;
+  #120000000
+  avdd = 2.2;
+  #800000
   avdd = 3.3;
   #120000000
   $finish;

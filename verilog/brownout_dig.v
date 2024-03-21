@@ -3,7 +3,8 @@ module brownout_dig(
 input logic [2:0] otrip,
 input logic [2:0] vtrip,
 input logic ena,
-input logic force_rc_osc,
+input logic force_ena_rc_osc,
+input logic force_dis_rc_osc,
 input logic force_short_oneshot,
 input logic brout_filt,
 input logic osc_ck,
@@ -45,7 +46,7 @@ output timed_out
     endcase
   end
 
-  assign osc_ena = force_rc_osc | (ena & (brout_filt | !out_unbuf));
+  assign osc_ena = force_ena_rc_osc | (!force_dis_rc_osc & (ena & (brout_filt | !out_unbuf)));
   wire brout_filt_ena_rsb;
 
   //BROUT_FILT RETIME
@@ -85,7 +86,7 @@ output timed_out
     if (!cnt_rsb) begin
       cnt <= 12'b111111111111;
     end else begin
-      cnt <= brout_filt_retimed ? 0 : timed_out ? cnt : force_short_oneshot ? (cnt & 12'b111111000000) + 12'b000001111111 : cnt + 1;
+      cnt <= brout_filt_retimed ? 0 : timed_out ? cnt : force_short_oneshot ? (cnt & 12'b111000000000) + 12'b001111111111 : cnt + 1;
     end
   end
 
