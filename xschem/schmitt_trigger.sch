@@ -10,11 +10,11 @@ lab=m}
 N 40 160 50 160 {
 lab=avss}
 N 40 -100 50 -100 {
-lab=avdd}
+lab=dvdd}
 N 50 -190 50 -100 {
-lab=avdd}
+lab=dvdd}
 N 40 -190 40 -130 {
-lab=avdd}
+lab=dvdd}
 N 0 -100 0 160 {
 lab=in}
 N 50 160 50 250 {
@@ -26,11 +26,11 @@ lab=m}
 N 200 160 210 160 {
 lab=avss}
 N 200 -100 210 -100 {
-lab=avdd}
+lab=dvdd}
 N 210 -190 210 -100 {
-lab=avdd}
+lab=dvdd}
 N 200 -190 200 -130 {
-lab=avdd}
+lab=dvdd}
 N 160 -100 160 160 {
 lab=out}
 N 210 160 210 250 {
@@ -42,11 +42,11 @@ lab=out}
 N 360 160 370 160 {
 lab=avss}
 N 360 -100 370 -100 {
-lab=avdd}
+lab=dvdd}
 N 370 -190 370 -100 {
-lab=avdd}
+lab=dvdd}
 N 360 -190 360 -130 {
-lab=avdd}
+lab=dvdd}
 N 320 -100 320 160 {
 lab=m}
 N 370 160 370 250 {
@@ -62,7 +62,7 @@ lab=out}
 N 160 20 360 20 {
 lab=out}
 N -50 -190 370 -190 {
-lab=avdd}
+lab=dvdd}
 N -50 250 370 250 {
 lab=avss}
 C {xschem/sky130_fd_pr/nfet_01v8.sym} 20 160 0 0 {name=M1
@@ -93,8 +93,8 @@ sa=0 sb=0 sd=0
 model=pfet_01v8
 spiceprefix=X
 }
-C {devices/ipin.sym} -50 -190 2 1 {name=p1 lab=avdd}
-C {devices/ipin.sym} -50 250 2 1 {name=p2 lab=avss}
+C {devices/ipin.sym} -50 -190 2 1 {name=p1 lab=dvdd}
+C {devices/ipin.sym} -50 250 2 1 {name=p2 lab=dvss}
 C {xschem/sky130_fd_pr/nfet_01v8.sym} 180 160 0 0 {name=M2
 W=1
 L=0.5

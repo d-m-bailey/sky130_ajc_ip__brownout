@@ -8,10 +8,6 @@
 #Adapted from Tim Edwards' efabless Corp CACE example:
 #https://github.com/RTimothyEdwards/sky130_ef_ip__rdac3v_8bit
 #
-#Response time is defined here as the time lapse between a voltage drop
-#in avdd that crosses the preset trip voltage and the digital alarm
-#assertion at the output.
-#
 #
 #-----------------------------------------------------------------------
 
