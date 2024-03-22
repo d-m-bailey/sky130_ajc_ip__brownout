@@ -10,7 +10,7 @@ To clone this repository:
 To view a schematic after cloning the repository:
 
 ```
-cd sky130_ajc_ip_brownout
+cd sky130_ajc_ip__brownout
 xschem xschem/sky130_ajc_ip__brownout_tb.sch
 ```
 
