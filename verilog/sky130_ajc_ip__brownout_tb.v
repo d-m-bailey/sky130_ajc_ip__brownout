@@ -21,7 +21,7 @@ real ibg_200n;
 real vin_brout;
 real vin_vunder;
 
-brownout brownout(
+sky130_ajc_ip__brownout_tb sky130_ajc_ip__brownout_tb(
 //INPUTS
 .avdd(avdd),
 .avss(avss),
