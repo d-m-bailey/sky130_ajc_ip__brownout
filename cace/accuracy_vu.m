@@ -1,5 +1,5 @@
 #------------------------------------------------------------------------
-#Octave script to extract accuracy of overvoltage detector trip voltages
+#Octave script to extract accuracy of brown-out detector trip voltages
 #after running CACE
 #------------------------------------------------------------------------
 #
@@ -14,7 +14,7 @@
 #accuracy = (v1 + v2) / 2
 #
 #where v1 is the trip voltage resulting from applying a positive ramp
-#to the overvoltage detector, and v2 is the trip voltage resulting from
+#to the brown-out detector, and v2 is the trip voltage resulting from
 #applying a negative ramp.
 #
 #

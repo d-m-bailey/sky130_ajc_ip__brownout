@@ -1,5 +1,5 @@
 #------------------------------------------------------------------------
-#Octave script to extract hysteresis of overvoltage detector trip voltages
+#Octave script to extract hysteresis of brown-out detector trip voltages
 #after running CACE
 #------------------------------------------------------------------------
 #
@@ -8,13 +8,13 @@
 #Adapted from Tim Edwards' efabless Corp CACE example:
 #https://github.com/RTimothyEdwards/sky130_ef_ip__rdac3v_8bit
 #
-#Hysteresis is the difference between the postive ramp trip voltage and 
+#Hysteresis is the difference between the postive ramp trip voltage and
 #negative ramp trip voltage:
 #
 #hysteresis = v1 - v2
 #
 #where v1 is the trip voltage resulting from applying a positive ramp
-#to the overvoltage detector, and v2 is the trip voltage resulting from
+#to the brown-out detector, and v2 is the trip voltage resulting from
 #applying a negative ramp.
 #
 #
@@ -24,7 +24,7 @@
 args = argv();
 load(args{1});
 
-# Find the index of the conditions representing otrip[3:0]
+# Find the index of the conditions representing otrip[2:0]
 bvecidx = -1;
 
 names = results.("NAMES");
