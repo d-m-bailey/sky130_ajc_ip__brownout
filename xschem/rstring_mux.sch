@@ -17,7 +17,6 @@ T {2.63V} 320 -920 0 0 0.4 0.4 {}
 T {2.55V} 320 -980 0 0 0.4 0.4 {}
 T {2.47V} 320 -1040 0 0 0.4 0.4 {}
 T {2.40V} 320 -1100 0 0 0.4 0.4 {}
-T {~750nA-1500nA} 30 1230 0 0 0.4 0.4 {}
 N 120 -670 300 -670 {
 lab=vtrip7}
 N 120 -730 300 -730 {
@@ -34,12 +33,6 @@ N 120 -1030 300 -1030 {
 lab=vtrip1}
 N 120 -1090 300 -1090 {
 lab=vtrip0}
-N -190 1220 120 1220 {
-lab=avss}
-N -190 -1090 -70 -1090 {
-lab=avdd}
-N 120 1010 120 1060 {
-lab=#net1}
 N -70 1010 -70 1030 {
 lab=vtrip0}
 N -70 1030 50 1030 {
@@ -62,12 +55,6 @@ N -90 -1060 -90 1220 {
 lab=avss}
 N 100 -1060 100 1220 {
 lab=avss}
-N 110 1090 120 1090 {
-lab=avss}
-N 120 1120 120 1220 {
-lab=avss}
-N 110 1090 110 1220 {
-lab=avss}
 N 800 -950 800 -790 {
 lab=vtrip7,vtrip6,vtrip5,vtrip4,vtrip3,vtrip2,vtrip1,vtrip0}
 N 870 -210 870 -50 {
@@ -82,14 +69,32 @@ N 840 -270 840 -250 {
 lab=vtrip_decoded_b_avdd[7:0]}
 N 810 -210 810 -50 {
 lab=vtrip7,vtrip6,vtrip5,vtrip4,vtrip3,vtrip2,vtrip1,vtrip0}
+N 120 1010 120 1220 {
+lab=avss}
+N -210 1090 -200 1090 {
+lab=avss}
+N -200 1120 -200 1220 {
+lab=avss}
+N -210 1090 -210 1220 {
+lab=avss}
+N -200 -1090 -200 1060 {
+lab=#net1}
+N -320 -1150 -280 -1150 {
+lab=ena_b}
+N -320 -1150 -320 -1130 {
+lab=ena_b}
+N -390 -1090 -350 -1090 {
+lab=avdd}
+N -230 1220 120 1220 {
+lab=avss}
+N -290 -1090 -70 -1090 {
+lab=#net1}
 C {xschem/sky130_fd_pr/res_xhigh_po.sym} 120 920 0 0 {name=R1
 W=2
 L=50
 model=res_xhigh_po
 spiceprefix=X
 mult=1}
-C {devices/ipin.sym} -190 -1090 2 1 {name=p34 lab=avdd}
-C {devices/ipin.sym} -190 1220 2 1 {name=p35 lab=avss}
 C {xschem/sky130_fd_pr/res_xhigh_po.sym} 120 860 0 0 {name=R2
 W=2
 L=50
@@ -543,24 +548,9 @@ spiceprefix=X
 }
 C {devices/lab_pin.sym} 830 -790 1 1 {name=p54 sig_type=std_logic lab=avss}
 C {devices/lab_pin.sym} 870 -850 2 0 {name=p55 sig_type=std_logic lab=otrip_decoded_avdd[7:0]}
-C {xschem/sky130_fd_pr/nfet_g5v0d10v5.sym} 140 1090 0 1 {name=Mena
-W=5
-L=0.6
-nf=1
-mult=16
-ad="'int((nf+1)/2) * W/nf * 0.29'" 
-pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
-as="'int((nf+2)/2) * W/nf * 0.29'" 
-ps="'2*int((nf+2)/2) * (W/nf + 0.29)'"
-nrd="'0.29 / W'" nrs="'0.29 / W'"
-sa=0 sb=0 sd=0
-model=nfet_g5v0d10v5
-spiceprefix=X
-}
 C {devices/lab_pin.sym} 870 -1010 2 0 {name=p52 sig_type=std_logic lab=otrip_decoded_b_avdd[7:0]}
 C {devices/lab_wire.sym} 800 -880 0 0 {name=p56 sig_type=std_logic lab=vtrip7,vtrip6,vtrip5,vtrip4,vtrip3,vtrip2,vtrip1,vtrip0}
 C {devices/opin.sym} 860 -890 2 1 {name=p57 lab=vout_brout}
-C {devices/ipin.sym} 160 1090 2 0 {name=p1 lab=ena}
 C {devices/ipin.sym} 610 -520 2 1 {name=p2 lab=otrip_decoded_avdd[7:0]}
 C {devices/lab_pin.sym} 690 -520 2 0 {name=p5 sig_type=std_logic lab=otrip_decoded_b_avdd[7:0]}
 C {devices/ipin.sym} 590 -400 2 1 {name=p6 lab=dvss}
@@ -603,3 +593,39 @@ C {devices/ipin.sym} 610 -460 2 1 {name=p12 lab=vtrip_decoded_avdd[7:0]}
 C {devices/lab_pin.sym} 690 -460 2 0 {name=p13 sig_type=std_logic lab=vtrip_decoded_b_avdd[7:0]}
 C {xschem/sky130_stdcells/inv_1.sym} 650 -520 0 0 {name=xIinv0[7:0] VGND=avss VNB=avss VPB=avdd VPWR=avdd prefix=sky130_fd_sc_hvl__ }
 C {xschem/sky130_stdcells/inv_1.sym} 650 -460 0 0 {name=xIinv1[7:0] VGND=avss VNB=avss VPB=avdd VPWR=avdd prefix=sky130_fd_sc_hvl__ }
+C {xschem/sky130_stdcells/inv_1.sym} 650 -580 0 0 {name=xIinv2 VGND=avss VNB=avss VPB=avdd VPWR=avdd prefix=sky130_fd_sc_hvl__ }
+C {devices/ipin.sym} 610 -580 2 1 {name=p14 lab=ena}
+C {devices/lab_pin.sym} 690 -580 2 0 {name=p15 sig_type=std_logic lab=ena_b}
+C {devices/ipin.sym} -390 -1090 2 1 {name=p1 lab=avdd}
+C {devices/ipin.sym} -230 1220 2 1 {name=p16 lab=avss}
+C {xschem/sky130_fd_pr/nfet_g5v0d10v5.sym} -180 1090 0 1 {name=Mpdn
+W=1
+L=1
+nf=1
+mult=1
+ad="'int((nf+1)/2) * W/nf * 0.29'" 
+pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
+as="'int((nf+2)/2) * W/nf * 0.29'" 
+ps="'2*int((nf+2)/2) * (W/nf + 0.29)'"
+nrd="'0.29 / W'" nrs="'0.29 / W'"
+sa=0 sb=0 sd=0
+model=nfet_g5v0d10v5
+spiceprefix=X
+}
+C {xschem/sky130_fd_pr/pfet_g5v0d10v5.sym} -320 -1110 1 0 {name=Mpdp
+W=5
+L=0.6
+nf=1
+mult=16
+ad="'int((nf+1)/2) * W/nf * 0.29'" 
+pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
+as="'int((nf+2)/2) * W/nf * 0.29'" 
+ps="'2*int((nf+2)/2) * (W/nf + 0.29)'"
+nrd="'0.29 / W'" nrs="'0.29 / W'"
+sa=0 sb=0 sd=0
+model=pfet_g5v0d10v5
+spiceprefix=X
+}
+C {devices/lab_pin.sym} -320 -1090 1 1 {name=p17 sig_type=std_logic lab=avdd}
+C {devices/lab_pin.sym} -280 -1150 2 0 {name=p18 sig_type=std_logic lab=ena_b}
+C {devices/lab_pin.sym} -160 1090 2 0 {name=p19 sig_type=std_logic lab=ena_b}

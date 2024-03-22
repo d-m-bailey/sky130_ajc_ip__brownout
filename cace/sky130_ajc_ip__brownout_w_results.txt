@@ -1,0 +1,1690 @@
+#---------------------------------------------------
+# CACE format 4.0 characterization file /home/rtsang/chipalooza/sky130_ajc_ip__brownout/cace/sky130_ajc_ip__brownout_w_results.txt
+#---------------------------------------------------
+
+name:		sky130_ajc_ip__brownout
+description:	Brown-out detector
+commit:		N/A
+PDK:		sky130A
+foundry:	SkyWater
+cace_format:	4.0
+authorship {
+	designer:	Robin Matthew Tsang
+	company:	Ajacci, Ltd. Co.
+	creation_date:	March 19, 2024
+	modification_date:	March 22, 2024 at 06:02pm
+	license:	Apache 2.0
+}
+
+# Paths to various files
+
+paths {
+	root:		.
+	documentation:	doc
+	schematic:	xschem
+	layout:		gds
+	magic:		mag
+	netlist:	netlist
+	testbench:	cace
+	simulation:	ngspice
+	plots:		plots
+	logs:		ngspice/log
+}
+
+# Pin names and descriptions
+
+pins {
+	name:		vbg_1v2
+	description:	Bandgap reference 1.20V
+	type:		signal
+	direction:	input
+	Vmin:		1.15
+	Vmax:		1.25
+
+	+
+	name:		otrip2:0
+	description:	Digital trip voltage select for brown-out detector
+	type:		digital
+	direction:	input
+	Vmin:		dvss - 0.3
+	Vmax:		dvdd + 0.3
+
+	+
+	name:		vtrip2:0
+	description:	Digital trip voltage select for under-voltage detector
+	type:		digital
+	direction:	input
+	Vmin:		dvss - 0.3
+	Vmax:		dvdd + 0.3
+
+	+
+	name:		ena
+	description:	Enable input (active high)
+	type:		digital
+	direction:	input
+	Vmin:		dvss - 0.3
+	Vmax:		dvdd + 0.3
+
+	+
+	name:		isrc_sel
+	description:	Internal(0)/external(1) bias current select
+	type:		digital
+	direction:	input
+	Vmin:		dvss - 0.3
+	Vmax:		dvdd + 0.3
+
+	+
+	name:		force_ena_rc_osc
+	description:	Force internal rc-oscillator to turn on, test-mode
+	type:		digital
+	direction:	input
+	Vmin:		dvss - 0.3
+	Vmax:		dvdd + 0.3
+
+	+
+	name:		force_dis_rc_osc
+	description:	Force internal rc-oscillator to turn off, test-mode
+	type:		digital
+	direction:	input
+	Vmin:		dvss - 0.3
+	Vmax:		dvdd + 0.3
+
+	+
+	name:		force_short_oneshot
+	description:	Force one-shot timeout period to be very short, test-mode
+	type:		digital
+	direction:	input
+	Vmin:		dvss - 0.3
+	Vmax:		dvdd + 0.3
+
+	+
+	name:		ibg_200n
+	description:	External 200n bandgap reference current
+	type:		signal
+	direction:	input
+	Vmin:		avss - 0.3
+	Vmax:		avdd + 0.3
+
+	+
+	name:		out
+	description:	Brown-out alarm (active low)
+	type:		digital
+	direction:	output
+	Vmin:		dvss - 0.3
+	Vmax:		dvdd + 0.3
+
+	+
+	name:		vunder
+	description:	Under-voltage alarm (active low)
+	type:		digital
+	direction:	output
+	Vmin:		dvss - 0.3
+	Vmax:		dvdd + 0.3
+
+	+
+	name:		itest
+	description:	Test current, send to external 1Mohm resistor if desired
+	type:		signal
+	direction:	output
+	Vmin:		avss - 0.3
+	Vmax:		avdd + 0.3
+
+	+
+	name:		dvdd
+	description:	Positive digital power supply
+	type:		power
+	direction:	inout
+	Vmin:		1.5
+	Vmax:		2.1
+
+	+
+	name:		dvss
+	description:	Digital ground
+	type:		ground
+	direction:	inout
+	Vmin:		-0.3
+	Vmax:		0.3
+
+	+
+	name:		avdd
+	description:	Positive analog power supply
+	type:		power
+	direction:	inout
+	Vmin:		3.0
+	Vmax:		6.0
+
+	+
+	name:		avss
+	description:	Analog ground
+	type:		ground
+	direction:	inout
+	Vmin:		-0.3
+	Vmax:		0.3
+
+	+
+	name:		brout_filt
+	description:	Filtered analog comparator output of brown-out detector, test-mode
+	type:		digital
+	direction:	output
+	Vmin:		dvss - 0.3
+	Vmax:		dvdd + 0.3
+
+	+
+	name:		osc_ck
+	description:	RC oscillator output
+	type:		digital
+	direction:	output
+	Vmin:		dvss - 0.3
+	Vmax:		dvdd + 0.3
+
+	+
+	name:		vin_brout
+	description:	Analog input to comparator of brown-out detector
+	type:		signal
+	direction:	output
+	Vmin:		avss - 0.3
+	Vmax:		avdd + 0.3
+
+	+
+	name:		vin_vunder
+	description:	Analog input to comparator of under-voltage detector
+	type:		signal
+	direction:	output
+	Vmin:		avss - 0.3
+	Vmax:		avdd + 0.3
+
+	+
+	name:		timed_out
+	description:	Asserts high when one-shot timer expires after brown-out event recovers
+	type:		digital
+	direction:	output
+	Vmin:		dvss - 0.3
+	Vmax:		dvdd + 0.3
+
+	+
+	name:		dcomp
+	description:	Unfiltered analog comparator output of brown-out detector, test-mode
+	type:		digital
+	direction:	output
+	Vmin:		dvss - 0.3
+	Vmax:		dvdd + 0.3
+}
+
+# Default values for electrical parameter measurement conditions
+# if not otherwise specified
+
+default_conditions {
+	name:		Vdvdd
+	description:	Digital power supply voltage
+	display:	dvdd
+	unit:		V
+	typical:	1.8
+
+	+
+	name:		Vdvss
+	description:	Digital ground
+	display:	dvss
+	unit:		V
+	typical:	0
+
+	+
+	name:		Vavdd
+	description:	Analog power supply voltage
+	display:	avdd
+	unit:		V
+	typical:	3.3
+
+	+
+	name:		Vavss
+	description:	Analog ground
+	display:	avss
+	unit:		V
+	typical:	0
+
+	+
+	name:		cload
+	description:	Output load capatitance
+	display:	cload
+	unit:		pF
+	maximum:	20
+
+	+
+	name:		ena
+	description:	Overvoltage detector enable
+	display:	ena
+	typical:	1
+
+	+
+	name:		isrc_sel
+	description:	Internal(0)/external(1) bias current select
+	display:	isrc_sel
+	typical:	0
+
+	+
+	name:		force_ena_rc_osc
+	description:	Force internal rc-oscillator to turn on, test-mode
+	display:	force_ena_rc_osc
+	typical:	0
+
+	+
+	name:		force_dis_rc_osc
+	description:	Force internal rc-oscillator to turn on, test-mode
+	display:	force_dis_rc_osc
+	typical:	0
+
+	+
+	name:		force_short_oneshot
+	description:	Force one-shot timeout period to be very short, test-mode
+	display:	force_short_oneshot
+	typical:	0
+
+	+
+	name:		otrip[2:0]
+	description:	Brown-out trip voltage digital input value
+	display:	otrip[2:0]
+	typical:	100
+
+	+
+	name:		vtrip[2:0]
+	description:	Under-voltage trip voltage digital input value
+	display:	vtrip[2:0]
+	typical:	100
+
+	+
+	name:		temperature
+	description:	Ambient temperature
+	display:	Temp
+	unit:		{degrees}C
+	minimum:	-40
+	typical:	27
+	maximum:	130
+
+	+
+	name:		corner
+	description:	Process corner
+	display:	Corner
+	minimum:	ss
+	typical:	tt
+	maximum:	ff
+}
+
+# List of electrical parameters to be measured and their specified limits
+
+electrical_parameters {
+	name:		hysteresis_br
+	status:		active
+	description:	Check amount of hysteresis at each trip voltage
+	display:	Hysteresis (out)
+	unit:		V
+	spec {
+		minimum:	0.1 fail
+		typical:	0.2
+		maximum:	0.3 fail
+	}
+	results {
+		name:		schematic
+		minimum:	0.1147 pass
+		typical:	0.1606 pass
+		maximum:	0.2063 pass
+	}
+	simulate {
+		tool:		ngspice
+		template:	trip_up_down.spice
+		format:		ascii .data result
+		collate:	otrip[2:0]
+		group_size:	3
+	}
+	measure {
+		tool:		octave
+		filename:	hysteresis_br.m
+	}
+	conditions {
+		name:		otrip[2:0]
+		enumerate:	000 100 111
+
+		+
+		name:		force_dis_rc_osc
+		typical:	1
+
+		+
+		name:		temperature
+		minimum:	-40
+		typical:	27
+		maximum:	85
+
+		+
+		name:		corner
+		typical:	tt
+	}
+	testbenches {
+		filename:	ngspice/hysteresis_br_1.spice
+		conditions {
+			Vavss V 0
+			ena  1
+			Vdvdd V 1.8
+			Vavdd V 3.3
+			Vdvss V 0
+			isrc_sel  0
+			vtrip[2:0]  100
+			force_dis_rc_osc  1
+			force_short_oneshot  0
+			force_ena_rc_osc  0
+			corner  tt
+			temperature {degrees}C -40
+		}
+		variables {
+			name:		otrip[2:0]
+		}
+		results {
+			0.11465
+			0.12906
+			0.14204
+		}
+
+		+
+		filename:	ngspice/hysteresis_br_4.spice
+		conditions {
+			Vavss V 0
+			ena  1
+			Vdvdd V 1.8
+			Vavdd V 3.3
+			Vdvss V 0
+			isrc_sel  0
+			vtrip[2:0]  100
+			force_dis_rc_osc  1
+			force_short_oneshot  0
+			force_ena_rc_osc  0
+			corner  tt
+			temperature {degrees}C 27
+		}
+		variables {
+			name:		otrip[2:0]
+		}
+		results {
+			0.14322
+			0.1611
+			0.17762
+		}
+
+		+
+		filename:	ngspice/hysteresis_br_7.spice
+		conditions {
+			Vavss V 0
+			ena  1
+			Vdvdd V 1.8
+			Vavdd V 3.3
+			Vdvss V 0
+			isrc_sel  0
+			vtrip[2:0]  100
+			force_dis_rc_osc  1
+			force_short_oneshot  0
+			force_ena_rc_osc  0
+			corner  tt
+			temperature {degrees}C 85
+		}
+		variables {
+			name:		otrip[2:0]
+		}
+		results {
+			0.16622
+			0.18706
+			0.20628
+		}
+	}
+
+	+
+	name:		accuracy_br
+	status:		active
+	description:	Check absolute accuracy of trip voltages (avg of pos- and neg-ramp trip voltages)
+	display:	Accuracy (out)
+	unit:		V
+	spec {
+		minimum:	-0.1 fail
+		typical:	0
+		maximum:	0.1 fail
+	}
+	results {
+		name:		schematic
+		minimum:	0.00099 pass
+		typical:	0.001217 pass
+		maximum:	0.00174 pass
+	}
+	simulate {
+		tool:		ngspice
+		template:	trip_up_down.spice
+		format:		ascii .data result
+		collate:	otrip[2:0]
+		group_size:	3
+	}
+	measure {
+		tool:		octave
+		filename:	accuracy_br.m
+	}
+	conditions {
+		name:		otrip[2:0]
+		enumerate:	000 100 111
+
+		+
+		name:		force_dis_rc_osc
+		typical:	1
+
+		+
+		name:		temperature
+		minimum:	-40
+		typical:	27
+		maximum:	85
+
+		+
+		name:		corner
+		typical:	tt
+	}
+	testbenches {
+		filename:	ngspice/accuracy_br_4.spice
+		conditions {
+			Vavss V 0
+			ena  1
+			Vdvdd V 1.8
+			Vavdd V 3.3
+			Vdvss V 0
+			isrc_sel  0
+			vtrip[2:0]  100
+			force_dis_rc_osc  1
+			force_short_oneshot  0
+			force_ena_rc_osc  0
+			corner  tt
+			temperature {degrees}C 27
+		}
+		variables {
+			name:		otrip[2:0]
+		}
+		results {
+			0.00099
+			0.00102
+			0.00164
+		}
+
+		+
+		filename:	ngspice/accuracy_br_7.spice
+		conditions {
+			Vavss V 0
+			ena  1
+			Vdvdd V 1.8
+			Vavdd V 3.3
+			Vdvss V 0
+			isrc_sel  0
+			vtrip[2:0]  100
+			force_dis_rc_osc  1
+			force_short_oneshot  0
+			force_ena_rc_osc  0
+			corner  tt
+			temperature {degrees}C 85
+		}
+		variables {
+			name:		otrip[2:0]
+		}
+		results {
+			0.0011
+			0.00113
+			0.00174
+		}
+	}
+
+	+
+	name:		hysteresis_vu
+	status:		active
+	description:	Check amount of hysteresis at each trip voltage
+	display:	Hysteresis (vunder)
+	unit:		V
+	spec {
+		minimum:	0.1 fail
+		typical:	0.2
+		maximum:	0.3 fail
+	}
+	results {
+		name:		schematic
+		minimum:	0.1123 pass
+		typical:	0.1598 pass
+		maximum:	0.2064 pass
+	}
+	simulate {
+		tool:		ngspice
+		template:	trip_up_down.spice
+		format:		ascii .data result
+		collate:	vtrip[2:0]
+		group_size:	3
+	}
+	measure {
+		tool:		octave
+		filename:	hysteresis_vu.m
+	}
+	conditions {
+		name:		vtrip[2:0]
+		enumerate:	000 100 111
+
+		+
+		name:		force_dis_rc_osc
+		typical:	1
+
+		+
+		name:		temperature
+		minimum:	-40
+		typical:	27
+		maximum:	85
+
+		+
+		name:		corner
+		typical:	tt
+	}
+	testbenches {
+		filename:	ngspice/hysteresis_vu_1.spice
+		conditions {
+			Vavss V 0
+			ena  1
+			Vdvdd V 1.8
+			Vavdd V 3.3
+			Vdvss V 0
+			otrip[2:0]  100
+			isrc_sel  0
+			force_dis_rc_osc  1
+			force_short_oneshot  0
+			force_ena_rc_osc  0
+			corner  tt
+			temperature {degrees}C -40
+		}
+		variables {
+			name:		vtrip[2:0]
+		}
+		results {
+			0.11227
+			0.12905
+			0.142
+		}
+
+		+
+		filename:	ngspice/hysteresis_vu_4.spice
+		conditions {
+			Vavss V 0
+			ena  1
+			Vdvdd V 1.8
+			Vavdd V 3.3
+			Vdvss V 0
+			otrip[2:0]  100
+			isrc_sel  0
+			force_dis_rc_osc  1
+			force_short_oneshot  0
+			force_ena_rc_osc  0
+			corner  tt
+			temperature {degrees}C 27
+		}
+		variables {
+			name:		vtrip[2:0]
+		}
+		results {
+			0.14188
+			0.1611
+			0.17634
+		}
+
+		+
+		filename:	ngspice/hysteresis_vu_7.spice
+		conditions {
+			Vavss V 0
+			ena  1
+			Vdvdd V 1.8
+			Vavdd V 3.3
+			Vdvss V 0
+			otrip[2:0]  100
+			isrc_sel  0
+			force_dis_rc_osc  1
+			force_short_oneshot  0
+			force_ena_rc_osc  0
+			corner  tt
+			temperature {degrees}C 85
+		}
+		variables {
+			name:		vtrip[2:0]
+		}
+		results {
+			0.16623
+			0.18706
+			0.20636
+		}
+	}
+
+	+
+	name:		accuracy_vu
+	status:		active
+	description:	Check absolute accuracy of trip voltages (avg of pos- and neg-ramp trip voltages)
+	display:	Accuracy (vunder)
+	unit:		V
+	spec {
+		minimum:	-0.1 fail
+		typical:	0
+		maximum:	0.1 fail
+	}
+	results {
+		name:		schematic
+		minimum:	0.00102 pass
+		typical:	0.00166 pass
+		maximum:	0.0023 pass
+	}
+	simulate {
+		tool:		ngspice
+		template:	trip_up_down.spice
+		format:		ascii .data result
+		collate:	vtrip[2:0]
+		group_size:	3
+	}
+	measure {
+		tool:		octave
+		filename:	accuracy_vu.m
+	}
+	conditions {
+		name:		vtrip[2:0]
+		enumerate:	000 100 111
+
+		+
+		name:		force_dis_rc_osc
+		typical:	1
+
+		+
+		name:		temperature
+		minimum:	-40
+		typical:	27
+		maximum:	85
+
+		+
+		name:		corner
+		typical:	tt
+	}
+	testbenches {
+		filename:	ngspice/accuracy_vu_1.spice
+		conditions {
+			Vavss V 0
+			ena  1
+			Vdvdd V 1.8
+			Vavdd V 3.3
+			Vdvss V 0
+			otrip[2:0]  100
+			isrc_sel  0
+			force_dis_rc_osc  1
+			force_short_oneshot  0
+			force_ena_rc_osc  0
+			corner  tt
+			temperature {degrees}C -40
+		}
+		variables {
+			name:		vtrip[2:0]
+		}
+		results {
+			0.002145
+			0.001055
+			0.00161
+		}
+
+		+
+		filename:	ngspice/accuracy_vu_4.spice
+		conditions {
+			Vavss V 0
+			ena  1
+			Vdvdd V 1.8
+			Vavdd V 3.3
+			Vdvss V 0
+			otrip[2:0]  100
+			isrc_sel  0
+			force_dis_rc_osc  1
+			force_short_oneshot  0
+			force_ena_rc_osc  0
+			corner  tt
+			temperature {degrees}C 27
+		}
+		variables {
+			name:		vtrip[2:0]
+		}
+		results {
+			0.00166
+			0.00102
+			0.0023
+		}
+
+		+
+		filename:	ngspice/accuracy_vu_7.spice
+		conditions {
+			Vavss V 0
+			ena  1
+			Vdvdd V 1.8
+			Vavdd V 3.3
+			Vdvss V 0
+			otrip[2:0]  100
+			isrc_sel  0
+			force_dis_rc_osc  1
+			force_short_oneshot  0
+			force_ena_rc_osc  0
+			corner  tt
+			temperature {degrees}C 85
+		}
+		variables {
+			name:		vtrip[2:0]
+		}
+		results {
+			0.001095
+			0.00113
+			0.00173
+		}
+	}
+
+	+
+	name:		response_time_br
+	status:		active
+	description:	Check time-delay between step in avdd to out assertion (otrip=2.71V)
+	display:	Response time (out)
+	unit:		{micro}s
+	spec {
+		minimum:	10 fail
+		typical:	20
+		maximum:	50 fail
+	}
+	results {
+		name:		schematic
+		minimum:	23.23 pass
+		typical:	25.57 pass
+		maximum:	43.63 pass
+	}
+	simulate {
+		tool:		ngspice
+		template:	response_time.spice
+		format:		ascii .data result
+		collate:	otrip[2:0]
+		group_size:	1
+	}
+	measure {
+		tool:		octave
+		filename:	response_time_br.m
+	}
+	conditions {
+		name:		otrip[2:0]
+		typical:	100
+
+		+
+		name:		force_short_oneshot
+		typical:	1
+
+		+
+		name:		temperature
+		minimum:	-40
+		typical:	27
+		maximum:	85
+
+		+
+		name:		corner
+		typical:	tt
+	}
+	testbenches {
+		filename:	ngspice/response_time_br_1.spice
+		conditions {
+			otrip[2:0]  100
+			Vavss V 0
+			ena  1
+			Vdvdd V 1.8
+			Vavdd V 3.3
+			Vdvss V 0
+			isrc_sel  0
+			vtrip[2:0]  100
+			force_dis_rc_osc  0
+			force_short_oneshot  1
+			force_ena_rc_osc  0
+			corner  tt
+			temperature {degrees}C -40
+		}
+		results {
+			4.3626e-05
+		}
+
+		+
+		filename:	ngspice/response_time_br_2.spice
+		conditions {
+			otrip[2:0]  100
+			Vavss V 0
+			ena  1
+			Vdvdd V 1.8
+			Vavdd V 3.3
+			Vdvss V 0
+			isrc_sel  0
+			vtrip[2:0]  100
+			force_dis_rc_osc  0
+			force_short_oneshot  1
+			force_ena_rc_osc  0
+			corner  tt
+			temperature {degrees}C 27
+		}
+		results {
+			2.5569e-05
+		}
+
+		+
+		filename:	ngspice/response_time_br_3.spice
+		conditions {
+			otrip[2:0]  100
+			Vavss V 0
+			ena  1
+			Vdvdd V 1.8
+			Vavdd V 3.3
+			Vdvss V 0
+			isrc_sel  0
+			vtrip[2:0]  100
+			force_dis_rc_osc  0
+			force_short_oneshot  1
+			force_ena_rc_osc  0
+			corner  tt
+			temperature {degrees}C 85
+		}
+		results {
+			2.3233e-05
+		}
+	}
+
+	+
+	name:		response_time_vu
+	status:		active
+	description:	Check time-delay between step in avdd to vunder assertion (vtrip=2.71V)
+	display:	Response time (vunder)
+	unit:		{micro}s
+	spec {
+		minimum:	1 fail
+		typical:	2
+		maximum:	5 fail
+	}
+	results {
+		name:		schematic
+		minimum:	1.653 pass
+		typical:	1.757 pass
+		maximum:	1.88 pass
+	}
+	simulate {
+		tool:		ngspice
+		template:	response_time.spice
+		format:		ascii .data result
+		collate:	vtrip[2:0]
+		group_size:	1
+	}
+	measure {
+		tool:		octave
+		filename:	response_time_vu.m
+	}
+	conditions {
+		name:		vtrip[2:0]
+		typical:	100
+
+		+
+		name:		force_short_oneshot
+		typical:	1
+
+		+
+		name:		temperature
+		minimum:	-40
+		typical:	27
+		maximum:	85
+
+		+
+		name:		corner
+		typical:	tt
+	}
+	testbenches {
+		filename:	ngspice/response_time_vu_1.spice
+		conditions {
+			vtrip[2:0]  100
+			Vavss V 0
+			ena  1
+			Vdvdd V 1.8
+			Vavdd V 3.3
+			Vdvss V 0
+			otrip[2:0]  100
+			isrc_sel  0
+			force_dis_rc_osc  0
+			force_short_oneshot  1
+			force_ena_rc_osc  0
+			corner  tt
+			temperature {degrees}C -40
+		}
+		results {
+			1.653e-06
+		}
+
+		+
+		filename:	ngspice/response_time_vu_2.spice
+		conditions {
+			vtrip[2:0]  100
+			Vavss V 0
+			ena  1
+			Vdvdd V 1.8
+			Vavdd V 3.3
+			Vdvss V 0
+			otrip[2:0]  100
+			isrc_sel  0
+			force_dis_rc_osc  0
+			force_short_oneshot  1
+			force_ena_rc_osc  0
+			corner  tt
+			temperature {degrees}C 27
+		}
+		results {
+			1.757e-06
+		}
+
+		+
+		filename:	ngspice/response_time_vu_3.spice
+		conditions {
+			vtrip[2:0]  100
+			Vavss V 0
+			ena  1
+			Vdvdd V 1.8
+			Vavdd V 3.3
+			Vdvss V 0
+			otrip[2:0]  100
+			isrc_sel  0
+			force_dis_rc_osc  0
+			force_short_oneshot  1
+			force_ena_rc_osc  0
+			corner  tt
+			temperature {degrees}C 85
+		}
+		results {
+			1.88e-06
+		}
+	}
+
+	+
+	name:		reset_active_time
+	status:		active
+	description:	Estimate reset active time by check rc oscillator period across 10 cycles, then multiplying by 4096.
+	display:	Reset active time (est.)
+	unit:		s
+	spec {
+		minimum:	0.050 fail
+		typical:	0.100
+		maximum:	0.200 fail
+	}
+	results {
+		name:		schematic
+		minimum:	0.06764 pass
+		typical:	0.1017 pass
+		maximum:	0.1964 pass
+	}
+	simulate {
+		tool:		ngspice
+		template:	response_time.spice
+		format:		ascii .data result
+	}
+	measure {
+		tool:		octave
+		filename:	response_time_osc.m
+	}
+	conditions {
+		name:		force_short_oneshot
+		typical:	1
+
+		+
+		name:		temperature
+		minimum:	-40
+		typical:	27
+		maximum:	85
+
+		+
+		name:		corner
+		minimum:	ff
+		typical:	tt
+		maximum:	ss
+	}
+	testbenches {
+		filename:	ngspice/reset_active_time_2.spice
+		conditions {
+			Vavss V 0
+			ena  1
+			Vdvdd V 1.8
+			Vavdd V 3.3
+			Vdvss V 0
+			otrip[2:0]  100
+			isrc_sel  0
+			vtrip[2:0]  100
+			force_dis_rc_osc  0
+			force_short_oneshot  1
+			force_ena_rc_osc  0
+			corner  tt
+			temperature {degrees}C -40
+		}
+		results {
+			0.145529
+		}
+
+		+
+		filename:	ngspice/reset_active_time_3.spice
+		conditions {
+			Vavss V 0
+			ena  1
+			Vdvdd V 1.8
+			Vavdd V 3.3
+			Vdvss V 0
+			otrip[2:0]  100
+			isrc_sel  0
+			vtrip[2:0]  100
+			force_dis_rc_osc  0
+			force_short_oneshot  1
+			force_ena_rc_osc  0
+			corner  ss
+			temperature {degrees}C -40
+		}
+		results {
+			0.196353
+		}
+
+		+
+		filename:	ngspice/reset_active_time_4.spice
+		conditions {
+			Vavss V 0
+			ena  1
+			Vdvdd V 1.8
+			Vavdd V 3.3
+			Vdvss V 0
+			otrip[2:0]  100
+			isrc_sel  0
+			vtrip[2:0]  100
+			force_dis_rc_osc  0
+			force_short_oneshot  1
+			force_ena_rc_osc  0
+			corner  ff
+			temperature {degrees}C 27
+		}
+		results {
+			0.0980767
+		}
+
+		+
+		filename:	ngspice/reset_active_time_5.spice
+		conditions {
+			Vavss V 0
+			ena  1
+			Vdvdd V 1.8
+			Vavdd V 3.3
+			Vdvss V 0
+			otrip[2:0]  100
+			isrc_sel  0
+			vtrip[2:0]  100
+			force_dis_rc_osc  0
+			force_short_oneshot  1
+			force_ena_rc_osc  0
+			corner  tt
+			temperature {degrees}C 27
+		}
+		results {
+			0.101704
+		}
+
+		+
+		filename:	ngspice/reset_active_time_6.spice
+		conditions {
+			Vavss V 0
+			ena  1
+			Vdvdd V 1.8
+			Vavdd V 3.3
+			Vdvss V 0
+			otrip[2:0]  100
+			isrc_sel  0
+			vtrip[2:0]  100
+			force_dis_rc_osc  0
+			force_short_oneshot  1
+			force_ena_rc_osc  0
+			corner  ss
+			temperature {degrees}C 27
+		}
+		results {
+			0.115055
+		}
+
+		+
+		filename:	ngspice/reset_active_time_7.spice
+		conditions {
+			Vavss V 0
+			ena  1
+			Vdvdd V 1.8
+			Vavdd V 3.3
+			Vdvss V 0
+			otrip[2:0]  100
+			isrc_sel  0
+			vtrip[2:0]  100
+			force_dis_rc_osc  0
+			force_short_oneshot  1
+			force_ena_rc_osc  0
+			corner  ff
+			temperature {degrees}C 85
+		}
+		results {
+			0.0676352
+		}
+
+		+
+		filename:	ngspice/reset_active_time_8.spice
+		conditions {
+			Vavss V 0
+			ena  1
+			Vdvdd V 1.8
+			Vavdd V 3.3
+			Vdvss V 0
+			otrip[2:0]  100
+			isrc_sel  0
+			vtrip[2:0]  100
+			force_dis_rc_osc  0
+			force_short_oneshot  1
+			force_ena_rc_osc  0
+			corner  tt
+			temperature {degrees}C 85
+		}
+		results {
+			0.0747028
+		}
+
+		+
+		filename:	ngspice/reset_active_time_9.spice
+		conditions {
+			Vavss V 0
+			ena  1
+			Vdvdd V 1.8
+			Vavdd V 3.3
+			Vdvss V 0
+			otrip[2:0]  100
+			isrc_sel  0
+			vtrip[2:0]  100
+			force_dis_rc_osc  0
+			force_short_oneshot  1
+			force_ena_rc_osc  0
+			corner  ss
+			temperature {degrees}C 85
+		}
+		results {
+			0.0849203
+		}
+	}
+
+	+
+	name:		Idd_enabled
+	status:		active
+	description:	Current draw through analog supply, brown-out detector enabled
+	display:	Idd
+	unit:		{micro}A
+	spec {
+		minimum:	any
+		typical:	5
+		maximum:	10 fail
+	}
+	results {
+		name:		schematic
+		minimum:	4.709 pass
+		typical:	4.901 pass
+		maximum:	4.968 pass
+	}
+	simulate {
+		tool:		ngspice
+		template:	dccurrent_avdd.spice
+		format:		ascii .data null result
+	}
+	conditions {
+		name:		Vdvdd
+		typical:	1.8
+
+		+
+		name:		Vavdd
+		typical:	3.3
+
+		+
+		name:		otrip[2:0]
+		typical:	100
+
+		+
+		name:		vtrip[2:0]
+		typical:	100
+
+		+
+		name:		temperature
+		minimum:	-40
+		typical:	27
+		maximum:	85
+
+		+
+		name:		corner
+		minimum:	ss
+		typical:	tt
+		maximum:	ff
+	}
+	testbenches {
+		filename:	ngspice/Idd_enabled_1.spice
+		conditions {
+			Vavss V 0
+			ena  1
+			Vdvdd V 1.8
+			Vavdd V 3.3
+			Vdvss V 0
+			otrip[2:0]  100
+			isrc_sel  0
+			vtrip[2:0]  100
+			force_dis_rc_osc  0
+			force_short_oneshot  0
+			force_ena_rc_osc  0
+			corner  ss
+			temperature {degrees}C -40
+		}
+		results {
+			4.96843564e-06
+		}
+
+		+
+		filename:	ngspice/Idd_enabled_2.spice
+		conditions {
+			Vavss V 0
+			ena  1
+			Vdvdd V 1.8
+			Vavdd V 3.3
+			Vdvss V 0
+			otrip[2:0]  100
+			isrc_sel  0
+			vtrip[2:0]  100
+			force_dis_rc_osc  0
+			force_short_oneshot  0
+			force_ena_rc_osc  0
+			corner  tt
+			temperature {degrees}C -40
+		}
+		results {
+			4.94605525e-06
+		}
+
+		+
+		filename:	ngspice/Idd_enabled_3.spice
+		conditions {
+			Vavss V 0
+			ena  1
+			Vdvdd V 1.8
+			Vavdd V 3.3
+			Vdvss V 0
+			otrip[2:0]  100
+			isrc_sel  0
+			vtrip[2:0]  100
+			force_dis_rc_osc  0
+			force_short_oneshot  0
+			force_ena_rc_osc  0
+			corner  ff
+			temperature {degrees}C -40
+		}
+		results {
+			4.93480148e-06
+		}
+
+		+
+		filename:	ngspice/Idd_enabled_4.spice
+		conditions {
+			Vavss V 0
+			ena  1
+			Vdvdd V 1.8
+			Vavdd V 3.3
+			Vdvss V 0
+			otrip[2:0]  100
+			isrc_sel  0
+			vtrip[2:0]  100
+			force_dis_rc_osc  0
+			force_short_oneshot  0
+			force_ena_rc_osc  0
+			corner  ss
+			temperature {degrees}C 27
+		}
+		results {
+			4.94386155e-06
+		}
+
+		+
+		filename:	ngspice/Idd_enabled_5.spice
+		conditions {
+			Vavss V 0
+			ena  1
+			Vdvdd V 1.8
+			Vavdd V 3.3
+			Vdvss V 0
+			otrip[2:0]  100
+			isrc_sel  0
+			vtrip[2:0]  100
+			force_dis_rc_osc  0
+			force_short_oneshot  0
+			force_ena_rc_osc  0
+			corner  tt
+			temperature {degrees}C 27
+		}
+		results {
+			4.90146952e-06
+		}
+
+		+
+		filename:	ngspice/Idd_enabled_6.spice
+		conditions {
+			Vavss V 0
+			ena  1
+			Vdvdd V 1.8
+			Vavdd V 3.3
+			Vdvss V 0
+			otrip[2:0]  100
+			isrc_sel  0
+			vtrip[2:0]  100
+			force_dis_rc_osc  0
+			force_short_oneshot  0
+			force_ena_rc_osc  0
+			corner  ff
+			temperature {degrees}C 27
+		}
+		results {
+			4.87659615e-06
+		}
+
+		+
+		filename:	ngspice/Idd_enabled_7.spice
+		conditions {
+			Vavss V 0
+			ena  1
+			Vdvdd V 1.8
+			Vavdd V 3.3
+			Vdvss V 0
+			otrip[2:0]  100
+			isrc_sel  0
+			vtrip[2:0]  100
+			force_dis_rc_osc  0
+			force_short_oneshot  0
+			force_ena_rc_osc  0
+			corner  ss
+			temperature {degrees}C 85
+		}
+		results {
+			4.75694060e-06
+		}
+
+		+
+		filename:	ngspice/Idd_enabled_8.spice
+		conditions {
+			Vavss V 0
+			ena  1
+			Vdvdd V 1.8
+			Vavdd V 3.3
+			Vdvss V 0
+			otrip[2:0]  100
+			isrc_sel  0
+			vtrip[2:0]  100
+			force_dis_rc_osc  0
+			force_short_oneshot  0
+			force_ena_rc_osc  0
+			corner  tt
+			temperature {degrees}C 85
+		}
+		results {
+			4.70850353e-06
+		}
+
+		+
+		filename:	ngspice/Idd_enabled_9.spice
+		conditions {
+			Vavss V 0
+			ena  1
+			Vdvdd V 1.8
+			Vavdd V 3.3
+			Vdvss V 0
+			otrip[2:0]  100
+			isrc_sel  0
+			vtrip[2:0]  100
+			force_dis_rc_osc  0
+			force_short_oneshot  0
+			force_ena_rc_osc  0
+			corner  ff
+			temperature {degrees}C 85
+		}
+		results {
+			4.72915475e-06
+		}
+	}
+
+	+
+	name:		Idd_disabled
+	status:		active
+	description:	Current draw through analog supply, brown-out detector disabled
+	display:	Standby current
+	unit:		{micro}A
+	spec {
+		minimum:	any
+		typical:	0.01
+		maximum:	0.1 fail
+	}
+	results {
+		name:		schematic
+		minimum:	0.0009821 pass
+		typical:	0.001613 pass
+		maximum:	0.07845 pass
+	}
+	simulate {
+		tool:		ngspice
+		template:	dccurrent_avdd.spice
+		format:		ascii .data null result
+	}
+	conditions {
+		name:		Vdvdd
+		typical:	1.8
+
+		+
+		name:		Vavdd
+		typical:	3.3
+
+		+
+		name:		otrip[2:0]
+		typical:	000
+
+		+
+		name:		vtrip[2:0]
+		typical:	000
+
+		+
+		name:		ena
+		typical:	0
+
+		+
+		name:		temperature
+		minimum:	-40
+		typical:	27
+		maximum:	85
+
+		+
+		name:		corner
+		minimum:	ss
+		typical:	tt
+		maximum:	ff
+	}
+	testbenches {
+		filename:	ngspice/Idd_disabled_1.spice
+		conditions {
+			Vavss V 0
+			ena  0
+			Vdvdd V 1.8
+			Vavdd V 3.3
+			Vdvss V 0
+			otrip[2:0]  000
+			isrc_sel  0
+			vtrip[2:0]  000
+			force_dis_rc_osc  0
+			force_short_oneshot  0
+			force_ena_rc_osc  0
+			corner  ss
+			temperature {degrees}C -40
+		}
+		results {
+			9.92350722e-10
+		}
+
+		+
+		filename:	ngspice/Idd_disabled_2.spice
+		conditions {
+			Vavss V 0
+			ena  0
+			Vdvdd V 1.8
+			Vavdd V 3.3
+			Vdvss V 0
+			otrip[2:0]  000
+			isrc_sel  0
+			vtrip[2:0]  000
+			force_dis_rc_osc  0
+			force_short_oneshot  0
+			force_ena_rc_osc  0
+			corner  tt
+			temperature {degrees}C -40
+		}
+		results {
+			9.82096214e-10
+		}
+
+		+
+		filename:	ngspice/Idd_disabled_3.spice
+		conditions {
+			Vavss V 0
+			ena  0
+			Vdvdd V 1.8
+			Vavdd V 3.3
+			Vdvss V 0
+			otrip[2:0]  000
+			isrc_sel  0
+			vtrip[2:0]  000
+			force_dis_rc_osc  0
+			force_short_oneshot  0
+			force_ena_rc_osc  0
+			corner  ff
+			temperature {degrees}C -40
+		}
+		results {
+			1.02793172e-09
+		}
+
+		+
+		filename:	ngspice/Idd_disabled_4.spice
+		conditions {
+			Vavss V 0
+			ena  0
+			Vdvdd V 1.8
+			Vavdd V 3.3
+			Vdvss V 0
+			otrip[2:0]  000
+			isrc_sel  0
+			vtrip[2:0]  000
+			force_dis_rc_osc  0
+			force_short_oneshot  0
+			force_ena_rc_osc  0
+			corner  ss
+			temperature {degrees}C 27
+		}
+		results {
+			3.13350240e-09
+		}
+
+		+
+		filename:	ngspice/Idd_disabled_5.spice
+		conditions {
+			Vavss V 0
+			ena  0
+			Vdvdd V 1.8
+			Vavdd V 3.3
+			Vdvss V 0
+			otrip[2:0]  000
+			isrc_sel  0
+			vtrip[2:0]  000
+			force_dis_rc_osc  0
+			force_short_oneshot  0
+			force_ena_rc_osc  0
+			corner  tt
+			temperature {degrees}C 27
+		}
+		results {
+			1.61335043e-09
+		}
+
+		+
+		filename:	ngspice/Idd_disabled_6.spice
+		conditions {
+			Vavss V 0
+			ena  0
+			Vdvdd V 1.8
+			Vavdd V 3.3
+			Vdvss V 0
+			otrip[2:0]  000
+			isrc_sel  0
+			vtrip[2:0]  000
+			force_dis_rc_osc  0
+			force_short_oneshot  0
+			force_ena_rc_osc  0
+			corner  ff
+			temperature {degrees}C 27
+		}
+		results {
+			6.05523459e-09
+		}
+
+		+
+		filename:	ngspice/Idd_disabled_7.spice
+		conditions {
+			Vavss V 0
+			ena  0
+			Vdvdd V 1.8
+			Vavdd V 3.3
+			Vdvss V 0
+			otrip[2:0]  000
+			isrc_sel  0
+			vtrip[2:0]  000
+			force_dis_rc_osc  0
+			force_short_oneshot  0
+			force_ena_rc_osc  0
+			corner  ss
+			temperature {degrees}C 85
+		}
+		results {
+			4.98982291e-09
+		}
+
+		+
+		filename:	ngspice/Idd_disabled_8.spice
+		conditions {
+			Vavss V 0
+			ena  0
+			Vdvdd V 1.8
+			Vavdd V 3.3
+			Vdvss V 0
+			otrip[2:0]  000
+			isrc_sel  0
+			vtrip[2:0]  000
+			force_dis_rc_osc  0
+			force_short_oneshot  0
+			force_ena_rc_osc  0
+			corner  tt
+			temperature {degrees}C 85
+		}
+		results {
+			1.36308161e-08
+		}
+
+		+
+		filename:	ngspice/Idd_disabled_9.spice
+		conditions {
+			Vavss V 0
+			ena  0
+			Vdvdd V 1.8
+			Vavdd V 3.3
+			Vdvss V 0
+			otrip[2:0]  000
+			isrc_sel  0
+			vtrip[2:0]  000
+			force_dis_rc_osc  0
+			force_short_oneshot  0
+			force_ena_rc_osc  0
+			corner  ff
+			temperature {degrees}C 85
+		}
+		results {
+			7.84505624e-08
+		}
+	}
+}
