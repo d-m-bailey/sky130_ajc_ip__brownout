@@ -36,6 +36,7 @@ brownout brownout(
 .osc_ck(osc_ck),
 .itest(itest),
 .brout_filt(brout_filt),
+.dcomp(dcomp),
 .vin_brout(vin_brout),
 .vin_vunder(vin_vunder),
 .timed_out(timed_out)

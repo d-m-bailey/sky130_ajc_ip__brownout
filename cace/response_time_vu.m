@@ -1,6 +1,7 @@
 #------------------------------------------------------------------------
-#Octave script to extract accuracy of overvoltage detector trip voltages
-#after running CACE
+#After running CACE, this octave script extracts the response time of
+#the under-voltage detector i.e. when avdd falls below a preset threshold
+#voltage.
 #------------------------------------------------------------------------
 #
 #Ajacci, Ltd. Co. (c) 2024
@@ -19,21 +20,21 @@
 args = argv();
 load(args{1});
 
-# Find the index of the conditions representing otrip[3:0]
+# Find the index of the conditions representing vtrip[2:0]
 bvecidx = -1;
 
 names = results.("NAMES");
 l = length(names);
 for i = 1:l,
     n = names(i);
-    if (strcmp(n, "otrip[2:0]") == 1),
+    if (strcmp(n, "vtrip[2:0]") == 1),
 	bvecidx = i;
     endif
 endfor
 
 # Sanity checks
 if (bvecidx < 0),
-    printf("Error:  Cannot find condition otrip[2:0] in list!");
+    printf("Error:  Cannot find condition vtrip[2:0] in list!");
     return
 endif
 
@@ -47,8 +48,8 @@ bvals = results.(cstr);
 ival = bin2dec(bvals);
 
 #result is organized in alternating brown-out/under-voltage pairs
-for i=1:2:length(ival)
-  response_time(bitshift((i+1),-1)) = result(i+1);
+for i=1:4:length(ival)
+  response_time(bitshift((i+3),-2)) = result(i+1);
 endfor
 
 printf("%g\n", response_time)

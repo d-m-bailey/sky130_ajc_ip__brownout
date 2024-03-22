@@ -29,18 +29,14 @@ N -380 -660 -380 -610 {
 lab=avdd_bg}
 N -210 -660 -210 -640 {
 lab=avdd_bg}
-N -210 -580 -210 -60 {
-lab=ibg_200n}
-N -210 -60 0 -60 {
+N -210 -40 0 -40 {
 lab=ibg_200n}
 N 300 -280 630 -280 {
 lab=out}
-N 300 -240 470 -240 {
+N 300 -220 470 -220 {
 lab=itest}
 N 630 -280 630 -110 {
 lab=out}
-N 470 -240 470 -50 {
-lab=itest}
 N 190 -410 190 -390 {
 lab=GND}
 N 160 -410 190 -410 {
@@ -70,9 +66,9 @@ lab=GND}
 N -30 -410 0 -410 {
 lab=GND}
 N -30 -570 0 -570 {
-lab=GND}
+lab=#net1}
 N -30 -490 0 -490 {
-lab=GND}
+lab=#net2}
 N 400 -410 400 -390 {
 lab=GND}
 N 370 -410 400 -410 {
@@ -86,15 +82,20 @@ lab=GND}
 N 370 -490 400 -490 {
 lab=GND}
 N -30 -650 -0 -650 {
-lab=GND}
+lab=#net3}
 N -30 -730 -0 -730 {
-lab=GND}
-N -30 -730 -30 -410 {
-lab=GND}
+lab=#net4}
 N -140 -660 -140 -640 {
 lab=avdd_bg}
 N -380 -660 -140 -660 {
 lab=avdd_bg}
+N -210 -580 -210 -40 {
+lab=ibg_200n}
+N 470 -220 470 -50 {
+lab=itest}
+N -30 -810 0 -810 {
+lab=#net4}
+N -30 -810 -30 -410 {}
 C {devices/isource.sym} -370 -480 0 0 {name=Ibias value=200n}
 C {xschem/sky130_fd_pr/pfet_g5v0d10v5.sym} -230 -610 0 0 {name=M1
 W=1
@@ -132,7 +133,7 @@ footprint=1206
 device=resistor
 m=1}
 C {devices/gnd.sym} 470 10 0 0 {name=l9 lab=GND}
-C {devices/lab_wire.sym} 460 -240 0 0 {name=p7 sig_type=std_logic lab=itest}
+C {devices/lab_wire.sym} 460 -220 0 0 {name=p7 sig_type=std_logic lab=itest}
 C {devices/gnd.sym} 630 -50 0 0 {name=l8 lab=GND}
 C {devices/capa.sym} 630 -80 0 0 {name=C1
 m=1
@@ -140,7 +141,7 @@ value=20p
 footprint=1206
 device="ceramic capacitor"}
 C {devices/lab_wire.sym} 610 -280 0 0 {name=p12 sig_type=std_logic lab=out}
-C {xschem/sky130_ajc_ip__brownout.sym} 150 -170 0 0 {name=xIbrout}
+C {xschem/sky130_ajc_ip__brownout.sym} 150 -160 0 0 {name=xIbrout}
 C {devices/lab_pin.sym} 0 -280 0 0 {name=p9 lab=avdd}
 C {devices/lab_pin.sym} 0 -260 0 0 {name=p15 lab=avss}
 C {devices/lab_pin.sym} 0 -240 0 0 {name=p20 lab=dvdd}
@@ -148,16 +149,16 @@ C {devices/lab_pin.sym} 0 -220 0 0 {name=p22 lab=dvss}
 C {devices/lab_pin.sym} 300 -260 0 1 {name=p23 lab=osc_ck}
 C {devices/lab_pin.sym} 0 -200 0 0 {name=p24 lab=vbg_1v2}
 C {devices/lab_pin.sym} 0 -180 0 0 {name=p26 lab=otrip[2:0]}
-C {devices/lab_pin.sym} 300 -220 0 1 {name=p28 lab=brout_filt}
+C {devices/lab_pin.sym} 300 -200 0 1 {name=p28 lab=brout_filt}
 C {devices/lab_pin.sym} 0 -140 0 0 {name=p30 lab=ena}
-C {devices/lab_pin.sym} 300 -200 0 1 {name=p32 lab=vin_brout}
-C {devices/lab_pin.sym} 0 -120 0 0 {name=p33 lab=force_rc_osc}
-C {devices/lab_pin.sym} 0 -100 0 0 {name=p34 lab=force_short_oneshot}
-C {devices/lab_pin.sym} 300 -160 0 1 {name=p35 lab=timed_out}
-C {devices/lab_pin.sym} 0 -80 0 0 {name=p37 lab=isrc_sel}
+C {devices/lab_pin.sym} 300 -180 0 1 {name=p32 lab=vin_brout}
+C {devices/lab_pin.sym} 0 -120 0 0 {name=p33 lab=force_ena_rc_osc}
+C {devices/lab_pin.sym} 0 -80 0 0 {name=p34 lab=force_short_oneshot}
+C {devices/lab_pin.sym} 300 -140 0 1 {name=p35 lab=timed_out}
+C {devices/lab_pin.sym} 0 -60 0 0 {name=p37 lab=isrc_sel}
 C {devices/lab_pin.sym} 0 -160 0 0 {name=p8 lab=vtrip[2:0]}
-C {devices/lab_pin.sym} 300 -180 0 1 {name=p10 lab=vin_vunder}
-C {devices/lab_pin.sym} 300 -140 0 1 {name=p13 lab=vunder}
+C {devices/lab_pin.sym} 300 -160 0 1 {name=p10 lab=vin_vunder}
+C {devices/lab_pin.sym} 300 -120 0 1 {name=p13 lab=vunder}
 C {devices/vsource.sym} 620 -600 0 0 {name=Vavss value="DC \{Vavss\}" savecurrent=false}
 C {devices/lab_pin.sym} 620 -630 2 0 {name=p25 sig_type=std_logic lab=avss}
 C {devices/lab_pin.sym} 620 -710 2 0 {name=p36 sig_type=std_logic lab=avdd}
@@ -215,11 +216,15 @@ wrdata \{simpath\}/\{filename\}_\{N\}.data -I(Vavdd)
 quit
 .endc
 "}
-C {devices/vsource.sym} 0 -680 0 0 {name=Vforce_rc_osc value="DC 0" savecurrent=false}
-C {devices/lab_pin.sym} 0 -710 2 0 {name=p6 sig_type=std_logic lab=force_rc_osc}
-C {devices/vsource.sym} 0 -760 0 0 {name=Vforce_rc_osc1 value="DC 0" savecurrent=false}
-C {devices/lab_pin.sym} 0 -790 2 0 {name=p11 sig_type=std_logic lab=force_short_oneshot}
 C {devices/vsource.sym} -140 -610 0 0 {name=Vavdd_bg value="DC 3.3" savecurrent=false}
 C {devices/lab_wire.sym} -290 -660 0 0 {name=p3 sig_type=std_logic lab=avdd_bg}
 C {devices/gnd.sym} -140 -580 0 0 {name=l2 lab=GND}
 C {devices/gnd.sym} -370 -450 0 0 {name=l3 lab=GND}
+C {devices/lab_pin.sym} 0 -100 0 0 {name=p14 lab=force_dis_rc_osc}
+C {devices/lab_pin.sym} 300 -240 0 1 {name=p16 lab=dcomp}
+C {devices/vsource.sym} 0 -680 0 0 {name=Vforce_dis_rc_osc value="DC [\{force_dis_rc_osc\}*\{Vdvdd\}]" savecurrent=false}
+C {devices/lab_pin.sym} 0 -710 2 0 {name=p11 sig_type=std_logic lab=force_dis_rc_osc}
+C {devices/vsource.sym} 0 -840 0 0 {name=Vforce_short_oneshot value="DC [\{force_short_oneshot\}*\{Vdvdd\}]" savecurrent=false}
+C {devices/lab_pin.sym} 0 -870 2 0 {name=p6 sig_type=std_logic lab=force_short_oneshot}
+C {devices/vsource.sym} 0 -760 0 0 {name=Vforce_ena_rc_osc value="DC [\{force_ena_rc_osc\}*\{Vdvdd\}]" savecurrent=false}
+C {devices/lab_pin.sym} 0 -790 2 0 {name=p19 sig_type=std_logic lab=force_ena_rc_osc}

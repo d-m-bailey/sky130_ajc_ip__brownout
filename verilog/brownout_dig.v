@@ -6,6 +6,7 @@ input logic ena,
 input logic force_ena_rc_osc,
 input logic force_dis_rc_osc,
 input logic force_short_oneshot,
+input logic dcomp,
 input logic brout_filt,
 input logic osc_ck,
 //OUTPUTS
@@ -46,33 +47,39 @@ output timed_out
     endcase
   end
 
-  assign osc_ena = force_ena_rc_osc | (!force_dis_rc_osc & (ena & (brout_filt | !out_unbuf)));
-  wire brout_filt_ena_rsb;
+  assign osc_ena = force_ena_rc_osc | (!force_dis_rc_osc & (ena & (dcomp | !out_unbuf)));
+  wire dcomp_ena_rsb;
 
   //BROUT_FILT RETIME
-  assign brout_filt_ena_rsb = ena & brout_filt;
+  assign dcomp_ena_rsb = ena & dcomp;
 
-  reg brout_filt_retimed;
-  always @ (posedge osc_ck or negedge brout_filt_ena_rsb) begin
-    if (!brout_filt_ena_rsb) begin
-      brout_filt_retimed <= 0;
+  reg dcomp_retimed;
+  always @ (posedge osc_ck or negedge dcomp_ena_rsb) begin
+    if (!dcomp_ena_rsb) begin
+      dcomp_retimed <= 0;
     end else begin
-      brout_filt_retimed <= brout_filt;
+      dcomp_retimed <= dcomp;
     end
   end
 
-  //COUNTER RESET
-  reg cnt_rsb_stg1, cnt_rsb_stg2, cnt_rsb;
+  reg clr_cnt_sb_stg1, clr_cnt_sb;
 
-  always @ (posedge osc_ck or negedge ena) begin
-    if (!ena) begin
-      cnt_rsb_stg1 <= 0;
-      cnt_rsb_stg2 <= 0;
-      cnt_rsb <= 0;
+  always @ (posedge osc_ck or posedge brout_filt) begin
+    if (brout_filt) begin
+      clr_cnt_sb_stg1 <= 0;
+      clr_cnt_sb <= 0;
     end else begin
-      cnt_rsb_stg1 <= 1;
-      cnt_rsb_stg2 <= cnt_rsb_stg1;
-      cnt_rsb <= cnt_rsb_stg2;
+      clr_cnt_sb_stg1 <= 1;
+      clr_cnt_sb <= clr_cnt_sb_stg1;
+    end
+  end
+
+  reg clr_cnt;
+  always @ (posedge osc_ck or negedge clr_cnt_sb) begin
+    if (!clr_cnt_sb) begin
+      clr_cnt <= 1;
+    end else begin
+      clr_cnt <= 0;
     end
   end
 
@@ -80,13 +87,13 @@ output timed_out
   reg [11:0] cnt;
 
   assign timed_out = (cnt == 12'b111111111111);
-  assign out_unbuf = brout_filt_retimed ? 0 : timed_out;
+  assign out_unbuf = dcomp_retimed ? 0 : timed_out;
 
-  always @ (posedge osc_ck or negedge cnt_rsb) begin
-    if (!cnt_rsb) begin
+  always @ (posedge osc_ck or negedge ena) begin
+    if (!ena) begin
       cnt <= 12'b111111111111;
     end else begin
-      cnt <= brout_filt_retimed ? 0 : timed_out ? cnt : force_short_oneshot ? (cnt & 12'b111000000000) + 12'b001111111111 : cnt + 1;
+      cnt <= clr_cnt ? 0 : timed_out ? cnt : force_short_oneshot ? (cnt & 12'b111000000000) + 12'b001111111111 : cnt + 1;
     end
   end
 

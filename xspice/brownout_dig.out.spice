@@ -1,163 +1,172 @@
 * XSpice netlist created from SPICE and liberty sources by spi2xspice.py
 * NGSPICE file created from brownout_dig.ext - technology: sky130A
-* Black-box entry subcircuit for sky130_fd_sc_hd__nor3b_1 abstract view
-* Black-box entry subcircuit for sky130_fd_sc_hd__decap_8 abstract view
+* Black-box entry subcircuit for sky130_fd_sc_hd__decap_6 abstract view
+* Black-box entry subcircuit for sky130_fd_sc_hd__and3_1 abstract view
+* Black-box entry subcircuit for sky130_fd_sc_hd__fill_1 abstract view
 * Black-box entry subcircuit for sky130_fd_sc_hd__fill_2 abstract view
-* Black-box entry subcircuit for sky130_fd_sc_hd__and2_1 abstract view
-* Black-box entry subcircuit for sky130_fd_sc_hd__dfrtp_1 abstract view
+* Black-box entry subcircuit for sky130_fd_sc_hd__dfstp_1 abstract view
+* Black-box entry subcircuit for sky130_fd_sc_hd__inv_2 abstract view
+* Black-box entry subcircuit for sky130_fd_sc_hd__clkbuf_4 abstract view
 * Black-box entry subcircuit for sky130_fd_sc_hd__buf_2 abstract view
 * Black-box entry subcircuit for sky130_fd_sc_hd__decap_3 abstract view
 * Black-box entry subcircuit for sky130_fd_sc_hd__tapvpwrvgnd_1 abstract view
-* Black-box entry subcircuit for sky130_fd_sc_hd__dfstp_1 abstract view
-* Black-box entry subcircuit for sky130_fd_sc_hd__and4_1 abstract view
-* Black-box entry subcircuit for sky130_fd_sc_hd__fill_1 abstract view
-* Black-box entry subcircuit for sky130_fd_sc_hd__nor3_1 abstract view
-* Black-box entry subcircuit for sky130_fd_sc_hd__decap_4 abstract view
-* Black-box entry subcircuit for sky130_fd_sc_hd__nand2_1 abstract view
-* Black-box entry subcircuit for sky130_fd_sc_hd__inv_2 abstract view
-* Black-box entry subcircuit for sky130_fd_sc_hd__clkbuf_4 abstract view
+* Black-box entry subcircuit for sky130_fd_sc_hd__and3b_1 abstract view
 * Black-box entry subcircuit for sky130_ef_sc_hd__decap_12 abstract view
+* Black-box entry subcircuit for sky130_fd_sc_hd__decap_4 abstract view
+* Black-box entry subcircuit for sky130_fd_sc_hd__decap_8 abstract view
 * Black-box entry subcircuit for sky130_fd_sc_hd__a21o_1 abstract view
-* Black-box entry subcircuit for sky130_fd_sc_hd__decap_6 abstract view
-* Black-box entry subcircuit for sky130_fd_sc_hd__a31o_1 abstract view
-* Black-box entry subcircuit for sky130_fd_sc_hd__nand2b_1 abstract view
+* Black-box entry subcircuit for sky130_fd_sc_hd__conb_1 abstract view
 * Black-box entry subcircuit for sky130_fd_sc_hd__o21a_1 abstract view
 * Black-box entry subcircuit for sky130_fd_sc_hd__xor2_1 abstract view
 * Black-box entry subcircuit for sky130_fd_sc_hd__a21oi_1 abstract view
-* Black-box entry subcircuit for sky130_fd_sc_hd__clkbuf_1 abstract view
-* Black-box entry subcircuit for sky130_fd_sc_hd__and3_1 abstract view
-* Black-box entry subcircuit for sky130_fd_sc_hd__dlymetal6s2s_1 abstract view
-* Black-box entry subcircuit for sky130_fd_sc_hd__and3b_1 abstract view
 * Black-box entry subcircuit for sky130_fd_sc_hd__xnor2_1 abstract view
+* Black-box entry subcircuit for sky130_fd_sc_hd__nand2_1 abstract view
 * Black-box entry subcircuit for sky130_fd_sc_hd__or2_1 abstract view
 * Black-box entry subcircuit for sky130_fd_sc_hd__buf_1 abstract view
+* Black-box entry subcircuit for sky130_fd_sc_hd__nor3b_1 abstract view
+* Black-box entry subcircuit for sky130_fd_sc_hd__clkbuf_1 abstract view
+* Black-box entry subcircuit for sky130_fd_sc_hd__clkbuf_2 abstract view
 * Black-box entry subcircuit for sky130_fd_sc_hd__nor2_2 abstract view
-* Black-box entry subcircuit for sky130_fd_sc_hd__clkbuf_16 abstract view
-* Black-box entry subcircuit for sky130_fd_sc_hd__dlygate4sd3_1 abstract view
-* Black-box entry subcircuit for sky130_fd_sc_hd__nand3_1 abstract view
-* Black-box entry subcircuit for sky130_fd_sc_hd__conb_1 abstract view
+* Black-box entry subcircuit for sky130_fd_sc_hd__and2_1 abstract view
+* Black-box entry subcircuit for sky130_fd_sc_hd__a31o_1 abstract view
+* Black-box entry subcircuit for sky130_fd_sc_hd__nor3_1 abstract view
 * Black-box entry subcircuit for sky130_fd_sc_hd__or3b_1 abstract view
+* Black-box entry subcircuit for sky130_fd_sc_hd__and2b_1 abstract view
+* Black-box entry subcircuit for sky130_fd_sc_hd__dlymetal6s2s_1 abstract view
+* Black-box entry subcircuit for sky130_fd_sc_hd__and4_2 abstract view
+* Black-box entry subcircuit for sky130_fd_sc_hd__clkbuf_16 abstract view
+* Black-box entry subcircuit for sky130_fd_sc_hd__o31a_1 abstract view
+* Black-box entry subcircuit for sky130_fd_sc_hd__dfrtp_1 abstract view
+* Black-box entry subcircuit for sky130_fd_sc_hd__and4_1 abstract view
+* Black-box entry subcircuit for sky130_fd_sc_hd__a21boi_1 abstract view
+* Black-box entry subcircuit for sky130_fd_sc_hd__dlygate4sd3_1 abstract view
+* Black-box entry subcircuit for sky130_fd_sc_hd__a22o_1 abstract view
 * Black-box entry subcircuit for sky130_fd_sc_hd__nor2_1 abstract view
-.subckt brownout_dig a_VGND a_VPWR a_brout_filt a_ena a_force_dis_rc_osc a_force_ena_rc_osc a_force_short_oneshot a_osc_ck a_osc_ena a_otrip_0_ a_otrip_1_ a_otrip_2_ a_otrip_decoded_0_ a_otrip_decoded_1_ a_otrip_decoded_2_ a_otrip_decoded_3_ a_otrip_decoded_4_ a_otrip_decoded_5_ a_otrip_decoded_6_ a_otrip_decoded_7_ a_out_unbuf a_timed_out a_vtrip_0_ a_vtrip_1_ a_vtrip_2_ a_vtrip_decoded_0_ a_vtrip_decoded_1_ a_vtrip_decoded_2_ a_vtrip_decoded_3_ a_vtrip_decoded_4_ a_vtrip_decoded_5_ a_vtrip_decoded_6_ a_vtrip_decoded_7_
-A_062_ [net11 net9 net10] net25 d_lut_sky130_fd_sc_hd__nor3b_1
-A_045_ [cnt\_4\_ _026_] _027_ d_lut_sky130_fd_sc_hd__and2_1
-A_114_ net33 clknet_1_0__leaf_osc_ck NULL ~net2 cnt_rsb_stg1 NULL ddflop
-Aoutput20 [net20] otrip_decoded_7_ d_lut_sky130_fd_sc_hd__buf_2
-A_061_ [net11 net10 net9] net24 d_lut_sky130_fd_sc_hd__nor3b_1
-A_113_ _011_ clknet_1_0__leaf_osc_ck ~net32 NULL cnt\_11\_ NULL ddflop
-A_044_ [cnt\_1\_ cnt\_0\_ cnt\_3\_ cnt\_2\_] _026_ d_lut_sky130_fd_sc_hd__and4_1
-Aoutput21 [net21] out_unbuf d_lut_sky130_fd_sc_hd__buf_2
-A_060_ [net11 net10 net9] net23 d_lut_sky130_fd_sc_hd__nor3_1
-A_112_ _010_ clknet_1_0__leaf_osc_ck ~net32 NULL cnt\_10\_ NULL ddflop
-A_043_ [cnt\_1\_ cnt\_0\_] _025_ d_lut_sky130_fd_sc_hd__nand2_1
-Aoutput22 [net22] timed_out d_lut_sky130_fd_sc_hd__buf_2
-A_111_ _009_ clknet_1_0__leaf_osc_ck ~net32 NULL cnt\_9\_ NULL ddflop
-A_042_ [net3] _024_ d_lut_sky130_fd_sc_hd__inv_2
-Aoutput23 [net23] vtrip_decoded_0_ d_lut_sky130_fd_sc_hd__clkbuf_4
-Aoutput12 [net12] osc_ena d_lut_sky130_fd_sc_hd__buf_2
-A_041_ [net31] _023_ d_lut_sky130_fd_sc_hd__inv_2
-A_110_ _008_ clknet_1_0__leaf_osc_ck ~net32 NULL cnt\_8\_ NULL ddflop
-Aoutput24 [net24] vtrip_decoded_1_ d_lut_sky130_fd_sc_hd__clkbuf_4
-Aoutput13 [net13] otrip_decoded_0_ d_lut_sky130_fd_sc_hd__buf_2
-Aoutput25 [net25] vtrip_decoded_2_ d_lut_sky130_fd_sc_hd__clkbuf_4
-Aoutput14 [net14] otrip_decoded_1_ d_lut_sky130_fd_sc_hd__buf_2
-A_099_ [_031_ _017_ cnt\_11\_] _021_ d_lut_sky130_fd_sc_hd__a21o_1
-Aoutput26 [net26] vtrip_decoded_3_ d_lut_sky130_fd_sc_hd__clkbuf_4
-Aoutput15 [net15] otrip_decoded_2_ d_lut_sky130_fd_sc_hd__buf_2
-A_098_ [_023_ _019_ _020_ net21] _010_ d_lut_sky130_fd_sc_hd__a31o_1
-Aoutput27 [net27] vtrip_decoded_4_ d_lut_sky130_fd_sc_hd__clkbuf_4
-Aoutput16 [net16] otrip_decoded_3_ d_lut_sky130_fd_sc_hd__buf_2
-A_097_ [_031_ _017_] _020_ d_lut_sky130_fd_sc_hd__nand2_1
-Aoutput28 [net28] vtrip_decoded_5_ d_lut_sky130_fd_sc_hd__clkbuf_4
-Aoutput17 [net17] otrip_decoded_4_ d_lut_sky130_fd_sc_hd__buf_2
-A_096_ [cnt\_9\_ _017_ cnt\_10\_] _019_ d_lut_sky130_fd_sc_hd__a21o_1
-Aoutput29 [net29] vtrip_decoded_6_ d_lut_sky130_fd_sc_hd__clkbuf_4
-A_079_ [_026_ _037_] _038_ d_lut_sky130_fd_sc_hd__nand2b_1
-Aoutput18 [net18] otrip_decoded_5_ d_lut_sky130_fd_sc_hd__buf_2
-A_095_ [net22 _018_ _023_] _009_ d_lut_sky130_fd_sc_hd__o21a_1
-Afanout31 [brout_filt_retimed] net31 d_lut_sky130_fd_sc_hd__buf_2
-Aoutput19 [net19] otrip_decoded_6_ d_lut_sky130_fd_sc_hd__buf_2
-A_078_ [cnt\_1\_ cnt\_0\_ cnt\_2\_ cnt\_3\_] _037_ d_lut_sky130_fd_sc_hd__a31o_1
-Afanout32 [net34] net32 d_lut_sky130_fd_sc_hd__clkbuf_4
-A_094_ [cnt\_9\_ _017_] _018_ d_lut_sky130_fd_sc_hd__xor2_1
-A_077_ [_033_ _036_ net31] _002_ d_lut_sky130_fd_sc_hd__a21oi_1
-A_093_ [cnt\_8\_ _030_ net5] _017_ d_lut_sky130_fd_sc_hd__a21o_1
-A_076_ [cnt\_2\_ _025_] _036_ d_lut_sky130_fd_sc_hd__xor2_1
-Ainput1 [brout_filt] net1 d_lut_sky130_fd_sc_hd__clkbuf_1
-A_059_ [net8 net6 net7] net20 d_lut_sky130_fd_sc_hd__and3_1
-A_092_ [_033_ _016_ net31] _008_ d_lut_sky130_fd_sc_hd__a21oi_1
-Ainput2 [ena] net2 d_lut_sky130_fd_sc_hd__dlymetal6s2s_1
-A_075_ [_033_ _035_ net31] _001_ d_lut_sky130_fd_sc_hd__a21oi_1
-A_058_ [net6 net7 net8] net19 d_lut_sky130_fd_sc_hd__and3b_1
-A_091_ [cnt\_8\_ _030_] _016_ d_lut_sky130_fd_sc_hd__xnor2_1
-A_074_ [_025_ _034_] _035_ d_lut_sky130_fd_sc_hd__nand2_1
-Ainput3 [force_dis_rc_osc] net3 d_lut_sky130_fd_sc_hd__clkbuf_1
-A_057_ [net7 net6 net8] net18 d_lut_sky130_fd_sc_hd__and3b_1
-A_109_ _007_ clknet_1_0__leaf_osc_ck ~net32 NULL cnt\_7\_ NULL ddflop
-A_090_ [_033_ _015_ net37] _007_ d_lut_sky130_fd_sc_hd__a21oi_1
-Ainput4 [force_ena_rc_osc] net4 d_lut_sky130_fd_sc_hd__clkbuf_1
-A_056_ [net6 net7 net8] net17 d_lut_sky130_fd_sc_hd__nor3b_1
-A_073_ [cnt\_1\_ cnt\_0\_] _034_ d_lut_sky130_fd_sc_hd__or2_1
-A_108_ _006_ clknet_1_1__leaf_osc_ck ~net32 NULL cnt\_6\_ NULL ddflop
-Ainput5 [force_short_oneshot] net5 d_lut_sky130_fd_sc_hd__buf_1
-A_072_ [net38 _033_ net31] _000_ d_lut_sky130_fd_sc_hd__a21oi_1
-A_055_ [net8 net6 net7] net16 d_lut_sky130_fd_sc_hd__and3b_1
-A_107_ _005_ clknet_1_1__leaf_osc_ck ~net34 NULL cnt\_5\_ NULL ddflop
-A_071_ [net5 net22] _033_ d_lut_sky130_fd_sc_hd__nor2_2
-Ainput6 [otrip_0_] net6 d_lut_sky130_fd_sc_hd__dlymetal6s2s_1
-A_106_ _004_ clknet_1_0__leaf_osc_ck ~net32 NULL cnt\_4\_ NULL ddflop
-A_054_ [net8 net6 net7] net15 d_lut_sky130_fd_sc_hd__nor3b_1
-A_070_ [net1 net2] brout_filt_ena_rsb d_lut_sky130_fd_sc_hd__and2_1
-Ainput7 [otrip_1_] net7 d_lut_sky130_fd_sc_hd__dlymetal6s2s_1
-Ainput10 [vtrip_1_] net10 d_lut_sky130_fd_sc_hd__dlymetal6s2s_1
-A_053_ [net8 net7 net6] net14 d_lut_sky130_fd_sc_hd__nor3b_1
-A_105_ _003_ clknet_1_1__leaf_osc_ck ~net32 NULL cnt\_3\_ NULL ddflop
+* Black-box entry subcircuit for sky130_fd_sc_hd__nand2b_1 abstract view
+.subckt brownout_dig a_VGND a_VPWR a_brout_filt a_dcomp a_ena a_force_dis_rc_osc a_force_ena_rc_osc a_force_short_oneshot a_osc_ck a_osc_ena a_otrip_0_ a_otrip_1_ a_otrip_2_ a_otrip_decoded_0_ a_otrip_decoded_1_ a_otrip_decoded_2_ a_otrip_decoded_3_ a_otrip_decoded_4_ a_otrip_decoded_5_ a_otrip_decoded_6_ a_otrip_decoded_7_ a_out_unbuf a_timed_out a_vtrip_0_ a_vtrip_1_ a_vtrip_2_ a_vtrip_decoded_0_ a_vtrip_decoded_1_ a_vtrip_decoded_2_ a_vtrip_decoded_3_ a_vtrip_decoded_4_ a_vtrip_decoded_5_ a_vtrip_decoded_6_ a_vtrip_decoded_7_
+A_062_ [net9 net7 net8] net21 d_lut_sky130_fd_sc_hd__and3_1
+A_114_ _010_ clknet_1_1__leaf_osc_ck ~net3 NULL cnt\_8\_ NULL ddflop
+A_045_ [net1] _000_ d_lut_sky130_fd_sc_hd__inv_2
+Aoutput31 [net31] vtrip_decoded_7_ d_lut_sky130_fd_sc_hd__clkbuf_4
+Aoutput20 [net20] otrip_decoded_6_ d_lut_sky130_fd_sc_hd__buf_2
+A_061_ [net7 net8 net9] net20 d_lut_sky130_fd_sc_hd__and3b_1
+A_044_ [net4] _029_ d_lut_sky130_fd_sc_hd__inv_2
+A_113_ _009_ clknet_1_1__leaf_osc_ck ~net33 NULL cnt\_7\_ NULL ddflop
+Aoutput21 [net21] otrip_decoded_7_ d_lut_sky130_fd_sc_hd__buf_2
+A_060_ [net8 net7 net9] net19 d_lut_sky130_fd_sc_hd__and3b_1
+A_043_ [net32] _028_ d_lut_sky130_fd_sc_hd__inv_2
+A_112_ _008_ clknet_1_0__leaf_osc_ck ~net33 NULL cnt\_6\_ NULL ddflop
+Aoutput22 [net22] out_unbuf d_lut_sky130_fd_sc_hd__buf_2
+A_111_ _007_ clknet_1_0__leaf_osc_ck ~net33 NULL cnt\_5\_ NULL ddflop
+Aoutput23 [net23] timed_out d_lut_sky130_fd_sc_hd__buf_2
+A_110_ _006_ clknet_1_0__leaf_osc_ck ~net33 NULL cnt\_4\_ NULL ddflop
+Aoutput24 [net24] vtrip_decoded_0_ d_lut_sky130_fd_sc_hd__clkbuf_4
+Aoutput13 [net13] osc_ena d_lut_sky130_fd_sc_hd__buf_2
+Aoutput25 [net25] vtrip_decoded_1_ d_lut_sky130_fd_sc_hd__clkbuf_4
+Aoutput14 [net14] otrip_decoded_0_ d_lut_sky130_fd_sc_hd__buf_2
+A_099_ [cnt\_9\_ _022_ cnt\_10\_] _024_ d_lut_sky130_fd_sc_hd__a21o_1
+Aoutput26 [net26] vtrip_decoded_2_ d_lut_sky130_fd_sc_hd__clkbuf_4
+Aoutput15 [net15] otrip_decoded_1_ d_lut_sky130_fd_sc_hd__buf_2
+A_119__350 net35 done
+A_119__351 _119__35/LO dzero
+A_098_ [net23 _023_ _028_] _011_ d_lut_sky130_fd_sc_hd__o21a_1
+Aoutput27 [net27] vtrip_decoded_3_ d_lut_sky130_fd_sc_hd__clkbuf_4
+Aoutput16 [net16] otrip_decoded_2_ d_lut_sky130_fd_sc_hd__buf_2
+A_097_ [cnt\_9\_ _022_] _023_ d_lut_sky130_fd_sc_hd__xor2_1
+Aoutput28 [net28] vtrip_decoded_4_ d_lut_sky130_fd_sc_hd__clkbuf_4
+Aoutput17 [net17] otrip_decoded_3_ d_lut_sky130_fd_sc_hd__buf_2
+A_096_ [cnt\_8\_ _035_ net6] _022_ d_lut_sky130_fd_sc_hd__a21o_1
+Aoutput29 [net29] vtrip_decoded_5_ d_lut_sky130_fd_sc_hd__clkbuf_4
+A_079_ [cnt\_2\_ _030_] _041_ d_lut_sky130_fd_sc_hd__xor2_1
+Aoutput18 [net18] otrip_decoded_4_ d_lut_sky130_fd_sc_hd__buf_2
+A_095_ [_038_ _021_ net38] _010_ d_lut_sky130_fd_sc_hd__a21oi_1
+A_078_ [_038_ _040_ net32] _003_ d_lut_sky130_fd_sc_hd__a21oi_1
+Aoutput19 [net19] otrip_decoded_5_ d_lut_sky130_fd_sc_hd__buf_2
+Afanout32 [clr_cnt] net32 d_lut_sky130_fd_sc_hd__buf_2
+A_094_ [cnt\_8\_ _035_] _021_ d_lut_sky130_fd_sc_hd__xnor2_1
+A_077_ [_030_ _039_] _040_ d_lut_sky130_fd_sc_hd__nand2_1
+Afanout33 [net3] net33 d_lut_sky130_fd_sc_hd__clkbuf_4
+A_093_ [_038_ _020_ net32] _009_ d_lut_sky130_fd_sc_hd__a21oi_1
+A_076_ [cnt\_1\_ cnt\_0\_] _039_ d_lut_sky130_fd_sc_hd__or2_1
+Ainput1 [brout_filt] net1 d_lut_sky130_fd_sc_hd__buf_1
+A_059_ [net7 net8 net9] net18 d_lut_sky130_fd_sc_hd__nor3b_1
+Ainput2 [dcomp] net2 d_lut_sky130_fd_sc_hd__clkbuf_1
+A_092_ [cnt\_7\_ _034_] _020_ d_lut_sky130_fd_sc_hd__xor2_1
+A_075_ [net39 _038_ net32] _002_ d_lut_sky130_fd_sc_hd__a21oi_1
+A_058_ [net9 net7 net8] net17 d_lut_sky130_fd_sc_hd__and3b_1
+Ainput3 [ena] net3 d_lut_sky130_fd_sc_hd__clkbuf_2
+A_074_ [net6 net23] _038_ d_lut_sky130_fd_sc_hd__nor2_2
+A_091_ [_038_ _019_ net32] _008_ d_lut_sky130_fd_sc_hd__a21oi_1
+A_057_ [net9 net7 net8] net16 d_lut_sky130_fd_sc_hd__nor3b_1
+A_109_ _005_ clknet_1_0__leaf_osc_ck ~net33 NULL cnt\_3\_ NULL ddflop
+A_090_ [_034_ _018_] _019_ d_lut_sky130_fd_sc_hd__nand2_1
+Ainput4 [force_dis_rc_osc] net4 d_lut_sky130_fd_sc_hd__clkbuf_1
+A_073_ [net2 net33] dcomp_ena_rsb d_lut_sky130_fd_sc_hd__and2_1
+A_056_ [net9 net8 net7] net15 d_lut_sky130_fd_sc_hd__nor3b_1
+A_108_ _004_ clknet_1_1__leaf_osc_ck ~net33 NULL cnt\_2\_ NULL ddflop
+Ainput5 [force_ena_rc_osc] net5 d_lut_sky130_fd_sc_hd__clkbuf_1
+A_072_ [net33 _029_ _037_ net5] net13 d_lut_sky130_fd_sc_hd__a31o_1
+A_055_ [net9 net7 net8] net14 d_lut_sky130_fd_sc_hd__nor3_1
+A_107_ _003_ clknet_1_0__leaf_osc_ck ~net33 NULL cnt\_1\_ NULL ddflop
+A_118__340 _118__34/HI done
+A_118__341 net34 dzero
+Ainput6 [force_short_oneshot] net6 d_lut_sky130_fd_sc_hd__buf_1
+A_071_ [dcomp_retimed net2 net23] _037_ d_lut_sky130_fd_sc_hd__or3b_1
+A_106_ _002_ clknet_1_0__leaf_osc_ck ~net33 NULL cnt\_0\_ NULL ddflop
+A_054_ [dcomp_retimed net23] net22 d_lut_sky130_fd_sc_hd__and2b_1
+A_070_ [net12 net11 net10] net31 d_lut_sky130_fd_sc_hd__and3_1
+Ainput7 [otrip_0_] net7 d_lut_sky130_fd_sc_hd__dlymetal6s2s_1
+Ainput10 [vtrip_0_] net10 d_lut_sky130_fd_sc_hd__dlymetal6s2s_1
+A_053_ [cnt\_8\_ cnt\_11\_ _035_ _036_] net23 d_lut_sky130_fd_sc_hd__and4_2
+A_105_ [net1] _001_ d_lut_sky130_fd_sc_hd__inv_2
 Aclkbuf_1_1__f_osc_ck [clknet_0_osc_ck] clknet_1_1__leaf_osc_ck d_lut_sky130_fd_sc_hd__clkbuf_16
-Ainput8 [otrip_2_] net8 d_lut_sky130_fd_sc_hd__dlymetal6s2s_1
-Ainput11 [vtrip_2_] net11 d_lut_sky130_fd_sc_hd__dlymetal6s2s_1
-A_052_ [net8 net6 net7] net13 d_lut_sky130_fd_sc_hd__nor3_1
-A_104_ _002_ clknet_1_1__leaf_osc_ck ~net34 NULL cnt\_2\_ NULL ddflop
-Ainput9 [vtrip_0_] net9 d_lut_sky130_fd_sc_hd__dlymetal6s2s_1
-A_051_ [_023_ net22] net21 d_lut_sky130_fd_sc_hd__and2_1
-A_103_ _001_ clknet_1_1__leaf_osc_ck ~net32 NULL cnt\_1\_ NULL ddflop
-Ahold1 [cnt_rsb] net34 d_lut_sky130_fd_sc_hd__dlygate4sd3_1
+Ainput8 [otrip_1_] net8 d_lut_sky130_fd_sc_hd__dlymetal6s2s_1
+Ainput11 [vtrip_1_] net11 d_lut_sky130_fd_sc_hd__dlymetal6s2s_1
+A_104_ [net23 _026_ _027_ _028_] _013_ d_lut_sky130_fd_sc_hd__o31a_1
+A_052_ [cnt\_9\_ cnt\_10\_] _036_ d_lut_sky130_fd_sc_hd__and2_1
+A_121_ net2 clknet_1_1__leaf_osc_ck NULL ~dcomp_ena_rsb dcomp_retimed NULL ddflop
+Ainput9 [otrip_2_] net9 d_lut_sky130_fd_sc_hd__dlymetal6s2s_1
+Ainput12 [vtrip_2_] net12 d_lut_sky130_fd_sc_hd__dlymetal6s2s_1
+A_051_ [cnt\_4\_ cnt\_7\_ _031_ _033_] _035_ d_lut_sky130_fd_sc_hd__and4_1
+A_120_ net37 clknet_1_0__leaf_osc_ck NULL ~_001_ clr_cnt_sb NULL ddflop
+A_103_ [_036_ _022_ cnt\_11\_] _027_ d_lut_sky130_fd_sc_hd__a21boi_1
+Ahold1 [clr_cnt_sb] net36 d_lut_sky130_fd_sc_hd__dlygate4sd3_1
+A_102_ [cnt\_11\_ _036_ _022_] _026_ d_lut_sky130_fd_sc_hd__and3b_1
 Aclkbuf_0_osc_ck [osc_ck] clknet_0_osc_ck d_lut_sky130_fd_sc_hd__clkbuf_16
-A_050_ [cnt\_8\_ cnt\_11\_ _030_ _031_] net22 d_lut_sky130_fd_sc_hd__and4_1
-A_102_ _000_ clknet_1_1__leaf_osc_ck ~net32 NULL cnt\_0\_ NULL ddflop
-Ahold2 [cnt_rsb_stg2] net35 d_lut_sky130_fd_sc_hd__dlygate4sd3_1
-A_101_ [_023_ _021_ _022_ net21] _011_ d_lut_sky130_fd_sc_hd__a31o_1
-Ahold3 [cnt_rsb_stg1] net36 d_lut_sky130_fd_sc_hd__dlygate4sd3_1
-A_100_ [cnt\_11\_ _031_ _017_] _022_ d_lut_sky130_fd_sc_hd__nand3_1
-Ahold4 [brout_filt_retimed] net37 d_lut_sky130_fd_sc_hd__dlygate4sd3_1
-A_114__330 net33 done
-A_114__331 _114__33/LO dzero
-Ahold5 [cnt\_0\_] net38 d_lut_sky130_fd_sc_hd__dlygate4sd3_1
-A_089_ [cnt\_7\_ _029_] _015_ d_lut_sky130_fd_sc_hd__xor2_1
-A_088_ [_033_ _014_ net31] _006_ d_lut_sky130_fd_sc_hd__a21oi_1
-A_087_ [_029_ _013_] _014_ d_lut_sky130_fd_sc_hd__nand2_1
+A_050_ [_032_ _033_] _034_ d_lut_sky130_fd_sc_hd__nand2_1
+Ahold2 [clr_cnt_sb_stg1] net37 d_lut_sky130_fd_sc_hd__dlygate4sd3_1
+A_101_ [_028_ net23 _024_ _025_] _012_ d_lut_sky130_fd_sc_hd__a22o_1
+Ahold3 [clr_cnt] net38 d_lut_sky130_fd_sc_hd__dlygate4sd3_1
+A_100_ [_036_ _022_ net32] _025_ d_lut_sky130_fd_sc_hd__a21oi_1
+Ahold4 [cnt\_0\_] net39 d_lut_sky130_fd_sc_hd__dlygate4sd3_1
+A_089_ [cnt\_5\_ cnt\_4\_ _031_ cnt\_6\_] _018_ d_lut_sky130_fd_sc_hd__a31o_1
+A_088_ [_038_ _017_ net32] _007_ d_lut_sky130_fd_sc_hd__a21oi_1
+A_087_ [cnt\_5\_ _032_] _017_ d_lut_sky130_fd_sc_hd__xnor2_1
 Aclkbuf_1_0__f_osc_ck [clknet_0_osc_ck] clknet_1_0__leaf_osc_ck d_lut_sky130_fd_sc_hd__clkbuf_16
-A_086_ [cnt\_5\_ cnt\_4\_ _026_ cnt\_6\_] _013_ d_lut_sky130_fd_sc_hd__a31o_1
-A_069_ [net2 _024_ _032_ net4] net12 d_lut_sky130_fd_sc_hd__a31o_1
-A_085_ [_033_ _012_ net31] _005_ d_lut_sky130_fd_sc_hd__a21oi_1
-A_068_ [net31 net1 net22] _032_ d_lut_sky130_fd_sc_hd__or3b_1
-A_067_ [net11 net10 net9] net30 d_lut_sky130_fd_sc_hd__and3_1
-A_084_ [cnt\_5\_ _027_] _012_ d_lut_sky130_fd_sc_hd__xnor2_1
-A_083_ [_033_ _040_ net31] _004_ d_lut_sky130_fd_sc_hd__a21oi_1
-A_066_ [net9 net10 net11] net29 d_lut_sky130_fd_sc_hd__and3b_1
-A_049_ [cnt\_9\_ cnt\_10\_] _031_ d_lut_sky130_fd_sc_hd__and2_1
-A_065_ [net10 net9 net11] net28 d_lut_sky130_fd_sc_hd__and3b_1
-A_082_ [_027_ _039_] _040_ d_lut_sky130_fd_sc_hd__or2_1
-A_048_ [cnt\_4\_ cnt\_7\_ _026_ _028_] _030_ d_lut_sky130_fd_sc_hd__and4_1
-A_117_ net1 clknet_1_0__leaf_osc_ck NULL ~brout_filt_ena_rsb brout_filt_retimed NULL ddflop
-A_081_ [cnt\_4\_ _026_] _039_ d_lut_sky130_fd_sc_hd__nor2_1
-A_064_ [net10 net9 net11] net27 d_lut_sky130_fd_sc_hd__nor3b_1
-A_047_ [_027_ _028_] _029_ d_lut_sky130_fd_sc_hd__nand2_1
-A_116_ net35 clknet_1_0__leaf_osc_ck NULL ~net2 cnt_rsb NULL ddflop
-A_063_ [net11 net10 net9] net26 d_lut_sky130_fd_sc_hd__and3b_1
-A_080_ [_033_ _038_ net31] _003_ d_lut_sky130_fd_sc_hd__a21oi_1
-A_046_ [cnt\_5\_ cnt\_6\_] _028_ d_lut_sky130_fd_sc_hd__and2_1
-A_115_ net36 clknet_1_1__leaf_osc_ck NULL ~net2 cnt_rsb_stg2 NULL ddflop
-Aoutput30 [net30] vtrip_decoded_7_ d_lut_sky130_fd_sc_hd__clkbuf_4
+A_086_ [_038_ _016_ net32] _006_ d_lut_sky130_fd_sc_hd__a21oi_1
+A_069_ [net10 net11 net12] net30 d_lut_sky130_fd_sc_hd__and3b_1
+A_085_ [_032_ _015_] _016_ d_lut_sky130_fd_sc_hd__or2_1
+A_068_ [net11 net10 net12] net29 d_lut_sky130_fd_sc_hd__and3b_1
+A_067_ [net11 net10 net12] net28 d_lut_sky130_fd_sc_hd__nor3b_1
+A_084_ [cnt\_4\_ _031_] _015_ d_lut_sky130_fd_sc_hd__nor2_1
+A_119_ net35 clknet_1_0__leaf_osc_ck NULL ~_000_ clr_cnt_sb_stg1 NULL ddflop
+A_083_ [_038_ _014_ net32] _005_ d_lut_sky130_fd_sc_hd__a21oi_1
+A_066_ [net12 net11 net10] net27 d_lut_sky130_fd_sc_hd__and3b_1
+A_118_ net34 clknet_1_0__leaf_osc_ck ~net36 NULL clr_cnt NULL ddflop
+A_049_ [cnt\_5\_ cnt\_6\_] _033_ d_lut_sky130_fd_sc_hd__and2_1
+A_065_ [net12 net10 net11] net26 d_lut_sky130_fd_sc_hd__nor3b_1
+A_082_ [_031_ _042_] _014_ d_lut_sky130_fd_sc_hd__nand2b_1
+A_117_ _013_ clknet_1_1__leaf_osc_ck ~net3 NULL cnt\_11\_ NULL ddflop
+A_048_ [cnt\_4\_ _031_] _032_ d_lut_sky130_fd_sc_hd__and2_1
+A_081_ [cnt\_1\_ cnt\_0\_ cnt\_2\_ cnt\_3\_] _042_ d_lut_sky130_fd_sc_hd__a31o_1
+A_064_ [net12 net11 net10] net25 d_lut_sky130_fd_sc_hd__nor3b_1
+A_047_ [cnt\_1\_ cnt\_0\_ cnt\_3\_ cnt\_2\_] _031_ d_lut_sky130_fd_sc_hd__and4_1
+A_116_ _012_ clknet_1_1__leaf_osc_ck ~net3 NULL cnt\_10\_ NULL ddflop
+A_063_ [net12 net11 net10] net24 d_lut_sky130_fd_sc_hd__nor3_1
+A_080_ [_038_ _041_ net32] _004_ d_lut_sky130_fd_sc_hd__a21oi_1
+A_115_ _011_ clknet_1_1__leaf_osc_ck ~net3 NULL cnt\_9\_ NULL ddflop
+A_046_ [cnt\_1\_ cnt\_0\_] _030_ d_lut_sky130_fd_sc_hd__nand2_1
+Aoutput30 [net30] vtrip_decoded_6_ d_lut_sky130_fd_sc_hd__clkbuf_4
 
 .model todig_1v8 adc_bridge(in_high=1.2 in_low=0.6 rise_delay=10n fall_delay=10n)
 .model toana_1v8 dac_bridge(out_high=1.8 out_low=0)
@@ -170,15 +179,16 @@ Aoutput30 [net30] vtrip_decoded_7_ d_lut_sky130_fd_sc_hd__clkbuf_4
 AA2D1 [a_VGND] [VGND] todig_1v8
 AA2D2 [a_VPWR] [VPWR] todig_1v8
 AA2D3 [a_brout_filt] [brout_filt] todig_1v8
-AA2D4 [a_ena] [ena] todig_1v8
-AA2D5 [a_force_dis_rc_osc] [force_dis_rc_osc] todig_1v8
-AA2D6 [a_force_ena_rc_osc] [force_ena_rc_osc] todig_1v8
-AA2D7 [a_force_short_oneshot] [force_short_oneshot] todig_1v8
-AA2D8 [a_osc_ck] [osc_ck] todig_1v8
+AA2D4 [a_dcomp] [dcomp] todig_1v8
+AA2D5 [a_ena] [ena] todig_1v8
+AA2D6 [a_force_dis_rc_osc] [force_dis_rc_osc] todig_1v8
+AA2D7 [a_force_ena_rc_osc] [force_ena_rc_osc] todig_1v8
+AA2D8 [a_force_short_oneshot] [force_short_oneshot] todig_1v8
+AA2D9 [a_osc_ck] [osc_ck] todig_1v8
 AD2A1 [osc_ena] [a_osc_ena] toana_1v8
-AA2D9 [a_otrip_0_] [otrip_0_] todig_1v8
-AA2D10 [a_otrip_1_] [otrip_1_] todig_1v8
-AA2D11 [a_otrip_2_] [otrip_2_] todig_1v8
+AA2D10 [a_otrip_0_] [otrip_0_] todig_1v8
+AA2D11 [a_otrip_1_] [otrip_1_] todig_1v8
+AA2D12 [a_otrip_2_] [otrip_2_] todig_1v8
 AD2A2 [otrip_decoded_0_] [a_otrip_decoded_0_] toana_1v8
 AD2A3 [otrip_decoded_1_] [a_otrip_decoded_1_] toana_1v8
 AD2A4 [otrip_decoded_2_] [a_otrip_decoded_2_] toana_1v8
@@ -189,9 +199,9 @@ AD2A8 [otrip_decoded_6_] [a_otrip_decoded_6_] toana_1v8
 AD2A9 [otrip_decoded_7_] [a_otrip_decoded_7_] toana_1v8
 AD2A10 [out_unbuf] [a_out_unbuf] toana_1v8
 AD2A11 [timed_out] [a_timed_out] toana_1v8
-AA2D12 [a_vtrip_0_] [vtrip_0_] todig_1v8
-AA2D13 [a_vtrip_1_] [vtrip_1_] todig_1v8
-AA2D14 [a_vtrip_2_] [vtrip_2_] todig_1v8
+AA2D13 [a_vtrip_0_] [vtrip_0_] todig_1v8
+AA2D14 [a_vtrip_1_] [vtrip_1_] todig_1v8
+AA2D15 [a_vtrip_2_] [vtrip_2_] todig_1v8
 AD2A12 [vtrip_decoded_0_] [a_vtrip_decoded_0_] toana_1v8
 AD2A13 [vtrip_decoded_1_] [a_vtrip_decoded_1_] toana_1v8
 AD2A14 [vtrip_decoded_2_] [a_vtrip_decoded_2_] toana_1v8
@@ -204,49 +214,34 @@ AD2A19 [vtrip_decoded_7_] [a_vtrip_decoded_7_] toana_1v8
 .ends
 
 
-* sky130_fd_sc_hd__nor3b_1 (!A&!B&C_N)
-.model d_lut_sky130_fd_sc_hd__nor3b_1 d_lut (rise_delay=1n fall_delay=1n input_load=1p
-+ table_values "00001000")
-* sky130_fd_sc_hd__decap_8 (no function)
-* sky130_fd_sc_hd__fill_2 (no function)
-* sky130_fd_sc_hd__and2_1 (A&B)
-.model d_lut_sky130_fd_sc_hd__and2_1 d_lut (rise_delay=1n fall_delay=1n input_load=1p
-+ table_values "0001")
-* sky130_fd_sc_hd__dfrtp_1 IQ
-* sky130_fd_sc_hd__buf_2 (A)
-.model d_lut_sky130_fd_sc_hd__buf_2 d_lut (rise_delay=1n fall_delay=1n input_load=1p
-+ table_values "01")
-* sky130_fd_sc_hd__decap_3 (no function)
-* sky130_fd_sc_hd__tapvpwrvgnd_1 (no function)
-* sky130_fd_sc_hd__dfstp_1 IQ
-* sky130_fd_sc_hd__and4_1 (A&B&C&D)
-.model d_lut_sky130_fd_sc_hd__and4_1 d_lut (rise_delay=1n fall_delay=1n input_load=1p
-+ table_values "0000000000000001")
+* sky130_fd_sc_hd__decap_6 (no function)
+* sky130_fd_sc_hd__and3_1 (A&B&C)
+.model d_lut_sky130_fd_sc_hd__and3_1 d_lut (rise_delay=1n fall_delay=1n input_load=1p
++ table_values "00000001")
 * sky130_fd_sc_hd__fill_1 (no function)
-* sky130_fd_sc_hd__nor3_1 (!A&!B&!C)
-.model d_lut_sky130_fd_sc_hd__nor3_1 d_lut (rise_delay=1n fall_delay=1n input_load=1p
-+ table_values "10000000")
-* sky130_fd_sc_hd__decap_4 (no function)
-* sky130_fd_sc_hd__nand2_1 (!A) | (!B)
-.model d_lut_sky130_fd_sc_hd__nand2_1 d_lut (rise_delay=1n fall_delay=1n input_load=1p
-+ table_values "1110")
+* sky130_fd_sc_hd__fill_2 (no function)
+* sky130_fd_sc_hd__dfstp_1 IQ
 * sky130_fd_sc_hd__inv_2 (!A)
 .model d_lut_sky130_fd_sc_hd__inv_2 d_lut (rise_delay=1n fall_delay=1n input_load=1p
 + table_values "10")
 * sky130_fd_sc_hd__clkbuf_4 (A)
 .model d_lut_sky130_fd_sc_hd__clkbuf_4 d_lut (rise_delay=1n fall_delay=1n input_load=1p
 + table_values "01")
+* sky130_fd_sc_hd__buf_2 (A)
+.model d_lut_sky130_fd_sc_hd__buf_2 d_lut (rise_delay=1n fall_delay=1n input_load=1p
++ table_values "01")
+* sky130_fd_sc_hd__decap_3 (no function)
+* sky130_fd_sc_hd__tapvpwrvgnd_1 (no function)
+* sky130_fd_sc_hd__and3b_1 (!A_N&B&C)
+.model d_lut_sky130_fd_sc_hd__and3b_1 d_lut (rise_delay=1n fall_delay=1n input_load=1p
++ table_values "00000010")
 * sky130_ef_sc_hd__decap_12 (no function)
+* sky130_fd_sc_hd__decap_4 (no function)
+* sky130_fd_sc_hd__decap_8 (no function)
 * sky130_fd_sc_hd__a21o_1 (A1&A2) | (B1)
 .model d_lut_sky130_fd_sc_hd__a21o_1 d_lut (rise_delay=1n fall_delay=1n input_load=1p
 + table_values "00011111")
-* sky130_fd_sc_hd__decap_6 (no function)
-* sky130_fd_sc_hd__a31o_1 (A1&A2&A3) | (B1)
-.model d_lut_sky130_fd_sc_hd__a31o_1 d_lut (rise_delay=1n fall_delay=1n input_load=1p
-+ table_values "0000000111111111")
-* sky130_fd_sc_hd__nand2b_1 (A_N) | (!B)
-.model d_lut_sky130_fd_sc_hd__nand2b_1 d_lut (rise_delay=1n fall_delay=1n input_load=1p
-+ table_values "1101")
+* sky130_fd_sc_hd__conb_1 1
 * sky130_fd_sc_hd__o21a_1 (A1&B1) | (A2&B1)
 .model d_lut_sky130_fd_sc_hd__o21a_1 d_lut (rise_delay=1n fall_delay=1n input_load=1p
 + table_values "00000111")
@@ -256,44 +251,74 @@ AD2A19 [vtrip_decoded_7_] [a_vtrip_decoded_7_] toana_1v8
 * sky130_fd_sc_hd__a21oi_1 (!A1&!B1) | (!A2&!B1)
 .model d_lut_sky130_fd_sc_hd__a21oi_1 d_lut (rise_delay=1n fall_delay=1n input_load=1p
 + table_values "11100000")
-* sky130_fd_sc_hd__clkbuf_1 (A)
-.model d_lut_sky130_fd_sc_hd__clkbuf_1 d_lut (rise_delay=1n fall_delay=1n input_load=1p
-+ table_values "01")
-* sky130_fd_sc_hd__and3_1 (A&B&C)
-.model d_lut_sky130_fd_sc_hd__and3_1 d_lut (rise_delay=1n fall_delay=1n input_load=1p
-+ table_values "00000001")
-* sky130_fd_sc_hd__dlymetal6s2s_1 (A)
-.model d_lut_sky130_fd_sc_hd__dlymetal6s2s_1 d_lut (rise_delay=1n fall_delay=1n input_load=1p
-+ table_values "01")
-* sky130_fd_sc_hd__and3b_1 (!A_N&B&C)
-.model d_lut_sky130_fd_sc_hd__and3b_1 d_lut (rise_delay=1n fall_delay=1n input_load=1p
-+ table_values "00000010")
 * sky130_fd_sc_hd__xnor2_1 (!A&!B) | (A&B)
 .model d_lut_sky130_fd_sc_hd__xnor2_1 d_lut (rise_delay=1n fall_delay=1n input_load=1p
 + table_values "1001")
+* sky130_fd_sc_hd__nand2_1 (!A) | (!B)
+.model d_lut_sky130_fd_sc_hd__nand2_1 d_lut (rise_delay=1n fall_delay=1n input_load=1p
++ table_values "1110")
 * sky130_fd_sc_hd__or2_1 (A) | (B)
 .model d_lut_sky130_fd_sc_hd__or2_1 d_lut (rise_delay=1n fall_delay=1n input_load=1p
 + table_values "0111")
 * sky130_fd_sc_hd__buf_1 (A)
 .model d_lut_sky130_fd_sc_hd__buf_1 d_lut (rise_delay=1n fall_delay=1n input_load=1p
 + table_values "01")
+* sky130_fd_sc_hd__nor3b_1 (!A&!B&C_N)
+.model d_lut_sky130_fd_sc_hd__nor3b_1 d_lut (rise_delay=1n fall_delay=1n input_load=1p
++ table_values "00001000")
+* sky130_fd_sc_hd__clkbuf_1 (A)
+.model d_lut_sky130_fd_sc_hd__clkbuf_1 d_lut (rise_delay=1n fall_delay=1n input_load=1p
++ table_values "01")
+* sky130_fd_sc_hd__clkbuf_2 (A)
+.model d_lut_sky130_fd_sc_hd__clkbuf_2 d_lut (rise_delay=1n fall_delay=1n input_load=1p
++ table_values "01")
 * sky130_fd_sc_hd__nor2_2 (!A&!B)
 .model d_lut_sky130_fd_sc_hd__nor2_2 d_lut (rise_delay=1n fall_delay=1n input_load=1p
 + table_values "1000")
-* sky130_fd_sc_hd__clkbuf_16 (A)
-.model d_lut_sky130_fd_sc_hd__clkbuf_16 d_lut (rise_delay=1n fall_delay=1n input_load=1p
-+ table_values "01")
-* sky130_fd_sc_hd__dlygate4sd3_1 (A)
-.model d_lut_sky130_fd_sc_hd__dlygate4sd3_1 d_lut (rise_delay=1n fall_delay=1n input_load=1p
-+ table_values "01")
-* sky130_fd_sc_hd__nand3_1 (!A) | (!B) | (!C)
-.model d_lut_sky130_fd_sc_hd__nand3_1 d_lut (rise_delay=1n fall_delay=1n input_load=1p
-+ table_values "11111110")
-* sky130_fd_sc_hd__conb_1 1
+* sky130_fd_sc_hd__and2_1 (A&B)
+.model d_lut_sky130_fd_sc_hd__and2_1 d_lut (rise_delay=1n fall_delay=1n input_load=1p
++ table_values "0001")
+* sky130_fd_sc_hd__a31o_1 (A1&A2&A3) | (B1)
+.model d_lut_sky130_fd_sc_hd__a31o_1 d_lut (rise_delay=1n fall_delay=1n input_load=1p
++ table_values "0000000111111111")
+* sky130_fd_sc_hd__nor3_1 (!A&!B&!C)
+.model d_lut_sky130_fd_sc_hd__nor3_1 d_lut (rise_delay=1n fall_delay=1n input_load=1p
++ table_values "10000000")
 * sky130_fd_sc_hd__or3b_1 (A) | (B) | (!C_N)
 .model d_lut_sky130_fd_sc_hd__or3b_1 d_lut (rise_delay=1n fall_delay=1n input_load=1p
 + table_values "11110111")
+* sky130_fd_sc_hd__and2b_1 (!A_N&B)
+.model d_lut_sky130_fd_sc_hd__and2b_1 d_lut (rise_delay=1n fall_delay=1n input_load=1p
++ table_values "0010")
+* sky130_fd_sc_hd__dlymetal6s2s_1 (A)
+.model d_lut_sky130_fd_sc_hd__dlymetal6s2s_1 d_lut (rise_delay=1n fall_delay=1n input_load=1p
++ table_values "01")
+* sky130_fd_sc_hd__and4_2 (A&B&C&D)
+.model d_lut_sky130_fd_sc_hd__and4_2 d_lut (rise_delay=1n fall_delay=1n input_load=1p
++ table_values "0000000000000001")
+* sky130_fd_sc_hd__clkbuf_16 (A)
+.model d_lut_sky130_fd_sc_hd__clkbuf_16 d_lut (rise_delay=1n fall_delay=1n input_load=1p
++ table_values "01")
+* sky130_fd_sc_hd__o31a_1 (A1&B1) | (A2&B1) | (A3&B1)
+.model d_lut_sky130_fd_sc_hd__o31a_1 d_lut (rise_delay=1n fall_delay=1n input_load=1p
++ table_values "0000000001111111")
+* sky130_fd_sc_hd__dfrtp_1 IQ
+* sky130_fd_sc_hd__and4_1 (A&B&C&D)
+.model d_lut_sky130_fd_sc_hd__and4_1 d_lut (rise_delay=1n fall_delay=1n input_load=1p
++ table_values "0000000000000001")
+* sky130_fd_sc_hd__a21boi_1 (!A1&B1_N) | (!A2&B1_N)
+.model d_lut_sky130_fd_sc_hd__a21boi_1 d_lut (rise_delay=1n fall_delay=1n input_load=1p
++ table_values "00001110")
+* sky130_fd_sc_hd__dlygate4sd3_1 (A)
+.model d_lut_sky130_fd_sc_hd__dlygate4sd3_1 d_lut (rise_delay=1n fall_delay=1n input_load=1p
++ table_values "01")
+* sky130_fd_sc_hd__a22o_1 (B1&B2) | (A1&A2)
+.model d_lut_sky130_fd_sc_hd__a22o_1 d_lut (rise_delay=1n fall_delay=1n input_load=1p
++ table_values "0001000100011111")
 * sky130_fd_sc_hd__nor2_1 (!A&!B)
 .model d_lut_sky130_fd_sc_hd__nor2_1 d_lut (rise_delay=1n fall_delay=1n input_load=1p
 + table_values "1000")
+* sky130_fd_sc_hd__nand2b_1 (A_N) | (!B)
+.model d_lut_sky130_fd_sc_hd__nand2b_1 d_lut (rise_delay=1n fall_delay=1n input_load=1p
++ table_values "1101")
 .end

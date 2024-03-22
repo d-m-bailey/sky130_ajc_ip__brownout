@@ -14,6 +14,7 @@ input logic osc_ena,
 input logic out_unbuf,
 //OUTPTUS
 output brout_filt,
+output dcomp,
 output out,
 output vunder,
 output osc_ck,
@@ -61,9 +62,9 @@ comparator comparator_brout(
 .vinn(vin_brout),
 .ena(ena),
 .ibias(ibias),
-.dout(brout_filt)
+.dout(dcomp)
 );
-
+assign brout_filt = dcomp;
 comparator comparator_vunder(
 .avdd(avdd),
 .avss(avss),

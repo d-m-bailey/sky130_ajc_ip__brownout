@@ -26,6 +26,7 @@ output vunder,
 //DEBUG OUTPUTS
 output osc_ck,
 output real itest, //700nA bias current
+output dcomp,
 output brout_filt,
 output real vin_brout,
 output real vin_vunder,
@@ -51,6 +52,7 @@ brownout_ana brownout_ana(
 .out_unbuf(out_unbuf),
 //OUTPUTS
 .brout_filt(brout_filt),
+.dcomp(dcomp),
 .out(out),
 .vunder(vunder),
 .osc_ck(osc_ck),
@@ -69,6 +71,7 @@ brownout_dig brownout_dig(
 .force_dis_rc_osc(force_dis_rc_osc),
 .force_short_oneshot(force_short_oneshot),
 .brout_filt(brout_filt),
+.dcomp(dcomp),
 //.vunder_unbuf(vunder_unbuf),
 .osc_ck(osc_ck),
 //OUTPUTS

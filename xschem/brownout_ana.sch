@@ -9,22 +9,6 @@ T {Copyright 2024 Ajacci, Ltd. Co.
 Apache License, Version 2.0 with Addendum, see NOTICE
 Date: 03/14/2024   Rev: 0
 Description: Brown-out detector (analog section)} -230 410 0 0 0.4 0.4 {}
-N 590 -60 700 -60 {
-lab=dcomp}
-N 930 -60 930 -30 {
-lab=dcomp_filt}
-N 800 -60 800 -30 {
-lab=dcomp_filt}
-N 730 -40 730 50 {
-lab=avss}
-N 800 30 800 50 {
-lab=avss}
-N 930 30 930 50 {
-lab=avss}
-N 700 50 930 50 {
-lab=avss}
-N 760 -60 1000 -60 {
-lab=dcomp_filt}
 N -820 420 -780 420 {
 lab=#net1}
 N -920 420 -900 420 {
@@ -39,11 +23,34 @@ N 590 260 660 260 {
 lab=#net4}
 N 840 260 880 260 {
 lab=#net5}
-N 1660 -80 1700 -80 {
+N 960 -60 1000 -60 {
 lab=#net6}
-N 1540 -80 1580 -80 {
+N 840 -60 880 -60 {
 lab=vl}
-N 1300 -80 1360 -80 {lab=vsch}
+N 590 -60 660 -60 {
+lab=dcomp3v3}
+N 1350 60 1350 90 {
+lab=dcomp_filt}
+N 1220 60 1220 90 {
+lab=dcomp_filt}
+N 1150 80 1150 170 {
+lab=avss}
+N 1220 150 1220 170 {
+lab=avss}
+N 1350 150 1350 170 {
+lab=avss}
+N 1120 170 1350 170 {
+lab=avss}
+N 1180 60 1420 60 {
+lab=dcomp_filt}
+N 1720 40 1780 40 {
+lab=vsch}
+N 860 -60 860 60 {
+lab=vl}
+N 860 60 1120 60 {
+lab=vl}
+N 1860 40 1900 40 {
+lab=#net7}
 C {devices/lab_pin.sym} -220 -60 0 0 {name=p1 lab=avdd}
 C {devices/lab_pin.sym} 80 -60 0 1 {name=p2 lab=vin_brout}
 C {devices/lab_pin.sym} -220 0 0 0 {name=p4 lab=dvdd}
@@ -69,17 +76,8 @@ C {devices/lab_pin.sym} 290 -120 0 0 {name=p17 lab=ena_avdd}
 C {devices/ipin.sym} 290 -180 0 0 {name=p19 lab=ibg_200n}
 C {devices/lab_pin.sym} 290 20 0 0 {name=p28 lab=vbg_1v2}
 C {devices/lab_pin.sym} 290 -20 0 0 {name=p11 lab=ena_avdd}
-C {xschem/sky130_fd_pr/res_xhigh_po.sym} 730 -60 3 0 {name=R1
-W=2
-L=1000
-model=res_xhigh_po
-spiceprefix=X
-mult=1}
-C {devices/lab_pin.sym} 700 50 2 1 {name=p29 lab=avss}
-C {sky130_fd_sc_hvl__lsbufhv2lv_1.sym} 1450 -80 0 0 {name=xIlvls4 LVPWR=dvdd VGND=avss VNB=avss VPB=avdd VPWR=avdd prefix=sky130_fd_sc_hvl__ }
-C {xschem/sky130_fd_pr/cap_mim_m3_1.sym} 800 0 0 0 {name=C1 model=cap_mim_m3_1 W=30 L=30 MF=3 spiceprefix=X}
-C {xschem/sky130_fd_pr/cap_mim_m3_2.sym} 930 0 0 0 {name=C2 model=cap_mim_m3_2 W=30 L=30 MF=3 spiceprefix=X}
-C {devices/opin.sym} 1780 -80 0 0 {name=p30 lab=brout_filt}
+C {sky130_fd_sc_hvl__lsbufhv2lv_1.sym} 750 -60 0 0 {name=xIlvls4 LVPWR=dvdd VGND=avss VNB=avss VPB=avdd VPWR=avdd prefix=sky130_fd_sc_hvl__ }
+C {devices/opin.sym} 1080 -60 0 0 {name=p30 lab=dcomp}
 C {devices/lab_pin.sym} 590 -180 0 1 {name=p31 lab=ibias}
 C {devices/opin.sym} 590 -200 0 0 {name=p18 lab=itest}
 C {devices/lab_pin.sym} 290 200 0 0 {name=p32 lab=dvss}
@@ -98,8 +96,7 @@ C {rstring_mux.sym} -70 0 0 0 {name=xIrsmux}
 C {comparator.sym} 440 -10 0 0 {name=xIcomp_brout}
 C {ibias_gen.sym} 440 -150 0 0 {name=xIbiasgen}
 C {rc_osc.sym} 440 180 0 0 {name=xIosc}
-C {devices/lab_wire.sym} 680 -60 0 0 {name=p10 sig_type=std_logic lab=dcomp}
-C {devices/lab_wire.sym} 900 -60 0 0 {name=p40 sig_type=std_logic lab=dcomp_filt}
+C {devices/lab_wire.sym} 650 -60 0 0 {name=p10 sig_type=std_logic lab=dcomp3v3}
 C {devices/opin.sym} 590 -270 0 0 {name=p41 lab=vin_brout}
 C {devices/ipin.sym} -920 420 0 0 {name=p42 lab=out_unbuf}
 C {xschem/sky130_stdcells/inv_4.sym} -860 420 0 0 {name=xIinv0 VGND=dvss VNB=dvss VPB=dvdd VPWR=dvdd prefix=sky130_fd_sc_hd__ }
@@ -123,10 +120,23 @@ C {comparator.sym} 440 310 0 0 {name=xIcomp_vunder}
 C {sky130_fd_sc_hvl__lsbufhv2lv_1.sym} 750 260 0 0 {name=xIlvls5 LVPWR=dvdd VGND=avss VNB=avss VPB=avdd VPWR=avdd prefix=sky130_fd_sc_hvl__ }
 C {devices/opin.sym} 590 -250 0 0 {name=p43 lab=vin_vunder}
 C {xschem/sky130_stdcells/inv_4.sym} 920 260 0 0 {name=xIinv2 VGND=dvss VNB=dvss VPB=dvdd VPWR=dvdd prefix=sky130_fd_sc_hd__ }
-C {xschem/sky130_stdcells/inv_4.sym} 1620 -80 0 0 {name=xIinv5 VGND=dvss VNB=dvss VPB=dvdd VPWR=dvdd prefix=sky130_fd_sc_hd__ }
-C {xschem/sky130_stdcells/inv_16.sym} 1740 -80 0 0 {name=xIinv6 VGND=dvss VNB=dvss VPB=dvdd VPWR=dvdd prefix=sky130_fd_sc_hd__ }
-C {xschem/schmitt_trigger.sym} 1150 -60 0 0 {name=xIschmitt}
-C {devices/lab_pin.sym} 1000 -40 2 1 {name=p56 lab=avss}
-C {devices/lab_pin.sym} 1000 -80 2 1 {name=p57 lab=avdd}
-C {devices/lab_wire.sym} 1340 -80 0 0 {name=p58 sig_type=std_logic lab=vsch}
-C {devices/lab_wire.sym} 1570 -80 0 0 {name=p59 sig_type=std_logic lab=vl}
+C {xschem/sky130_stdcells/inv_4.sym} 920 -60 0 0 {name=xIinv5 VGND=dvss VNB=dvss VPB=dvdd VPWR=dvdd prefix=sky130_fd_sc_hd__ }
+C {xschem/sky130_stdcells/inv_16.sym} 1040 -60 0 0 {name=xIinv6 VGND=dvss VNB=dvss VPB=dvdd VPWR=dvdd prefix=sky130_fd_sc_hd__ }
+C {devices/lab_wire.sym} 870 -60 0 0 {name=p59 sig_type=std_logic lab=vl}
+C {xschem/sky130_fd_pr/res_xhigh_po.sym} 1150 60 3 0 {name=R1
+W=2
+L=1000
+model=res_xhigh_po
+spiceprefix=X
+mult=1}
+C {devices/lab_pin.sym} 1120 170 2 1 {name=p29 lab=avss}
+C {xschem/sky130_fd_pr/cap_mim_m3_1.sym} 1220 120 0 0 {name=C1 model=cap_mim_m3_1 W=30 L=30 MF=3 spiceprefix=X}
+C {xschem/sky130_fd_pr/cap_mim_m3_2.sym} 1350 120 0 0 {name=C2 model=cap_mim_m3_2 W=30 L=30 MF=3 spiceprefix=X}
+C {devices/lab_wire.sym} 1320 60 0 0 {name=p56 sig_type=std_logic lab=dcomp_filt}
+C {xschem/schmitt_trigger.sym} 1570 60 0 0 {name=xIschmitt}
+C {devices/lab_pin.sym} 1420 40 0 0 {name=p57 lab=dvdd}
+C {devices/lab_pin.sym} 1420 80 0 0 {name=p58 lab=dvss}
+C {devices/lab_wire.sym} 1770 40 0 0 {name=p60 sig_type=std_logic lab=vsch}
+C {devices/opin.sym} 1980 40 0 0 {name=p40 lab=brout_filt}
+C {xschem/sky130_stdcells/inv_4.sym} 1820 40 0 0 {name=xIinv7 VGND=dvss VNB=dvss VPB=dvdd VPWR=dvdd prefix=sky130_fd_sc_hd__ }
+C {xschem/sky130_stdcells/inv_16.sym} 1940 40 0 0 {name=xIinv8 VGND=dvss VNB=dvss VPB=dvdd VPWR=dvdd prefix=sky130_fd_sc_hd__ }

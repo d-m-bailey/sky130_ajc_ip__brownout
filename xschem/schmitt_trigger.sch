@@ -65,7 +65,7 @@ N -50 -190 370 -190 {
 lab=avdd}
 N -50 250 370 250 {
 lab=avss}
-C {xschem/sky130_fd_pr/nfet_g5v0d10v5.sym} 20 160 0 0 {name=M1
+C {xschem/sky130_fd_pr/nfet_01v8.sym} 20 160 0 0 {name=M1
 W=1
 L=0.5
 nf=1 
@@ -79,7 +79,7 @@ sa=0 sb=0 sd=0
 model=nfet_01v8
 spiceprefix=X
 }
-C {xschem/sky130_fd_pr/pfet_g5v0d10v5.sym} 20 -100 0 0 {name=M3
+C {xschem/sky130_fd_pr/pfet_01v8.sym} 20 -100 0 0 {name=M3
 W=1
 L=0.5
 nf=1
@@ -95,35 +95,7 @@ spiceprefix=X
 }
 C {devices/ipin.sym} -50 -190 2 1 {name=p1 lab=avdd}
 C {devices/ipin.sym} -50 250 2 1 {name=p2 lab=avss}
-C {xschem/sky130_fd_pr/nfet_g5v0d10v5.sym} 180 160 0 0 {name=M2
-W=1.5
-L=0.5
-nf=1 
-mult=1
-ad="'int((nf+1)/2) * W/nf * 0.29'" 
-pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
-as="'int((nf+2)/2) * W/nf * 0.29'" 
-ps="'2*int((nf+2)/2) * (W/nf + 0.29)'"
-nrd="'0.29 / W'" nrs="'0.29 / W'"
-sa=0 sb=0 sd=0
-model=nfet_01v8
-spiceprefix=X
-}
-C {xschem/sky130_fd_pr/pfet_g5v0d10v5.sym} 180 -100 0 0 {name=M4
-W=1.5
-L=0.5
-nf=1
-mult=3
-ad="'int((nf+1)/2) * W/nf * 0.29'" 
-pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
-as="'int((nf+2)/2) * W/nf * 0.29'" 
-ps="'2*int((nf+2)/2) * (W/nf + 0.29)'"
-nrd="'0.29 / W'" nrs="'0.29 / W'"
-sa=0 sb=0 sd=0
-model=pfet_01v8
-spiceprefix=X
-}
-C {xschem/sky130_fd_pr/nfet_g5v0d10v5.sym} 340 160 0 0 {name=M5
+C {xschem/sky130_fd_pr/nfet_01v8.sym} 180 160 0 0 {name=M2
 W=1
 L=0.5
 nf=1 
@@ -137,7 +109,35 @@ sa=0 sb=0 sd=0
 model=nfet_01v8
 spiceprefix=X
 }
-C {xschem/sky130_fd_pr/pfet_g5v0d10v5.sym} 340 -100 0 0 {name=M6
+C {xschem/sky130_fd_pr/pfet_01v8.sym} 180 -100 0 0 {name=M4
+W=1
+L=0.5
+nf=1
+mult=3
+ad="'int((nf+1)/2) * W/nf * 0.29'" 
+pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
+as="'int((nf+2)/2) * W/nf * 0.29'" 
+ps="'2*int((nf+2)/2) * (W/nf + 0.29)'"
+nrd="'0.29 / W'" nrs="'0.29 / W'"
+sa=0 sb=0 sd=0
+model=pfet_01v8
+spiceprefix=X
+}
+C {xschem/sky130_fd_pr/nfet_01v8.sym} 340 160 0 0 {name=M5
+W=1
+L=0.5
+nf=1 
+mult=1
+ad="'int((nf+1)/2) * W/nf * 0.29'" 
+pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
+as="'int((nf+2)/2) * W/nf * 0.29'" 
+ps="'2*int((nf+2)/2) * (W/nf + 0.29)'"
+nrd="'0.29 / W'" nrs="'0.29 / W'"
+sa=0 sb=0 sd=0
+model=nfet_01v8
+spiceprefix=X
+}
+C {xschem/sky130_fd_pr/pfet_01v8.sym} 340 -100 0 0 {name=M6
 W=1
 L=0.5
 nf=1

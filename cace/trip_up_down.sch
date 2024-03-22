@@ -33,12 +33,10 @@ N -210 -40 0 -40 {
 lab=ibg_200n}
 N 300 -280 630 -280 {
 lab=out}
-N 300 -240 470 -240 {
+N 300 -220 470 -220 {
 lab=itest}
 N 630 -280 630 -110 {
 lab=out}
-N 470 -240 470 -50 {
-lab=itest}
 N 240 -410 240 -390 {
 lab=GND}
 N 210 -410 240 -410 {
@@ -97,6 +95,8 @@ N -30 -810 -30 -410 {
 lab=GND}
 N -30 -730 0 -730 {
 lab=GND}
+N 470 -220 470 -50 {
+lab=itest}
 C {devices/isource.sym} -370 -480 0 0 {name=Ibias value=200n}
 C {xschem/sky130_fd_pr/pfet_g5v0d10v5.sym} -230 -610 0 0 {name=M1
 W=1
@@ -134,7 +134,7 @@ footprint=1206
 device=resistor
 m=1}
 C {devices/gnd.sym} 470 10 0 0 {name=l9 lab=GND}
-C {devices/lab_wire.sym} 460 -240 0 0 {name=p7 sig_type=std_logic lab=itest}
+C {devices/lab_wire.sym} 460 -220 0 0 {name=p7 sig_type=std_logic lab=itest}
 C {devices/gnd.sym} 630 -50 0 0 {name=l8 lab=GND}
 C {devices/capa.sym} 630 -80 0 0 {name=C1
 m=1
@@ -150,23 +150,23 @@ C {devices/lab_pin.sym} 0 -220 0 0 {name=p22 lab=dvss}
 C {devices/lab_pin.sym} 300 -260 0 1 {name=p23 lab=osc_ck}
 C {devices/lab_pin.sym} 0 -200 0 0 {name=p24 lab=vbg_1v2}
 C {devices/lab_pin.sym} 0 -180 0 0 {name=p26 lab=otrip[2:0]}
-C {devices/lab_pin.sym} 300 -220 0 1 {name=p28 lab=brout_filt}
+C {devices/lab_pin.sym} 300 -200 0 1 {name=p28 lab=brout_filt}
 C {devices/lab_pin.sym} 0 -140 0 0 {name=p30 lab=ena}
-C {devices/lab_pin.sym} 300 -200 0 1 {name=p32 lab=vin_brout}
+C {devices/lab_pin.sym} 300 -180 0 1 {name=p32 lab=vin_brout}
 C {devices/lab_pin.sym} 0 -120 0 0 {name=p33 lab=force_ena_rc_osc}
 C {devices/lab_pin.sym} 0 -80 0 0 {name=p34 lab=force_short_oneshot}
-C {devices/lab_pin.sym} 300 -160 0 1 {name=p35 lab=timed_out}
+C {devices/lab_pin.sym} 300 -140 0 1 {name=p35 lab=timed_out}
 C {devices/lab_pin.sym} 0 -60 0 0 {name=p37 lab=isrc_sel}
 C {devices/lab_pin.sym} 0 -160 0 0 {name=p8 lab=vtrip[2:0]}
-C {devices/lab_pin.sym} 300 -180 0 1 {name=p10 lab=vin_vunder}
-C {devices/lab_pin.sym} 300 -140 0 1 {name=p13 lab=vunder}
+C {devices/lab_pin.sym} 300 -160 0 1 {name=p10 lab=vin_vunder}
+C {devices/lab_pin.sym} 300 -120 0 1 {name=p13 lab=vunder}
 C {devices/vsource.sym} 670 -600 0 0 {name=Vavss value="DC \{Vavss\}" savecurrent=false}
 C {devices/lab_pin.sym} 670 -630 2 0 {name=p25 sig_type=std_logic lab=avss}
 C {devices/lab_pin.sym} 670 -710 2 0 {name=p36 sig_type=std_logic lab=avdd}
 C {devices/vsource.sym} 0 -440 0 0 {name=Vena value="DC [\{ena\}*\{Vdvdd\}]" savecurrent=false}
 C {devices/gnd.sym} 0 -390 0 0 {name=l15 lab=GND}
 C {devices/lab_pin.sym} 0 -470 2 0 {name=p38 sig_type=std_logic lab=ena}
-C {devices/vsource.sym} 670 -680 0 0 {name=Vavdd value="pwl (0 2 3m 6 6m 2) DC \{Vavdd\}" savecurrent=true}
+C {devices/vsource.sym} 670 -680 0 0 {name=Vavdd value="pwl (0 2 3m 3.6 6m 2) DC \{Vavdd\}" savecurrent=true}
 C {devices/vsource.sym} 0 -520 0 0 {name=Vbg1v2 value="DC 1.2" savecurrent=false}
 C {devices/lab_pin.sym} 0 -550 2 0 {name=p39 sig_type=std_logic lab=vbg_1v2}
 C {devices/vsource.sym} 670 -440 0 0 {name=Vdvss value="DC \{Vdvss\}" savecurrent=false}
@@ -213,9 +213,9 @@ C {devices/code_shown.sym} -1200 -710 0 0 {name=SETUP only_toplevel=false value=
 C {devices/code_shown.sym} -1210 -400 0 0 {name=CONTROL only_toplevel=false value=".csparam dvdd2=[\{Vdvdd\}/2]
 .control
 tran 10u 6m
-meas tran otrip_r find v(avdd) when v(brout_filt)=$&dvdd2 td=3m rise=1
-meas tran otrip_f find v(avdd) when v(brout_filt)=$&dvdd2 td=100u fall=1
-meas tran vtrip_r find v(avdd) when v(vunder)=$&dvdd2 td=100u rise=1
+meas tran otrip_r find v(avdd) when v(dcomp)=$&dvdd2 td=3m rise=1
+meas tran otrip_f find v(avdd) when v(dcomp)=$&dvdd2 td=300u fall=1
+meas tran vtrip_r find v(avdd) when v(vunder)=$&dvdd2 td=300u rise=1
 meas tran vtrip_f find v(avdd) when v(vunder)=$&dvdd2 td=3m fall=1
 echo $&otrip_r > \{simpath\}/\{filename\}_\{N\}.data
 echo $&otrip_f >> \{simpath\}/\{filename\}_\{N\}.data
@@ -235,3 +235,4 @@ C {devices/gnd.sym} -370 -450 0 0 {name=l3 lab=GND}
 C {devices/lab_pin.sym} 0 -100 0 0 {name=p14 lab=force_dis_rc_osc}
 C {devices/vsource.sym} 0 -760 0 0 {name=Vforce_ena_rc_osc value="DC [\{force_ena_rc_osc\}*\{Vdvdd\}]" savecurrent=false}
 C {devices/lab_pin.sym} 0 -790 2 0 {name=p16 sig_type=std_logic lab=force_ena_rc_osc}
+C {devices/lab_pin.sym} 300 -240 0 1 {name=p19 lab=dcomp}

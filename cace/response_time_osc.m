@@ -1,7 +1,6 @@
 #------------------------------------------------------------------------
-#After running CACE, this octave script extracts the response time of
-#the brown-out detector i.e. when avdd falls below a preset threshold
-#voltage.
+#After running CACE, this octave script extracts the period and frequency
+#of the rc oscillator.
 #------------------------------------------------------------------------
 #
 #Ajacci, Ltd. Co. (c) 2024
@@ -10,7 +9,7 @@
 #https://github.com/RTimothyEdwards/sky130_ef_ip__rdac3v_8bit
 #
 #Response time is defined here as the time lapse between a voltage drop
-#in avdd that crosses the preset trip voltage and the digital alarm 
+#in avdd that crosses the preset trip voltage and the digital alarm
 #assertion at the output.
 #
 #
@@ -47,9 +46,11 @@ bvals = results.(cstr);
 # Convert digital binary string to integer
 ival = bin2dec(bvals);
 
-#result is organized in alternating brown-out/under-voltage pairs
+#result is organized in alternating brown-out/under-voltage/rc period/rc freq sets
 for i=1:4:length(ival)
-  response_time(bitshift((i+3),-2)) = result(i+0);
+  rc_osc_period(bitshift((i+3),-2)) = result(i+2);
 endfor
 
-printf("%g\n", response_time)
+reset_active_window = rc_osc_period .* 4096;
+
+printf("%g\n", reset_active_window)

@@ -6,7 +6,6 @@ V {}
 S {}
 E {}
 T {Copyright 2024 Ajacci, Ltd. Co.
-Drawn by Robin M. Tsang
 Apache License, Version 2.0 with Addendum, see NOTICE
 Date: 03/20/2024   Rev: 0
 Description: Trip voltage and analog select mux} 290 1010 0 0 0.4 0.4 {}

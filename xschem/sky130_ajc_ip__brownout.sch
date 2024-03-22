@@ -21,7 +21,7 @@ r5 vtrip[2] vtrip2 1
 
 *XSPICE CO-SIM netlist
 .include brownout_dig.out.spice
-xibrownout_dig dvss dvdd brout_filt ena force_dis_rc_osc force_ena_rc_osc force_short_oneshot osc_ck osc_ena 
+xibrownout_dig dvss dvdd brout_filt dcomp ena force_dis_rc_osc force_ena_rc_osc force_short_oneshot osc_ck osc_ena 
 +otrip0 otrip1 otrip2
 +otrip_decoded_0_ otrip_decoded_1_ otrip_decoded_2_ otrip_decoded_3_ otrip_decoded_4_ otrip_decoded_5_ otrip_decoded_6_ otrip_decoded_7_
 +out_unbuf timed_out
@@ -46,17 +46,17 @@ C {devices/lab_pin.sym} -150 -80 0 0 {name=p14 lab=vbg_1v2}
 C {devices/lab_pin.sym} -150 -40 0 0 {name=p15 lab=avdd}
 C {devices/lab_pin.sym} 150 -60 0 1 {name=p16 lab=itest}
 C {devices/lab_pin.sym} -150 -60 0 0 {name=p17 lab=ena}
-C {devices/lab_pin.sym} -150 -20 0 0 {name=p18 lab=avss}
-C {devices/lab_pin.sym} -150 0 0 0 {name=p19 lab=ibg_200n}
+C {devices/lab_pin.sym} -150 0 0 0 {name=p18 lab=avss}
+C {devices/lab_pin.sym} -150 -20 0 0 {name=p19 lab=ibg_200n}
 C {devices/lab_pin.sym} -150 20 0 0 {name=p20 lab=dvdd}
 C {devices/lab_pin.sym} -150 60 0 0 {name=p21 lab=dvss}
 C {devices/lab_pin.sym} -150 40 0 0 {name=p22 lab=isrc_sel}
-C {devices/lab_pin.sym} 150 -40 0 1 {name=p23 lab=brout_filt}
-C {devices/lab_pin.sym} 150 -20 0 1 {name=p24 lab=osc_ck}
+C {devices/lab_pin.sym} 150 -20 0 1 {name=p23 lab=brout_filt}
+C {devices/lab_pin.sym} 150 0 0 1 {name=p24 lab=osc_ck}
 C {devices/lab_pin.sym} -150 100 0 0 {name=p25 lab=osc_ena}
 C {devices/lab_pin.sym} -150 120 0 0 {name=p27 lab=out_unbuf}
-C {devices/lab_pin.sym} 150 0 0 1 {name=p28 lab=vunder}
-C {devices/lab_pin.sym} 150 20 0 1 {name=p29 lab=out}
+C {devices/lab_pin.sym} 150 20 0 1 {name=p28 lab=vunder}
+C {devices/lab_pin.sym} 150 40 0 1 {name=p29 lab=out}
 C {devices/opin.sym} 180 -280 0 0 {name=p30 lab=vin_brout}
 C {devices/opin.sym} 180 -380 0 0 {name=p33 lab=out}
 C {devices/opin.sym} 180 -360 0 0 {name=p34 lab=osc_ck}
@@ -69,3 +69,5 @@ C {devices/opin.sym} 180 -260 0 0 {name=p38 lab=vin_vunder}
 C {devices/opin.sym} 180 -220 0 0 {name=p31 lab=vunder}
 C {devices/lab_pin.sym} -150 80 0 0 {name=p32 lab=vtrip_decoded_7_,vtrip_decoded_6_,vtrip_decoded_5_,vtrip_decoded_4_,vtrip_decoded_3_,vtrip_decoded_2_,vtrip_decoded_1_,vtrip_decoded_0_}
 C {devices/ipin.sym} -430 -260 2 1 {name=p35 lab=force_ena_rc_osc}
+C {devices/lab_pin.sym} 150 -40 0 1 {name=p40 lab=dcomp}
+C {devices/opin.sym} 180 -340 0 0 {name=p42 lab=dcomp}
