@@ -1,3 +1,11 @@
+################################################################################        
+#Copyright 2024 Ajacci, Ltd. Co.
+#License: Apache License, Version 2.0 with Addendum, see NOTICE
+#Date: 22 March, 2024   Rev 0
+#Description: Top-level combining analog and digtal sections of brown-out
+#detector with under-voltage detector.
+################################################################################
+
 `include "behavioral/rc_osc.v"
 `include "behavioral/rstring_mux.v"
 `include "behavioral/comparator.v"

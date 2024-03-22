@@ -1,3 +1,11 @@
+################################################################################
+#Copyright 2024 Ajacci, Ltd. Co.
+#License: Apache License, Version 2.0 with Addendum, see NOTICE
+#Date: 22 March, 2024   Rev 0
+#Description: Digital section of brown-out detector.  Decodes analog mux signals
+#otrip[2:0] and vtrip[2:0], and handles one-shot timer.
+################################################################################
+
 module brownout_dig(
 //INPUTS
 input logic [2:0] otrip,
