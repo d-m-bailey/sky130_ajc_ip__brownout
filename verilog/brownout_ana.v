@@ -1,11 +1,11 @@
-################################################################################        
-#Copyright 2024 Ajacci, Ltd. Co.
-#License: Apache License, Version 2.0 with Addendum, see NOTICE
-#Date: 22 March, 2024   Rev 0
-#Description: Analog section of brown-out detector.  Not routed, instatiates
-#comparators, rc oscillator, ibias generator, and resistor string with analog
-#mux.
-################################################################################
+//################################################################################        
+// Copyright 2024 Ajacci, Ltd. Co.
+// License: Apache License, Version 2.0 with Addendum, see NOTICE
+// Date: 22 March, 2024   Rev 0
+// Description: Analog section of brown-out detector.  Not routed, instatiates
+// comparators, rc oscillator, ibias generator, and resistor string with analog
+// mux.
+//################################################################################
 
 module brownout_ana(
 //INPUTS

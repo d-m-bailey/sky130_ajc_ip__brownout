@@ -1,11 +1,11 @@
 To compile:
 
-`iverilog -g2005-sv -o tb_brownout tb_brownout.v`
+`iverilog -g2005-sv -o sky130_ajc_ip__brownout_tb sky130_ajc_ip__brownout_tb.v`
 
 To run:
 
-`vvp tb_brownout`
+`vvp sky130_ajc_ip__brownout_tb`
 
 To view results:
 
-`gtkwave tb_brownout.vcd`
+`gtkwave sky130_ajc_ip__brownout_tb.vcd`

@@ -1,12 +1,12 @@
-################################################################################        
-#Copyright 2024 Ajacci, Ltd. Co.
-#License: Apache License, Version 2.0 with Addendum, see NOTICE
-#Date: 22 March, 2024   Rev 0
-#Description: Testbench for brown-out detector
-################################################################################
+//############################################################################
+// Copyright 2024 Ajacci, Ltd. Co.
+// License: Apache License, Version 2.0 with Addendum, see NOTICE
+// Date: 22 March, 2024   Rev 0
+// Description: Testbench for brown-out detector
+//############################################################################
 
-`include "brownout.v"
-module tb_brownout();
+`include "sky130_ajc_ip__brownout.v"
+module sky130_ajc_ip__brownout_tb();
 
 real avdd;
 real vbg_1v2;
