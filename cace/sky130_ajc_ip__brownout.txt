@@ -562,11 +562,11 @@ electrical_parameters {
 	status:		skip
 	description:	Estimate reset active time by check rc oscillator period across 10 cycles, then multiplying by 4096.
 	display:	Reset active time (est.)
-	unit:		s
+	unit:		ms
 	spec {
-		maximum:	0.200	fail
-		typical:	0.100
-		minimum:	0.050	fail
+		maximum:	200	fail
+		typical:	100
+		minimum:	50	fail
 	}
 	simulate {
 		tool:		ngspice
@@ -594,6 +594,56 @@ electrical_parameters {
 		minimum: ff
 
 	}
+
+        +
+        name:           supply_brown_out
+        status:         skip
+        description:    Demo of a supply brown-out with test-mode force_short_oneshot enabled.
+        display:        Brown-out demo (short)
+        unit:           V
+        simulate {
+                tool:           ngspice
+                template:       transient.spice
+                format:         ascii .data time result avdd osc_ck
+        }
+        plot {
+                filename: supply_brown_out.png
+                xaxis: time
+                yaxis: result
+        }
+        variables {
+                name: time
+                display: Time
+                unit: ms
+
+                +
+                name: result
+                display: out
+                unit: V
+
+                +
+                name: avdd
+                display: avdd
+                unit: V
+
+                +
+                name: osc_ck
+                display: osc_ck
+                unit: V
+        }
+        conditions {
+                name: force_short_oneshot
+                typical: 1
+
+                +
+                name: temperature
+                typical: 27
+
+                +
+                name: corner
+                typical: tt
+
+        }
 
 	+
 	name:		Idd_enabled
