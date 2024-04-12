@@ -32,11 +32,11 @@ lab=avdd_bg}
 N -210 -40 0 -40 {
 lab=ibg_200n}
 N 300 -280 630 -280 {
-lab=out}
+lab=outb}
 N 300 -220 470 -220 {
 lab=itest}
 N 630 -280 630 -110 {
-lab=out}
+lab=outb}
 N 210 -410 210 -390 {
 lab=GND}
 N 180 -410 210 -410 {
@@ -141,7 +141,7 @@ m=1
 value=20p
 footprint=1206
 device="ceramic capacitor"}
-C {devices/lab_wire.sym} 610 -280 0 0 {name=p12 sig_type=std_logic lab=out}
+C {devices/lab_wire.sym} 610 -280 0 0 {name=p12 sig_type=std_logic lab=outb}
 C {xschem/sky130_ajc_ip__brownout.sym} 150 -160 0 0 {name=xIbrout}
 C {devices/lab_pin.sym} 0 -280 0 0 {name=p9 lab=avdd}
 C {devices/lab_pin.sym} 0 -260 0 0 {name=p15 lab=avss}
@@ -213,7 +213,7 @@ C {devices/code_shown.sym} -1200 -400 0 0 {name=CONTROL only_toplevel=false valu
 .control
 tran 20u 2m
 meas tran stept_f when v(avdd)=2.7 fall=1
-meas tran tript_f_br when v(out)=$&dvdd2 td=700u fall=1
+meas tran tript_f_br when v(outb)=$&dvdd2 td=700u fall=1
 meas tran tript_f_vu when v(vunder)=$&dvdd2 td=700u fall=1
 meas tran osc_start when v(osc_ck)=$&dvdd2 td=700u rise=1
 meas tran osc_end when v(osc_ck)=$&dvdd2 td=700u rise=11

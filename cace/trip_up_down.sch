@@ -141,7 +141,7 @@ m=1
 value=20p
 footprint=1206
 device="ceramic capacitor"}
-C {devices/lab_wire.sym} 610 -280 0 0 {name=p12 sig_type=std_logic lab=out}
+C {devices/lab_wire.sym} 610 -280 0 0 {name=p12 sig_type=std_logic lab=outb}
 C {xschem/sky130_ajc_ip__brownout.sym} 150 -160 0 0 {name=xIbrout}
 C {devices/lab_pin.sym} 0 -280 0 0 {name=p9 lab=avdd}
 C {devices/lab_pin.sym} 0 -260 0 0 {name=p15 lab=avss}

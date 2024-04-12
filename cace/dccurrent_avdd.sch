@@ -66,9 +66,9 @@ lab=GND}
 N -30 -410 0 -410 {
 lab=GND}
 N -30 -570 0 -570 {
-lab=#net1}
+lab=GND}
 N -30 -490 0 -490 {
-lab=#net2}
+lab=GND}
 N 400 -410 400 -390 {
 lab=GND}
 N 370 -410 400 -410 {
@@ -82,9 +82,9 @@ lab=GND}
 N 370 -490 400 -490 {
 lab=GND}
 N -30 -650 -0 -650 {
-lab=#net3}
+lab=GND}
 N -30 -730 -0 -730 {
-lab=#net4}
+lab=GND}
 N -140 -660 -140 -640 {
 lab=avdd_bg}
 N -380 -660 -140 -660 {
@@ -94,8 +94,9 @@ lab=ibg_200n}
 N 470 -220 470 -50 {
 lab=itest}
 N -30 -810 0 -810 {
-lab=#net4}
-N -30 -810 -30 -410 {}
+lab=GND}
+N -30 -810 -30 -410 {
+lab=GND}
 C {devices/isource.sym} -370 -480 0 0 {name=Ibias value=200n}
 C {xschem/sky130_fd_pr/pfet_g5v0d10v5.sym} -230 -610 0 0 {name=M1
 W=1
@@ -140,7 +141,7 @@ m=1
 value=20p
 footprint=1206
 device="ceramic capacitor"}
-C {devices/lab_wire.sym} 610 -280 0 0 {name=p12 sig_type=std_logic lab=out}
+C {devices/lab_wire.sym} 610 -280 0 0 {name=p12 sig_type=std_logic lab=outb}
 C {xschem/sky130_ajc_ip__brownout.sym} 150 -160 0 0 {name=xIbrout}
 C {devices/lab_pin.sym} 0 -280 0 0 {name=p9 lab=avdd}
 C {devices/lab_pin.sym} 0 -260 0 0 {name=p15 lab=avss}
