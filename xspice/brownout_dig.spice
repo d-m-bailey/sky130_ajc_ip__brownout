@@ -175,7 +175,7 @@
 .subckt brownout_dig VGND VPWR brout_filt dcomp ena force_dis_rc_osc force_ena_rc_osc
 + force_short_oneshot osc_ck osc_ena otrip[0] otrip[1] otrip[2] otrip_decoded[0] otrip_decoded[1]
 + otrip_decoded[2] otrip_decoded[3] otrip_decoded[4] otrip_decoded[5] otrip_decoded[6]
-+ otrip_decoded[7] out_unbuf timed_out vtrip[0] vtrip[1] vtrip[2] vtrip_decoded[0]
++ otrip_decoded[7] outb_unbuf timed_out vtrip[0] vtrip[1] vtrip[2] vtrip_decoded[0]
 + vtrip_decoded[1] vtrip_decoded[2] vtrip_decoded[3] vtrip_decoded[4] vtrip_decoded[5]
 + vtrip_decoded[6] vtrip_decoded[7]
 XFILLER_0_9_49 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_6
@@ -203,7 +203,7 @@ XFILLER_0_1_85 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_4
 X_112_ clknet_1_0__leaf_osc_ck _008_ net33 VGND VGND VPWR VPWR cnt\[6\] sky130_fd_sc_hd__dfstp_1
 XTAP_TAPCELL_ROW_15_56 VGND VPWR sky130_fd_sc_hd__tapvpwrvgnd_1
 XFILLER_0_9_3 VPWR VGND VPWR VGND sky130_ef_sc_hd__decap_12
-Xoutput22 net22 VGND VGND VPWR VPWR out_unbuf sky130_fd_sc_hd__buf_2
+Xoutput22 net22 VGND VGND VPWR VPWR outb_unbuf sky130_fd_sc_hd__buf_2
 XTAP_TAPCELL_ROW_2_37 VGND VPWR sky130_fd_sc_hd__tapvpwrvgnd_1
 XFILLER_0_13_43 VPWR VGND VPWR VGND sky130_ef_sc_hd__decap_12
 XPHY_EDGE_ROW_12_Left_28 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_3

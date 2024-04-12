@@ -43,7 +43,7 @@
 * Black-box entry subcircuit for sky130_fd_sc_hd__a22o_1 abstract view
 * Black-box entry subcircuit for sky130_fd_sc_hd__nor2_1 abstract view
 * Black-box entry subcircuit for sky130_fd_sc_hd__nand2b_1 abstract view
-.subckt brownout_dig a_VGND a_VPWR a_brout_filt a_dcomp a_ena a_force_dis_rc_osc a_force_ena_rc_osc a_force_short_oneshot a_osc_ck a_osc_ena a_otrip_0_ a_otrip_1_ a_otrip_2_ a_otrip_decoded_0_ a_otrip_decoded_1_ a_otrip_decoded_2_ a_otrip_decoded_3_ a_otrip_decoded_4_ a_otrip_decoded_5_ a_otrip_decoded_6_ a_otrip_decoded_7_ a_out_unbuf a_timed_out a_vtrip_0_ a_vtrip_1_ a_vtrip_2_ a_vtrip_decoded_0_ a_vtrip_decoded_1_ a_vtrip_decoded_2_ a_vtrip_decoded_3_ a_vtrip_decoded_4_ a_vtrip_decoded_5_ a_vtrip_decoded_6_ a_vtrip_decoded_7_
+.subckt brownout_dig a_VGND a_VPWR a_brout_filt a_dcomp a_ena a_force_dis_rc_osc a_force_ena_rc_osc a_force_short_oneshot a_osc_ck a_osc_ena a_otrip_0_ a_otrip_1_ a_otrip_2_ a_otrip_decoded_0_ a_otrip_decoded_1_ a_otrip_decoded_2_ a_otrip_decoded_3_ a_otrip_decoded_4_ a_otrip_decoded_5_ a_otrip_decoded_6_ a_otrip_decoded_7_ a_outb_unbuf a_timed_out a_vtrip_0_ a_vtrip_1_ a_vtrip_2_ a_vtrip_decoded_0_ a_vtrip_decoded_1_ a_vtrip_decoded_2_ a_vtrip_decoded_3_ a_vtrip_decoded_4_ a_vtrip_decoded_5_ a_vtrip_decoded_6_ a_vtrip_decoded_7_
 A_062_ [net9 net7 net8] net21 d_lut_sky130_fd_sc_hd__and3_1
 A_114_ _010_ clknet_1_1__leaf_osc_ck ~net3 NULL cnt\_8\_ NULL ddflop
 A_045_ [net1] _000_ d_lut_sky130_fd_sc_hd__inv_2
@@ -56,7 +56,7 @@ Aoutput21 [net21] otrip_decoded_7_ d_lut_sky130_fd_sc_hd__buf_2
 A_060_ [net8 net7 net9] net19 d_lut_sky130_fd_sc_hd__and3b_1
 A_043_ [net32] _028_ d_lut_sky130_fd_sc_hd__inv_2
 A_112_ _008_ clknet_1_0__leaf_osc_ck ~net33 NULL cnt\_6\_ NULL ddflop
-Aoutput22 [net22] out_unbuf d_lut_sky130_fd_sc_hd__buf_2
+Aoutput22 [net22] outb_unbuf d_lut_sky130_fd_sc_hd__buf_2
 A_111_ _007_ clknet_1_0__leaf_osc_ck ~net33 NULL cnt\_5\_ NULL ddflop
 Aoutput23 [net23] timed_out d_lut_sky130_fd_sc_hd__buf_2
 A_110_ _006_ clknet_1_0__leaf_osc_ck ~net33 NULL cnt\_4\_ NULL ddflop
@@ -197,7 +197,7 @@ AD2A6 [otrip_decoded_4_] [a_otrip_decoded_4_] toana_1v8
 AD2A7 [otrip_decoded_5_] [a_otrip_decoded_5_] toana_1v8
 AD2A8 [otrip_decoded_6_] [a_otrip_decoded_6_] toana_1v8
 AD2A9 [otrip_decoded_7_] [a_otrip_decoded_7_] toana_1v8
-AD2A10 [out_unbuf] [a_out_unbuf] toana_1v8
+AD2A10 [outb_unbuf] [a_outb_unbuf] toana_1v8
 AD2A11 [timed_out] [a_timed_out] toana_1v8
 AA2D13 [a_vtrip_0_] [vtrip_0_] todig_1v8
 AA2D14 [a_vtrip_1_] [vtrip_1_] todig_1v8
