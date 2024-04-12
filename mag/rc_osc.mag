@@ -1,7 +1,7 @@
 magic
 tech sky130A
 magscale 1 2
-timestamp 1712883964
+timestamp 1712936140
 << dnwell >>
 rect -2387 -2578 24567 1958
 << nwell >>
@@ -1285,7 +1285,7 @@ rect 23952 681 24547 705
 rect 23952 361 24203 681
 rect 24523 361 24547 681
 rect 23952 337 24547 361
-use sky130_fd_pr__cap_mim_m3_2_LUWKLG  sky130_fd_pr__cap_mim_m3_2_LUWKLG_0 ~/chipalooza/sky130_ajc_ip__brownout/mag
+use sky130_fd_pr__cap_mim_m3_2_LUWKLG  sky130_fd_pr__cap_mim_m3_2_LUWKLG_0
 timestamp 1712463840
 transform 0 -1 4968 1 0 777
 box -3349 -19200 3371 19200

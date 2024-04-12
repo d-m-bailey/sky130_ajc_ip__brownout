@@ -1,7 +1,7 @@
 magic
 tech sky130A
 magscale 1 2
-timestamp 1712897939
+timestamp 1712936140
 << viali >>
 rect 4169 10761 4203 10795
 rect 4813 10761 4847 10795
@@ -7314,73 +7314,73 @@ transform 1 0 8832 0 -1 10880
 box -38 -48 130 592
 << labels >>
 flabel metal4 s 4868 2128 5188 10928 0 FreeSans 1920 90 0 0 VGND
-port 0 nsew ground bidirectional
+port 2 nsew ground bidirectional
 flabel metal4 s 4208 2128 4528 10928 0 FreeSans 1920 90 0 0 VPWR
 port 1 nsew power bidirectional
 flabel metal3 s 0 4088 800 4208 0 FreeSans 480 0 0 0 brout_filt
-port 2 nsew signal input
+port 32 nsew signal input
 flabel metal3 s 10373 6128 11173 6248 0 FreeSans 480 0 0 0 dcomp
-port 3 nsew signal input
-flabel metal3 s 0 8848 800 8968 0 FreeSans 480 0 0 0 ena
-port 4 nsew signal input
-flabel metal3 s 10373 4088 11173 4208 0 FreeSans 480 0 0 0 force_dis_rc_osc
-port 5 nsew signal input
-flabel metal3 s 10373 5448 11173 5568 0 FreeSans 480 0 0 0 force_ena_rc_osc
-port 6 nsew signal input
-flabel metal3 s 10373 7488 11173 7608 0 FreeSans 480 0 0 0 force_short_oneshot
-port 7 nsew signal input
-flabel metal3 s 0 8168 800 8288 0 FreeSans 480 0 0 0 osc_ck
-port 8 nsew signal input
-flabel metal3 s 10373 4768 11173 4888 0 FreeSans 480 0 0 0 osc_ena
-port 9 nsew signal output
-flabel metal2 s 3238 0 3294 800 0 FreeSans 224 90 0 0 otrip[0]
-port 10 nsew signal input
-flabel metal2 s 5170 0 5226 800 0 FreeSans 224 90 0 0 otrip[1]
-port 11 nsew signal input
-flabel metal2 s 5814 0 5870 800 0 FreeSans 224 90 0 0 otrip[2]
-port 12 nsew signal input
-flabel metal2 s 9678 0 9734 800 0 FreeSans 224 90 0 0 otrip_decoded[0]
-port 13 nsew signal output
-flabel metal2 s 4526 0 4582 800 0 FreeSans 224 90 0 0 otrip_decoded[1]
-port 14 nsew signal output
-flabel metal2 s 3882 0 3938 800 0 FreeSans 224 90 0 0 otrip_decoded[2]
-port 15 nsew signal output
-flabel metal2 s 9034 0 9090 800 0 FreeSans 224 90 0 0 otrip_decoded[3]
-port 16 nsew signal output
-flabel metal2 s 6458 0 6514 800 0 FreeSans 224 90 0 0 otrip_decoded[4]
-port 17 nsew signal output
-flabel metal2 s 7746 0 7802 800 0 FreeSans 224 90 0 0 otrip_decoded[5]
-port 18 nsew signal output
-flabel metal2 s 7102 0 7158 800 0 FreeSans 224 90 0 0 otrip_decoded[6]
-port 19 nsew signal output
-flabel metal2 s 8390 0 8446 800 0 FreeSans 224 90 0 0 otrip_decoded[7]
-port 20 nsew signal output
-flabel metal3 s 10373 6808 11173 6928 0 FreeSans 480 0 0 0 outb_unbuf
-port 21 nsew signal output
-flabel metal3 s 10373 8168 11173 8288 0 FreeSans 480 0 0 0 timed_out
-port 22 nsew signal output
-flabel metal2 s 8390 12517 8446 13317 0 FreeSans 224 90 0 0 vtrip[0]
 port 23 nsew signal input
-flabel metal2 s 1950 12517 2006 13317 0 FreeSans 224 90 0 0 vtrip[1]
-port 24 nsew signal input
-flabel metal2 s 2594 12517 2650 13317 0 FreeSans 224 90 0 0 vtrip[2]
-port 25 nsew signal input
-flabel metal2 s 5170 12517 5226 13317 0 FreeSans 224 90 0 0 vtrip_decoded[0]
-port 26 nsew signal output
-flabel metal2 s 3882 12517 3938 13317 0 FreeSans 224 90 0 0 vtrip_decoded[1]
-port 27 nsew signal output
-flabel metal2 s 3238 12517 3294 13317 0 FreeSans 224 90 0 0 vtrip_decoded[2]
-port 28 nsew signal output
-flabel metal2 s 7746 12517 7802 13317 0 FreeSans 224 90 0 0 vtrip_decoded[3]
-port 29 nsew signal output
-flabel metal2 s 4526 12517 4582 13317 0 FreeSans 224 90 0 0 vtrip_decoded[4]
-port 30 nsew signal output
-flabel metal2 s 6458 12517 6514 13317 0 FreeSans 224 90 0 0 vtrip_decoded[5]
-port 31 nsew signal output
-flabel metal2 s 5814 12517 5870 13317 0 FreeSans 224 90 0 0 vtrip_decoded[6]
-port 32 nsew signal output
-flabel metal2 s 7102 12517 7158 13317 0 FreeSans 224 90 0 0 vtrip_decoded[7]
+flabel metal3 s 0 8848 800 8968 0 FreeSans 480 0 0 0 ena
+port 9 nsew signal input
+flabel metal3 s 10373 4088 11173 4208 0 FreeSans 480 0 0 0 force_dis_rc_osc
+port 12 nsew signal input
+flabel metal3 s 10373 5448 11173 5568 0 FreeSans 480 0 0 0 force_ena_rc_osc
+port 10 nsew signal input
+flabel metal3 s 10373 7488 11173 7608 0 FreeSans 480 0 0 0 force_short_oneshot
+port 14 nsew signal input
+flabel metal3 s 0 8168 800 8288 0 FreeSans 480 0 0 0 osc_ck
+port 34 nsew signal input
+flabel metal3 s 10373 4768 11173 4888 0 FreeSans 480 0 0 0 osc_ena
+port 11 nsew signal output
+flabel metal2 s 3238 0 3294 800 0 FreeSans 224 90 0 0 otrip[0]
+port 5 nsew signal input
+flabel metal2 s 5170 0 5226 800 0 FreeSans 224 90 0 0 otrip[1]
+port 4 nsew signal input
+flabel metal2 s 5814 0 5870 800 0 FreeSans 224 90 0 0 otrip[2]
+port 3 nsew signal input
+flabel metal2 s 9678 0 9734 800 0 FreeSans 224 90 0 0 otrip_decoded[0]
+port 22 nsew signal output
+flabel metal2 s 4526 0 4582 800 0 FreeSans 224 90 0 0 otrip_decoded[1]
+port 21 nsew signal output
+flabel metal2 s 3882 0 3938 800 0 FreeSans 224 90 0 0 otrip_decoded[2]
+port 20 nsew signal output
+flabel metal2 s 9034 0 9090 800 0 FreeSans 224 90 0 0 otrip_decoded[3]
+port 19 nsew signal output
+flabel metal2 s 6458 0 6514 800 0 FreeSans 224 90 0 0 otrip_decoded[4]
+port 18 nsew signal output
+flabel metal2 s 7746 0 7802 800 0 FreeSans 224 90 0 0 otrip_decoded[5]
+port 17 nsew signal output
+flabel metal2 s 7102 0 7158 800 0 FreeSans 224 90 0 0 otrip_decoded[6]
+port 16 nsew signal output
+flabel metal2 s 8390 0 8446 800 0 FreeSans 224 90 0 0 otrip_decoded[7]
+port 15 nsew signal output
+flabel metal3 s 10373 6808 11173 6928 0 FreeSans 480 0 0 0 outb_unbuf
+port 13 nsew signal output
+flabel metal3 s 10373 8168 11173 8288 0 FreeSans 480 0 0 0 timed_out
 port 33 nsew signal output
+flabel metal2 s 8390 12517 8446 13317 0 FreeSans 224 90 0 0 vtrip[0]
+port 8 nsew signal input
+flabel metal2 s 1950 12517 2006 13317 0 FreeSans 224 90 0 0 vtrip[1]
+port 7 nsew signal input
+flabel metal2 s 2594 12517 2650 13317 0 FreeSans 224 90 0 0 vtrip[2]
+port 6 nsew signal input
+flabel metal2 s 5170 12517 5226 13317 0 FreeSans 224 90 0 0 vtrip_decoded[0]
+port 31 nsew signal output
+flabel metal2 s 3882 12517 3938 13317 0 FreeSans 224 90 0 0 vtrip_decoded[1]
+port 30 nsew signal output
+flabel metal2 s 3238 12517 3294 13317 0 FreeSans 224 90 0 0 vtrip_decoded[2]
+port 29 nsew signal output
+flabel metal2 s 7746 12517 7802 13317 0 FreeSans 224 90 0 0 vtrip_decoded[3]
+port 28 nsew signal output
+flabel metal2 s 4526 12517 4582 13317 0 FreeSans 224 90 0 0 vtrip_decoded[4]
+port 27 nsew signal output
+flabel metal2 s 6458 12517 6514 13317 0 FreeSans 224 90 0 0 vtrip_decoded[5]
+port 26 nsew signal output
+flabel metal2 s 5814 12517 5870 13317 0 FreeSans 224 90 0 0 vtrip_decoded[6]
+port 25 nsew signal output
+flabel metal2 s 7102 12517 7158 13317 0 FreeSans 224 90 0 0 vtrip_decoded[7]
+port 24 nsew signal output
 rlabel metal1 5566 10880 5566 10880 0 VGND
 rlabel metal1 5566 10336 5566 10336 0 VPWR
 rlabel metal2 2438 3672 2438 3672 0 _000_
