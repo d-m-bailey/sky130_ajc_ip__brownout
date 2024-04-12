@@ -19,7 +19,7 @@ input logic brout_filt,
 input logic osc_ck,
 //OUTPUTS
 output osc_ena,
-output out_unbuf,
+output outb_unbuf,
 output logic [7:0] otrip_decoded,
 output logic [7:0] vtrip_decoded,
 //DEBUG OUTPUTS
@@ -55,7 +55,7 @@ output timed_out
     endcase
   end
 
-  assign osc_ena = force_ena_rc_osc | (!force_dis_rc_osc & (ena & (dcomp | !out_unbuf)));
+  assign osc_ena = force_ena_rc_osc | (!force_dis_rc_osc & (ena & (dcomp | !outb_unbuf)));
   wire dcomp_ena_rsb;
 
   //BROUT_FILT RETIME
@@ -95,7 +95,7 @@ output timed_out
   reg [11:0] cnt;
 
   assign timed_out = (cnt == 12'b111111111111);
-  assign out_unbuf = dcomp_retimed ? 0 : timed_out;
+  assign outb_unbuf = dcomp_retimed ? 0 : timed_out;
 
   always @ (posedge osc_ck or negedge ena) begin
     if (!ena) begin

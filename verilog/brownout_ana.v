@@ -20,11 +20,11 @@ input logic ena,
 input logic isrc_sel,
 input real ibg_200n,
 input logic osc_ena,
-input logic out_unbuf,
+input logic outb_unbuf,
 //OUTPTUS
 output brout_filt,
 output dcomp,
-output out,
+output outb,
 output vunder,
 output osc_ck,
 output real vin_brout,
@@ -34,7 +34,7 @@ output real itest
 
 //BUFFERS
 assign vunder = ~vunder_unbuf;
-assign out = out_unbuf;
+assign outb = outb_unbuf;
 
 rstring_mux rstring_mux(
 .avdd(avdd),

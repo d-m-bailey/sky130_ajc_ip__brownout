@@ -57,7 +57,7 @@ brownout_ana brownout_ana(
 .isrc_sel(isrc_sel),
 .ibg_200n(ibg_200n),
 .osc_ena(osc_ena),
-.out_unbuf(out_unbuf),
+.outb_unbuf(outb_unbuf),
 //OUTPUTS
 .brout_filt(brout_filt),
 .dcomp(dcomp),
@@ -84,7 +84,7 @@ brownout_dig brownout_dig(
 .osc_ck(osc_ck),
 //OUTPUTS
 .osc_ena(osc_ena),
-.out_unbuf(out_unbuf),
+.outb_unbuf(outb_unbuf),
 //.vunder(vunder),
 .otrip_decoded(otrip_decoded),
 .vtrip_decoded(vtrip_decoded),

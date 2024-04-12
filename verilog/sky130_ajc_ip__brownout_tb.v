@@ -37,7 +37,7 @@ sky130_ajc_ip__brownout_tb sky130_ajc_ip__brownout_tb(
 .isrc_sel(isrc_sel), //debug
 .ibg_200n(ibg_200n), //debug 200nA current
 //OUTPUTS
-.out(out),
+.outb(outb),
 .vunder(vunder),
 //DEBUG OUTPUTS
 .osc_ck(osc_ck),
