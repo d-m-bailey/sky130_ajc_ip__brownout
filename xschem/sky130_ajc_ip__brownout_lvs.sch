@@ -10,25 +10,6 @@ Apache License, Version 2.0 with Addendum, see NOTICE
 Date: 03/14/2024   Rev: 0
 Description: Brownout detector (analog & digital sections)} -570 180 0 0 0.4 0.4 {}
 C {xschem/brownout_ana.sym} 0 10 0 0 {name=xIana}
-C {devices/code.sym} -580 -40 0 0 {name=brownout_dig only_toplevel=false value="
-
-r0 otrip[0] otrip0 1
-r1 otrip[1] otrip1 1
-r2 otrip[2] otrip2 1
-r3 vtrip[0] vtrip0 1
-r4 vtrip[1] vtrip1 1
-r5 vtrip[2] vtrip2 1
-
-*XSPICE CO-SIM netlist
-.include brownout_dig.out.spice
-xibrownout_dig dvss dvdd brout_filt dcomp ena force_dis_rc_osc force_ena_rc_osc force_short_oneshot osc_ck osc_ena 
-+otrip0 otrip1 otrip2
-+otrip_decoded_0_ otrip_decoded_1_ otrip_decoded_2_ otrip_decoded_3_ otrip_decoded_4_ otrip_decoded_5_ otrip_decoded_6_ otrip_decoded_7_
-+outb_unbuf timed_out
-+vtrip0 vtrip1 vtrip2
-+vtrip_decoded_0_ vtrip_decoded_1_ vtrip_decoded_2_ vtrip_decoded_3_ vtrip_decoded_4_ vtrip_decoded_5_ vtrip_decoded_6_ vtrip_decoded_7_
-+brownout_dig
-"}
 C {devices/ipin.sym} -430 -420 2 1 {name=p1 lab=avdd}
 C {devices/ipin.sym} -430 -400 2 1 {name=p2 lab=avss}
 C {devices/ipin.sym} -430 -380 2 1 {name=p3 lab=dvdd}
@@ -71,3 +52,20 @@ C {devices/lab_pin.sym} -150 80 0 0 {name=p32 lab=vtrip_decoded_7_,vtrip_decoded
 C {devices/ipin.sym} -430 -260 2 1 {name=p35 lab=force_ena_rc_osc}
 C {devices/lab_pin.sym} 150 -40 0 1 {name=p40 lab=dcomp}
 C {devices/opin.sym} 180 -340 0 0 {name=p42 lab=dcomp}
+C {xschem/brownout_dig.sym} -100 -590 0 0 {name=xIdig}
+C {devices/lab_pin.sym} -250 -690 0 0 {name=p43 lab=dvdd}
+C {devices/lab_pin.sym} -250 -670 0 0 {name=p44 lab=dvss}
+C {devices/lab_pin.sym} -250 -650 0 0 {name=p45 lab=otrip[2:0]}
+C {devices/lab_pin.sym} -250 -630 0 0 {name=p46 lab=vtrip[2:0]}
+C {devices/lab_pin.sym} -250 -610 0 0 {name=p47 lab=ena}
+C {devices/lab_pin.sym} -250 -590 0 0 {name=p48 lab=force_ena_rc_osc}
+C {devices/lab_pin.sym} 50 -690 0 1 {name=p49 lab=osc_ena}
+C {devices/lab_pin.sym} -250 -570 0 0 {name=p50 lab=force_dis_rc_osc}
+C {devices/lab_pin.sym} 50 -670 0 1 {name=p51 lab=outb_unbuf}
+C {devices/lab_pin.sym} -250 -550 0 0 {name=p52 lab=force_short_oneshot}
+C {devices/lab_pin.sym} -250 -530 0 0 {name=p54 lab=dcomp}
+C {devices/lab_pin.sym} -250 -510 0 0 {name=p56 lab=brout_filt}
+C {devices/lab_pin.sym} 50 -610 0 1 {name=p57 lab=timed_out}
+C {devices/lab_pin.sym} -250 -490 0 0 {name=p58 lab=osc_ck}
+C {devices/lab_pin.sym} 50 -650 0 1 {name=p53 lab=otrip_decoded_7_,otrip_decoded_6_,otrip_decoded_5_,otrip_decoded_4_,otrip_decoded_3_,otrip_decoded_2_,otrip_decoded_1_,otrip_decoded_0_}
+C {devices/lab_pin.sym} 50 -630 0 1 {name=p55 lab=vtrip_decoded_7_,vtrip_decoded_6_,vtrip_decoded_5_,vtrip_decoded_4_,vtrip_decoded_3_,vtrip_decoded_2_,vtrip_decoded_1_,vtrip_decoded_0_}

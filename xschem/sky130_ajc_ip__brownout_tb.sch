@@ -34,13 +34,11 @@ lab=avdd_bg}
 N -210 -660 -210 -640 {
 lab=avdd_bg}
 N 300 -280 630 -280 {
-lab=out}
-N 300 -240 470 -240 {
+lab=outb}
+N 300 -220 470 -220 {
 lab=itest}
 N 630 -280 630 -110 {
-lab=out}
-N 470 -240 470 -50 {
-lab=itest}
+lab=outb}
 N -130 -660 -130 -610 {
 lab=avdd_bg}
 N -380 -660 -130 -660 {
@@ -49,6 +47,8 @@ N -210 -40 -0 -40 {
 lab=ibg_200n}
 N -210 -580 -210 -40 {
 lab=ibg_200n}
+N 470 -220 470 -50 {
+lab=itest}
 C {devices/vsource.sym} -750 -170 0 0 {name=Vavss value=0 savecurrent=false}
 C {devices/gnd.sym} -750 -140 0 0 {name=l1 lab=GND}
 C {devices/lab_pin.sym} -750 -200 1 0 {name=p1 sig_type=std_logic lab=avss}
@@ -105,10 +105,10 @@ plot xibrout.xiana.xiosc.in osc_ck*1.1 xibrout.xiana.xiosc.net1*1.2 xibrout.xian
 
 *plot brout_filt itest avdd ena vbg_1v2 vin_brout vin_vunder timed_out xibrout.xiana.dcomp xibrout.xiana.dcomp_filt
 *plot i(Vavdd) i(Vdvdd)
-*plot out avdd vunder*0.75 ena*0.5
+*plot outb avdd vunder*0.75 ena*0.5
 *plot xibrout.osc_ena 1.25*out 1.75*brout_filt
 *plot 0.5*brout_filt 0.75*xibrout.xiana.dcomp xibrout.xiana.dcomp_filt
-*plot avdd 0.25*osc_ck 0.5*ena 0.75*brout_filt timed_out 1.25*out 1.5*vunder
+*plot avdd 0.25*osc_ck 0.5*ena 0.75*brout_filt timed_out 1.25*outb 1.5*vunder
 *plot osc_ck*0.5 xibrout.xiana.xiosc.in xibrout.xiana.xiosc.m xibrout.osc_ena*0.25 brout_filt out*1.25
 .endc
 "}
@@ -160,14 +160,14 @@ footprint=1206
 device=resistor
 m=1}
 C {devices/gnd.sym} 470 10 0 0 {name=l9 lab=GND}
-C {devices/lab_wire.sym} 460 -240 0 0 {name=p7 sig_type=std_logic lab=itest}
+C {devices/lab_wire.sym} 460 -220 0 0 {name=p7 sig_type=std_logic lab=itest}
 C {devices/gnd.sym} 630 -50 0 0 {name=l8 lab=GND}
 C {devices/capa.sym} 630 -80 0 0 {name=C1
 m=1
 value=20p
 footprint=1206
 device="ceramic capacitor"}
-C {devices/lab_wire.sym} 610 -280 0 0 {name=p12 sig_type=std_logic lab=out}
+C {devices/lab_wire.sym} 610 -280 0 0 {name=p12 sig_type=std_logic lab=outb}
 C {xschem/sky130_ajc_ip__brownout.sym} 150 -160 0 0 {name=xIbrout}
 C {devices/lab_pin.sym} 0 -280 0 0 {name=p9 lab=avdd}
 C {devices/lab_pin.sym} 0 -260 0 0 {name=p15 lab=avss}
@@ -176,16 +176,16 @@ C {devices/lab_pin.sym} 0 -220 0 0 {name=p22 lab=dvss}
 C {devices/lab_pin.sym} 300 -260 0 1 {name=p23 lab=osc_ck}
 C {devices/lab_pin.sym} 0 -200 0 0 {name=p24 lab=vbg_1v2}
 C {devices/lab_pin.sym} 0 -180 0 0 {name=p26 lab=otrip[2:0]}
-C {devices/lab_pin.sym} 300 -220 0 1 {name=p28 lab=brout_filt}
+C {devices/lab_pin.sym} 300 -200 0 1 {name=p28 lab=brout_filt}
 C {devices/lab_pin.sym} 0 -140 0 0 {name=p30 lab=ena}
-C {devices/lab_pin.sym} 300 -200 0 1 {name=p32 lab=vin_brout}
+C {devices/lab_pin.sym} 300 -180 0 1 {name=p32 lab=vin_brout}
 C {devices/lab_pin.sym} 0 -120 0 0 {name=p33 lab=force_ena_rc_osc}
 C {devices/lab_pin.sym} 0 -80 0 0 {name=p34 lab=force_short_oneshot}
-C {devices/lab_pin.sym} 300 -160 0 1 {name=p35 lab=timed_out}
+C {devices/lab_pin.sym} 300 -140 0 1 {name=p35 lab=timed_out}
 C {devices/lab_pin.sym} 0 -60 0 0 {name=p37 lab=isrc_sel}
 C {devices/lab_pin.sym} 0 -160 0 0 {name=p8 lab=vtrip[2:0]}
-C {devices/lab_pin.sym} 300 -180 0 1 {name=p10 lab=vin_vunder}
-C {devices/lab_pin.sym} 300 -140 0 1 {name=p13 lab=vunder}
+C {devices/lab_pin.sym} 300 -160 0 1 {name=p10 lab=vin_vunder}
+C {devices/lab_pin.sym} 300 -120 0 1 {name=p13 lab=vunder}
 C {devices/gnd.sym} -680 290 0 0 {name=l10 lab=GND}
 C {devices/vsource.sym} -680 260 0 0 {name=Vvotrip0 value="DC 0" savecurrent=false}
 C {devices/lab_pin.sym} -680 230 1 0 {name=p14 sig_type=std_logic lab=otrip[0]}
@@ -208,3 +208,4 @@ C {devices/gnd.sym} -130 -550 0 0 {name=l15 lab=GND}
 C {devices/vsource.sym} -130 -580 0 0 {name=Vavdd_bg value="DC 3.3" savecurrent=false}
 C {devices/lab_wire.sym} -280 -660 0 0 {name=p3 sig_type=std_logic lab=avdd_bg}
 C {devices/lab_pin.sym} 0 -100 0 0 {name=p25 lab=force_dis_rc_osc}
+C {devices/lab_pin.sym} 300 -240 0 1 {name=p36 lab=dcomp}
