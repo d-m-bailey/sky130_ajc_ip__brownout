@@ -27,6 +27,8 @@ Demo of the a temporary glitch on `avdd` (orange), causing the `out` (blue) to a
 ![](sky130_ajc_ip__brownout_layout.png)
 Layout of `sky130_ajc_ip__brownout`, approximate size is 230um x 230um sq.
 
+The gds file is located at `gds/sky130_ajc_ip__brownout.gds`
+
 ## Design-Rule-Check (DRC)
 DRC is automatic in Magic. Design passes all rules in Magic except the 'MV diffusion spacing rules'. However, according to Tim Edwards at eFabless Inc., these are not actual violations and are false positives, see picture below.
 
@@ -34,19 +36,19 @@ DRC is automatic in Magic. Design passes all rules in Magic except the 'MV diffu
 DRC rule violations that are false positives (not actual violations) related to 'MV diffusion spacing'
 
 
-heck the design using Klayout sky130 DRC deck for consistency:
+Check the design using Klayout sky130 DRC deck for consistency:
 1. In the Magic Tcl interpreter, run `gds write sky130_ajc_ip__brownout.gds` to stream out a gds file from Magic.
 2. Load `sky130_ajc_ip__brownout.gds` into Klayout by running `klayout sky130ajc_ip__brownout.gds`
 3. Run sky130A DRC rule deck (assumes Klayout environment is already setup for sky130 pdk, not described here)
 
 
-![](drc_sky130A.png)
+![](brownout_drc_sky130A.png)
 Output from Klayout showing no DRC rule violations (all green) for sky130A DRC runset
 
 Some special 'manufacturing rules' are not checked in Magic, so a special 'mr' rule deck in Klayout is used to check for those violations.  Simply load the `sky130A_mr` DRC deck and run to produce the all-pass result pictured below:
 
 
-![](drc_sky130A_mr.png)
+![](brownout_drc_sky130A_mr.png)
 Output from Klayout showing no DRC rule violations for sky130A 'mr' DRC rules
 
 
