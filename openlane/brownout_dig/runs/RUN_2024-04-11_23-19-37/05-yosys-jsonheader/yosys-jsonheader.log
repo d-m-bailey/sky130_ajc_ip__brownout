@@ -1,0 +1,136 @@
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2020  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.38 (git sha1 543faed9c8c, clang++ 16.0.6 -fPIC -Os)
+
+Loaded SDC plugin
+[TCL: yosys -import] Command name collision: found pre-existing command `cd' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `eval' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `exec' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `read' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `trace' -> skip.
+
+1. Executing Liberty frontend: /home/rtsang/.volare/volare/sky130/versions/bdc9412b3e468c102d01b7cf6337be06ec6e9c9a/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+Imported 428 cell types from liberty file.
+
+2. Executing Verilog-2005 frontend: /home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/brownout_dig.v
+Parsing SystemVerilog input from `/home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/brownout_dig.v' to AST representation.
+Generating RTLIL representation for module `\brownout_dig'.
+Note: Assuming pure combinatorial block at /home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/brownout_dig.v:32.3-43.6 in
+compliance with IEC 62142(E):2005 / IEEE Std. 1364.1(E):2002. Recommending
+use of @* instead of @(...) for better match of synthesis and simulation.
+Note: Assuming pure combinatorial block at /home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/brownout_dig.v:45.3-56.6 in
+compliance with IEC 62142(E):2005 / IEEE Std. 1364.1(E):2002. Recommending
+use of @* instead of @(...) for better match of synthesis and simulation.
+Successfully finished Verilog frontend.
+
+3. Executing HIERARCHY pass (managing design hierarchy).
+
+3.1. Analyzing design hierarchy..
+Top module:  \brownout_dig
+
+3.2. Analyzing design hierarchy..
+Top module:  \brownout_dig
+Removed 0 unused modules.
+Renaming module brownout_dig to brownout_dig.
+
+4. Executing PROC pass (convert processes to netlists).
+
+4.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+4.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 1 switch rules as full_case in process $proc$/home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/brownout_dig.v:100$18 in module brownout_dig.
+Marked 1 switch rules as full_case in process $proc$/home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/brownout_dig.v:86$13 in module brownout_dig.
+Marked 1 switch rules as full_case in process $proc$/home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/brownout_dig.v:75$12 in module brownout_dig.
+Marked 1 switch rules as full_case in process $proc$/home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/brownout_dig.v:65$10 in module brownout_dig.
+Removed 1 dead cases from process $proc$/home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/brownout_dig.v:45$2 in module brownout_dig.
+Marked 1 switch rules as full_case in process $proc$/home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/brownout_dig.v:45$2 in module brownout_dig.
+Removed 1 dead cases from process $proc$/home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/brownout_dig.v:32$1 in module brownout_dig.
+Marked 1 switch rules as full_case in process $proc$/home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/brownout_dig.v:32$1 in module brownout_dig.
+Removed a total of 2 dead cases.
+
+4.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 5 redundant assignments.
+Promoted 2 assignments to connections.
+
+4.4. Executing PROC_INIT pass (extract init attributes).
+
+4.5. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \ena in `\brownout_dig.$proc$/home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/brownout_dig.v:100$18'.
+Found async reset \clr_cnt_sb in `\brownout_dig.$proc$/home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/brownout_dig.v:86$13'.
+Found async reset \brout_filt in `\brownout_dig.$proc$/home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/brownout_dig.v:75$12'.
+Found async reset \dcomp_ena_rsb in `\brownout_dig.$proc$/home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/brownout_dig.v:65$10'.
+
+4.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 2 switches.
+
+4.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\brownout_dig.$proc$/home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/brownout_dig.v:100$18'.
+     1/1: $0\cnt[11:0]
+Creating decoders for process `\brownout_dig.$proc$/home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/brownout_dig.v:86$13'.
+     1/1: $0\clr_cnt[0:0]
+Creating decoders for process `\brownout_dig.$proc$/home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/brownout_dig.v:75$12'.
+     1/2: $0\clr_cnt_sb[0:0]
+     2/2: $0\clr_cnt_sb_stg1[0:0]
+Creating decoders for process `\brownout_dig.$proc$/home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/brownout_dig.v:65$10'.
+     1/1: $0\dcomp_retimed[0:0]
+Creating decoders for process `\brownout_dig.$proc$/home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/brownout_dig.v:45$2'.
+     1/1: $1\vtrip_decoded[7:0]
+Creating decoders for process `\brownout_dig.$proc$/home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/brownout_dig.v:32$1'.
+     1/1: $1\otrip_decoded[7:0]
+
+4.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\brownout_dig.\vtrip_decoded' from process `\brownout_dig.$proc$/home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/brownout_dig.v:45$2'.
+No latch inferred for signal `\brownout_dig.\otrip_decoded' from process `\brownout_dig.$proc$/home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/brownout_dig.v:32$1'.
+
+4.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\brownout_dig.\cnt' using process `\brownout_dig.$proc$/home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/brownout_dig.v:100$18'.
+  created $adff cell `$procdff$37' with positive edge clock and negative level reset.
+Creating register for signal `\brownout_dig.\clr_cnt' using process `\brownout_dig.$proc$/home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/brownout_dig.v:86$13'.
+  created $adff cell `$procdff$38' with positive edge clock and negative level reset.
+Creating register for signal `\brownout_dig.\clr_cnt_sb_stg1' using process `\brownout_dig.$proc$/home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/brownout_dig.v:75$12'.
+  created $adff cell `$procdff$39' with positive edge clock and positive level reset.
+Creating register for signal `\brownout_dig.\clr_cnt_sb' using process `\brownout_dig.$proc$/home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/brownout_dig.v:75$12'.
+  created $adff cell `$procdff$40' with positive edge clock and positive level reset.
+Creating register for signal `\brownout_dig.\dcomp_retimed' using process `\brownout_dig.$proc$/home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/brownout_dig.v:65$10'.
+  created $adff cell `$procdff$41' with positive edge clock and negative level reset.
+
+4.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+4.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Removing empty process `brownout_dig.$proc$/home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/brownout_dig.v:100$18'.
+Removing empty process `brownout_dig.$proc$/home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/brownout_dig.v:86$13'.
+Removing empty process `brownout_dig.$proc$/home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/brownout_dig.v:75$12'.
+Removing empty process `brownout_dig.$proc$/home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/brownout_dig.v:65$10'.
+Found and cleaned up 1 empty switch in `\brownout_dig.$proc$/home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/brownout_dig.v:45$2'.
+Removing empty process `brownout_dig.$proc$/home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/brownout_dig.v:45$2'.
+Found and cleaned up 1 empty switch in `\brownout_dig.$proc$/home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/brownout_dig.v:32$1'.
+Removing empty process `brownout_dig.$proc$/home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/brownout_dig.v:32$1'.
+Cleaned up 2 empty switches.
+
+4.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module brownout_dig.
+<suppressed ~1 debug messages>
+
+End of script. Logfile hash: fe4e624d15, CPU: user 0.25s system 0.03s, MEM: 52.88 MB peak
+Yosys 0.38 (git sha1 543faed9c8c, clang++ 16.0.6 -fPIC -Os)
+Time spent: 68% 2x read_liberty (0 sec), 22% 1x proc_dff (0 sec), ...

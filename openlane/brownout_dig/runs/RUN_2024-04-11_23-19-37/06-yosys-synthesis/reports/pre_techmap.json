@@ -1,0 +1,59 @@
+{
+   "creator": "Yosys 0.38 (git sha1 543faed9c8c, clang++ 16.0.6 -fPIC -Os)",
+   "invocation": "stat -json -liberty /home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/runs/RUN_2024-04-11_23-19-37/tmp/cf69170abd3b458a95bee2083ab8035e.lib ",
+   "modules": {
+      "\\brownout_dig": {
+         "num_wires":         82,
+         "num_wire_bits":     122,
+         "num_pub_wires":     20,
+         "num_pub_wire_bits": 49,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         109,
+         "num_cells_by_type": {
+            "$_ANDNOT_": 44,
+            "$_AND_": 2,
+            "$_DFFE_PN1P_": 12,
+            "$_DFF_PN0_": 1,
+            "$_DFF_PN1_": 1,
+            "$_DFF_PP0_": 2,
+            "$_MUX_": 3,
+            "$_NAND_": 8,
+            "$_NOR_": 1,
+            "$_NOT_": 6,
+            "$_ORNOT_": 5,
+            "$_OR_": 11,
+            "$_XNOR_": 5,
+            "$_XOR_": 8
+         }
+      }
+   },
+      "design": {
+         "num_wires":         82,
+         "num_wire_bits":     122,
+         "num_pub_wires":     20,
+         "num_pub_wire_bits": 49,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         109,
+         "num_cells_by_type": {
+            "$_ANDNOT_": 44,
+            "$_AND_": 2,
+            "$_DFFE_PN1P_": 12,
+            "$_DFF_PN0_": 1,
+            "$_DFF_PN1_": 1,
+            "$_DFF_PP0_": 2,
+            "$_MUX_": 3,
+            "$_NAND_": 8,
+            "$_NOR_": 1,
+            "$_NOT_": 6,
+            "$_ORNOT_": 5,
+            "$_OR_": 11,
+            "$_XNOR_": 5,
+            "$_XOR_": 8
+         }
+      }
+}
+

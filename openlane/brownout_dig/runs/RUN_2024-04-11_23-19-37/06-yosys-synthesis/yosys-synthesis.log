@@ -1,0 +1,1280 @@
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2020  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.38 (git sha1 543faed9c8c, clang++ 16.0.6 -fPIC -Os)
+
+Loaded SDC plugin
+[TCL: yosys -import] Command name collision: found pre-existing command `cd' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `eval' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `exec' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `read' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `trace' -> skip.
+
+1. Executing Liberty frontend: /home/rtsang/.volare/volare/sky130/versions/bdc9412b3e468c102d01b7cf6337be06ec6e9c9a/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+Imported 428 cell types from liberty file.
+
+2. Executing Verilog-2005 frontend: /home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/brownout_dig.v
+Parsing SystemVerilog input from `/home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/brownout_dig.v' to AST representation.
+Generating RTLIL representation for module `\brownout_dig'.
+Note: Assuming pure combinatorial block at /home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/brownout_dig.v:32.3-43.6 in
+compliance with IEC 62142(E):2005 / IEEE Std. 1364.1(E):2002. Recommending
+use of @* instead of @(...) for better match of synthesis and simulation.
+Note: Assuming pure combinatorial block at /home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/brownout_dig.v:45.3-56.6 in
+compliance with IEC 62142(E):2005 / IEEE Std. 1364.1(E):2002. Recommending
+use of @* instead of @(...) for better match of synthesis and simulation.
+Successfully finished Verilog frontend.
+
+3. Generating Graphviz representation of design.
+Writing dot description to `/home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/runs/RUN_2024-04-11_23-19-37/06-yosys-synthesis/hierarchy.dot'.
+Dumping module brownout_dig to page 1.
+
+4. Executing HIERARCHY pass (managing design hierarchy).
+
+4.1. Analyzing design hierarchy..
+Top module:  \brownout_dig
+
+4.2. Analyzing design hierarchy..
+Top module:  \brownout_dig
+Removed 0 unused modules.
+Renaming module brownout_dig to brownout_dig.
+
+5. Executing TRIBUF pass.
+
+6. Executing HIERARCHY pass (managing design hierarchy).
+
+6.1. Analyzing design hierarchy..
+Top module:  \brownout_dig
+
+6.2. Analyzing design hierarchy..
+Top module:  \brownout_dig
+Removed 0 unused modules.
+
+7. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+8. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 1 switch rules as full_case in process $proc$/home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/brownout_dig.v:100$18 in module brownout_dig.
+Marked 1 switch rules as full_case in process $proc$/home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/brownout_dig.v:86$13 in module brownout_dig.
+Marked 1 switch rules as full_case in process $proc$/home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/brownout_dig.v:75$12 in module brownout_dig.
+Marked 1 switch rules as full_case in process $proc$/home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/brownout_dig.v:65$10 in module brownout_dig.
+Removed 1 dead cases from process $proc$/home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/brownout_dig.v:45$2 in module brownout_dig.
+Marked 1 switch rules as full_case in process $proc$/home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/brownout_dig.v:45$2 in module brownout_dig.
+Removed 1 dead cases from process $proc$/home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/brownout_dig.v:32$1 in module brownout_dig.
+Marked 1 switch rules as full_case in process $proc$/home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/brownout_dig.v:32$1 in module brownout_dig.
+Removed a total of 2 dead cases.
+
+9. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 5 redundant assignments.
+Promoted 2 assignments to connections.
+
+10. Executing PROC_INIT pass (extract init attributes).
+
+11. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \ena in `\brownout_dig.$proc$/home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/brownout_dig.v:100$18'.
+Found async reset \clr_cnt_sb in `\brownout_dig.$proc$/home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/brownout_dig.v:86$13'.
+Found async reset \brout_filt in `\brownout_dig.$proc$/home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/brownout_dig.v:75$12'.
+Found async reset \dcomp_ena_rsb in `\brownout_dig.$proc$/home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/brownout_dig.v:65$10'.
+
+12. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 2 switches.
+
+13. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\brownout_dig.$proc$/home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/brownout_dig.v:100$18'.
+     1/1: $0\cnt[11:0]
+Creating decoders for process `\brownout_dig.$proc$/home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/brownout_dig.v:86$13'.
+     1/1: $0\clr_cnt[0:0]
+Creating decoders for process `\brownout_dig.$proc$/home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/brownout_dig.v:75$12'.
+     1/2: $0\clr_cnt_sb[0:0]
+     2/2: $0\clr_cnt_sb_stg1[0:0]
+Creating decoders for process `\brownout_dig.$proc$/home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/brownout_dig.v:65$10'.
+     1/1: $0\dcomp_retimed[0:0]
+Creating decoders for process `\brownout_dig.$proc$/home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/brownout_dig.v:45$2'.
+     1/1: $1\vtrip_decoded[7:0]
+Creating decoders for process `\brownout_dig.$proc$/home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/brownout_dig.v:32$1'.
+     1/1: $1\otrip_decoded[7:0]
+
+14. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\brownout_dig.\vtrip_decoded' from process `\brownout_dig.$proc$/home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/brownout_dig.v:45$2'.
+No latch inferred for signal `\brownout_dig.\otrip_decoded' from process `\brownout_dig.$proc$/home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/brownout_dig.v:32$1'.
+
+15. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\brownout_dig.\cnt' using process `\brownout_dig.$proc$/home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/brownout_dig.v:100$18'.
+  created $adff cell `$procdff$37' with positive edge clock and negative level reset.
+Creating register for signal `\brownout_dig.\clr_cnt' using process `\brownout_dig.$proc$/home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/brownout_dig.v:86$13'.
+  created $adff cell `$procdff$38' with positive edge clock and negative level reset.
+Creating register for signal `\brownout_dig.\clr_cnt_sb_stg1' using process `\brownout_dig.$proc$/home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/brownout_dig.v:75$12'.
+  created $adff cell `$procdff$39' with positive edge clock and positive level reset.
+Creating register for signal `\brownout_dig.\clr_cnt_sb' using process `\brownout_dig.$proc$/home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/brownout_dig.v:75$12'.
+  created $adff cell `$procdff$40' with positive edge clock and positive level reset.
+Creating register for signal `\brownout_dig.\dcomp_retimed' using process `\brownout_dig.$proc$/home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/brownout_dig.v:65$10'.
+  created $adff cell `$procdff$41' with positive edge clock and negative level reset.
+
+16. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+17. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Removing empty process `brownout_dig.$proc$/home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/brownout_dig.v:100$18'.
+Removing empty process `brownout_dig.$proc$/home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/brownout_dig.v:86$13'.
+Removing empty process `brownout_dig.$proc$/home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/brownout_dig.v:75$12'.
+Removing empty process `brownout_dig.$proc$/home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/brownout_dig.v:65$10'.
+Found and cleaned up 1 empty switch in `\brownout_dig.$proc$/home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/brownout_dig.v:45$2'.
+Removing empty process `brownout_dig.$proc$/home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/brownout_dig.v:45$2'.
+Found and cleaned up 1 empty switch in `\brownout_dig.$proc$/home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/brownout_dig.v:32$1'.
+Removing empty process `brownout_dig.$proc$/home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/brownout_dig.v:32$1'.
+Cleaned up 2 empty switches.
+
+18. Executing CHECK pass (checking for obvious problems).
+Checking module brownout_dig...
+Found and reported 0 problems.
+
+19. Executing OPT_EXPR pass (perform const folding).
+Optimizing module brownout_dig.
+<suppressed ~1 debug messages>
+
+20. Executing FLATTEN pass (flatten design).
+
+21. Executing OPT_EXPR pass (perform const folding).
+Optimizing module brownout_dig.
+
+22. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \brownout_dig..
+Removed 3 unused cells and 19 unused wires.
+<suppressed ~6 debug messages>
+
+23. Executing OPT pass (performing simple optimizations).
+
+23.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module brownout_dig.
+
+23.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\brownout_dig'.
+Removed a total of 0 cells.
+
+23.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \brownout_dig..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~2 debug messages>
+
+23.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \brownout_dig.
+Performed a total of 0 changes.
+
+23.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\brownout_dig'.
+Removed a total of 0 cells.
+
+23.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+23.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \brownout_dig..
+
+23.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module brownout_dig.
+
+23.9. Finished OPT passes. (There is nothing left to do.)
+
+24. Executing FSM pass (extract and optimize FSM).
+
+24.1. Executing FSM_DETECT pass (finding FSMs in design).
+
+24.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+
+24.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+24.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \brownout_dig..
+
+24.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+24.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+
+24.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+
+24.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+
+25. Executing OPT pass (performing simple optimizations).
+
+25.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module brownout_dig.
+
+25.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\brownout_dig'.
+Removed a total of 0 cells.
+
+25.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \brownout_dig..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~2 debug messages>
+
+25.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \brownout_dig.
+Performed a total of 0 changes.
+
+25.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\brownout_dig'.
+Removed a total of 0 cells.
+
+25.6. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $procdff$37 ($adff) from module brownout_dig (D = $0\cnt[11:0], Q = \cnt).
+
+25.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \brownout_dig..
+
+25.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module brownout_dig.
+
+25.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+25.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \brownout_dig..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~2 debug messages>
+
+25.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \brownout_dig.
+Performed a total of 0 changes.
+
+25.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\brownout_dig'.
+Removed a total of 0 cells.
+
+25.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+25.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \brownout_dig..
+
+25.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module brownout_dig.
+
+25.16. Finished OPT passes. (There is nothing left to do.)
+
+26. Executing WREDUCE pass (reducing word size of cells).
+Removed top 29 address bits (of 32) from memory init port brownout_dig.$auto$mem.cc:328:emit$30 ($auto$proc_rom.cc:150:do_switch$28).
+Removed top 29 address bits (of 32) from memory init port brownout_dig.$auto$mem.cc:328:emit$34 ($auto$proc_rom.cc:150:do_switch$32).
+Removed top 31 bits (of 32) from mux cell brownout_dig.$ternary$/home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/brownout_dig.v:98$17 ($mux).
+Removed top 20 bits (of 32) from port A of cell brownout_dig.$add$/home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/brownout_dig.v:104$21 ($add).
+Removed top 2 bits (of 12) from port B of cell brownout_dig.$add$/home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/brownout_dig.v:104$21 ($add).
+Removed top 19 bits (of 32) from port Y of cell brownout_dig.$add$/home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/brownout_dig.v:104$21 ($add).
+Removed top 31 bits (of 32) from port B of cell brownout_dig.$add$/home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/brownout_dig.v:104$22 ($add).
+Removed top 19 bits (of 32) from port Y of cell brownout_dig.$add$/home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/brownout_dig.v:104$22 ($add).
+Removed top 19 bits (of 32) from mux cell brownout_dig.$ternary$/home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/brownout_dig.v:104$23 ($mux).
+Removed top 1 bits (of 2) from port B of cell brownout_dig.$auto$opt_dff.cc:195:make_patterns_logic$44 ($ne).
+Removed top 19 bits (of 32) from mux cell brownout_dig.$ternary$/home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/brownout_dig.v:104$25 ($mux).
+Removed top 20 bits (of 32) from mux cell brownout_dig.$ternary$/home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/brownout_dig.v:104$26 ($mux).
+Removed top 1 bits (of 13) from mux cell brownout_dig.$ternary$/home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/brownout_dig.v:104$25 ($mux).
+Removed top 1 bits (of 13) from mux cell brownout_dig.$ternary$/home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/brownout_dig.v:104$23 ($mux).
+Removed top 1 bits (of 13) from port Y of cell brownout_dig.$add$/home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/brownout_dig.v:104$21 ($add).
+Removed top 1 bits (of 13) from port Y of cell brownout_dig.$add$/home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/brownout_dig.v:104$22 ($add).
+Removed top 20 bits (of 32) from wire brownout_dig.$add$/home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/brownout_dig.v:104$21_Y.
+Removed top 20 bits (of 32) from wire brownout_dig.$add$/home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/brownout_dig.v:104$22_Y.
+Removed top 20 bits (of 32) from wire brownout_dig.$ternary$/home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/brownout_dig.v:104$23_Y.
+Removed top 20 bits (of 32) from wire brownout_dig.$ternary$/home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/brownout_dig.v:104$25_Y.
+
+27. Executing PEEPOPT pass (run peephole optimizers).
+
+28. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \brownout_dig..
+Removed 0 unused cells and 6 unused wires.
+<suppressed ~1 debug messages>
+
+29. Executing ALUMACC pass (create $alu and $macc cells).
+Extracting $alu and $macc cells in module brownout_dig:
+  creating $macc model for $add$/home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/brownout_dig.v:104$21 ($add).
+  creating $macc model for $add$/home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/brownout_dig.v:104$22 ($add).
+  creating $alu model for $macc $add$/home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/brownout_dig.v:104$22.
+  creating $alu model for $macc $add$/home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/brownout_dig.v:104$21.
+  creating $alu cell for $add$/home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/brownout_dig.v:104$21: $auto$alumacc.cc:485:replace_alu$49
+  creating $alu cell for $add$/home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/brownout_dig.v:104$22: $auto$alumacc.cc:485:replace_alu$52
+  created 2 $alu and 0 $macc cells.
+
+30. Executing SHARE pass (SAT-based resource sharing).
+
+31. Executing OPT pass (performing simple optimizations).
+
+31.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module brownout_dig.
+
+31.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\brownout_dig'.
+Removed a total of 0 cells.
+
+31.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \brownout_dig..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~2 debug messages>
+
+31.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \brownout_dig.
+Performed a total of 0 changes.
+
+31.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\brownout_dig'.
+Removed a total of 0 cells.
+
+31.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+31.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \brownout_dig..
+
+31.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module brownout_dig.
+
+31.9. Finished OPT passes. (There is nothing left to do.)
+
+32. Executing MEMORY pass.
+
+32.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+32.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+32.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+32.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+32.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+Checking read port `$auto$proc_rom.cc:150:do_switch$28'[0] in module `\brownout_dig': no output FF found.
+Checking read port `$auto$proc_rom.cc:150:do_switch$32'[0] in module `\brownout_dig': no output FF found.
+Checking read port address `$auto$proc_rom.cc:150:do_switch$28'[0] in module `\brownout_dig': no address FF found.
+Checking read port address `$auto$proc_rom.cc:150:do_switch$32'[0] in module `\brownout_dig': no address FF found.
+
+32.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \brownout_dig..
+
+32.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+32.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+32.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \brownout_dig..
+
+32.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+33. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \brownout_dig..
+
+34. Executing OPT pass (performing simple optimizations).
+
+34.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module brownout_dig.
+<suppressed ~2 debug messages>
+
+34.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\brownout_dig'.
+Removed a total of 0 cells.
+
+34.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+34.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \brownout_dig..
+Removed 0 unused cells and 1 unused wires.
+<suppressed ~1 debug messages>
+
+34.5. Finished fast OPT passes.
+
+35. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+Mapping memory $auto$proc_rom.cc:150:do_switch$28 in module \brownout_dig:
+  created 8 $dff cells and 0 static cells of width 8.
+  read interface: 0 $dff and 7 $mux cells.
+  write interface: 0 write mux blocks.
+Mapping memory $auto$proc_rom.cc:150:do_switch$32 in module \brownout_dig:
+  created 8 $dff cells and 0 static cells of width 8.
+  read interface: 0 $dff and 7 $mux cells.
+  write interface: 0 write mux blocks.
+
+36. Executing OPT pass (performing simple optimizations).
+
+36.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module brownout_dig.
+
+36.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\brownout_dig'.
+Removed a total of 0 cells.
+
+36.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \brownout_dig..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~4 debug messages>
+
+36.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \brownout_dig.
+    Consolidated identical input bits for $mux cell $memory$auto$proc_rom.cc:150:do_switch$32$rdmux[0][2][2]$95:
+      Old ports: A=8'00010000, B=8'00100000, Y=$memory$auto$proc_rom.cc:150:do_switch$32$rdmux[0][1][1]$a$87
+      New ports: A=2'01, B=2'10, Y=$memory$auto$proc_rom.cc:150:do_switch$32$rdmux[0][1][1]$a$87 [5:4]
+      New connections: { $memory$auto$proc_rom.cc:150:do_switch$32$rdmux[0][1][1]$a$87 [7:6] $memory$auto$proc_rom.cc:150:do_switch$32$rdmux[0][1][1]$a$87 [3:0] } = 6'000000
+    Consolidated identical input bits for $mux cell $memory$auto$proc_rom.cc:150:do_switch$32$rdmux[0][2][1]$92:
+      Old ports: A=8'00000100, B=8'00001000, Y=$memory$auto$proc_rom.cc:150:do_switch$32$rdmux[0][1][0]$b$85
+      New ports: A=2'01, B=2'10, Y=$memory$auto$proc_rom.cc:150:do_switch$32$rdmux[0][1][0]$b$85 [3:2]
+      New connections: { $memory$auto$proc_rom.cc:150:do_switch$32$rdmux[0][1][0]$b$85 [7:4] $memory$auto$proc_rom.cc:150:do_switch$32$rdmux[0][1][0]$b$85 [1:0] } = 6'000000
+    Consolidated identical input bits for $mux cell $memory$auto$proc_rom.cc:150:do_switch$32$rdmux[0][2][0]$89:
+      Old ports: A=8'00000001, B=8'00000010, Y=$memory$auto$proc_rom.cc:150:do_switch$32$rdmux[0][1][0]$a$84
+      New ports: A=2'01, B=2'10, Y=$memory$auto$proc_rom.cc:150:do_switch$32$rdmux[0][1][0]$a$84 [1:0]
+      New connections: $memory$auto$proc_rom.cc:150:do_switch$32$rdmux[0][1][0]$a$84 [7:2] = 6'000000
+    Consolidated identical input bits for $mux cell $memory$auto$proc_rom.cc:150:do_switch$28$rdmux[0][2][2]$74:
+      Old ports: A=8'00010000, B=8'00100000, Y=$memory$auto$proc_rom.cc:150:do_switch$28$rdmux[0][1][1]$a$66
+      New ports: A=2'01, B=2'10, Y=$memory$auto$proc_rom.cc:150:do_switch$28$rdmux[0][1][1]$a$66 [5:4]
+      New connections: { $memory$auto$proc_rom.cc:150:do_switch$28$rdmux[0][1][1]$a$66 [7:6] $memory$auto$proc_rom.cc:150:do_switch$28$rdmux[0][1][1]$a$66 [3:0] } = 6'000000
+    Consolidated identical input bits for $mux cell $memory$auto$proc_rom.cc:150:do_switch$28$rdmux[0][2][1]$71:
+      Old ports: A=8'00000100, B=8'00001000, Y=$memory$auto$proc_rom.cc:150:do_switch$28$rdmux[0][1][0]$b$64
+      New ports: A=2'01, B=2'10, Y=$memory$auto$proc_rom.cc:150:do_switch$28$rdmux[0][1][0]$b$64 [3:2]
+      New connections: { $memory$auto$proc_rom.cc:150:do_switch$28$rdmux[0][1][0]$b$64 [7:4] $memory$auto$proc_rom.cc:150:do_switch$28$rdmux[0][1][0]$b$64 [1:0] } = 6'000000
+    Consolidated identical input bits for $mux cell $memory$auto$proc_rom.cc:150:do_switch$28$rdmux[0][2][0]$68:
+      Old ports: A=8'00000001, B=8'00000010, Y=$memory$auto$proc_rom.cc:150:do_switch$28$rdmux[0][1][0]$a$63
+      New ports: A=2'01, B=2'10, Y=$memory$auto$proc_rom.cc:150:do_switch$28$rdmux[0][1][0]$a$63 [1:0]
+      New connections: $memory$auto$proc_rom.cc:150:do_switch$28$rdmux[0][1][0]$a$63 [7:2] = 6'000000
+    Consolidated identical input bits for $mux cell $memory$auto$proc_rom.cc:150:do_switch$28$rdmux[0][2][3]$77:
+      Old ports: A=8'01000000, B=8'10000000, Y=$memory$auto$proc_rom.cc:150:do_switch$28$rdmux[0][1][1]$b$67
+      New ports: A=2'01, B=2'10, Y=$memory$auto$proc_rom.cc:150:do_switch$28$rdmux[0][1][1]$b$67 [7:6]
+      New connections: $memory$auto$proc_rom.cc:150:do_switch$28$rdmux[0][1][1]$b$67 [5:0] = 6'000000
+    Consolidated identical input bits for $mux cell $memory$auto$proc_rom.cc:150:do_switch$32$rdmux[0][2][3]$98:
+      Old ports: A=8'01000000, B=8'10000000, Y=$memory$auto$proc_rom.cc:150:do_switch$32$rdmux[0][1][1]$b$88
+      New ports: A=2'01, B=2'10, Y=$memory$auto$proc_rom.cc:150:do_switch$32$rdmux[0][1][1]$b$88 [7:6]
+      New connections: $memory$auto$proc_rom.cc:150:do_switch$32$rdmux[0][1][1]$b$88 [5:0] = 6'000000
+  Optimizing cells in module \brownout_dig.
+    Consolidated identical input bits for $mux cell $memory$auto$proc_rom.cc:150:do_switch$32$rdmux[0][1][1]$86:
+      Old ports: A=$memory$auto$proc_rom.cc:150:do_switch$32$rdmux[0][1][1]$a$87, B=$memory$auto$proc_rom.cc:150:do_switch$32$rdmux[0][1][1]$b$88, Y=$memory$auto$proc_rom.cc:150:do_switch$32$rdmux[0][0][0]$b$82
+      New ports: A={ 2'00 $memory$auto$proc_rom.cc:150:do_switch$32$rdmux[0][1][1]$a$87 [5:4] }, B={ $memory$auto$proc_rom.cc:150:do_switch$32$rdmux[0][1][1]$b$88 [7:6] 2'00 }, Y=$memory$auto$proc_rom.cc:150:do_switch$32$rdmux[0][0][0]$b$82 [7:4]
+      New connections: $memory$auto$proc_rom.cc:150:do_switch$32$rdmux[0][0][0]$b$82 [3:0] = 4'0000
+    Consolidated identical input bits for $mux cell $memory$auto$proc_rom.cc:150:do_switch$32$rdmux[0][1][0]$83:
+      Old ports: A=$memory$auto$proc_rom.cc:150:do_switch$32$rdmux[0][1][0]$a$84, B=$memory$auto$proc_rom.cc:150:do_switch$32$rdmux[0][1][0]$b$85, Y=$memory$auto$proc_rom.cc:150:do_switch$32$rdmux[0][0][0]$a$81
+      New ports: A={ 2'00 $memory$auto$proc_rom.cc:150:do_switch$32$rdmux[0][1][0]$a$84 [1:0] }, B={ $memory$auto$proc_rom.cc:150:do_switch$32$rdmux[0][1][0]$b$85 [3:2] 2'00 }, Y=$memory$auto$proc_rom.cc:150:do_switch$32$rdmux[0][0][0]$a$81 [3:0]
+      New connections: $memory$auto$proc_rom.cc:150:do_switch$32$rdmux[0][0][0]$a$81 [7:4] = 4'0000
+    Consolidated identical input bits for $mux cell $memory$auto$proc_rom.cc:150:do_switch$28$rdmux[0][1][1]$65:
+      Old ports: A=$memory$auto$proc_rom.cc:150:do_switch$28$rdmux[0][1][1]$a$66, B=$memory$auto$proc_rom.cc:150:do_switch$28$rdmux[0][1][1]$b$67, Y=$memory$auto$proc_rom.cc:150:do_switch$28$rdmux[0][0][0]$b$61
+      New ports: A={ 2'00 $memory$auto$proc_rom.cc:150:do_switch$28$rdmux[0][1][1]$a$66 [5:4] }, B={ $memory$auto$proc_rom.cc:150:do_switch$28$rdmux[0][1][1]$b$67 [7:6] 2'00 }, Y=$memory$auto$proc_rom.cc:150:do_switch$28$rdmux[0][0][0]$b$61 [7:4]
+      New connections: $memory$auto$proc_rom.cc:150:do_switch$28$rdmux[0][0][0]$b$61 [3:0] = 4'0000
+    Consolidated identical input bits for $mux cell $memory$auto$proc_rom.cc:150:do_switch$28$rdmux[0][1][0]$62:
+      Old ports: A=$memory$auto$proc_rom.cc:150:do_switch$28$rdmux[0][1][0]$a$63, B=$memory$auto$proc_rom.cc:150:do_switch$28$rdmux[0][1][0]$b$64, Y=$memory$auto$proc_rom.cc:150:do_switch$28$rdmux[0][0][0]$a$60
+      New ports: A={ 2'00 $memory$auto$proc_rom.cc:150:do_switch$28$rdmux[0][1][0]$a$63 [1:0] }, B={ $memory$auto$proc_rom.cc:150:do_switch$28$rdmux[0][1][0]$b$64 [3:2] 2'00 }, Y=$memory$auto$proc_rom.cc:150:do_switch$28$rdmux[0][0][0]$a$60 [3:0]
+      New connections: $memory$auto$proc_rom.cc:150:do_switch$28$rdmux[0][0][0]$a$60 [7:4] = 4'0000
+  Optimizing cells in module \brownout_dig.
+Performed a total of 12 changes.
+
+36.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\brownout_dig'.
+<suppressed ~24 debug messages>
+Removed a total of 8 cells.
+
+36.6. Executing OPT_SHARE pass.
+
+36.7. Executing OPT_DFF pass (perform DFF optimizations).
+
+36.8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \brownout_dig..
+Removed 0 unused cells and 24 unused wires.
+<suppressed ~1 debug messages>
+
+36.9. Executing OPT_EXPR pass (perform const folding).
+Optimizing module brownout_dig.
+
+36.10. Rerunning OPT passes. (Maybe there is more to do..)
+
+36.11. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \brownout_dig..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~4 debug messages>
+
+36.12. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \brownout_dig.
+Performed a total of 0 changes.
+
+36.13. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\brownout_dig'.
+Removed a total of 0 cells.
+
+36.14. Executing OPT_SHARE pass.
+
+36.15. Executing OPT_DFF pass (perform DFF optimizations).
+
+36.16. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \brownout_dig..
+
+36.17. Executing OPT_EXPR pass (perform const folding).
+Optimizing module brownout_dig.
+
+36.18. Finished OPT passes. (There is nothing left to do.)
+
+37. Executing TECHMAP pass (map to technology primitives).
+
+37.1. Executing Verilog-2005 frontend: /nix/store/vn1kmwhr52wisnfkmn6fk9g15p3klzs0-yosys/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/nix/store/vn1kmwhr52wisnfkmn6fk9g15p3klzs0-yosys/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+37.2. Continuing TECHMAP pass.
+Using extmapper simplemap for cells of type $mux.
+Using extmapper simplemap for cells of type $logic_not.
+Using extmapper simplemap for cells of type $or.
+Using extmapper simplemap for cells of type $and.
+Using extmapper simplemap for cells of type $eq.
+Using template $paramod$8f780356cb6cdb52f6a744190131b65634639c4e\_90_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $ne.
+Using template $paramod$3ef7d3dd227da7627a99c5e5a6a4deb817573e39\_90_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $adffe.
+Using extmapper simplemap for cells of type $adff.
+Using extmapper simplemap for cells of type $xor.
+Using template $paramod\_90_lcu\WIDTH=32'00000000000000000000000000001100 for cells of type $lcu.
+Using extmapper simplemap for cells of type $pos.
+Using extmapper simplemap for cells of type $not.
+Using template $paramod\_90_lcu\WIDTH=32'00000000000000000000000000000011 for cells of type $lcu.
+No more expansions possible.
+<suppressed ~428 debug messages>
+
+38. Executing OPT pass (performing simple optimizations).
+
+38.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module brownout_dig.
+<suppressed ~97 debug messages>
+
+38.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\brownout_dig'.
+<suppressed ~51 debug messages>
+Removed a total of 17 cells.
+
+38.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+38.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \brownout_dig..
+Removed 4 unused cells and 90 unused wires.
+<suppressed ~5 debug messages>
+
+38.5. Finished fast OPT passes.
+
+39. Executing ABC pass (technology mapping using ABC).
+
+39.1. Extracting gate netlist of module `\brownout_dig' to `<abc-temp-dir>/input.blif'..
+Extracted 112 gates and 139 wires to a netlist network with 25 inputs and 33 outputs.
+
+39.1.1. Executing ABC.
+Running ABC command: "/nix/store/5bgsgwzww9f2z7wl7kga42xrf1vpmnql-yosys-abc/bin/abc" -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 13 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + strash 
+ABC: + dretime 
+ABC: + map 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+39.1.2. Re-integrating ABC results.
+ABC RESULTS:               NOR cells:        1
+ABC RESULTS:              NAND cells:        8
+ABC RESULTS:             ORNOT cells:        5
+ABC RESULTS:              XNOR cells:        5
+ABC RESULTS:               NOT cells:        6
+ABC RESULTS:               XOR cells:        8
+ABC RESULTS:               MUX cells:        3
+ABC RESULTS:            ANDNOT cells:       44
+ABC RESULTS:                OR cells:       11
+ABC RESULTS:               AND cells:        2
+ABC RESULTS:        internal signals:       81
+ABC RESULTS:           input signals:       25
+ABC RESULTS:          output signals:       33
+Removing temp directory.
+
+40. Executing OPT pass (performing simple optimizations).
+
+40.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module brownout_dig.
+<suppressed ~2 debug messages>
+
+40.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\brownout_dig'.
+Removed a total of 0 cells.
+
+40.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+40.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \brownout_dig..
+Removed 0 unused cells and 93 unused wires.
+<suppressed ~1 debug messages>
+
+40.5. Finished fast OPT passes.
+
+41. Executing HIERARCHY pass (managing design hierarchy).
+
+41.1. Analyzing design hierarchy..
+Top module:  \brownout_dig
+
+41.2. Analyzing design hierarchy..
+Top module:  \brownout_dig
+Removed 0 unused modules.
+
+42. Printing statistics.
+
+=== brownout_dig ===
+
+   Number of wires:                 82
+   Number of wire bits:            122
+   Number of public wires:          20
+   Number of public wire bits:      49
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                109
+     $_ANDNOT_                      44
+     $_AND_                          2
+     $_DFFE_PN1P_                   12
+     $_DFF_PN0_                      1
+     $_DFF_PN1_                      1
+     $_DFF_PP0_                      2
+     $_MUX_                          3
+     $_NAND_                         8
+     $_NOR_                          1
+     $_NOT_                          6
+     $_ORNOT_                        5
+     $_OR_                          11
+     $_XNOR_                         5
+     $_XOR_                          8
+
+43. Executing CHECK pass (checking for obvious problems).
+Checking module brownout_dig...
+Found and reported 0 problems.
+
+44. Generating Graphviz representation of design.
+Writing dot description to `/home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/runs/RUN_2024-04-11_23-19-37/06-yosys-synthesis/post_techmap.dot'.
+Dumping module brownout_dig to page 1.
+
+45. Executing SHARE pass (SAT-based resource sharing).
+
+46. Executing OPT pass (performing simple optimizations).
+
+46.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module brownout_dig.
+
+46.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\brownout_dig'.
+Removed a total of 0 cells.
+
+46.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \brownout_dig..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+46.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \brownout_dig.
+Performed a total of 0 changes.
+
+46.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\brownout_dig'.
+Removed a total of 0 cells.
+
+46.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+46.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \brownout_dig..
+
+46.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module brownout_dig.
+
+46.9. Finished OPT passes. (There is nothing left to do.)
+
+47. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \brownout_dig..
+{
+   "creator": "Yosys 0.38 (git sha1 543faed9c8c, clang++ 16.0.6 -fPIC -Os)",
+   "invocation": "stat -json -liberty /home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/runs/RUN_2024-04-11_23-19-37/tmp/cf69170abd3b458a95bee2083ab8035e.lib ",
+   "modules": {
+      "\\brownout_dig": {
+         "num_wires":         82,
+         "num_wire_bits":     122,
+         "num_pub_wires":     20,
+         "num_pub_wire_bits": 49,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         109,
+         "num_cells_by_type": {
+            "$_ANDNOT_": 44,
+            "$_AND_": 2,
+            "$_DFFE_PN1P_": 12,
+            "$_DFF_PN0_": 1,
+            "$_DFF_PN1_": 1,
+            "$_DFF_PP0_": 2,
+            "$_MUX_": 3,
+            "$_NAND_": 8,
+            "$_NOR_": 1,
+            "$_NOT_": 6,
+            "$_ORNOT_": 5,
+            "$_OR_": 11,
+            "$_XNOR_": 5,
+            "$_XOR_": 8
+         }
+      }
+   },
+      "design": {
+         "num_wires":         82,
+         "num_wire_bits":     122,
+         "num_pub_wires":     20,
+         "num_pub_wire_bits": 49,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         109,
+         "num_cells_by_type": {
+            "$_ANDNOT_": 44,
+            "$_AND_": 2,
+            "$_DFFE_PN1P_": 12,
+            "$_DFF_PN0_": 1,
+            "$_DFF_PN1_": 1,
+            "$_DFF_PP0_": 2,
+            "$_MUX_": 3,
+            "$_NAND_": 8,
+            "$_NOR_": 1,
+            "$_NOT_": 6,
+            "$_ORNOT_": 5,
+            "$_OR_": 11,
+            "$_XNOR_": 5,
+            "$_XOR_": 8
+         }
+      }
+}
+
+48. Printing statistics.
+
+=== brownout_dig ===
+
+   Number of wires:                 82
+   Number of wire bits:            122
+   Number of public wires:          20
+   Number of public wire bits:      49
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                109
+     $_ANDNOT_                      44
+     $_AND_                          2
+     $_DFFE_PN1P_                   12
+     $_DFF_PN0_                      1
+     $_DFF_PN1_                      1
+     $_DFF_PP0_                      2
+     $_MUX_                          3
+     $_NAND_                         8
+     $_NOR_                          1
+     $_NOT_                          6
+     $_ORNOT_                        5
+     $_OR_                          11
+     $_XNOR_                         5
+     $_XOR_                          8
+
+   Area for cell type $_NOT_ is unknown!
+   Area for cell type $_AND_ is unknown!
+   Area for cell type $_NAND_ is unknown!
+   Area for cell type $_OR_ is unknown!
+   Area for cell type $_NOR_ is unknown!
+   Area for cell type $_XOR_ is unknown!
+   Area for cell type $_XNOR_ is unknown!
+   Area for cell type $_ANDNOT_ is unknown!
+   Area for cell type $_ORNOT_ is unknown!
+   Area for cell type $_MUX_ is unknown!
+   Area for cell type $_DFF_PN0_ is unknown!
+   Area for cell type $_DFF_PN1_ is unknown!
+   Area for cell type $_DFF_PP0_ is unknown!
+   Area for cell type $_DFFE_PN1P_ is unknown!
+
+mapping tbuf
+[INFO] Applying tri-state buffer mapping from '/home/rtsang/.volare/volare/sky130/versions/bdc9412b3e468c102d01b7cf6337be06ec6e9c9a/sky130A/libs.tech/openlane/sky130_fd_sc_hd/tribuff_map.v'â¦
+
+49. Executing TECHMAP pass (map to technology primitives).
+
+49.1. Executing Verilog-2005 frontend: /home/rtsang/.volare/volare/sky130/versions/bdc9412b3e468c102d01b7cf6337be06ec6e9c9a/sky130A/libs.tech/openlane/sky130_fd_sc_hd/tribuff_map.v
+Parsing Verilog input from `/home/rtsang/.volare/volare/sky130/versions/bdc9412b3e468c102d01b7cf6337be06ec6e9c9a/sky130A/libs.tech/openlane/sky130_fd_sc_hd/tribuff_map.v' to AST representation.
+Generating RTLIL representation for module `\$_TBUF_'.
+Successfully finished Verilog frontend.
+
+49.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~3 debug messages>
+
+50. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+[INFO] Applying latch mapping from '/home/rtsang/.volare/volare/sky130/versions/bdc9412b3e468c102d01b7cf6337be06ec6e9c9a/sky130A/libs.tech/openlane/sky130_fd_sc_hd/latch_map.v'â¦
+
+51. Executing TECHMAP pass (map to technology primitives).
+
+51.1. Executing Verilog-2005 frontend: /home/rtsang/.volare/volare/sky130/versions/bdc9412b3e468c102d01b7cf6337be06ec6e9c9a/sky130A/libs.tech/openlane/sky130_fd_sc_hd/latch_map.v
+Parsing Verilog input from `/home/rtsang/.volare/volare/sky130/versions/bdc9412b3e468c102d01b7cf6337be06ec6e9c9a/sky130A/libs.tech/openlane/sky130_fd_sc_hd/latch_map.v' to AST representation.
+Generating RTLIL representation for module `\$_DLATCH_P_'.
+Generating RTLIL representation for module `\$_DLATCH_N_'.
+Successfully finished Verilog frontend.
+
+51.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~4 debug messages>
+
+52. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+
+53. Executing DFFLIBMAP pass (mapping DFF cells to sequential cells from liberty file).
+  cell sky130_fd_sc_hd__dfxtp_2 (noninv, pins=3, area=21.27) is a direct match for cell type $_DFF_P_.
+  cell sky130_fd_sc_hd__dfrtp_2 (noninv, pins=4, area=26.28) is a direct match for cell type $_DFF_PN0_.
+  cell sky130_fd_sc_hd__dfstp_2 (noninv, pins=4, area=26.28) is a direct match for cell type $_DFF_PN1_.
+  cell sky130_fd_sc_hd__dfbbn_2 (noninv, pins=6, area=35.03) is a direct match for cell type $_DFFSR_NNN_.
+  final dff cell mappings:
+    unmapped dff cell: $_DFF_N_
+    \sky130_fd_sc_hd__dfxtp_2 _DFF_P_ (.CLK( C), .D( D), .Q( Q));
+    unmapped dff cell: $_DFF_NN0_
+    unmapped dff cell: $_DFF_NN1_
+    unmapped dff cell: $_DFF_NP0_
+    unmapped dff cell: $_DFF_NP1_
+    \sky130_fd_sc_hd__dfrtp_2 _DFF_PN0_ (.CLK( C), .D( D), .Q( Q), .RESET_B( R));
+    \sky130_fd_sc_hd__dfstp_2 _DFF_PN1_ (.CLK( C), .D( D), .Q( Q), .SET_B( R));
+    unmapped dff cell: $_DFF_PP0_
+    unmapped dff cell: $_DFF_PP1_
+    \sky130_fd_sc_hd__dfbbn_2 _DFFSR_NNN_ (.CLK_N( C), .D( D), .Q( Q), .Q_N(~Q), .RESET_B( R), .SET_B( S));
+    unmapped dff cell: $_DFFSR_NNP_
+    unmapped dff cell: $_DFFSR_NPN_
+    unmapped dff cell: $_DFFSR_NPP_
+    unmapped dff cell: $_DFFSR_PNN_
+    unmapped dff cell: $_DFFSR_PNP_
+    unmapped dff cell: $_DFFSR_PPN_
+    unmapped dff cell: $_DFFSR_PPP_
+
+53.1. Executing DFFLEGALIZE pass (convert FFs to types supported by the target).
+Mapping DFF cells in module `\brownout_dig':
+  mapped 3 $_DFF_PN0_ cells to \sky130_fd_sc_hd__dfrtp_2 cells.
+  mapped 13 $_DFF_PN1_ cells to \sky130_fd_sc_hd__dfstp_2 cells.
+{
+   "creator": "Yosys 0.38 (git sha1 543faed9c8c, clang++ 16.0.6 -fPIC -Os)",
+   "invocation": "stat -json -liberty /home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/runs/RUN_2024-04-11_23-19-37/tmp/cf69170abd3b458a95bee2083ab8035e.lib ",
+   "modules": {
+      "\\brownout_dig": {
+         "num_wires":         96,
+         "num_wire_bits":     136,
+         "num_pub_wires":     20,
+         "num_pub_wire_bits": 49,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         123,
+         "area":              420.403200,
+         "num_cells_by_type": {
+            "$_ANDNOT_": 44,
+            "$_AND_": 2,
+            "$_MUX_": 15,
+            "$_NAND_": 8,
+            "$_NOR_": 1,
+            "$_NOT_": 8,
+            "$_ORNOT_": 5,
+            "$_OR_": 11,
+            "$_XNOR_": 5,
+            "$_XOR_": 8,
+            "sky130_fd_sc_hd__dfrtp_2": 3,
+            "sky130_fd_sc_hd__dfstp_2": 13
+         }
+      }
+   },
+      "design": {
+         "num_wires":         96,
+         "num_wire_bits":     136,
+         "num_pub_wires":     20,
+         "num_pub_wire_bits": 49,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         123,
+         "area":              420.403200,
+         "num_cells_by_type": {
+            "$_ANDNOT_": 44,
+            "$_AND_": 2,
+            "$_MUX_": 15,
+            "$_NAND_": 8,
+            "$_NOR_": 1,
+            "$_NOT_": 8,
+            "$_ORNOT_": 5,
+            "$_OR_": 11,
+            "$_XNOR_": 5,
+            "$_XOR_": 8,
+            "sky130_fd_sc_hd__dfrtp_2": 3,
+            "sky130_fd_sc_hd__dfstp_2": 13
+         }
+      }
+}
+
+54. Printing statistics.
+
+=== brownout_dig ===
+
+   Number of wires:                 96
+   Number of wire bits:            136
+   Number of public wires:          20
+   Number of public wire bits:      49
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                123
+     $_ANDNOT_                      44
+     $_AND_                          2
+     $_MUX_                         15
+     $_NAND_                         8
+     $_NOR_                          1
+     $_NOT_                          8
+     $_ORNOT_                        5
+     $_OR_                          11
+     $_XNOR_                         5
+     $_XOR_                          8
+     sky130_fd_sc_hd__dfrtp_2        3
+     sky130_fd_sc_hd__dfstp_2       13
+
+   Area for cell type $_NOT_ is unknown!
+   Area for cell type $_AND_ is unknown!
+   Area for cell type $_NAND_ is unknown!
+   Area for cell type $_OR_ is unknown!
+   Area for cell type $_NOR_ is unknown!
+   Area for cell type $_XOR_ is unknown!
+   Area for cell type $_XNOR_ is unknown!
+   Area for cell type $_ANDNOT_ is unknown!
+   Area for cell type $_ORNOT_ is unknown!
+   Area for cell type $_MUX_ is unknown!
+
+   Chip area for module '\brownout_dig': 420.403200
+
+[INFO] USING STRATEGY AREA 0
+
+55. Executing ABC pass (technology mapping using ABC).
+
+55.1. Extracting gate netlist of module `\brownout_dig' to `/run/user/1000/yosys-abc-KtwUo1/input.blif'..
+Extracted 107 gates and 133 wires to a netlist network with 26 inputs and 34 outputs.
+
+55.1.1. Executing ABC.
+Running ABC command: "/nix/store/5bgsgwzww9f2z7wl7kga42xrf1vpmnql-yosys-abc/bin/abc" -s -f /run/user/1000/yosys-abc-KtwUo1/abc.script 2>&1
+ABC: ABC command line: "source /run/user/1000/yosys-abc-KtwUo1/abc.script".
+ABC: 
+ABC: + read_blif /run/user/1000/yosys-abc-KtwUo1/input.blif 
+ABC: + read_lib -w /home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/runs/RUN_2024-04-11_23-19-37/tmp/cf69170abd3b458a95bee2083ab8035e.lib 
+ABC: Parsing finished successfully.  Parsing time =     0.07 sec
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfbbn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfsbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfstp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfstp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxtp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtp_1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_2".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_4".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_8".
+ABC: Library "sky130_fd_sc_hd__tt_025C_1v80" from "/home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/runs/RUN_2024-04-11_23-19-37/tmp/cf69170abd3b458a95bee2083ab8035e.lib" has 175 cells (17 skipped: 14 seq; 3 tri-state; 0 no func; 0 dont_use).  Time =     0.12 sec
+ABC: Memory =    9.54 MB. Time =     0.12 sec
+ABC: Warning: Detected 2 multi-output gates (for example, "sky130_fd_sc_hd__fa_1").
+ABC: + read_constr -v /home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/runs/RUN_2024-04-11_23-19-37/06-yosys-synthesis/synthesis.sdc 
+ABC: Setting driving cell to be "sky130_fd_sc_hd__inv_2/Y".
+ABC: Setting output load to be 33.442001.
+ABC: + read_constr /home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/runs/RUN_2024-04-11_23-19-37/06-yosys-synthesis/synthesis.sdc 
+ABC: + fx 
+ABC: + mfs 
+ABC: + strash 
+ABC: + drf -l 
+ABC: + balance 
+ABC: + drw -l 
+ABC: + drf -l 
+ABC: + balance 
+ABC: + drw -l 
+ABC: + drw -l -z 
+ABC: + balance 
+ABC: + drf -l -z 
+ABC: + drw -l -z 
+ABC: + balance 
+ABC: + retime -D -D 1000000 -M 5 
+ABC: + scleanup 
+ABC: Error: The network is combinational.
+ABC: + fraig_store 
+ABC: + balance 
+ABC: + fraig_store 
+ABC: + balance 
+ABC: + drw -l 
+ABC: + drf -l 
+ABC: + balance 
+ABC: + drw -l 
+ABC: + drw -l -z 
+ABC: + balance 
+ABC: + drf -l -z 
+ABC: + drw -l -z 
+ABC: + balance 
+ABC: + fraig_store 
+ABC: + balance 
+ABC: + drw -l 
+ABC: + drf -l 
+ABC: + balance 
+ABC: + drw -l 
+ABC: + drw -l -z 
+ABC: + balance 
+ABC: + drf -l -z 
+ABC: + drw -l -z 
+ABC: + balance 
+ABC: + fraig_store 
+ABC: + balance 
+ABC: + drw -l 
+ABC: + drf -l 
+ABC: + balance 
+ABC: + drw -l 
+ABC: + drw -l -z 
+ABC: + balance 
+ABC: + drf -l -z 
+ABC: + drw -l -z 
+ABC: + balance 
+ABC: + fraig_store 
+ABC: + fraig_restore 
+ABC: + amap -m -Q 0.1 -F 20 -A 20 -C 5000 
+ABC: + retime -D -D 1000000 
+ABC: + &get -n 
+ABC: + &st 
+ABC: + &dch 
+ABC: + &nf 
+ABC: + &put 
+ABC: + 
+ABC: + stime -p 
+ABC: Cannot find the default PI driving cell (sky130_fd_sc_hd__inv_2/Y) in the library.
+ABC: WireLoad = "none"  Gates =     63 (  6.3 %)   Cap = 18.9 ff (  1.6 %)   Area =      584.31 ( 92.1 %)   Delay =  1718.65 ps  (  9.5 %)               
+ABC: Path  0 --       4 : 0    3 pi                      A =   0.00  Df =   0.0   -0.0 ps  S =   0.0 ps  Cin =  0.0 ff  Cout =  13.5 ff  Cmax =   0.0 ff  G =    0  
+ABC: Path  1 --      65 : 4    5 sky130_fd_sc_hd__and4_2 A =  10.01  Df = 245.5  -11.0 ps  S =  95.6 ps  Cin =  1.5 ff  Cout =  11.8 ff  Cmax = 300.3 ff  G =  736  
+ABC: Path  2 --      69 : 4    3 sky130_fd_sc_hd__and4_2 A =  10.01  Df = 514.5  -25.7 ps  S =  98.6 ps  Cin =  1.5 ff  Cout =  12.4 ff  Cmax = 300.3 ff  G =  796  
+ABC: Path  3 --      71 : 4    7 sky130_fd_sc_hd__and4_2 A =  10.01  Df = 923.4 -103.6 ps  S = 267.7 ps  Cin =  1.5 ff  Cout =  48.9 ff  Cmax = 300.3 ff  G = 3165  
+ABC: Path  4 --      89 : 3    1 sky130_fd_sc_hd__or3b_2 A =   8.76  Df =1386.2 -346.8 ps  S =  73.5 ps  Cin =  1.5 ff  Cout =   2.5 ff  Cmax = 269.2 ff  G =  157  
+ABC: Path  5 --      90 : 4    1 sky130_fd_sc_hd__a31o_2 A =   8.76  Df =1718.6 -415.2 ps  S = 198.9 ps  Cin =  2.4 ff  Cout =  33.4 ff  Cmax = 271.9 ff  G = 1420  
+ABC: Start-point = pi3 (\cnt [2]).  End-point = po18 (\osc_ena).
+ABC: + print_stats -m 
+ABC: netlist                       : i/o =   26/   34  lat =    0  nd =    63  edge =    170  area =584.39  delay = 5.00  lev = 5
+ABC: + write_blif /run/user/1000/yosys-abc-KtwUo1/output.blif 
+
+55.1.2. Re-integrating ABC results.
+ABC RESULTS:   sky130_fd_sc_hd__and4_2 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__and2b_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__nor3_2 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__nor3b_2 cells:        6
+ABC RESULTS:   sky130_fd_sc_hd__and3_2 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__or3b_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__and2_2 cells:        4
+ABC RESULTS:   sky130_fd_sc_hd__nand2b_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__nor2_2 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__or2_2 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__a31o_2 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__nand2_2 cells:        4
+ABC RESULTS:   sky130_fd_sc_hd__xnor2_2 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__xor2_2 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__o21a_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__a21o_2 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__a21oi_2 cells:       10
+ABC RESULTS:   sky130_fd_sc_hd__a22o_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__and3b_2 cells:        7
+ABC RESULTS:   sky130_fd_sc_hd__a21boi_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__o31a_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__inv_2 cells:        4
+ABC RESULTS:        internal signals:       73
+ABC RESULTS:           input signals:       26
+ABC RESULTS:          output signals:       34
+Removing temp directory.
+
+56. Executing SETUNDEF pass (replace undef values with defined constants).
+
+57. Executing HILOMAP pass (mapping to constant drivers).
+Warning: Selection "sky130_fd_sc_hd__conb_1" did not match any module.
+Warning: Selection "LO" did not match any object.
+
+58. Executing SPLITNETS pass (splitting up multi-bit signals).
+
+59. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \brownout_dig..
+Removed 0 unused cells and 133 unused wires.
+<suppressed ~1 debug messages>
+
+60. Executing INSBUF pass (insert buffer cells for connected wires).
+
+61. Executing CHECK pass (checking for obvious problems).
+Checking module brownout_dig...
+Found and reported 0 problems.
+{
+   "creator": "Yosys 0.38 (git sha1 543faed9c8c, clang++ 16.0.6 -fPIC -Os)",
+   "invocation": "stat -json -liberty /home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/runs/RUN_2024-04-11_23-19-37/tmp/cf69170abd3b458a95bee2083ab8035e.lib ",
+   "modules": {
+      "\\brownout_dig": {
+         "num_wires":         74,
+         "num_wire_bits":     92,
+         "num_pub_wires":     31,
+         "num_pub_wire_bits": 49,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         79,
+         "area":              1004.713600,
+         "num_cells_by_type": {
+            "sky130_fd_sc_hd__a21boi_2": 1,
+            "sky130_fd_sc_hd__a21o_2": 2,
+            "sky130_fd_sc_hd__a21oi_2": 10,
+            "sky130_fd_sc_hd__a22o_2": 1,
+            "sky130_fd_sc_hd__a31o_2": 3,
+            "sky130_fd_sc_hd__and2_2": 4,
+            "sky130_fd_sc_hd__and2b_2": 1,
+            "sky130_fd_sc_hd__and3_2": 2,
+            "sky130_fd_sc_hd__and3b_2": 7,
+            "sky130_fd_sc_hd__and4_2": 3,
+            "sky130_fd_sc_hd__dfrtp_2": 3,
+            "sky130_fd_sc_hd__dfstp_2": 13,
+            "sky130_fd_sc_hd__inv_2": 4,
+            "sky130_fd_sc_hd__nand2_2": 4,
+            "sky130_fd_sc_hd__nand2b_2": 1,
+            "sky130_fd_sc_hd__nor2_2": 2,
+            "sky130_fd_sc_hd__nor3_2": 2,
+            "sky130_fd_sc_hd__nor3b_2": 6,
+            "sky130_fd_sc_hd__o21a_2": 1,
+            "sky130_fd_sc_hd__o31a_2": 1,
+            "sky130_fd_sc_hd__or2_2": 2,
+            "sky130_fd_sc_hd__or3b_2": 1,
+            "sky130_fd_sc_hd__xnor2_2": 2,
+            "sky130_fd_sc_hd__xor2_2": 3
+         }
+      }
+   },
+      "design": {
+         "num_wires":         74,
+         "num_wire_bits":     92,
+         "num_pub_wires":     31,
+         "num_pub_wire_bits": 49,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         79,
+         "area":              1004.713600,
+         "num_cells_by_type": {
+            "sky130_fd_sc_hd__a21boi_2": 1,
+            "sky130_fd_sc_hd__a21o_2": 2,
+            "sky130_fd_sc_hd__a21oi_2": 10,
+            "sky130_fd_sc_hd__a22o_2": 1,
+            "sky130_fd_sc_hd__a31o_2": 3,
+            "sky130_fd_sc_hd__and2_2": 4,
+            "sky130_fd_sc_hd__and2b_2": 1,
+            "sky130_fd_sc_hd__and3_2": 2,
+            "sky130_fd_sc_hd__and3b_2": 7,
+            "sky130_fd_sc_hd__and4_2": 3,
+            "sky130_fd_sc_hd__dfrtp_2": 3,
+            "sky130_fd_sc_hd__dfstp_2": 13,
+            "sky130_fd_sc_hd__inv_2": 4,
+            "sky130_fd_sc_hd__nand2_2": 4,
+            "sky130_fd_sc_hd__nand2b_2": 1,
+            "sky130_fd_sc_hd__nor2_2": 2,
+            "sky130_fd_sc_hd__nor3_2": 2,
+            "sky130_fd_sc_hd__nor3b_2": 6,
+            "sky130_fd_sc_hd__o21a_2": 1,
+            "sky130_fd_sc_hd__o31a_2": 1,
+            "sky130_fd_sc_hd__or2_2": 2,
+            "sky130_fd_sc_hd__or3b_2": 1,
+            "sky130_fd_sc_hd__xnor2_2": 2,
+            "sky130_fd_sc_hd__xor2_2": 3
+         }
+      }
+}
+
+62. Printing statistics.
+
+=== brownout_dig ===
+
+   Number of wires:                 74
+   Number of wire bits:             92
+   Number of public wires:          31
+   Number of public wire bits:      49
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 79
+     sky130_fd_sc_hd__a21boi_2       1
+     sky130_fd_sc_hd__a21o_2         2
+     sky130_fd_sc_hd__a21oi_2       10
+     sky130_fd_sc_hd__a22o_2         1
+     sky130_fd_sc_hd__a31o_2         3
+     sky130_fd_sc_hd__and2_2         4
+     sky130_fd_sc_hd__and2b_2        1
+     sky130_fd_sc_hd__and3_2         2
+     sky130_fd_sc_hd__and3b_2        7
+     sky130_fd_sc_hd__and4_2         3
+     sky130_fd_sc_hd__dfrtp_2        3
+     sky130_fd_sc_hd__dfstp_2       13
+     sky130_fd_sc_hd__inv_2          4
+     sky130_fd_sc_hd__nand2_2        4
+     sky130_fd_sc_hd__nand2b_2       1
+     sky130_fd_sc_hd__nor2_2         2
+     sky130_fd_sc_hd__nor3_2         2
+     sky130_fd_sc_hd__nor3b_2        6
+     sky130_fd_sc_hd__o21a_2         1
+     sky130_fd_sc_hd__o31a_2         1
+     sky130_fd_sc_hd__or2_2          2
+     sky130_fd_sc_hd__or3b_2         1
+     sky130_fd_sc_hd__xnor2_2        2
+     sky130_fd_sc_hd__xor2_2         3
+
+   Chip area for module '\brownout_dig': 1004.713600
+
+63. Executing Verilog backend.
+Dumping module `\brownout_dig'.
+
+64. Executing JSON backend.
+
+Warnings: 2 unique messages, 2 total
+End of script. Logfile hash: a0d3eb7645, CPU: user 1.51s system 0.02s, MEM: 55.00 MB peak
+Yosys 0.38 (git sha1 543faed9c8c, clang++ 16.0.6 -fPIC -Os)
+Time spent: 37% 7x stat (0 sec), 20% 2x read_liberty (0 sec), ...

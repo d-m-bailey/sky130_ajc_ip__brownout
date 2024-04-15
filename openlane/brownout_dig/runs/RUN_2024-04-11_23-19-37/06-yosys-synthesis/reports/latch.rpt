@@ -1,0 +1,4 @@
+
+14. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\brownout_dig.\vtrip_decoded' from process `\brownout_dig.$proc$/home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/brownout_dig.v:45$2'.
+No latch inferred for signal `\brownout_dig.\otrip_decoded' from process `\brownout_dig.$proc$/home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/brownout_dig.v:32$1'.

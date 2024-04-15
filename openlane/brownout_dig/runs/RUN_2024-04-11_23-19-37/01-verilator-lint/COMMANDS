@@ -1,0 +1,1 @@
+verilator --lint-only --Wall --Wno-DECLFILENAME --Wno-EOFNEWLINE --top-module brownout_dig /home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/runs/RUN_2024-04-11_23-19-37/01-verilator-lint/bb.v /home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/brownout_dig.v --Wno-fatal --relative-includes --Werror-LATCH

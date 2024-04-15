@@ -1,0 +1,46 @@
+Reading technology LEF file at '/home/rtsang/.volare/volare/sky130/versions/bdc9412b3e468c102d01b7cf6337be06ec6e9c9a/sky130A/libs.ref/sky130_fd_sc_hd/techlef/sky130_fd_sc_hd__nom.tlef'…
+[INFO ODB-0222] Reading LEF file: /home/rtsang/.volare/volare/sky130/versions/bdc9412b3e468c102d01b7cf6337be06ec6e9c9a/sky130A/libs.ref/sky130_fd_sc_hd/techlef/sky130_fd_sc_hd__nom.tlef
+[INFO ODB-0223]     Created 13 technology layers
+[INFO ODB-0224]     Created 25 technology vias
+[INFO ODB-0226] Finished LEF file:  /home/rtsang/.volare/volare/sky130/versions/bdc9412b3e468c102d01b7cf6337be06ec6e9c9a/sky130A/libs.ref/sky130_fd_sc_hd/techlef/sky130_fd_sc_hd__nom.tlef
+Reading cell LEF file at '/home/rtsang/.volare/volare/sky130/versions/bdc9412b3e468c102d01b7cf6337be06ec6e9c9a/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_ef_sc_hd.lef'…
+[INFO ODB-0222] Reading LEF file: /home/rtsang/.volare/volare/sky130/versions/bdc9412b3e468c102d01b7cf6337be06ec6e9c9a/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_ef_sc_hd.lef
+[WARNING ODB-0220] WARNING (LEFPARS-2008): NOWIREEXTENSIONATPIN statement is obsolete in version 5.6 or later.
+The NOWIREEXTENSIONATPIN statement will be ignored. See file /home/rtsang/.volare/volare/sky130/versions/bdc9412b3e468c102d01b7cf6337be06ec6e9c9a/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_ef_sc_hd.lef at line 2.
+
+[INFO ODB-0225]     Created 4 library cells
+[INFO ODB-0226] Finished LEF file:  /home/rtsang/.volare/volare/sky130/versions/bdc9412b3e468c102d01b7cf6337be06ec6e9c9a/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_ef_sc_hd.lef
+Reading cell LEF file at '/home/rtsang/.volare/volare/sky130/versions/bdc9412b3e468c102d01b7cf6337be06ec6e9c9a/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_fd_sc_hd.lef'…
+[INFO ODB-0222] Reading LEF file: /home/rtsang/.volare/volare/sky130/versions/bdc9412b3e468c102d01b7cf6337be06ec6e9c9a/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_fd_sc_hd.lef
+[WARNING ODB-0220] WARNING (LEFPARS-2008): NOWIREEXTENSIONATPIN statement is obsolete in version 5.6 or later.
+The NOWIREEXTENSIONATPIN statement will be ignored. See file /home/rtsang/.volare/volare/sky130/versions/bdc9412b3e468c102d01b7cf6337be06ec6e9c9a/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_fd_sc_hd.lef at line 2.
+
+[INFO ODB-0225]     Created 437 library cells
+[INFO ODB-0226] Finished LEF file:  /home/rtsang/.volare/volare/sky130/versions/bdc9412b3e468c102d01b7cf6337be06ec6e9c9a/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_fd_sc_hd.lef
+[INFO ODB-0127] Reading DEF file: /home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/runs/RUN_2024-04-11_23-19-37/47-openroad-fillinsertion/brownout_dig.def
+[INFO ODB-0128] Design: brownout_dig
+[INFO ODB-0130]     Created 34 pins.
+[INFO ODB-0131]     Created 284 components and 1463 component-terminals.
+[INFO ODB-0132]     Created 2 special nets and 1082 connections.
+[INFO ODB-0133]     Created 134 nets and 379 connections.
+[INFO ODB-0134] Finished DEF file: /home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/runs/RUN_2024-04-11_23-19-37/47-openroad-fillinsertion/brownout_dig.def
+Using RCX ruleset '/home/rtsang/.volare/volare/sky130/versions/bdc9412b3e468c102d01b7cf6337be06ec6e9c9a/sky130A/libs.tech/openlane/rules.openrcx.sky130A.nom.calibre'…
+[INFO RCX-0431] Defined process_corner CURRENT_CORNER with ext_model_index 0
+[INFO RCX-0029] Defined extraction corner CURRENT_CORNER
+[INFO RCX-0008] extracting parasitics of brownout_dig ...
+[INFO RCX-0435] Reading extraction model file /home/rtsang/.volare/volare/sky130/versions/bdc9412b3e468c102d01b7cf6337be06ec6e9c9a/sky130A/libs.tech/openlane/rules.openrcx.sky130A.nom.calibre ...
+[INFO RCX-0436] RC segment generation brownout_dig (max_merge_res 50.0) ...
+[INFO RCX-0040] Final 419 rc segments
+[INFO RCX-0439] Coupling Cap extraction brownout_dig ...
+[INFO RCX-0440] Coupling threshhold is 0.1000 fF, coupling capacitance less than 0.1000 fF will be grounded.
+[INFO RCX-0043] 759 wires to be extracted
+[INFO RCX-0442] 52% completion -- 402 wires have been extracted
+[INFO RCX-0442] 100% completion -- 759 wires have been extracted
+[INFO RCX-0045] Extract 134 nets, 553 rsegs, 553 caps, 630 ccs
+[INFO RCX-0015] Finished extracting brownout_dig.
+Setting global connections for newly added cells…
+[INFO] Setting global connections...
+Writing extracted parasitics to '/home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/runs/RUN_2024-04-11_23-19-37/48-openroad-rcx/nom/brownout_dig.nom.spef'…
+[INFO RCX-0016] Writing SPEF ...
+[INFO RCX-0443] 134 nets finished
+[INFO RCX-0017] Finished writing SPEF ...

@@ -25,27 +25,27 @@ node "B" 1535 197.736 214 221 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 node "A" 1532 206.739 30 221 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 33684 2104 0 0 5760 368 0 0 0 0 0 0 0 0 0 0 0 0
 node "VPB" 1586 516.168 30 527 nw 0 0 0 0 172056 1714 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 substrate "VNB" 0 0 30 -17 pw 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-cap "VPWR" "B" 17.4269
-cap "B" "A" 71.1648
-cap "B" "VPB" 56.6481
-cap "VGND" "Y" 289.148
-cap "VGND" "a_27_297#" 7.25593
-cap "a_27_297#" "Y" 152.388
-cap "VGND" "VPWR" 46.6812
-cap "VPWR" "Y" 12.6918
-cap "VPWR" "a_27_297#" 321.063
-cap "VGND" "A" 59.7272
-cap "A" "Y" 52.3328
-cap "a_27_297#" "A" 88.8659
-cap "VGND" "VPB" 6.12774
-cap "VPB" "Y" 9.60645
-cap "a_27_297#" "VPB" 20.2574
-cap "VPWR" "A" 41.8326
-cap "VPWR" "VPB" 49.9616
-cap "A" "VPB" 56.2725
-cap "VGND" "B" 29.406
-cap "B" "Y" 179.365
 cap "B" "a_27_297#" 45.0524
+cap "A" "VGND" 59.7272
+cap "A" "VPB" 56.2725
+cap "VPWR" "Y" 12.6918
+cap "B" "VGND" 29.406
+cap "B" "VPB" 56.6481
+cap "VPWR" "A" 41.8326
+cap "VGND" "a_27_297#" 7.25593
+cap "A" "Y" 52.3328
+cap "VPB" "a_27_297#" 20.2574
+cap "VPWR" "B" 17.4269
+cap "Y" "B" 179.365
+cap "VGND" "VPB" 6.12774
+cap "VPWR" "a_27_297#" 321.063
+cap "Y" "a_27_297#" 152.388
+cap "A" "B" 71.1648
+cap "VPWR" "VGND" 46.6812
+cap "Y" "VGND" 289.148
+cap "A" "a_27_297#" 88.8659
+cap "VPWR" "VPB" 49.9616
+cap "Y" "VPB" 9.60645
 device msubckt sky130_fd_pr__nfet_01v8 335 47 336 48 l=30 w=130 "VNB" "B" 60 0 "Y" 130 3510,184 "VGND" 130 6760,364
 device msubckt sky130_fd_pr__nfet_01v8 251 47 252 48 l=30 w=130 "VNB" "B" 60 0 "VGND" 130 3510,184 "Y" 130 3510,184
 device msubckt sky130_fd_pr__nfet_01v8 167 47 168 48 l=30 w=130 "VNB" "A" 60 0 "Y" 130 3510,184 "VGND" 130 3510,184

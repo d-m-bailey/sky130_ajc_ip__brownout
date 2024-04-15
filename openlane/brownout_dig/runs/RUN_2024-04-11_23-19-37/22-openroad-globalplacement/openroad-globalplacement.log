@@ -1,0 +1,121 @@
+Reading OpenROAD database at '/home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/runs/RUN_2024-04-11_23-19-37/19-openroad-ioplacement/brownout_dig.odb'…
+Reading library file at '/home/rtsang/.volare/volare/sky130/versions/bdc9412b3e468c102d01b7cf6337be06ec6e9c9a/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib'…
+Reading design constraints file at '/nix/store/gz2n27iaqigc0pl644jsbk5cn7v7gs6p-python3-3.11.6-env/lib/python3.11/site-packages/openlane/scripts/base.sdc'…
+[INFO] Using clock osc_ck…
+[INFO] Setting output delay to: 200
+[INFO] Setting input delay to: 200
+[INFO] Setting load to: 0.033442
+[INFO] Setting clock uncertainty to: 0.25
+[INFO] Setting clock transition to: 0.1499999999999999944488848768742172978818416595458984375
+[INFO] Setting timing derate to: 5%
+[INFO] Setting RC values…
+[INFO] Setting signal min routing layer to: met1 and clock min routing layer to met1. 
+[INFO] Setting signal max routing layer to: met5 and clock max routing layer to met5. 
+{*}-density 0.83 -timing_driven -routability_driven -pad_right 0 -pad_left 0 -init_wirelength_coef 0.25
+[INFO GPL-0002] DBU: 1000
+[INFO GPL-0003] SiteSize: 460 2720
+[INFO GPL-0004] CoreAreaLxLy: 5520 10880
+[INFO GPL-0005] CoreAreaUxUy: 50140 54400
+[INFO GPL-0006] NumInstances: 140
+[INFO GPL-0007] NumPlaceInstances: 81
+[INFO GPL-0008] NumFixedInstances: 59
+[INFO GPL-0009] NumDummyInstances: 0
+[INFO GPL-0010] NumNets: 94
+[INFO GPL-0011] NumPins: 331
+[INFO GPL-0012] DieAreaLxLy: 0 0
+[INFO GPL-0013] DieAreaUxUy: 55865 66585
+[INFO GPL-0014] CoreAreaLxLy: 5520 10880
+[INFO GPL-0015] CoreAreaUxUy: 50140 54400
+[INFO GPL-0016] CoreArea: 1941862400
+[INFO GPL-0017] NonPlaceInstsArea: 153897600
+[INFO GPL-0018] PlaceInstsArea: 1012220800
+[INFO GPL-0019] Util(%): 56.61
+[INFO GPL-0020] StdInstsArea: 1012220800
+[INFO GPL-0021] MacroInstsArea: 0
+[InitialPlace]  Iter: 1 CG residual: 0.00000006 HPWL: 1882285
+[InitialPlace]  Iter: 2 CG residual: 0.00000010 HPWL: 1301622
+[InitialPlace]  Iter: 3 CG residual: 0.00000002 HPWL: 1268709
+[InitialPlace]  Iter: 4 CG residual: 0.00000010 HPWL: 1252991
+[InitialPlace]  Iter: 5 CG residual: 0.00000010 HPWL: 1248275
+[INFO GPL-0031] FillerInit: NumGCells: 120
+[INFO GPL-0032] FillerInit: NumGNets: 94
+[INFO GPL-0033] FillerInit: NumGPins: 331
+[INFO GPL-0023] TargetDensity: 0.83
+[INFO GPL-0024] AveragePlaceInstArea: 12496553
+[INFO GPL-0025] IdealBinArea: 15056088
+[INFO GPL-0026] IdealBinCnt: 128
+[INFO GPL-0027] TotalBinArea: 1941862400
+[INFO GPL-0028] BinCnt: 8 8
+[INFO GPL-0029] BinSize: 5578 5440
+[INFO GPL-0030] NumBins: 64
+[NesterovSolve] Iter: 1 overflow: 0.61273 HPWL: 887894
+[INFO GPL-0100] worst slack 5.99e-07
+[INFO GPL-0103] Weighted 9 nets.
+[NesterovSolve] Snapshot saved at iter = 4
+[NesterovSolve] Iter: 10 overflow: 0.562015 HPWL: 887156
+[NesterovSolve] Iter: 20 overflow: 0.525127 HPWL: 893329
+[NesterovSolve] Iter: 30 overflow: 0.542111 HPWL: 898016
+[NesterovSolve] Iter: 40 overflow: 0.548267 HPWL: 900950
+[NesterovSolve] Iter: 50 overflow: 0.55219 HPWL: 901061
+[NesterovSolve] Iter: 60 overflow: 0.558546 HPWL: 899593
+[NesterovSolve] Iter: 70 overflow: 0.555803 HPWL: 898574
+[NesterovSolve] Iter: 80 overflow: 0.553051 HPWL: 898484
+[NesterovSolve] Iter: 90 overflow: 0.552568 HPWL: 898993
+[NesterovSolve] Iter: 100 overflow: 0.553382 HPWL: 899664
+[NesterovSolve] Iter: 110 overflow: 0.553429 HPWL: 899855
+[NesterovSolve] Iter: 120 overflow: 0.552477 HPWL: 899707
+[NesterovSolve] Iter: 130 overflow: 0.549714 HPWL: 899923
+[NesterovSolve] Iter: 140 overflow: 0.542367 HPWL: 900542
+[NesterovSolve] Iter: 150 overflow: 0.524564 HPWL: 901496
+[NesterovSolve] Iter: 160 overflow: 0.510915 HPWL: 903148
+[NesterovSolve] Iter: 170 overflow: 0.508512 HPWL: 905433
+[NesterovSolve] Iter: 180 overflow: 0.50341 HPWL: 908703
+[NesterovSolve] Iter: 190 overflow: 0.492777 HPWL: 913079
+[INFO GPL-0100] worst slack 5.99e-07
+[INFO GPL-0103] Weighted 9 nets.
+[NesterovSolve] Iter: 200 overflow: 0.4762 HPWL: 918482
+[NesterovSolve] Iter: 210 overflow: 0.454776 HPWL: 928550
+[NesterovSolve] Iter: 220 overflow: 0.425546 HPWL: 948512
+[NesterovSolve] Iter: 230 overflow: 0.338443 HPWL: 980816
+[NesterovSolve] Iter: 240 overflow: 0.336556 HPWL: 985590
+[NesterovSolve] Iter: 250 overflow: 0.300728 HPWL: 1003888
+[NesterovSolve] Iter: 260 overflow: 0.285264 HPWL: 1017681
+[INFO GPL-0100] worst slack 5.99e-07
+[INFO GPL-0103] Weighted 9 nets.
+[NesterovSolve] Iter: 270 overflow: 0.249899 HPWL: 1029184
+[NesterovSolve] Iter: 280 overflow: 0.215556 HPWL: 1036251
+[INFO GPL-0100] worst slack 5.99e-07
+[INFO GPL-0103] Weighted 9 nets.
+[INFO GPL-0075] Routability numCall: 1 inflationIterCnt: 1 bloatIterCnt: 0
+[INFO GPL-0036] TileLxLy: 0 0
+[INFO GPL-0037] TileSize: 6900 6900
+[INFO GPL-0038] TileCnt: 8 9
+[INFO GPL-0039] numRoutingLayers: 6
+[INFO GPL-0040] NumTiles: 72
+[INFO GPL-0063] TotalRouteOverflowH2: 0
+[INFO GPL-0064] TotalRouteOverflowV2: 0
+[INFO GPL-0065] OverflowTileCnt2: 0
+[INFO GPL-0066] 0.5%RC: 1
+[INFO GPL-0067] 1.0%RC: 0.9833333293596903
+[INFO GPL-0068] 2.0%RC: 0.9300000071525574
+[INFO GPL-0069] 5.0%RC: 0.8590909188443964
+[INFO GPL-0070] 0.5rcK: 1
+[INFO GPL-0071] 1.0rcK: 1
+[INFO GPL-0072] 2.0rcK: 0
+[INFO GPL-0073] 5.0rcK: 0
+[INFO GPL-0074] FinalRC: 0.9916667
+[NesterovSolve] Iter: 290 overflow: 0.187272 HPWL: 1045829
+[NesterovSolve] Iter: 300 overflow: 0.160614 HPWL: 1056343
+[INFO GPL-0100] worst slack 5.99e-07
+[INFO GPL-0103] Weighted 9 nets.
+[NesterovSolve] Iter: 310 overflow: 0.136452 HPWL: 1071774
+[NesterovSolve] Iter: 320 overflow: 0.110116 HPWL: 1088106
+[NesterovSolve] Finished with Overflow: 0.097305
+[INFO] Setting RC values…
+Setting global connections for newly added cells…
+[INFO] Setting global connections...
+Writing OpenROAD database to '/home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/runs/RUN_2024-04-11_23-19-37/22-openroad-globalplacement/brownout_dig.odb'…
+Writing netlist to '/home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/runs/RUN_2024-04-11_23-19-37/22-openroad-globalplacement/brownout_dig.nl.v'…
+Writing powered netlist to '/home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/runs/RUN_2024-04-11_23-19-37/22-openroad-globalplacement/brownout_dig.pnl.v'…
+Writing layout to '/home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/runs/RUN_2024-04-11_23-19-37/22-openroad-globalplacement/brownout_dig.def'…
+Writing timing constraints to '/home/rtsang/chipalooza/sky130_ajc_ip__brownout/openlane/brownout_dig/runs/RUN_2024-04-11_23-19-37/22-openroad-globalplacement/brownout_dig.sdc'…
