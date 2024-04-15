@@ -97,7 +97,7 @@ ext2spice
 
 Magic should generate a file named `sky130_ajc_ip__brownout.spice`
 
-4. Put the files in the same directory and run the following command:
+4. Put the files in the same directory (mag/lvs) and run the following command in that directory:
 
 ```netgen -batch lvs "sky130_ajc_ip__brownout.spice sky130_ajc_ip__brownout" "sky130_ajc_ip__brownout_lvs.xschem sky130_ajc_ip__brownout_lvs" $PDK_ROOT/$PDK/libs.tech/netgen/sky130A_setup.tcl```
 
@@ -253,7 +253,7 @@ To make it run all the way through, add the following two options to reduce the 
 .option abstol=1e-3
 ```
 
-The result after simulation is shown in the figure below. All pass.
+Results after RCX simulation is shown in the figure below. All pass.
 ![](sky130_ajc_ip__brownout_cace_rcx.png)
 RCX netlist with .options reltol=1e-3 abstol=1e-3
 
