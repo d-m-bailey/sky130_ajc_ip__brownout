@@ -76,7 +76,18 @@ Netlist out `sky130_ajc_ip__brownout_lvs` in xschem and rename the netlist as `s
 .include $PDK_ROOT/$PDK/libs.ref/sky130_fd_sc_hd/spice/sky130_fd_sc_hd.spice
 ```
 
-2. Extract the layout in Magic using the following commands in the Tcl interpreter:
+2. Manually delete the bulk node 'avss' connection of the pnp device in the xschem netlist `sky130_ajc_ip__brownout_lvs.xschem`.
+
+Search for this line in the file:
+`XQ1 avss avss net7 avss sky130_fd_pr__pnp_05v5_W0p68L0p68 m=1`
+
+and change it to the following:
+
+`XQ1 avss avss net7 sky130_fd_pr__pnp_05v5_W0p68L0p68 m=1`
+
+This step is necessary because the 'combined' models of the sky130 pdk uses a 4-port connection to sky130_fd_pr__pnp_05v5_W0p68L0p68, but Magic only extracts 3 ports, so we manually delete the bulk node (4th port).
+
+3. Extract the layout in Magic using the following commands in the Tcl interpreter:
 
 ```
 extract all
@@ -86,7 +97,7 @@ ext2spice
 
 Magic should generate a file named `sky130_ajc_ip__brownout.spice`
 
-3. Put the files in the same directory and run the following command:
+4. Put the files in the same directory and run the following command:
 
 ```netgen -batch lvs "sky130_ajc_ip__brownout.spice sky130_ajc_ip__brownout" "sky130_ajc_ip__brownout_lvs.xschem sky130_ajc_ip__brownout_lvs" $PDK_ROOT/$PDK/libs.tech/netgen/sky130A_setup.tcl```
 
@@ -94,6 +105,41 @@ Netgen should produce the following output:
 
 
 ```
+Contents of circuit 1:  Circuit: 'sky130_ajc_ip__brownout'
+Circuit sky130_ajc_ip__brownout contains 184 device instances.
+  Class: sky130_fd_pr__cap_mim_m3_2 instances:   1
+  Class: sky130_fd_sc_hd__inv_4 instances:   5
+  Class: sky130_fd_pr__pnp_05v5_W0p68L0p68 instances:   1
+  Class: brownout_dig          instances:   1
+  Class: schmitt_trigger       instances:   1
+  Class: sky130_fd_sc_hvl__lsbufhv2lv_1 instances:   2
+  Class: sky130_fd_pr__nfet_g5v0d10v5 instances:  77
+  Class: sky130_fd_sc_hvl__inv_1 instances:  17
+  Class: sky130_fd_sc_hd__inv_16 instances:   4
+  Class: sky130_fd_sc_hvl__lsbuflv2hv_1 instances:  18
+  Class: sky130_fd_pr__res_xhigh_po_1p41 instances:  10
+  Class: sky130_fd_pr__pfet_g5v0d10v5 instances:  45
+  Class: ibias_gen             instances:   1
+  Class: rc_osc                instances:   1
+Circuit contains 118 nets.
+Contents of circuit 2:  Circuit: 'sky130_ajc_ip__brownout_lvs'
+Circuit sky130_ajc_ip__brownout_lvs contains 170 device instances.
+  Class: sky130_fd_pr__cap_mim_m3_2 instances:   1
+  Class: sky130_fd_sc_hd__inv_4 instances:   5
+  Class: sky130_fd_pr__pnp_05v5_W0p68L0p68 instances:   1
+  Class: brownout_dig          instances:   1
+  Class: schmitt_trigger       instances:   1
+  Class: sky130_fd_sc_hvl__lsbufhv2lv_1 instances:   2
+  Class: sky130_fd_pr__nfet_g5v0d10v5 instances:  63
+  Class: sky130_fd_sc_hvl__inv_1 instances:  17
+  Class: sky130_fd_sc_hd__inv_16 instances:   4
+  Class: sky130_fd_sc_hvl__lsbuflv2hv_1 instances:  18
+  Class: sky130_fd_pr__res_xhigh_po_1p41 instances:  10
+  Class: sky130_fd_pr__pfet_g5v0d10v5 instances:  45
+  Class: ibias_gen             instances:   1
+  Class: rc_osc                instances:   1
+Circuit contains 123 nets.
+
 Circuit was modified by parallel/series device merging.
 New circuit summary:
 
@@ -114,8 +160,8 @@ Circuit sky130_ajc_ip__brownout contains 170 device instances.
   Class: ibias_gen             instances:   1
   Class: rc_osc                instances:   1
 Circuit contains 118 nets.
-Contents of circuit 2:  Circuit: 'sky130_ajc_ip__brownout'
-Circuit sky130_ajc_ip__brownout contains 170 device instances.
+Contents of circuit 2:  Circuit: 'sky130_ajc_ip__brownout_lvs'
+Circuit sky130_ajc_ip__brownout_lvs contains 170 device instances.
   Class: sky130_fd_pr__cap_mim_m3_2 instances:   1
   Class: sky130_fd_sc_hd__inv_4 instances:   5
   Class: sky130_fd_pr__pnp_05v5_W0p68L0p68 instances:   1
@@ -181,10 +227,10 @@ name=brownout_ana only_toplevel=false value="
 
 .include mag/rcx/brownout_ana_rcx.spice
 
-xIana vin otrip_decoded[7] otrip_decoded[6] otrip_decoded[5] otrip_decoded[4] 
-+otrip_decoded[3] otrip_decoded[2] otrip_decoded[1] otrip_decoded[0]
-+vbg_1v2 avdd itest avss ibg_200n force_pdnb dvdd dvss dcomp isrc_sel
-+pwup_filt osc_ck osc_ena porb_h por_unbuf por porb por_ana
+xIana vin_brout otrip_decoded[7] otrip_decoded[6] otrip_decoded[5] otrip_decoded[4] otrip_decoded[3] otrip_decoded[2]
++ otrip_decoded[1] otrip_decoded[0] vin_vunder vbg_1v2 ena avdd ibg_200n itest avss dvdd isrc_sel dvss vtrip_decoded[7] vtrip_decoded[6]
++ vtrip_decoded[5] vtrip_decoded[4] vtrip_decoded[3] vtrip_decoded[2] vtrip_decoded[1] vtrip_decoded[0] dcomp brout_filt osc_ck osc_ena vunder outb
++ outb_unbuf brownout_ana
 "
 ```
 
