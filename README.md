@@ -260,3 +260,23 @@ RCX netlist with .options reltol=1e-3 abstol=1e-3
 ### Digital Route DRC & LVS
 DRC and LVS is performed by Openlane during synthesis.  It performs LVS by extracting the digital route using Magic, and then comparing it to the verilog file generated after fill-insersion.  Here is the result:
 ![](brownout_openlane.png)
+
+
+### Simulation convergence issues
+During the design phase it was discovered that the resistor string made up of xhigh_po resistors (2kohm/sq) confuses Ngspice when too many of them are in series.  There are a total of 105 resistors in the resistor ladder, and each resistor models second-order effects related to the substrate using hyperbolic-tangent functions (shown below).  Manually removing the `tanh` model and substuiting back in a basic resistor solves the convergence issues during simulation.  This is not seen as a risk as this is not a precision circuit.
+
+```
+rbody t1 t2 r = {rbody*(1-bp2+bp2*sqrt(1+(bq2*abs(v(t1,t2))*Efac)**2))*
++ (sub1+sub2*tanh(sub3*(min(v(r0,sub)+v(r1,sub),sub4)+sub5))) / (sub1+sub2*tanh(sub3*sub5)) }
++ tc1 = -1.47e-3
++ tc2 = 2.7e-6
++ tnom = 25.0
+```
+
+The above excerpt can be located at
+`$PDK_ROOT/$PDK/libs.ref/sky130_fd_pr/spice/sky130_fd_pr__res_xhigh_po.model.spice`
+
+Replacing the above definition of `rbody` with the following, eliminates convergence or simulator-going-haywire issues for this circuit
+```
+rbody t1 t2 r = rbody
+```
