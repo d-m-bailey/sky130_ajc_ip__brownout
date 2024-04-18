@@ -53,6 +53,9 @@ N 190 110 190 130 {
 lab=avss}
 N 120 130 190 130 {
 lab=avss}
+N 190 80 210 80 {}
+N 210 80 210 130 {}
+N 190 130 210 130 {}
 C {devices/lab_pin.sym} -220 -60 0 0 {name=p1 lab=avdd}
 C {devices/lab_pin.sym} 80 -60 0 1 {name=p2 lab=vin_brout}
 C {devices/lab_pin.sym} -220 -40 0 0 {name=p6 lab=ena_avdd}
@@ -135,11 +138,6 @@ C {xschem/sky130_stdcells/inv_4.sym} 1820 40 0 0 {name=xIinv7 VGND=dvss VNB=dvss
 C {xschem/sky130_stdcells/inv_16.sym} 1940 40 0 0 {name=xIinv8 VGND=dvss VNB=dvss VPB=dvdd VPWR=dvdd prefix=sky130_fd_sc_hd__ }
 C {devices/lab_pin.sym} 1150 80 1 1 {name=p61 lab=avss}
 C {devices/lab_wire.sym} 860 260 0 0 {name=p4 sig_type=std_logic lab=vlu}
-C {xschem/sky130_fd_pr/pnp_05v5.sym} 170 80 0 0 {name=Q1
-model=pnp_05v5_W0p68L0p68
-m=1
-spiceprefix=X
-}
 C {devices/lab_pin.sym} 120 130 0 0 {name=p5 lab=avss}
 C {devices/lab_pin.sym} 590 -200 0 1 {name=p62 lab=ibias0}
 C {xschem/sky130_fd_pr/res_xhigh_po_1p41.sym} 1150 60 3 0 {name=R2
@@ -147,3 +145,8 @@ L=700
 model=res_xhigh_po_1p41
 spiceprefix=X
 mult=1}
+C {xschem/pnp_05v5.sym} 170 80 0 0 {name=Q1
+model=pnp_05v5_W0p68L0p68
+m=1
+spiceprefix=X
+}

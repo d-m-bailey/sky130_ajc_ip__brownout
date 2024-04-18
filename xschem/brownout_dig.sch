@@ -5,8 +5,8 @@ K {}
 V {}
 S {}
 E {}
-C {devices/ipin.sym} -20 -20 0 0 {name=p1 lab=dvdd}
-C {devices/ipin.sym} -20 0 0 0 {name=p2 lab=dvss}
+C {devices/ipin.sym} -20 -20 0 0 {name=p1 lab=VPWR}
+C {devices/ipin.sym} -20 0 0 0 {name=p2 lab=VGND}
 C {devices/ipin.sym} -20 20 0 0 {name=p3 lab=otrip[2:0]}
 C {devices/ipin.sym} -20 40 0 0 {name=p4 lab=vtrip[2:0]}
 C {devices/ipin.sym} -20 60 0 0 {name=p5 lab=ena}

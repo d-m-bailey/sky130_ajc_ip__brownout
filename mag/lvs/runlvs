@@ -1,0 +1,5 @@
+set layout [readnet spice "sky130_ajc_ip__brownout.spice"]
+set source [readnet spice "$env(PDK_ROOT)/$env(PDK)/libs.ref/sky130_fd_sc_hd/spice/sky130_fd_sc_hd.spice"]
+readnet verilog brownout_dig.pnl.v $source
+readnet spice "sky130_ajc_ip__brownout_lvs.xschem" $source
+lvs "$layout sky130_ajc_ip__brownout" "$source sky130_ajc_ip__brownout_lvs" $env(PDK_ROOT)/$env(PDK)/libs.tech/netgen/$env(PDK)_setup.tcl lvs.report

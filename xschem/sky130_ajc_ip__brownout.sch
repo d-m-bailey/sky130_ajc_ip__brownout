@@ -9,7 +9,7 @@ T {Copyright 2024 Ajacci, Ltd. Co.
 Apache License, Version 2.0 with Addendum, see NOTICE
 Date: 03/14/2024   Rev: 0
 Description: Brownout detector (analog & digital sections)} -570 180 0 0 0.4 0.4 {}
-C {xschem/brownout_ana.sym} 0 10 0 0 {name=xIana}
+C {xschem/brownout_ana_rcx.sym} 0 10 0 0 {name=xIana}
 C {devices/code.sym} -580 -40 0 0 {name=brownout_dig only_toplevel=false value="
 
 r0 otrip[0] otrip0 1

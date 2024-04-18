@@ -496,10 +496,10 @@ X4 Y B VPWR VPB sky130_fd_pr__pfet_01v8_hvt ad=0.135 pd=1.27 as=0.14575 ps=1.335
 X5 VPWR A_N a_27_93# VPB sky130_fd_pr__pfet_01v8_hvt ad=0.14575 pd=1.335 as=0.1092 ps=1.36 w=0.42 l=0.15
 .ends
 
-.subckt brownout_dig otrip[2] otrip[1] otrip[0] vtrip[1] ena force_ena_rc_osc osc_ena
-+ force_dis_rc_osc outb_unbuf force_short_oneshot otrip_decoded[7] otrip_decoded[1]
-+ otrip_decoded[0] dcomp vtrip_decoded[6] vtrip_decoded[5] vtrip_decoded[4] vtrip_decoded[2]
-+ vtrip_decoded[0] brout_filt timed_out osc_ck otrip_decoded[6] otrip_decoded[3] vtrip_decoded[7]
+.subckt brownout_dig brout_filt dcomp ena force_dis_rc_osc force_ena_rc_osc force_short_oneshot
++ osc_ck otrip[0] otrip[1] otrip[2] vtrip[1] osc_ena otrip_decoded[0] otrip_decoded[1]
++ otrip_decoded[7] outb_unbuf timed_out vtrip_decoded[0] vtrip_decoded[2] vtrip_decoded[4]
++ vtrip_decoded[5] vtrip_decoded[6] otrip_decoded[6] otrip_decoded[3] vtrip_decoded[7]
 + otrip_decoded[5] otrip_decoded[2] otrip_decoded[4] vtrip_decoded[1] vtrip[0] vtrip_decoded[3]
 + VPWR VGND vtrip[2]
 XFILLER_0_9_49 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_6
@@ -1803,10 +1803,10 @@ Xsky130_fd_pr__pfet_g5v0d10v5_W8MWAU_0 out avdd avdd n1 n1 avdd n1 n1 avdd n1 ou
 
 .subckt brownout_ana otrip_decoded[7] otrip_decoded[6] otrip_decoded[5] otrip_decoded[4]
 + otrip_decoded[3] otrip_decoded[2] otrip_decoded[1] otrip_decoded[0] vin_vunder vbg_1v2
-+ ena avdd ibg_200n itest isrc_sel vtrip_decoded[7] vtrip_decoded[6] vtrip_decoded[5]
-+ vtrip_decoded[4] vtrip_decoded[3] vtrip_decoded[2] vtrip_decoded[1] vtrip_decoded[0]
-+ dcomp brout_filt osc_ck osc_ena vunder outb outb_unbuf comparator_0/vt comparator_1/vt
-+ avss vin_brout dvdd dvss
++ ena ibg_200n itest isrc_sel vtrip_decoded[7] vtrip_decoded[6] vtrip_decoded[5] vtrip_decoded[4]
++ vtrip_decoded[3] vtrip_decoded[2] vtrip_decoded[1] vtrip_decoded[0] dcomp brout_filt
++ osc_ck osc_ena vunder outb outb_unbuf comparator_0/vt comparator_1/vt avdd avss
++ vin_brout dvdd dvss
 Xsky130_fd_sc_hd__inv_16_3 sky130_fd_sc_hd__inv_4_4/Y dvss dvss dvdd dvdd outb sky130_fd_sc_hd__inv_16
 Xsky130_fd_sc_hvl__lsbufhv2lv_1_0 dcomp3v3 dvdd dvss dvss avdd avdd vl sky130_fd_sc_hvl__lsbufhv2lv_1
 Xsky130_fd_sc_hvl__lsbufhv2lv_1_1 dcomp3v3uv dvdd dvss dvss avdd avdd sky130_fd_sc_hd__inv_4_2/A
@@ -1887,19 +1887,18 @@ Xsky130_fd_sc_hd__inv_16_1 sky130_fd_sc_hd__inv_4_1/Y dvss dvss dvdd dvdd vunder
 Xsky130_fd_sc_hd__inv_16_2 sky130_fd_sc_hd__inv_4_3/Y dvss dvss dvdd dvdd dcomp sky130_fd_sc_hd__inv_16
 .ends
 
-.subckt sky130_ajc_ip__brownout avdd avss dvdd dvss vbg_1v2 otrip[2] otrip[1] otrip[0]
-+ ena force_dis_rc_osc force_short_oneshot isrc_sel ibg_200n vin_brout outb osc_ck
-+ brout_filt itest timed_out vtrip[2] vtrip[1] vtrip[0] vin_vunder vunder force_ena_rc_osc
-+ dcomp
+.subckt sky130_ajc_ip__brownout avdd avss outb dvdd osc_ck dvss dcomp vbg_1v2 otrip[2]
++ otrip[1] otrip[0] itest brout_filt vtrip[2] vtrip[1] vtrip[0] vin_brout ena force_ena_rc_osc
++ vin_vunder force_dis_rc_osc timed_out vunder force_short_oneshot isrc_sel ibg_200n
 Xsky130_fd_pr__nfet_g5v0d10v5_PXF6AN_0 dvss dvss ena dvss dvss dvss dvss dvss dvss
 + dvss otrip[1] dvss dvss force_short_oneshot dvss dvss dvss dvss dvss force_dis_rc_osc
 + dvss otrip[2] force_ena_rc_osc dvss dvss dvss dvss otrip[0] isrc_sel dvss dvss dvss
 + dvss dvss sky130_fd_pr__nfet_g5v0d10v5_PXF6AN
-Xbrownout_dig_0 otrip[2] otrip[1] otrip[0] vtrip[1] ena force_ena_rc_osc brownout_dig_0/osc_ena
-+ force_dis_rc_osc brownout_dig_0/outb_unbuf force_short_oneshot brownout_dig_0/otrip_decoded[7]
-+ brownout_dig_0/otrip_decoded[1] brownout_dig_0/otrip_decoded[0] dcomp brownout_dig_0/vtrip_decoded[6]
-+ brownout_dig_0/vtrip_decoded[5] brownout_dig_0/vtrip_decoded[4] brownout_dig_0/vtrip_decoded[2]
-+ brownout_dig_0/vtrip_decoded[0] brout_filt timed_out osc_ck brownout_dig_0/otrip_decoded[6]
+Xbrownout_dig_0 brout_filt dcomp ena force_dis_rc_osc force_ena_rc_osc force_short_oneshot
++ osc_ck otrip[0] otrip[1] otrip[2] vtrip[1] brownout_dig_0/osc_ena brownout_dig_0/otrip_decoded[0]
++ brownout_dig_0/otrip_decoded[1] brownout_dig_0/otrip_decoded[7] brownout_dig_0/outb_unbuf
++ timed_out brownout_dig_0/vtrip_decoded[0] brownout_dig_0/vtrip_decoded[2] brownout_dig_0/vtrip_decoded[4]
++ brownout_dig_0/vtrip_decoded[5] brownout_dig_0/vtrip_decoded[6] brownout_dig_0/otrip_decoded[6]
 + brownout_dig_0/otrip_decoded[3] brownout_dig_0/vtrip_decoded[7] brownout_dig_0/otrip_decoded[5]
 + brownout_dig_0/otrip_decoded[2] brownout_dig_0/otrip_decoded[4] brownout_dig_0/vtrip_decoded[1]
 + vtrip[0] brownout_dig_0/vtrip_decoded[3] dvdd dvss vtrip[2] brownout_dig
@@ -1910,11 +1909,11 @@ Xsky130_fd_pr__nfet_g5v0d10v5_XTZQRT_0 dvss dvss vtrip[1] dvss dvss dvss dvss dv
 Xbrownout_ana_0 brownout_dig_0/otrip_decoded[7] brownout_dig_0/otrip_decoded[6] brownout_dig_0/otrip_decoded[5]
 + brownout_dig_0/otrip_decoded[4] brownout_dig_0/otrip_decoded[3] brownout_dig_0/otrip_decoded[2]
 + brownout_dig_0/otrip_decoded[1] brownout_dig_0/otrip_decoded[0] vin_vunder vbg_1v2
-+ ena avdd ibg_200n itest isrc_sel brownout_dig_0/vtrip_decoded[7] brownout_dig_0/vtrip_decoded[6]
++ ena ibg_200n itest isrc_sel brownout_dig_0/vtrip_decoded[7] brownout_dig_0/vtrip_decoded[6]
 + brownout_dig_0/vtrip_decoded[5] brownout_dig_0/vtrip_decoded[4] brownout_dig_0/vtrip_decoded[3]
 + brownout_dig_0/vtrip_decoded[2] brownout_dig_0/vtrip_decoded[1] brownout_dig_0/vtrip_decoded[0]
 + dcomp brout_filt osc_ck brownout_dig_0/osc_ena vunder outb brownout_dig_0/outb_unbuf
-+ brownout_ana_0/comparator_0/vt brownout_ana_0/comparator_1/vt avss vin_brout dvdd
-+ dvss brownout_ana
++ brownout_ana_0/comparator_0/vt brownout_ana_0/comparator_1/vt avdd avss vin_brout
++ dvdd dvss brownout_ana
 .ends
 
