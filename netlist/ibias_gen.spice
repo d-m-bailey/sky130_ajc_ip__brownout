@@ -1,0 +1,53 @@
+** sch_path: /home/rtsang/chipalooza/sky130_ajc_ip__brownout/xschem/ibias_gen.sch
+.subckt ibias_gen avdd ibias0 itest ibias1 ibg_200n vbg_1v2 isrc_sel ena ve avss
+*.PININFO vbg_1v2:I ena:I ibias0:O ibg_200n:I isrc_sel:I avdd:I avss:I itest:O ve:I ibias1:O
+XM17 vstart vbg_1v2 vn0 avss sky130_fd_pr__nfet_g5v0d10v5 L=0.6 W=5 nf=1 m=10
+XMt9 vstart ena_b vstartena avdd sky130_fd_pr__pfet_g5v0d10v5 L=0.6 W=5 nf=1 m=1
+XMn0 vn0 vn0 ve avss sky130_fd_pr__nfet_g5v0d10v5 L=4 W=5 nf=1 m=2
+XMp0 vn0 vp0 avdd avdd sky130_fd_pr__pfet_g5v0d10v5 L=4 W=5 nf=1 m=2
+XMn1 vp0 vn0 vr avss sky130_fd_pr__nfet_g5v0d10v5 L=4 W=5 nf=1 m=2
+XMp1 vp0 vp0 avdd avdd sky130_fd_pr__pfet_g5v0d10v5 L=4 W=5 nf=1 m=2
+XMpb0 ibias0 vp avdd avdd sky130_fd_pr__pfet_g5v0d10v5 L=4 W=5 nf=1 m=2
+XMt0 vp0 isrc_sel vp avdd sky130_fd_pr__pfet_g5v0d10v5 L=0.6 W=5 nf=1 m=1
+XMt1 vp isrc_sel_b vp0 avss sky130_fd_pr__nfet_g5v0d10v5 L=0.6 W=5 nf=1 m=1
+XMl6 vp ena avdd avdd sky130_fd_pr__pfet_g5v0d10v5 L=2 W=5 nf=1 m=1
+XMl3 vp0 ena avdd avdd sky130_fd_pr__pfet_g5v0d10v5 L=2 W=5 nf=1 m=1
+XMl1 vn0 ena_b avss avss sky130_fd_pr__nfet_g5v0d10v5 L=2 W=5 nf=1 m=1
+XMnn1 vp1 vn1 avss avss sky130_fd_pr__nfet_g5v0d10v5 L=8 W=5 nf=1 m=8
+XMnn0 vn1 vn1 avss avss sky130_fd_pr__nfet_g5v0d10v5 L=8 W=5 nf=1 m=2
+XMl9 vn1 isrc_sel_b avss avss sky130_fd_pr__nfet_g5v0d10v5 L=2 W=5 nf=1 m=1
+XMt6 net1 isrc_sel vn1 avss sky130_fd_pr__nfet_g5v0d10v5 L=0.6 W=5 nf=1 m=1
+XMt7 vn1 isrc_sel_b net2 avdd sky130_fd_pr__pfet_g5v0d10v5 L=0.6 W=5 nf=1 m=1
+XMpp1 vp1 vp1 avdd avdd sky130_fd_pr__pfet_g5v0d10v5 L=4 W=5 nf=1 m=2
+XMt2 vp isrc_sel_b vp1 avdd sky130_fd_pr__pfet_g5v0d10v5 L=0.6 W=5 nf=1 m=1
+XMt3 vp1 isrc_sel vp avss sky130_fd_pr__nfet_g5v0d10v5 L=0.6 W=5 nf=1 m=1
+XMt4 ibg_200n ena net1 avss sky130_fd_pr__nfet_g5v0d10v5 L=0.6 W=5 nf=1 m=1
+XMt5 net2 ena_b ibg_200n avdd sky130_fd_pr__pfet_g5v0d10v5 L=0.6 W=5 nf=1 m=1
+XMl7 vp1 isrc_sel avdd avdd sky130_fd_pr__pfet_g5v0d10v5 L=2 W=5 nf=1 m=1
+XMl8 vp1 ena avdd avdd sky130_fd_pr__pfet_g5v0d10v5 L=2 W=5 nf=1 m=1
+XMl10 vn1 ena_b avss avss sky130_fd_pr__nfet_g5v0d10v5 L=2 W=5 nf=1 m=1
+XMl2 vp0 isrc_sel_b avdd avdd sky130_fd_pr__pfet_g5v0d10v5 L=2 W=5 nf=1 m=1
+XMl0 vn0 isrc_sel avss avss sky130_fd_pr__nfet_g5v0d10v5 L=2 W=5 nf=1 m=1
+XMt8 vstartena isrc_sel avdd avdd sky130_fd_pr__pfet_g5v0d10v5 L=0.6 W=5 nf=1 m=1
+XMn2 ena_b ena avss avss sky130_fd_pr__nfet_g5v0d10v5 L=1 W=5 nf=1 m=1
+XMp2 ena_b ena avdd avdd sky130_fd_pr__pfet_g5v0d10v5 L=1 W=5 nf=1 m=1
+XMn3 isrc_sel_b isrc_sel avss avss sky130_fd_pr__nfet_g5v0d10v5 L=1 W=5 nf=1 m=1
+XMp3 isrc_sel_b isrc_sel avdd avdd sky130_fd_pr__pfet_g5v0d10v5 L=1 W=5 nf=1 m=1
+XMtst itest vp avdd avdd sky130_fd_pr__pfet_g5v0d10v5 L=4 W=5 nf=1 m=2
+XR1 avss vr avss sky130_fd_pr__res_xhigh_po_1p41 L=700 mult=1 m=1
+XMdum0 avss avss avss avss sky130_fd_pr__nfet_g5v0d10v5 L=8 W=5 nf=1 m=10
+XMdum1 vp0 avss vn0 avss sky130_fd_pr__nfet_g5v0d10v5 L=0.6 W=5 nf=1 m=1
+XMdum2 vp avss vp avss sky130_fd_pr__nfet_g5v0d10v5 L=0.6 W=5 nf=1 m=1
+XMdum3 vp1 avss vn1 avss sky130_fd_pr__nfet_g5v0d10v5 L=0.6 W=5 nf=1 m=1
+XMdum4 ena_b avss isrc_sel_b avss sky130_fd_pr__nfet_g5v0d10v5 L=1 W=5 nf=1 m=1
+XMdum5 isrc_sel_b avdd ena_b avdd sky130_fd_pr__pfet_g5v0d10v5 L=1 W=5 nf=1 m=1
+XMdum6 vp0 avdd avdd avdd sky130_fd_pr__pfet_g5v0d10v5 L=0.6 W=5 nf=1 m=1
+XMdum7 vp avdd vp avdd sky130_fd_pr__pfet_g5v0d10v5 L=0.6 W=5 nf=1 m=1
+XMdum8 vn1 avdd vp1 avdd sky130_fd_pr__pfet_g5v0d10v5 L=0.6 W=5 nf=1 m=1
+XMdum9 avdd avdd avdd avdd sky130_fd_pr__pfet_g5v0d10v5 L=4 W=5 nf=1 m=4
+XMdum10 avss avss ve avss sky130_fd_pr__nfet_g5v0d10v5 L=4 W=5 nf=1 m=1
+XMdum11 vr avss ve avss sky130_fd_pr__nfet_g5v0d10v5 L=4 W=5 nf=1 m=1
+XMdum12 vr avss avss avss sky130_fd_pr__nfet_g5v0d10v5 L=4 W=5 nf=1 m=1
+XMpb1 ibias1 vp avdd avdd sky130_fd_pr__pfet_g5v0d10v5 L=4 W=5 nf=1 m=2
+.ends
+.end

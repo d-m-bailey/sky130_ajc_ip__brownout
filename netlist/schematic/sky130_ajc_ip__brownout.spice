@@ -1,0 +1,60 @@
+** sch_path: /home/rtsang/chipalooza/sky130_ajc_ip__brownout/xschem/sky130_ajc_ip__brownout.sch
+.subckt sky130_ajc_ip__brownout avdd avss outb dvdd osc_ck dvss dcomp vbg_1v2 otrip[2] otrip[1] otrip[0] itest brout_filt vtrip[2]
++ vtrip[1] vtrip[0] vin_brout ena force_ena_rc_osc vin_vunder force_dis_rc_osc timed_out vunder force_short_oneshot isrc_sel ibg_200n
+*.PININFO avdd:I avss:I dvdd:I dvss:I vbg_1v2:I otrip[2:0]:I ena:I force_dis_rc_osc:I force_short_oneshot:I isrc_sel:I ibg_200n:I
+*+ vin_brout:O outb:O osc_ck:O brout_filt:O itest:O timed_out:O vtrip[2:0]:I vin_vunder:O vunder:O force_ena_rc_osc:I dcomp:O
+xIana vin_brout otrip_decoded_7_ otrip_decoded_6_ otrip_decoded_5_ otrip_decoded_4_ otrip_decoded_3_ otrip_decoded_2_
++ otrip_decoded_1_ otrip_decoded_0_ vin_vunder vbg_1v2 ena avdd ibg_200n itest avss dvdd isrc_sel dvss vtrip_decoded_7_ vtrip_decoded_6_
++ vtrip_decoded_5_ vtrip_decoded_4_ vtrip_decoded_3_ vtrip_decoded_2_ vtrip_decoded_1_ vtrip_decoded_0_ dcomp brout_filt osc_ck osc_ena vunder outb
++ outb_unbuf brownout_ana_rcx
+**** begin user architecture code
+
+
+
+r0 otrip[0] otrip0 1
+r1 otrip[1] otrip1 1
+r2 otrip[2] otrip2 1
+r3 vtrip[0] vtrip0 1
+r4 vtrip[1] vtrip1 1
+r5 vtrip[2] vtrip2 1
+
+*XSPICE CO-SIM netlist
+.include brownout_dig.out.spice
+xibrownout_dig dvss dvdd brout_filt dcomp ena force_dis_rc_osc force_ena_rc_osc force_short_oneshot osc_ck osc_ena
++otrip0 otrip1 otrip2
++otrip_decoded_0_ otrip_decoded_1_ otrip_decoded_2_ otrip_decoded_3_ otrip_decoded_4_ otrip_decoded_5_ otrip_decoded_6_ otrip_decoded_7_
++outb_unbuf timed_out
++vtrip0 vtrip1 vtrip2
++vtrip_decoded_0_ vtrip_decoded_1_ vtrip_decoded_2_ vtrip_decoded_3_ vtrip_decoded_4_ vtrip_decoded_5_ vtrip_decoded_6_ vtrip_decoded_7_
++brownout_dig
+
+
+**** end user architecture code
+.ends
+
+* expanding   symbol:  xschem/brownout_ana_rcx.sym # of pins=20
+** sym_path: /home/rtsang/chipalooza/sky130_ajc_ip__brownout/xschem/brownout_ana_rcx.sym
+** sch_path: /home/rtsang/chipalooza/sky130_ajc_ip__brownout/xschem/brownout_ana_rcx.sch
+.subckt brownout_ana_rcx vin_brout otrip_decoded[7] otrip_decoded[6] otrip_decoded[5] otrip_decoded[4] otrip_decoded[3]
++ otrip_decoded[2] otrip_decoded[1] otrip_decoded[0] vin_vunder vbg_1v2 ena avdd ibg_200n itest avss dvdd isrc_sel dvss vtrip_decoded[7]
++ vtrip_decoded[6] vtrip_decoded[5] vtrip_decoded[4] vtrip_decoded[3] vtrip_decoded[2] vtrip_decoded[1] vtrip_decoded[0] dcomp brout_filt osc_ck
++ osc_ena vunder outb outb_unbuf
+*.PININFO vbg_1v2:I avdd:I avss:I dvdd:I dvss:I ena:I isrc_sel:I ibg_200n:I dcomp:O itest:O osc_ena:I osc_ck:O
+*+ otrip_decoded[7:0]:I vin_brout:O outb_unbuf:I outb:O vunder:O vtrip_decoded[7:0]:I vin_vunder:O brout_filt:O
+**** begin user architecture code
+
+
+
+.include mag/rcx/brownout_ana_rcx.spice
+
+xIana vin_brout otrip_decoded[7] otrip_decoded[6] otrip_decoded[5] otrip_decoded[4] otrip_decoded[3] otrip_decoded[2]
++ otrip_decoded[1] otrip_decoded[0] vin_vunder vbg_1v2 ena avdd ibg_200n itest avss dvdd isrc_sel dvss vtrip_decoded[7] vtrip_decoded[6]
++ vtrip_decoded[5] vtrip_decoded[4] vtrip_decoded[3] vtrip_decoded[2] vtrip_decoded[1] vtrip_decoded[0] dcomp brout_filt osc_ck osc_ena vunder outb
++ outb_unbuf brownout_ana
+
+
+
+**** end user architecture code
+.ends
+
+.end

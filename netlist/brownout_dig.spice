@@ -1,0 +1,9 @@
+** sch_path: /home/rtsang/chipalooza/sky130_ajc_ip__brownout/xschem/brownout_dig.sch
+.subckt brownout_dig VPWR VGND otrip[2] otrip[1] otrip[0] vtrip[2] vtrip[1] vtrip[0] ena force_ena_rc_osc force_dis_rc_osc
++ force_short_oneshot dcomp brout_filt osc_ck osc_ena outb_unbuf otrip_decoded[7] otrip_decoded[6] otrip_decoded[5] otrip_decoded[4] otrip_decoded[3]
++ otrip_decoded[2] otrip_decoded[1] otrip_decoded[0] vtrip_decoded[7] vtrip_decoded[6] vtrip_decoded[5] vtrip_decoded[4] vtrip_decoded[3]
++ vtrip_decoded[2] vtrip_decoded[1] vtrip_decoded[0] timed_out
+*.PININFO VPWR:I VGND:I otrip[2:0]:I vtrip[2:0]:I ena:I force_ena_rc_osc:I force_dis_rc_osc:I force_short_oneshot:I dcomp:I
+*+ brout_filt:I osc_ck:I osc_ena:O outb_unbuf:O otrip_decoded[7:0]:O vtrip_decoded[7:0]:O timed_out:O
+.ends
+.end

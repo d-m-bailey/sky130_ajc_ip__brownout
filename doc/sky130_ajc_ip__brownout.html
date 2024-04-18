@@ -38,6 +38,10 @@
 <TD> March 19, 2024
 </TR>
 <TR>
+<TD> Last modified:
+<TD> April 15, 2024 at 09:14am
+</TR>
+<TR>
 <TD> License:
 <TD> Apache 2.0
 </TR>
@@ -412,85 +416,96 @@
 <TD> <B>Hysteresis (out)</B>
 <TD> Check amount of hysteresis at each trip voltage
 <TD> V
-<TD> 0.1147
-<TD> 0.1606
-<TD> 0.2063
+<TD> 0.1155
+<TD> 0.1617
+<TD> 0.2083
 <TD> 
 </TR>
 <TR>
 <TD> <B>Accuracy (out)</B>
 <TD> Check absolute accuracy of trip voltages (avg of pos- and neg-ramp trip voltages)
 <TD> V
-<TD> 0.000855
-<TD> 0.001125
-<TD> 0.00155
+<TD> 0.00024
+<TD> 0.000525
+<TD> 0.00076
 <TD> 
 </TR>
 <TR>
 <TD> <B>Hysteresis (vunder)</B>
 <TD> Check amount of hysteresis at each trip voltage
 <TD> V
-<TD> 0.1146
-<TD> 0.1601
-<TD> 0.2064
+<TD> 0.1161
+<TD> 0.1621
+<TD> 0.2084
 <TD> 
 </TR>
 <TR>
 <TD> <B>Accuracy (vunder)</B>
 <TD> Check absolute accuracy of trip voltages (avg of pos- and neg-ramp trip voltages)
 <TD> V
-<TD> 0.000865
-<TD> 0.001367
-<TD> 0.002225
+<TD> 0.000375
+<TD> 0.00063
+<TD> 0.00081
 <TD> 
 </TR>
 <TR>
 <TD> <B>Response time (out)</B>
 <TD> Check time-delay between step in avdd to out assertion (otrip=2.71V)
 <TD> µs
-<TD> 24.49
-<TD> 30.57
-<TD> 43.55
+<TD> 22.75
+<TD> 31.69
+<TD> 47.63
 <TD> 
 </TR>
 <TR>
 <TD> <B>Response time (vunder)</B>
 <TD> Check time-delay between step in avdd to vunder assertion (vtrip=2.71V)
 <TD> µs
-<TD> 1.65
-<TD> 1.76
-<TD> 1.889
+<TD> 2.004
+<TD> 2.004
+<TD> 2.441
 <TD> 
 </TR>
 <TR>
 <TD> <B>Reset active time (est.)</B>
 <TD> Estimate reset active time by check rc oscillator period across 10 cycles, then multiplying by 4096.
-<TD> s
-<TD> 0.06623
-<TD> 0.1048
-<TD> 0.1746
+<TD> ms
+<TD> 81.55
+<TD> 112.3
+<TD> 189.9
 <TD> 
 </TR>
 <TR>
 <TD> <B>Idd</B>
 <TD> Current draw through analog supply, brown-out detector enabled
 <TD> µA
-<TD> 4.709
-<TD> 4.901
-<TD> 4.948
+<TD> 6.106
+<TD> 6.379
+<TD> 6.524
 <TD> 
 </TR>
 <TR>
 <TD> <B>Standby current</B>
 <TD> Current draw through analog supply, brown-out detector disabled
 <TD> µA
-<TD> 0.001015
-<TD> 0.001641
-<TD> 0.01461
+<TD> 0.0007993
+<TD> 0.001324
+<TD> 0.03171
 <TD> 
 </TR>
 </TBODY>
 </TABLE>
-<BR><I>Note:</I> Values taken from Specification<BR>
+<BR><I>Note:</I> Values taken from Schematic captured<BR>
 </BODY>
 </HTML>
+
+<BLOCKQUOTE>
+   <CENTER>
+      <IMG SRC=../plots/schematic/supply_brown_out.png>
+      <BR>
+      <I>Demo of a supply brown-out with test-mode force_short_oneshot enabled.</I>
+      <BR>
+      (Values taken from schematic extraction)
+   </CENTER>
+</BLOCKQUOTE>
+

@@ -589,9 +589,9 @@ electrical_parameters {
 
 		+
 		name: corner
-		maximum: sf
+		maximum: ss
 		typical: tt
-		minimum: fs
+		minimum: ff
 
 	}
 

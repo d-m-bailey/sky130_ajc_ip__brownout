@@ -68,22 +68,20 @@ Run using Magic for layout-to-spice netlist extraction, and then Netgen for netl
 
 Steps taken to perform LVS:
 
-1. Created a blackbox for the digital block `brownout_dig` and replaced the xspice model of `brownout_dig` with the blackbox `brownout_dig`.  Save the new schematic as `sky130_ajc_ip__brownout_lvs`.
-Netlist out `sky130_ajc_ip__brownout_lvs` in xschem and rename the netlist as `sky130_ajc_ip__brownout_lvs.xschem`.  Edit `sky130_ajc_ip__brownout_lvs.xschem` and add the following lines to the file (change $PDK_ROOT/$PDK to the location of your setup):
+1. Created a blackbox for the digital block `brownout_dig` and replaced the xspice model of `brownout_dig` with the blackbox `brownout_dig`.  In the symbol `brownout_dig.sym`, set `type=primitive`, so that when netlisting out, brownout_dig will be instantiated but not defined (i.e. no `subckt brownout_dig` is writting out).  This is important later for the Verilog gate-level netlist of brownout_dig to properly define the definition for brownout_dig.  Save the new top-level schematic as `sky130_ajc_ip__brownout_lvs`.  Netlist out `sky130_ajc_ip__brownout_lvs` in xschem and rename the netlist as `sky130_ajc_ip__brownout_lvs.xschem`.  Edit `sky130_ajc_ip__brownout_lvs.xschem` and add the following lines to the file (change $PDK_ROOT/$PDK to the location of your setup):
 
 ```
 .include $PDK_ROOT/$PDK/libs.ref/sky130_fd_sc_hvl/spice/sky130_fd_sc_hvl.spice
-.include $PDK_ROOT/$PDK/libs.ref/sky130_fd_sc_hd/spice/sky130_fd_sc_hd.spice
 ```
 
 2. Manually delete the bulk node 'avss' connection of the pnp device in the xschem netlist `sky130_ajc_ip__brownout_lvs.xschem`.
 
 Search for this line in the file:
-`XQ1 avss avss net7 avss sky130_fd_pr__pnp_05v5_W0p68L0p68 m=1`
+`XQ1 avss avss net7 avss sky130_fd_pr__pnp_05v5_W0p68L0p68 m=1 mult=1`
 
 and change it to the following:
 
-`XQ1 avss avss net7 sky130_fd_pr__pnp_05v5_W0p68L0p68 m=1`
+`XQ1 avss avss net7 sky130_fd_pr__pnp_05v5_W0p68L0p68 m=1 mult=1`
 
 This step is necessary because the 'combined' models of the sky130 pdk uses a 4-port connection to sky130_fd_pr__pnp_05v5_W0p68L0p68, but Magic only extracts 3 ports, so we manually delete the bulk node (4th port).
 
@@ -97,52 +95,29 @@ ext2spice
 
 Magic should generate a file named `sky130_ajc_ip__brownout.spice`
 
-4. Put the files in the same directory (mag/lvs) and run the following command in that directory:
+4. Locate the final gate-level Verilog netlist of brownout_dig.  In this case, it is located at
 
-```netgen -batch lvs "sky130_ajc_ip__brownout.spice sky130_ajc_ip__brownout" "sky130_ajc_ip__brownout_lvs.xschem sky130_ajc_ip__brownout_lvs" $PDK_ROOT/$PDK/libs.tech/netgen/sky130A_setup.tcl```
+`openlane/brownout_dig/runs/RUN_2024-04-11_23-19-37/47-openroad-fillinsertion/brownout_dig.pnl.v`
+
+5. Put the files `sky130_ajc_ip__brownout.spice` (Magic-extracted netlist), `sky130_ajc_ip__brownout_lvs.xschem` (xschem netlist), and `brownout_dig.pnl.v` in the same directory, in this case `mag/lvs`.
+
+6. Create a new run script for Netgen, in this case called `runlvs`, and put the following contents inside:
+
+```
+set layout [readnet spice "sky130_ajc_ip__brownout.spice"]
+set source [readnet spice "$env(PDK_ROOT)/$env(PDK)/libs.ref/sky130_fd_sc_hd/spice/sky130_fd_sc_hd.spice"]
+readnet verilog brownout_dig.pnl.v $source
+readnet spice "sky130_ajc_ip__brownout_lvs.xschem" $source
+lvs "$layout sky130_ajc_ip__brownout" "$source sky130_ajc_ip__brownout_lvs" $env(PDK_ROOT)/$env(PDK)/libs.tech/netgen/$env(PDK)_setup.tcl lvs.report
+```
+
+7. Enter the following in the terminal to run LVS:
+
+`netgen -batch source runlvs`
 
 Netgen should produce the following output:
 
-
 ```
-Contents of circuit 1:  Circuit: 'sky130_ajc_ip__brownout'
-Circuit sky130_ajc_ip__brownout contains 184 device instances.
-  Class: sky130_fd_pr__cap_mim_m3_2 instances:   1
-  Class: sky130_fd_sc_hd__inv_4 instances:   5
-  Class: sky130_fd_pr__pnp_05v5_W0p68L0p68 instances:   1
-  Class: brownout_dig          instances:   1
-  Class: schmitt_trigger       instances:   1
-  Class: sky130_fd_sc_hvl__lsbufhv2lv_1 instances:   2
-  Class: sky130_fd_pr__nfet_g5v0d10v5 instances:  77
-  Class: sky130_fd_sc_hvl__inv_1 instances:  17
-  Class: sky130_fd_sc_hd__inv_16 instances:   4
-  Class: sky130_fd_sc_hvl__lsbuflv2hv_1 instances:  18
-  Class: sky130_fd_pr__res_xhigh_po_1p41 instances:  10
-  Class: sky130_fd_pr__pfet_g5v0d10v5 instances:  45
-  Class: ibias_gen             instances:   1
-  Class: rc_osc                instances:   1
-Circuit contains 118 nets.
-Contents of circuit 2:  Circuit: 'sky130_ajc_ip__brownout_lvs'
-Circuit sky130_ajc_ip__brownout_lvs contains 170 device instances.
-  Class: sky130_fd_pr__cap_mim_m3_2 instances:   1
-  Class: sky130_fd_sc_hd__inv_4 instances:   5
-  Class: sky130_fd_pr__pnp_05v5_W0p68L0p68 instances:   1
-  Class: brownout_dig          instances:   1
-  Class: schmitt_trigger       instances:   1
-  Class: sky130_fd_sc_hvl__lsbufhv2lv_1 instances:   2
-  Class: sky130_fd_pr__nfet_g5v0d10v5 instances:  63
-  Class: sky130_fd_sc_hvl__inv_1 instances:  17
-  Class: sky130_fd_sc_hd__inv_16 instances:   4
-  Class: sky130_fd_sc_hvl__lsbuflv2hv_1 instances:  18
-  Class: sky130_fd_pr__res_xhigh_po_1p41 instances:  10
-  Class: sky130_fd_pr__pfet_g5v0d10v5 instances:  45
-  Class: ibias_gen             instances:   1
-  Class: rc_osc                instances:   1
-Circuit contains 123 nets.
-
-Circuit was modified by parallel/series device merging.
-New circuit summary:
-
 Contents of circuit 1:  Circuit: 'sky130_ajc_ip__brownout'
 Circuit sky130_ajc_ip__brownout contains 170 device instances.
   Class: sky130_fd_pr__cap_mim_m3_2 instances:   1
@@ -185,10 +160,148 @@ Circuit 1 contains 118 nets,    Circuit 2 contains 118 nets.
 Final result: 
 Circuits match uniquely.
 .
-Logging to file "comp.out" disabled
+Logging to file "lvs.report" disabled
 LVS Done.
 ```
-4. It is imporant to check the layout to ensure no wires crossover or short out any part of the digital route as that will not be checked by this LVS procedure.
+
+8. Optional step to check the file `lvs.report` shows that the Verilog gate-level netlist, which defines brownout_dig was indeed included in the LVS check:
+
+
+```
+Subcircuit summary:
+Circuit 1: brownout_ana                    |Circuit 2: brownout_ana                    
+-------------------------------------------|-------------------------------------------
+sky130_fd_sc_hd__inv_16 (4)                |sky130_fd_sc_hd__inv_16 (4)                
+sky130_fd_sc_hvl__lsbufhv2lv_1 (2)         |sky130_fd_sc_hvl__lsbufhv2lv_1 (2)         
+sky130_fd_pr__nfet_g5v0d10v5 (186->49)     |sky130_fd_pr__nfet_g5v0d10v5 (186->49)     
+sky130_fd_pr__pfet_g5v0d10v5 (223->45)     |sky130_fd_pr__pfet_g5v0d10v5 (223->45)     
+sky130_fd_sc_hvl__inv_1 (17)               |sky130_fd_sc_hvl__inv_1 (17)               
+sky130_fd_pr__res_xhigh_po_1p41 (29->10)   |sky130_fd_pr__res_xhigh_po_1p41 (10)       
+sky130_fd_sc_hd__inv_4 (5)                 |sky130_fd_sc_hd__inv_4 (5)                 
+schmitt_trigger (1)                        |schmitt_trigger (1)                        
+sky130_fd_sc_hvl__lsbuflv2hv_1 (18)        |sky130_fd_sc_hvl__lsbuflv2hv_1 (18)        
+rc_osc (1)                                 |rc_osc (1)                                 
+sky130_fd_pr__cap_mim_m3_2 (6->1)          |sky130_fd_pr__cap_mim_m3_2 (6->1)          
+ibias_gen (1)                              |ibias_gen (1)                              
+sky130_fd_pr__pnp_05v5_W0p68L0p68 (1)      |sky130_fd_pr__pnp_05v5_W0p68L0p68 (1)      
+Number of devices: 155                     |Number of devices: 155                     
+Number of nets: 108                        |Number of nets: 108                        
+---------------------------------------------------------------------------------------
+Netlists match uniquely with port errors.
+
+Subcircuit pins:
+Circuit 1: brownout_ana                    |Circuit 2: brownout_ana                    
+-------------------------------------------|-------------------------------------------
+comparator_1/vt                            |(no matching pin)                          
+comparator_0/vt                            |(no matching pin)                          
+avss                                       |avss                                       
+vin_vunder                                 |vin_vunder                                 
+vin_brout                                  |vin_brout                                  
+avdd                                       |avdd                                       
+vbg_1v2                                    |vbg_1v2                                    
+ena                                        |ena                                        
+isrc_sel                                   |isrc_sel                                   
+itest                                      |itest                                      
+ibg_200n                                   |ibg_200n                                   
+osc_ck                                     |osc_ck                                     
+osc_ena                                    |osc_ena                                    
+outb_unbuf                                 |outb_unbuf                                 
+vtrip_decoded[7]                           |vtrip_decoded[7]                           
+otrip_decoded[7]                           |otrip_decoded[7]                           
+vtrip_decoded[6]                           |vtrip_decoded[6]                           
+otrip_decoded[6]                           |otrip_decoded[6]                           
+vtrip_decoded[5]                           |vtrip_decoded[5]                           
+otrip_decoded[5]                           |otrip_decoded[5]                           
+vtrip_decoded[4]                           |vtrip_decoded[4]                           
+vtrip_decoded[3]                           |vtrip_decoded[3]                           
+otrip_decoded[4]                           |otrip_decoded[4]                           
+otrip_decoded[3]                           |otrip_decoded[3]                           
+vtrip_decoded[2]                           |vtrip_decoded[2]                           
+otrip_decoded[2]                           |otrip_decoded[2]                           
+vtrip_decoded[1]                           |vtrip_decoded[1]                           
+otrip_decoded[1]                           |otrip_decoded[1]                           
+vtrip_decoded[0]                           |vtrip_decoded[0]                           
+otrip_decoded[0]                           |otrip_decoded[0]                           
+dcomp                                      |dcomp                                      
+vunder                                     |vunder                                     
+brout_filt                                 |brout_filt                                 
+outb                                       |outb                                       
+dvdd                                       |dvdd                                       
+dvss                                       |dvss                                       
+comparator_0/vt                            |(no matching pin)                          
+comparator_1/vt                            |(no matching pin)                          
+---------------------------------------------------------------------------------------
+Cell pin lists for brownout_ana and brownout_ana altered to match.
+Device classes brownout_ana and brownout_ana are equivalent.
+  Flattening non-matched subcircuits brownout_ana brownout_ana
+Flattening unmatched subcell sky130_fd_pr__nfet_g5v0d10v5_PXF6AN in circuit sky130_ajc_ip__brownout (0)(1 instance)
+Flattening unmatched subcell sky130_fd_pr__nfet_g5v0d10v5_V6EN4F in circuit sky130_ajc_ip__brownout (0)(1 instance)
+Flattening unmatched subcell sky130_fd_pr__nfet_g5v0d10v5_XTZQRT in circuit sky130_ajc_ip__brownout (0)(1 instance)
+
+Class sky130_ajc_ip__brownout (0):  Merged 14 parallel devices.
+Subcircuit summary:
+Circuit 1: sky130_ajc_ip__brownout         |Circuit 2: sky130_ajc_ip__brownout_lvs     
+-------------------------------------------|-------------------------------------------
+sky130_fd_pr__nfet_g5v0d10v5 (214->63)     |sky130_fd_pr__nfet_g5v0d10v5 (214->63)     
+brownout_dig (1)                           |brownout_dig (1)                           
+sky130_fd_sc_hd__inv_16 (4)                |sky130_fd_sc_hd__inv_16 (4)                
+sky130_fd_sc_hvl__lsbufhv2lv_1 (2)         |sky130_fd_sc_hvl__lsbufhv2lv_1 (2)         
+sky130_fd_pr__pfet_g5v0d10v5 (223->45)     |sky130_fd_pr__pfet_g5v0d10v5 (223->45)     
+sky130_fd_sc_hvl__inv_1 (17)               |sky130_fd_sc_hvl__inv_1 (17)               
+sky130_fd_pr__res_xhigh_po_1p41 (10)       |sky130_fd_pr__res_xhigh_po_1p41 (10)       
+sky130_fd_sc_hd__inv_4 (5)                 |sky130_fd_sc_hd__inv_4 (5)                 
+schmitt_trigger (1)                        |schmitt_trigger (1)                        
+sky130_fd_sc_hvl__lsbuflv2hv_1 (18)        |sky130_fd_sc_hvl__lsbuflv2hv_1 (18)        
+rc_osc (1)                                 |rc_osc (1)                                 
+sky130_fd_pr__cap_mim_m3_2 (6->1)          |sky130_fd_pr__cap_mim_m3_2 (6->1)          
+ibias_gen (1)                              |ibias_gen (1)                              
+sky130_fd_pr__pnp_05v5_W0p68L0p68 (1)      |sky130_fd_pr__pnp_05v5_W0p68L0p68 (1)      
+Number of devices: 170                     |Number of devices: 170                     
+Number of nets: 118                        |Number of nets: 118                        
+---------------------------------------------------------------------------------------
+Netlists match uniquely.
+
+Subcircuit pins:
+Circuit 1: sky130_ajc_ip__brownout         |Circuit 2: sky130_ajc_ip__brownout_lvs     
+-------------------------------------------|-------------------------------------------
+avss                                       |avss                                       
+avdd                                       |avdd                                       
+vbg_1v2                                    |vbg_1v2                                    
+vin_brout                                  |vin_brout                                  
+vin_vunder                                 |vin_vunder                                 
+dvdd                                       |dvdd                                       
+ibg_200n                                   |ibg_200n                                   
+itest                                      |itest                                      
+vunder                                     |vunder                                     
+outb                                       |outb                                       
+timed_out                                  |timed_out                                  
+isrc_sel                                   |isrc_sel                                   
+dcomp                                      |dcomp                                      
+brout_filt                                 |brout_filt                                 
+osc_ck                                     |osc_ck                                     
+force_dis_rc_osc                           |force_dis_rc_osc                           
+force_ena_rc_osc                           |force_ena_rc_osc                           
+force_short_oneshot                        |force_short_oneshot                        
+otrip[2]                                   |otrip[2]                                   
+otrip[1]                                   |otrip[1]                                   
+otrip[0]                                   |otrip[0]                                   
+vtrip[2]                                   |vtrip[2]                                   
+vtrip[1]                                   |vtrip[1]                                   
+vtrip[0]                                   |vtrip[0]                                   
+ena                                        |ena                                        
+dvss                                       |dvss                                       
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes sky130_ajc_ip__brownout and sky130_ajc_ip__brownout_lvs are equivalent.
+
+Final result: Circuits match uniquely.
+.
+
+```
+Last part of lvs.report showing LVS match as well as Verilog gate-level netlist (which defines `brownout_dig`)  being included in the check.
+
+
+
 
 
 ## Parasitic Resistance and Capacitance Extraction (RCX)

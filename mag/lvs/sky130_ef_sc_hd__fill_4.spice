@@ -1,0 +1,6 @@
+* NGSPICE file created from sky130_ef_sc_hd__fill_4.ext - technology: sky130A
+
+* Black-box entry subcircuit for sky130_ef_sc_hd__fill_4 abstract view
+.subckt sky130_ef_sc_hd__fill_4 VPWR VGND VPB VNB
+.ends
+

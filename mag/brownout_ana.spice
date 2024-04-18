@@ -1143,8 +1143,8 @@ Xibias_gen_0 ibias_gen_0/ibias0 itest ibias_gen_0/ibias1 ibg_200n vbg_1v2 ibias_
 + ibias_gen_0/ena ibias_gen_0/ve avss avdd ibias_gen
 Xsky130_fd_pr__rf_pnp_05v5_W0p68L0p68_0 avss avss ibias_gen_0/ve sky130_fd_pr__rf_pnp_05v5_W0p68L0p68 m=1
 Xcomparator_0 ibias_gen_0/ibias1 dcomp3v3uv ibias_gen_0/ena vin_vunder vbg_1v2 avss
-+ comparator_0/vt avdd comparator
-Xcomparator_1 ibias_gen_0/ibias0 dcomp3v3 ibias_gen_0/ena vin_brout vbg_1v2 avss comparator_1/vt
++ avss avdd comparator
+Xcomparator_1 ibias_gen_0/ibias0 dcomp3v3 ibias_gen_0/ena vin_brout vbg_1v2 avss avss
 + avdd comparator
 Xsky130_fd_sc_hd__inv_16_0 sky130_fd_sc_hd__inv_4_0/Y dvss dvss dvdd dvdd brout_filt
 + sky130_fd_sc_hd__inv_16
