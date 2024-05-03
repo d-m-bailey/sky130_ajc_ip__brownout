@@ -1802,4 +1802,6 @@ flabel metal3 1723 -1067 1723 -1067 0 FreeSans 1600 0 0 0 avdd
 port 1 nsew
 flabel metal2 11863 41082 11915 41282 0 FreeSans 1600 90 0 0 itest
 port 12 nsew
+<< properties >>
+string MASKHINTS_HVI 24971 18025 33794 19063 23178 16612 24484 17620 39642 21825 39883 23885
 << end >>
