@@ -1729,11 +1729,11 @@ rect 42893 -1593 43293 3659
 rect 42893 -1981 42899 -1593
 rect 43287 -1981 43293 -1593
 rect 42893 -1987 43293 -1981
-use brownout_ana  brownout_ana_0 ~/chipalooza/sky130_ajc_ip__brownout/mag
+use brownout_ana  brownout_ana_0
 timestamp 1713416677
 transform 1 0 29373 0 1 25849
 box -29373 -25849 12300 13900
-use brownout_dig  brownout_dig_0 ~/chipalooza/sky130_ajc_ip__brownout/mag
+use brownout_dig  brownout_dig_0
 timestamp 1713147927
 transform 1 0 30384 0 1 26140
 box 0 0 11173 13317
