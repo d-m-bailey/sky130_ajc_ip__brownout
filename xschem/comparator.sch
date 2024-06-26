@@ -250,7 +250,7 @@ lab=avss}
 N 650 80 650 150 {
 lab=avss}
 C {devices/ipin.sym} -800 -310 2 1 {name=p2 lab=ena}
-C {xschem/sky130_fd_pr/nfet_g5v0d10v5.sym} -350 0 0 1 {name=Mb
+C {sky130_fd_pr/nfet_g5v0d10v5.sym} -350 0 0 1 {name=Mb
 W=1
 L=8
 nf=1
@@ -264,7 +264,7 @@ sa=0 sb=0 sd=0
 model=nfet_g5v0d10v5
 spiceprefix=X
 }
-C {xschem/sky130_fd_pr/nfet_g5v0d10v5.sym} 160 0 0 0 {name=Mta
+C {sky130_fd_pr/nfet_g5v0d10v5.sym} 160 0 0 0 {name=Mta
 W=1
 L=8
 nf=1
@@ -278,7 +278,7 @@ sa=0 sb=0 sd=0
 model=nfet_g5v0d10v5
 spiceprefix=X
 }
-C {xschem/sky130_fd_pr/nfet_g5v0d10v5.sym} 90 80 0 1 {name=Ml0
+C {sky130_fd_pr/nfet_g5v0d10v5.sym} 90 80 0 1 {name=Ml0
 W=1
 L=1
 nf=1
@@ -296,7 +296,7 @@ C {devices/lab_pin.sym} 110 80 2 0 {name=p28 sig_type=std_logic lab=ena_b}
 C {devices/ipin.sym} -830 -600 2 1 {name=p34 lab=avdd}
 C {devices/ipin.sym} -830 150 2 1 {name=p35 lab=avss}
 C {devices/lab_wire.sym} -10 0 0 0 {name=p40 sig_type=std_logic lab=vn}
-C {xschem/sky130_fd_pr/nfet_g5v0d10v5.sym} -780 -100 0 0 {name=Minv0
+C {sky130_fd_pr/nfet_g5v0d10v5.sym} -780 -100 0 0 {name=Minv0
 W=1
 L=1
 nf=1
@@ -310,7 +310,7 @@ sa=0 sb=0 sd=0
 model=nfet_g5v0d10v5
 spiceprefix=X
 }
-C {xschem/sky130_fd_pr/pfet_g5v0d10v5.sym} -780 -470 0 0 {name=Minv1
+C {sky130_fd_pr/pfet_g5v0d10v5.sym} -780 -470 0 0 {name=Minv1
 W=1
 L=1
 nf=1
@@ -326,7 +326,7 @@ spiceprefix=X
 }
 C {devices/lab_wire.sym} -760 -310 0 1 {name=p41 sig_type=std_logic lab=ena_b}
 C {devices/ipin.sym} -370 -440 1 0 {name=p12 lab=ibias}
-C {xschem/sky130_fd_pr/nfet_g5v0d10v5.sym} -20 -200 0 0 {name=Mi0
+C {sky130_fd_pr/nfet_g5v0d10v5.sym} -20 -200 0 0 {name=Mi0
 W=1
 L=8
 nf=1
@@ -340,7 +340,7 @@ sa=0 sb=0 sd=0
 model=nfet_g5v0d10v5
 spiceprefix=X
 }
-C {xschem/sky130_fd_pr/nfet_g5v0d10v5.sym} 370 -200 0 1 {name=Mi1
+C {sky130_fd_pr/nfet_g5v0d10v5.sym} 370 -200 0 1 {name=Mi1
 W=1
 L=8
 nf=1
@@ -354,7 +354,7 @@ sa=0 sb=0 sd=0
 model=nfet_g5v0d10v5
 spiceprefix=X
 }
-C {xschem/sky130_fd_pr/pfet_g5v0d10v5.sym} 330 -500 0 0 {name=Mld1
+C {sky130_fd_pr/pfet_g5v0d10v5.sym} 330 -500 0 0 {name=Mld1
 W=1
 L=8
 nf=1
@@ -368,7 +368,7 @@ sa=0 sb=0 sd=0
 model=pfet_g5v0d10v5
 spiceprefix=X
 }
-C {xschem/sky130_fd_pr/pfet_g5v0d10v5.sym} 270 -500 0 1 {name=Mh1
+C {sky130_fd_pr/pfet_g5v0d10v5.sym} 270 -500 0 1 {name=Mh1
 W=1
 L=8
 nf=1
@@ -382,7 +382,7 @@ sa=0 sb=0 sd=0
 model=pfet_g5v0d10v5
 spiceprefix=X
 }
-C {xschem/sky130_fd_pr/pfet_g5v0d10v5.sym} 80 -500 0 0 {name=Mh0
+C {sky130_fd_pr/pfet_g5v0d10v5.sym} 80 -500 0 0 {name=Mh0
 W=1
 L=8
 nf=1
@@ -396,7 +396,7 @@ sa=0 sb=0 sd=0
 model=pfet_g5v0d10v5
 spiceprefix=X
 }
-C {xschem/sky130_fd_pr/pfet_g5v0d10v5.sym} 20 -500 0 1 {name=Mld0
+C {sky130_fd_pr/pfet_g5v0d10v5.sym} 20 -500 0 1 {name=Mld0
 W=1
 L=8
 nf=1
@@ -410,7 +410,7 @@ sa=0 sb=0 sd=0
 model=pfet_g5v0d10v5
 spiceprefix=X
 }
-C {xschem/sky130_fd_pr/pfet_g5v0d10v5.sym} 510 -450 0 0 {name=Mpp1
+C {sky130_fd_pr/pfet_g5v0d10v5.sym} 510 -450 0 0 {name=Mpp1
 W=1
 L=8
 nf=1
@@ -424,7 +424,7 @@ sa=0 sb=0 sd=0
 model=pfet_g5v0d10v5
 spiceprefix=X
 }
-C {xschem/sky130_fd_pr/nfet_g5v0d10v5.sym} 510 -100 0 0 {name=Mnn1
+C {sky130_fd_pr/nfet_g5v0d10v5.sym} 510 -100 0 0 {name=Mnn1
 W=1
 L=8
 nf=1
@@ -438,7 +438,7 @@ sa=0 sb=0 sd=0
 model=nfet_g5v0d10v5
 spiceprefix=X
 }
-C {xschem/sky130_fd_pr/pfet_g5v0d10v5.sym} -160 -450 0 1 {name=Mpp0
+C {sky130_fd_pr/pfet_g5v0d10v5.sym} -160 -450 0 1 {name=Mpp0
 W=1
 L=8
 nf=1
@@ -452,7 +452,7 @@ sa=0 sb=0 sd=0
 model=pfet_g5v0d10v5
 spiceprefix=X
 }
-C {xschem/sky130_fd_pr/nfet_g5v0d10v5.sym} -160 -100 0 1 {name=Mnn0
+C {sky130_fd_pr/nfet_g5v0d10v5.sym} -160 -100 0 1 {name=Mnn0
 W=1
 L=8
 nf=1
@@ -468,7 +468,7 @@ spiceprefix=X
 }
 C {devices/ipin.sym} -40 -200 2 1 {name=p1 lab=vinn}
 C {devices/ipin.sym} 390 -200 2 0 {name=p3 lab=vinp}
-C {xschem/sky130_fd_pr/pfet_g5v0d10v5.sym} 660 -450 0 0 {name=Minv3
+C {sky130_fd_pr/pfet_g5v0d10v5.sym} 660 -450 0 0 {name=Minv3
 W=1
 L=0.6
 nf=1
@@ -482,7 +482,7 @@ sa=0 sb=0 sd=0
 model=pfet_g5v0d10v5
 spiceprefix=X
 }
-C {xschem/sky130_fd_pr/nfet_g5v0d10v5.sym} 660 -100 0 0 {name=Minv2
+C {sky130_fd_pr/nfet_g5v0d10v5.sym} 660 -100 0 0 {name=Minv2
 W=1
 L=0.6
 nf=1
@@ -496,7 +496,7 @@ sa=0 sb=0 sd=0
 model=nfet_g5v0d10v5
 spiceprefix=X
 }
-C {xschem/sky130_fd_pr/pfet_g5v0d10v5.sym} 810 -450 0 0 {name=Minv5
+C {sky130_fd_pr/pfet_g5v0d10v5.sym} 810 -450 0 0 {name=Minv5
 W=1
 L=0.6
 nf=1
@@ -510,7 +510,7 @@ sa=0 sb=0 sd=0
 model=pfet_g5v0d10v5
 spiceprefix=X
 }
-C {xschem/sky130_fd_pr/nfet_g5v0d10v5.sym} 810 -100 0 0 {name=Minv4
+C {sky130_fd_pr/nfet_g5v0d10v5.sym} 810 -100 0 0 {name=Minv4
 W=1
 L=0.6
 nf=1
@@ -526,7 +526,7 @@ spiceprefix=X
 }
 C {devices/opin.sym} 850 -330 2 1 {name=p4 lab=out}
 C {devices/lab_wire.sym} 160 -150 0 0 {name=p5 sig_type=std_logic lab=vt}
-C {xschem/sky130_fd_pr/nfet_g5v0d10v5.sym} 380 80 0 1 {name=Ml1
+C {sky130_fd_pr/nfet_g5v0d10v5.sym} 380 80 0 1 {name=Ml1
 W=1
 L=1
 nf=1
@@ -541,7 +541,7 @@ model=nfet_g5v0d10v5
 spiceprefix=X
 }
 C {devices/lab_pin.sym} 400 80 2 0 {name=p6 sig_type=std_logic lab=ena_b}
-C {xschem/sky130_fd_pr/pfet_g5v0d10v5.sym} -100 -560 0 1 {name=Ml3
+C {sky130_fd_pr/pfet_g5v0d10v5.sym} -100 -560 0 1 {name=Ml3
 W=1
 L=1
 nf=1
@@ -556,7 +556,7 @@ model=pfet_g5v0d10v5
 spiceprefix=X
 }
 C {devices/lab_pin.sym} -80 -560 2 0 {name=p7 sig_type=std_logic lab=ena}
-C {xschem/sky130_fd_pr/pfet_g5v0d10v5.sym} 450 -560 0 0 {name=Ml4
+C {sky130_fd_pr/pfet_g5v0d10v5.sym} 450 -560 0 0 {name=Ml4
 W=1
 L=1
 nf=1
@@ -571,7 +571,7 @@ model=pfet_g5v0d10v5
 spiceprefix=X
 }
 C {devices/lab_pin.sym} 430 -560 2 1 {name=p8 sig_type=std_logic lab=ena}
-C {xschem/sky130_fd_pr/nfet_g5v0d10v5.sym} -270 -280 0 1 {name=Mt1
+C {sky130_fd_pr/nfet_g5v0d10v5.sym} -270 -280 0 1 {name=Mt1
 W=1
 L=1
 nf=1
@@ -586,7 +586,7 @@ model=nfet_g5v0d10v5
 spiceprefix=X
 }
 C {devices/lab_pin.sym} -250 -280 2 0 {name=p9 sig_type=std_logic lab=ena}
-C {xschem/sky130_fd_pr/pfet_g5v0d10v5.sym} -430 -280 0 1 {name=Mt0
+C {sky130_fd_pr/pfet_g5v0d10v5.sym} -430 -280 0 1 {name=Mt0
 W=1
 L=1
 nf=1
@@ -603,7 +603,7 @@ spiceprefix=X
 C {devices/lab_pin.sym} -410 -280 2 0 {name=p10 sig_type=std_logic lab=ena_b}
 C {devices/lab_pin.sym} -450 -280 2 1 {name=p11 sig_type=std_logic lab=avdd}
 C {devices/lab_pin.sym} -290 -280 2 1 {name=p13 sig_type=std_logic lab=avss}
-C {xschem/sky130_fd_pr/nfet_g5v0d10v5.sym} 620 80 0 0 {name=Ml2
+C {sky130_fd_pr/nfet_g5v0d10v5.sym} 620 80 0 0 {name=Ml2
 W=1
 L=1
 nf=1
@@ -623,7 +623,7 @@ C {devices/lab_wire.sym} 0 -390 0 0 {name=p16 sig_type=std_logic lab=vnn}
 C {devices/lab_wire.sym} 350 -390 0 1 {name=p17 sig_type=std_logic lab=vpp}
 C {devices/lab_wire.sym} 560 -330 0 1 {name=p18 sig_type=std_logic lab=n0}
 C {devices/lab_wire.sym} 720 -330 0 1 {name=p19 sig_type=std_logic lab=n1}
-C {xschem/sky130_fd_pr/nfet_g5v0d10v5.sym} 1020 100 0 0 {name=Mdum0
+C {sky130_fd_pr/nfet_g5v0d10v5.sym} 1020 100 0 0 {name=Mdum0
 W=1
 L=8
 nf=1
@@ -641,7 +641,7 @@ C {devices/lab_pin.sym} 1040 100 2 0 {name=p20 sig_type=std_logic lab=vt}
 C {devices/lab_pin.sym} 1000 100 2 1 {name=p21 sig_type=std_logic lab=avss}
 C {devices/lab_wire.sym} 1040 70 0 0 {name=p22 sig_type=std_logic lab=vnn}
 C {devices/lab_wire.sym} 1040 130 2 0 {name=p23 sig_type=std_logic lab=vt}
-C {xschem/sky130_fd_pr/nfet_g5v0d10v5.sym} 1250 100 0 0 {name=Mdum1
+C {sky130_fd_pr/nfet_g5v0d10v5.sym} 1250 100 0 0 {name=Mdum1
 W=1
 L=8
 nf=1
@@ -659,7 +659,7 @@ C {devices/lab_pin.sym} 1270 100 2 0 {name=p24 sig_type=std_logic lab=avss}
 C {devices/lab_pin.sym} 1230 100 2 1 {name=p25 sig_type=std_logic lab=avss}
 C {devices/lab_wire.sym} 1270 70 0 0 {name=p26 sig_type=std_logic lab=avss}
 C {devices/lab_wire.sym} 1270 130 2 0 {name=p27 sig_type=std_logic lab=avss}
-C {xschem/sky130_fd_pr/pfet_g5v0d10v5.sym} 1440 100 0 0 {name=Mdum2
+C {sky130_fd_pr/pfet_g5v0d10v5.sym} 1440 100 0 0 {name=Mdum2
 W=1
 L=8
 nf=1
@@ -677,7 +677,7 @@ C {devices/lab_pin.sym} 1460 100 2 0 {name=p29 sig_type=std_logic lab=avdd}
 C {devices/lab_pin.sym} 1420 100 2 1 {name=p30 sig_type=std_logic lab=avdd}
 C {devices/lab_wire.sym} 1460 70 0 0 {name=p31 sig_type=std_logic lab=avdd}
 C {devices/lab_wire.sym} 1460 130 2 0 {name=p32 sig_type=std_logic lab=avdd}
-C {xschem/sky130_fd_pr/pfet_g5v0d10v5.sym} 1630 100 0 0 {name=Mdum3
+C {sky130_fd_pr/pfet_g5v0d10v5.sym} 1630 100 0 0 {name=Mdum3
 W=1
 L=8
 nf=1

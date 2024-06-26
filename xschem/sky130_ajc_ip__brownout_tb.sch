@@ -117,7 +117,7 @@ C {devices/vsource.sym} -820 -170 0 0 {name=Vbg value=1.2 savecurrent=false}
 C {devices/gnd.sym} -820 -140 0 0 {name=l7 lab=GND}
 C {devices/lab_pin.sym} -820 -200 1 0 {name=p11 sig_type=std_logic lab=vbg_1v2}
 C {devices/isource.sym} -370 -480 0 0 {name=Ibias value=200n}
-C {xschem/sky130_fd_pr/pfet_g5v0d10v5.sym} -230 -610 0 0 {name=M1
+C {sky130_fd_pr/pfet_g5v0d10v5.sym} -230 -610 0 0 {name=M1
 W=1
 L=4
 nf=1
@@ -131,7 +131,7 @@ sa=0 sb=0 sd=0
 model=pfet_g5v0d10v5
 spiceprefix=X
 }
-C {xschem/sky130_fd_pr/pfet_g5v0d10v5.sym} -350 -610 0 1 {name=M0
+C {sky130_fd_pr/pfet_g5v0d10v5.sym} -350 -610 0 1 {name=M0
 W=1
 L=4
 nf=1
@@ -168,7 +168,7 @@ value=20p
 footprint=1206
 device="ceramic capacitor"}
 C {devices/lab_wire.sym} 610 -280 0 0 {name=p12 sig_type=std_logic lab=outb}
-C {xschem/sky130_ajc_ip__brownout.sym} 150 -160 0 0 {name=xIbrout}
+C {sky130_ajc_ip__brownout.sym} 150 -160 0 0 {name=xIbrout}
 C {devices/lab_pin.sym} 0 -280 0 0 {name=p9 lab=avdd}
 C {devices/lab_pin.sym} 0 -260 0 0 {name=p15 lab=avss}
 C {devices/lab_pin.sym} 0 -240 0 0 {name=p20 lab=dvdd}

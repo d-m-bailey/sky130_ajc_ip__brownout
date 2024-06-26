@@ -9,7 +9,7 @@ T {Copyright 2024 Ajacci, Ltd. Co.
 Apache License, Version 2.0 with Addendum, see NOTICE
 Date: 03/14/2024   Rev: 0
 Description: Brownout detector (analog & digital sections)} -570 180 0 0 0.4 0.4 {}
-C {xschem/brownout_ana.sym} 0 10 0 0 {name=xIana}
+C {brownout_ana.sym} 0 10 0 0 {name=xIana}
 C {devices/ipin.sym} -430 -420 2 1 {name=p1 lab=avdd}
 C {devices/ipin.sym} -430 -400 2 1 {name=p2 lab=avss}
 C {devices/ipin.sym} -430 -380 2 1 {name=p3 lab=dvdd}
@@ -52,7 +52,7 @@ C {devices/lab_pin.sym} -150 80 0 0 {name=p32 lab=vtrip_decoded_7_,vtrip_decoded
 C {devices/ipin.sym} -430 -260 2 1 {name=p35 lab=force_ena_rc_osc}
 C {devices/lab_pin.sym} 150 -40 0 1 {name=p40 lab=dcomp}
 C {devices/opin.sym} 180 -340 0 0 {name=p42 lab=dcomp}
-C {xschem/brownout_dig.sym} -100 -590 0 0 {name=xIdig}
+C {brownout_dig.sym} -100 -590 0 0 {name=xIdig}
 C {devices/lab_pin.sym} -250 -690 0 0 {name=p43 lab=dvdd}
 C {devices/lab_pin.sym} -250 -670 0 0 {name=p44 lab=dvss}
 C {devices/lab_pin.sym} -250 -650 0 0 {name=p45 lab=otrip[2:0]}
@@ -125,7 +125,7 @@ C {devices/lab_pin.sym} -450 -690 0 0 {name=p111 lab=dvss}
 C {devices/lab_pin.sym} -490 -720 0 0 {name=p112 lab=dvss}
 C {devices/lab_pin.sym} -450 -720 0 1 {name=p113 lab=dvss}
 C {devices/lab_pin.sym} -450 -750 0 0 {name=p114 lab=vin_vunder}
-C {xschem/sky130_fd_pr/nfet_g5v0d10v5.sym} -620 -1110 0 0 {name=Mdum0
+C {sky130_fd_pr/nfet_g5v0d10v5.sym} -620 -1110 0 0 {name=Mdum0
 W=1
 L=0.5
 nf=1
@@ -139,7 +139,7 @@ sa=0 sb=0 sd=0
 model=nfet_g5v0d10v5
 spiceprefix=X
 }
-C {xschem/sky130_fd_pr/nfet_g5v0d10v5.sym} -470 -1110 0 0 {name=Mdum1
+C {sky130_fd_pr/nfet_g5v0d10v5.sym} -470 -1110 0 0 {name=Mdum1
 W=1
 L=0.5
 nf=1
@@ -153,7 +153,7 @@ sa=0 sb=0 sd=0
 model=nfet_g5v0d10v5
 spiceprefix=X
 }
-C {xschem/sky130_fd_pr/nfet_g5v0d10v5.sym} -320 -1110 0 0 {name=Mdum2
+C {sky130_fd_pr/nfet_g5v0d10v5.sym} -320 -1110 0 0 {name=Mdum2
 W=1
 L=0.5
 nf=1
@@ -167,7 +167,7 @@ sa=0 sb=0 sd=0
 model=nfet_g5v0d10v5
 spiceprefix=X
 }
-C {xschem/sky130_fd_pr/nfet_g5v0d10v5.sym} -620 -1010 0 0 {name=Mdum3
+C {sky130_fd_pr/nfet_g5v0d10v5.sym} -620 -1010 0 0 {name=Mdum3
 W=1
 L=0.5
 nf=1
@@ -181,7 +181,7 @@ sa=0 sb=0 sd=0
 model=nfet_g5v0d10v5
 spiceprefix=X
 }
-C {xschem/sky130_fd_pr/nfet_g5v0d10v5.sym} -470 -1010 0 0 {name=Mdum4
+C {sky130_fd_pr/nfet_g5v0d10v5.sym} -470 -1010 0 0 {name=Mdum4
 W=1
 L=0.5
 nf=1
@@ -195,7 +195,7 @@ sa=0 sb=0 sd=0
 model=nfet_g5v0d10v5
 spiceprefix=X
 }
-C {xschem/sky130_fd_pr/nfet_g5v0d10v5.sym} -320 -1010 0 0 {name=Mdum5
+C {sky130_fd_pr/nfet_g5v0d10v5.sym} -320 -1010 0 0 {name=Mdum5
 W=1
 L=0.5
 nf=1
@@ -209,7 +209,7 @@ sa=0 sb=0 sd=0
 model=nfet_g5v0d10v5
 spiceprefix=X
 }
-C {xschem/sky130_fd_pr/nfet_g5v0d10v5.sym} -620 -910 0 0 {name=Mdum6
+C {sky130_fd_pr/nfet_g5v0d10v5.sym} -620 -910 0 0 {name=Mdum6
 W=1
 L=0.5
 nf=1
@@ -223,7 +223,7 @@ sa=0 sb=0 sd=0
 model=nfet_g5v0d10v5
 spiceprefix=X
 }
-C {xschem/sky130_fd_pr/nfet_g5v0d10v5.sym} -470 -910 0 0 {name=Mdum7
+C {sky130_fd_pr/nfet_g5v0d10v5.sym} -470 -910 0 0 {name=Mdum7
 W=1
 L=0.5
 nf=1
@@ -237,7 +237,7 @@ sa=0 sb=0 sd=0
 model=nfet_g5v0d10v5
 spiceprefix=X
 }
-C {xschem/sky130_fd_pr/nfet_g5v0d10v5.sym} -320 -910 0 0 {name=Mdum8
+C {sky130_fd_pr/nfet_g5v0d10v5.sym} -320 -910 0 0 {name=Mdum8
 W=1
 L=0.5
 nf=1
@@ -251,7 +251,7 @@ sa=0 sb=0 sd=0
 model=nfet_g5v0d10v5
 spiceprefix=X
 }
-C {xschem/sky130_fd_pr/nfet_g5v0d10v5.sym} -620 -810 0 0 {name=Mdum9
+C {sky130_fd_pr/nfet_g5v0d10v5.sym} -620 -810 0 0 {name=Mdum9
 W=1
 L=0.5
 nf=1
@@ -265,7 +265,7 @@ sa=0 sb=0 sd=0
 model=nfet_g5v0d10v5
 spiceprefix=X
 }
-C {xschem/sky130_fd_pr/nfet_g5v0d10v5.sym} -470 -810 0 0 {name=Mdum10
+C {sky130_fd_pr/nfet_g5v0d10v5.sym} -470 -810 0 0 {name=Mdum10
 W=1
 L=0.5
 nf=1
@@ -279,7 +279,7 @@ sa=0 sb=0 sd=0
 model=nfet_g5v0d10v5
 spiceprefix=X
 }
-C {xschem/sky130_fd_pr/nfet_g5v0d10v5.sym} -320 -810 0 0 {name=Mdum11
+C {sky130_fd_pr/nfet_g5v0d10v5.sym} -320 -810 0 0 {name=Mdum11
 W=1
 L=0.5
 nf=1
@@ -293,7 +293,7 @@ sa=0 sb=0 sd=0
 model=nfet_g5v0d10v5
 spiceprefix=X
 }
-C {xschem/sky130_fd_pr/nfet_g5v0d10v5.sym} -620 -720 0 0 {name=Mdum12
+C {sky130_fd_pr/nfet_g5v0d10v5.sym} -620 -720 0 0 {name=Mdum12
 W=1
 L=0.5
 nf=1
@@ -307,7 +307,7 @@ sa=0 sb=0 sd=0
 model=nfet_g5v0d10v5
 spiceprefix=X
 }
-C {xschem/sky130_fd_pr/nfet_g5v0d10v5.sym} -470 -720 0 0 {name=Mdum13
+C {sky130_fd_pr/nfet_g5v0d10v5.sym} -470 -720 0 0 {name=Mdum13
 W=1
 L=0.5
 nf=1
