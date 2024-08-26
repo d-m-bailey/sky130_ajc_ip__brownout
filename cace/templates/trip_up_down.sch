@@ -41,10 +41,6 @@ N 240 -410 240 -390 {
 lab=GND}
 N 210 -410 240 -410 {
 lab=GND}
-N 210 -650 240 -650 {
-lab=GND}
-N 210 -650 210 -410 {
-lab=GND}
 N 210 -570 240 -570 {
 lab=GND}
 N 210 -490 240 -490 {
@@ -73,10 +69,6 @@ N 450 -410 450 -390 {
 lab=GND}
 N 420 -410 450 -410 {
 lab=GND}
-N 420 -650 450 -650 {
-lab=GND}
-N 420 -650 420 -410 {
-lab=GND}
 N 420 -570 450 -570 {
 lab=GND}
 N 420 -490 450 -490 {
@@ -97,8 +89,16 @@ N -30 -730 0 -730 {
 lab=GND}
 N 470 -220 470 -50 {
 lab=itest}
+N 210 -570 210 -490 {
+lab=GND}
+N 210 -490 210 -410 {
+lab=GND}
+N 420 -570 420 -490 {
+lab=GND}
+N 420 -490 420 -410 {
+lab=GND}
 C {devices/isource.sym} -370 -480 0 0 {name=Ibias value=200n}
-C {xschem/sky130_fd_pr/pfet_g5v0d10v5.sym} -230 -610 0 0 {name=M1
+C {sky130_fd_pr/pfet_g5v0d10v5.sym} -230 -610 0 0 {name=M1
 W=1
 L=4
 nf=1
@@ -112,7 +112,7 @@ sa=0 sb=0 sd=0
 model=pfet_g5v0d10v5
 spiceprefix=X
 }
-C {xschem/sky130_fd_pr/pfet_g5v0d10v5.sym} -350 -610 0 1 {name=M0
+C {sky130_fd_pr/pfet_g5v0d10v5.sym} -350 -610 0 1 {name=M0
 W=1
 L=4
 nf=1
@@ -142,7 +142,7 @@ value=20p
 footprint=1206
 device="ceramic capacitor"}
 C {devices/lab_wire.sym} 610 -280 0 0 {name=p12 sig_type=std_logic lab=outb}
-C {xschem/sky130_ajc_ip__brownout.sym} 150 -160 0 0 {name=xIbrout}
+C {sky130_ajc_ip__brownout.sym} 150 -160 0 0 {name=xIbrout}
 C {devices/lab_pin.sym} 0 -280 0 0 {name=p9 lab=avdd}
 C {devices/lab_pin.sym} 0 -260 0 0 {name=p15 lab=avss}
 C {devices/lab_pin.sym} 0 -240 0 0 {name=p20 lab=dvdd}
@@ -160,50 +160,46 @@ C {devices/lab_pin.sym} 0 -60 0 0 {name=p37 lab=isrc_sel}
 C {devices/lab_pin.sym} 0 -160 0 0 {name=p8 lab=vtrip[2:0]}
 C {devices/lab_pin.sym} 300 -160 0 1 {name=p10 lab=vin_vunder}
 C {devices/lab_pin.sym} 300 -120 0 1 {name=p13 lab=vunder}
-C {devices/vsource.sym} 670 -600 0 0 {name=Vavss value="DC \{Vavss\}" savecurrent=false}
+C {devices/vsource.sym} 670 -600 0 0 {name=Vavss value="DC CACE\{Vavss\}" savecurrent=false}
 C {devices/lab_pin.sym} 670 -630 2 0 {name=p25 sig_type=std_logic lab=avss}
 C {devices/lab_pin.sym} 670 -710 2 0 {name=p36 sig_type=std_logic lab=avdd}
-C {devices/vsource.sym} 0 -440 0 0 {name=Vena value="DC [\{ena\}*\{Vdvdd\}]" savecurrent=false}
+C {devices/vsource.sym} 0 -440 0 0 {name=Vena value="DC CACE[CACE\{ena\}*CACE\{Vdvdd\}]" savecurrent=false}
 C {devices/gnd.sym} 0 -390 0 0 {name=l15 lab=GND}
 C {devices/lab_pin.sym} 0 -470 2 0 {name=p38 sig_type=std_logic lab=ena}
-C {devices/vsource.sym} 670 -680 0 0 {name=Vavdd value="pwl (0 2 3m 3.6 6m 2) DC \{Vavdd\}" savecurrent=true}
+C {devices/vsource.sym} 670 -680 0 0 {name=Vavdd value="pwl (0 2 3m 3.6 6m 2) DC CACE\{Vavdd\}" savecurrent=true}
 C {devices/vsource.sym} 0 -520 0 0 {name=Vbg1v2 value="DC 1.2" savecurrent=false}
 C {devices/lab_pin.sym} 0 -550 2 0 {name=p39 sig_type=std_logic lab=vbg_1v2}
-C {devices/vsource.sym} 670 -440 0 0 {name=Vdvss value="DC \{Vdvss\}" savecurrent=false}
+C {devices/vsource.sym} 670 -440 0 0 {name=Vdvss value="DC CACE\{Vdvss\}" savecurrent=false}
 C {devices/gnd.sym} 670 -390 0 0 {name=l16 lab=GND}
 C {devices/lab_pin.sym} 670 -470 2 0 {name=p40 sig_type=std_logic lab=dvss}
 C {devices/lab_pin.sym} 670 -550 2 0 {name=p41 sig_type=std_logic lab=dvdd}
-C {devices/vsource.sym} 670 -520 0 0 {name=Vdvdd value="DC \{Vdvdd\}" savecurrent=true}
+C {devices/vsource.sym} 670 -520 0 0 {name=Vdvdd value="DC CACE\{Vdvdd\}" savecurrent=true}
 C {devices/gnd.sym} 240 -390 0 0 {name=l17 lab=GND}
-C {devices/vsource.sym} 240 -440 0 0 {name=Vvotrip0 value="DC [\{otrip[0]\}*\{Vdvdd\}]" savecurrent=true}
+C {devices/vsource.sym} 240 -440 0 0 {name=Vvotrip0 value="DC CACE[CACE\{otrip[0]\}*CACE\{Vdvdd\}]" savecurrent=true}
 C {devices/lab_pin.sym} 240 -470 2 0 {name=p42 sig_type=std_logic lab=otrip[0]}
-C {devices/vsource.sym} 240 -520 0 0 {name=Vvotrip1 value="DC [\{otrip[1]\}*\{Vdvdd\}]" savecurrent=true}
+C {devices/vsource.sym} 240 -520 0 0 {name=Vvotrip1 value="DC CACE[CACE\{otrip[1]\}*CACE\{Vdvdd\}]" savecurrent=true}
 C {devices/lab_pin.sym} 240 -550 2 0 {name=p43 sig_type=std_logic lab=otrip[1]}
-C {devices/vsource.sym} 240 -600 0 0 {name=Vvotrip2 value="DC [\{otrip[2]\}*\{Vdvdd\}]" savecurrent=true}
+C {devices/vsource.sym} 240 -600 0 0 {name=Vvotrip2 value="DC CACE[CACE\{otrip[2]\}*CACE\{Vdvdd\}]" savecurrent=true}
 C {devices/lab_pin.sym} 240 -630 2 0 {name=p44 sig_type=std_logic lab=otrip[2]}
-C {devices/vsource.sym} 240 -680 0 0 {name=Vvotrip3 value="DC [\{otrip[3]\}*\{Vdvdd\}]" savecurrent=true}
-C {devices/lab_pin.sym} 240 -710 2 0 {name=p45 sig_type=std_logic lab=otrip[3]}
-C {devices/vsource.sym} 0 -600 0 0 {name=Visrc_sel value="DC [\{isrc_sel\}*\{Vdvdd\}]" savecurrent=false}
+C {devices/vsource.sym} 0 -600 0 0 {name=Visrc_sel value="DC CACE[CACE\{isrc_sel\}*CACE\{Vdvdd\}]" savecurrent=false}
 C {devices/lab_pin.sym} 0 -630 2 0 {name=p46 sig_type=std_logic lab=isrc_sel}
 C {devices/gnd.sym} 450 -390 0 0 {name=l1 lab=GND}
-C {devices/vsource.sym} 450 -440 0 0 {name=Vvvtrip0 value="DC [\{vtrip[0]\}*\{Vdvdd\}]" savecurrent=true}
+C {devices/vsource.sym} 450 -440 0 0 {name=Vvvtrip0 value="DC CACE[CACE\{vtrip[0]\}*CACE\{Vdvdd\}]" savecurrent=true}
 C {devices/lab_pin.sym} 450 -470 2 0 {name=p1 sig_type=std_logic lab=vtrip[0]}
-C {devices/vsource.sym} 450 -520 0 0 {name=Vvvtrip1 value="DC [\{vtrip[1]\}*\{Vdvdd\}]" savecurrent=true}
+C {devices/vsource.sym} 450 -520 0 0 {name=Vvvtrip1 value="DC CACE[CACE\{vtrip[1]\}*CACE\{Vdvdd\}]" savecurrent=true}
 C {devices/lab_pin.sym} 450 -550 2 0 {name=p2 sig_type=std_logic lab=vtrip[1]}
-C {devices/vsource.sym} 450 -600 0 0 {name=Vvvtrip2 value="DC [\{vtrip[2]\}*\{Vdvdd\}]" savecurrent=true}
+C {devices/vsource.sym} 450 -600 0 0 {name=Vvvtrip2 value="DC CACE[CACE\{vtrip[2]\}*CACE\{Vdvdd\}]" savecurrent=true}
 C {devices/lab_pin.sym} 450 -630 2 0 {name=p4 sig_type=std_logic lab=vtrip[2]}
-C {devices/vsource.sym} 450 -680 0 0 {name=Vvvtrip3 value="DC [\{vtrip[3]\}*\{Vdvdd\}]" savecurrent=true}
-C {devices/lab_pin.sym} 450 -710 2 0 {name=p5 sig_type=std_logic lab=vtrip[3]}
-C {devices/code_shown.sym} -1200 -710 0 0 {name=SETUP only_toplevel=false value="* CACE gensim simulation file \{filename\}_\{N\}
+C {devices/code_shown.sym} -1200 -710 0 0 {name=SETUP only_toplevel=false value="* CACE gensim simulation file CACE\{filename\}_CACE\{N\}
 * Generated by CACE gensim, Efabless Corporation (c) 2023
 * Find trip voltage by ramping Vavdd, both up and down.
 
-.lib \{PDK_ROOT\}/\{PDK\}/libs.tech/combined/sky130.lib.spice \{corner\}
-.include \{PDK_ROOT\}/\{PDK\}/libs.ref/sky130_fd_sc_hvl/spice/sky130_fd_sc_hvl.spice
-.include \{PDK_ROOT\}/\{PDK\}/libs.ref/sky130_fd_sc_hd/spice/sky130_fd_sc_hd.spice
-*.include \{DUT_path\}
+.lib CACE\{PDK_ROOT\}/CACE\{PDK\}/libs.tech/combined/sky130.lib.spice CACE\{corner\}
+.include CACE\{PDK_ROOT\}/CACE\{PDK\}/libs.ref/sky130_fd_sc_hvl/spice/sky130_fd_sc_hvl.spice
+.include CACE\{PDK_ROOT\}/CACE\{PDK\}/libs.ref/sky130_fd_sc_hd/spice/sky130_fd_sc_hd.spice
+*.include CACE\{DUT_path\}
 
-.option TEMP=\{temperature\}
+.option TEMP=CACE\{temperature\}
 * Flag unsafe operating conditions (exceeds models' specified limits)
 .option warn=1
 *.option reltol=5e-5
@@ -212,29 +208,29 @@ C {devices/code_shown.sym} -1200 -710 0 0 {name=SETUP only_toplevel=false value=
 
 .save all
 "}
-C {devices/code_shown.sym} -1210 -330 0 0 {name=CONTROL only_toplevel=false value=".csparam dvdd2=[\{Vdvdd\}/2]
+C {devices/code_shown.sym} -1210 -330 0 0 {name=CONTROL only_toplevel=false value=".csparam dvdd2=CACE[CACE\{Vdvdd\}/2]
 .control
 tran 1u 6m
 meas tran otrip_r find v(avdd) when v(dcomp)=$&dvdd2 td=3m rise=1
 meas tran otrip_f find v(avdd) when v(dcomp)=$&dvdd2 td=300u fall=1
 meas tran vtrip_r find v(avdd) when v(vunder)=$&dvdd2 td=300u rise=1
 meas tran vtrip_f find v(avdd) when v(vunder)=$&dvdd2 td=3m fall=1
-echo $&otrip_r > \{simpath\}/\{filename\}_\{N\}.data
-echo $&otrip_f >> \{simpath\}/\{filename\}_\{N\}.data
-echo $&vtrip_r >> \{simpath\}/\{filename\}_\{N\}.data
-echo $&vtrip_f >> \{simpath\}/\{filename\}_\{N\}.data
+echo $&otrip_r > CACE\{simpath\}/CACE\{filename\}_CACE\{N\}.data
+echo $&otrip_f >> CACE\{simpath\}/CACE\{filename\}_CACE\{N\}.data
+echo $&vtrip_r >> CACE\{simpath\}/CACE\{filename\}_CACE\{N\}.data
+echo $&vtrip_f >> CACE\{simpath\}/CACE\{filename\}_CACE\{N\}.data
 quit
 .endc
 "}
-C {devices/vsource.sym} 0 -680 0 0 {name=Vforce_dis_rc_osc value="DC [\{force_dis_rc_osc\}*\{Vdvdd\}]" savecurrent=false}
+C {devices/vsource.sym} 0 -680 0 0 {name=Vforce_dis_rc_osc value="DC CACE[CACE\{force_dis_rc_osc\}*CACE\{Vdvdd\}]" savecurrent=false}
 C {devices/lab_pin.sym} 0 -710 2 0 {name=p6 sig_type=std_logic lab=force_dis_rc_osc}
-C {devices/vsource.sym} 0 -840 0 0 {name=Vforce_short_oneshot value="DC [\{force_short_oneshot\}*\{Vdvdd\}]" savecurrent=false}
+C {devices/vsource.sym} 0 -840 0 0 {name=Vforce_short_oneshot value="DC CACE[CACE\{force_short_oneshot\}*CACE\{Vdvdd\}]" savecurrent=false}
 C {devices/lab_pin.sym} 0 -870 2 0 {name=p11 sig_type=std_logic lab=force_short_oneshot}
 C {devices/vsource.sym} -140 -610 0 0 {name=Vavdd_bg value="DC 3.3" savecurrent=false}
 C {devices/lab_wire.sym} -290 -660 0 0 {name=p3 sig_type=std_logic lab=avdd_bg}
 C {devices/gnd.sym} -140 -580 0 0 {name=l2 lab=GND}
 C {devices/gnd.sym} -370 -450 0 0 {name=l3 lab=GND}
 C {devices/lab_pin.sym} 0 -100 0 0 {name=p14 lab=force_dis_rc_osc}
-C {devices/vsource.sym} 0 -760 0 0 {name=Vforce_ena_rc_osc value="DC [\{force_ena_rc_osc\}*\{Vdvdd\}]" savecurrent=false}
+C {devices/vsource.sym} 0 -760 0 0 {name=Vforce_ena_rc_osc value="DC CACE[CACE\{force_ena_rc_osc\}*CACE\{Vdvdd\}]" savecurrent=false}
 C {devices/lab_pin.sym} 0 -790 2 0 {name=p16 sig_type=std_logic lab=force_ena_rc_osc}
 C {devices/lab_pin.sym} 300 -240 0 1 {name=p19 lab=dcomp}
