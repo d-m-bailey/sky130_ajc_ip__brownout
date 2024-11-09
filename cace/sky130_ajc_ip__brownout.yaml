@@ -1,0 +1,669 @@
+#--------------------------------------------------------------
+# CACE circuit characterization file
+#--------------------------------------------------------------
+
+name: sky130_ajc_ip__brownout
+description: Brown-out detector
+PDK: sky130A
+
+cace_format: 5.2
+
+authorship:
+  designer: Robin Matthew Tsang
+  company: Ajacci, Ltd. Co.
+  creation_date: March 19, 2024
+  license: Apache 2.0
+
+paths:
+  root: ..
+  documentation: docs
+  schematic: xschem
+  magic: mag
+  layout: gds
+  netlist: netlist
+
+pins:
+  vbg_1v2:
+    description: Bandgap reference 1.20V
+    type: signal
+    direction: input
+    Vmin: '1.15'
+    Vmax: '1.25'
+  
+  otrip[2:0]:
+    description: Digital trip voltage select for brown-out detector
+    type: digital
+    direction: input
+    Vmin: "dvss - 0.3"
+    Vmax: "dvdd + 0.3"
+  vtrip[2:0]:
+    description: Digital trip voltage select for under-voltage detector
+    type: digital
+    direction: input
+    Vmin: "dvss - 0.3"
+    Vmax: "dvdd + 0.3"
+  ena:
+    description: Enable input (active high)
+    type: digital
+    direction: input
+    Vmin: "dvss - 0.3"
+    Vmax: "dvdd + 0.3"
+  isrc_sel:
+    description: Internal(0)/external(1) bias current select
+    type: digital
+    direction: input
+    Vmin: "dvss - 0.3"
+    Vmax: "dvdd + 0.3"
+  force_ena_rc_osc:
+    description: Force internal rc-oscillator to turn on, test-mode
+    type: digital
+    direction: input
+    Vmin: "dvss - 0.3"
+    Vmax: "dvdd + 0.3"
+  force_dis_rc_osc:
+    description: Force internal rc-oscillator to turn off, test-mode
+    type: digital
+    direction: input
+    Vmin: "dvss - 0.3"
+    Vmax: "dvdd + 0.3"
+  force_short_oneshot:
+    description: Force one-shot timeout period to be very short, test-mode
+    type: digital
+    direction: input
+    Vmin: "dvss - 0.3"
+    Vmax: "dvdd + 0.3"
+  ibg_200n:
+    description: External 200n bandgap reference current
+    type: signal
+    direction: input
+    Vmin: "avss - 0.3"
+    Vmax: "avdd + 0.3"
+  outb:
+    description: Brown-out alarm (active low)
+    type: digital
+    direction: output
+    Vmin: "dvss - 0.3"
+    Vmax: "dvdd + 0.3"
+  vunder:
+    description: Under-voltage alarm (active low)
+    type: digital
+    direction: output
+    Vmin: "dvss - 0.3"
+    Vmax: "dvdd + 0.3"
+  itest:
+    description: Test current, send to external 1Mohm resistor if desired
+    type: signal
+    direction: output
+    Vmin: "avss - 0.3"
+    Vmax: "avdd + 0.3"
+  dvdd:
+    description: Positive digital power supply
+    type: power
+    direction: inout
+    Vmin: '1.5'
+    Vmax: '2.1'
+  dvss:
+    description: Digital ground
+    type: ground
+    direction: inout
+    Vmin: '-0.3'
+    Vmax: '0.3'
+  avdd:
+    description: Positive analog power supply
+    type: power
+    direction: inout
+    Vmin: '3.0'
+    Vmax: '6.0'
+  avss:
+    description: Analog ground
+    type: ground
+    direction: inout
+    Vmin: '-0.3'
+    Vmax: '0.3'
+  brout_filt:
+    description: Filtered analog comparator output of brown-out detector, test-mode
+    type: digital
+    direction: output
+    Vmin: "dvss - 0.3"
+    Vmax: "dvdd + 0.3"
+  osc_ck:
+    description: RC oscillator output
+    type: digital
+    direction: output
+    Vmin: "dvss - 0.3"
+    Vmax: "dvdd + 0.3"
+  vin_brout:
+    description: Analog input to comparator of brown-out detector
+    type: signal
+    direction: output
+    Vmin: "avss - 0.3"
+    Vmax: "avdd + 0.3"
+  vin_vunder:
+    description: Analog input to comparator of under-voltage detector
+    type: signal
+    direction: output
+    Vmin: "avss - 0.3"
+    Vmax: "avdd + 0.3"
+  timed_out:
+    description: Asserts high when one-shot timer expires after brown-out event recovers
+    type: digital
+    direction: output
+    Vmin: "dvss - 0.3"
+    Vmax: "dvdd + 0.3"
+  dcomp:
+    description: Unfiltered analog comparator output of brown-out detector, test-mode
+    type: digital
+    direction: output
+    Vmin: "dvss - 0.3"
+    Vmax: "dvdd + 0.3"
+
+default_conditions:
+  Vdvdd:
+    description: Digital power supply voltage
+    display: dvdd
+    unit: V
+    typical: '1.8'
+  Vdvss:
+    description: Digital ground
+    display: dvss
+    unit: V
+    typical: '0'
+  Vavdd:
+    description: Analog power supply voltage
+    display: avdd
+    unit: V
+    typical: '3.3'
+  Vavss:
+    description: Analog ground
+    display: avss
+    unit: V
+    typical: '0'
+  cload:
+    description: Output load capatitance
+    display: cload
+    unit: pF
+    maximum: '20'
+  ena:
+    description: Overvoltage detector enable
+    display: ena
+    typical: '1'
+  isrc_sel:
+    description: Internal(0)/external(1) bias current select
+    display: isrc_sel
+    typical: '0'
+  force_ena_rc_osc:
+    description: Force internal rc-oscillator to turn on, test-mode
+    display: force_ena_rc_osc
+    typical: '0'
+  force_dis_rc_osc:
+    description: Force internal rc-oscillator to turn on, test-mode
+    display: force_dis_rc_osc
+    typical: '0'
+  force_short_oneshot:
+    description: Force one-shot timeout period to be very short, test-mode
+    display: force_short_oneshot
+    typical: '0'
+  otrip[2:0]:
+    description: Brown-out trip voltage digital input value
+    display: otrip[2:0]
+    typical: 0b100
+  vtrip[2:0]:
+    description: Under-voltage trip voltage digital input value
+    display: vtrip[2:0]
+    typical: 0b100
+  temperature:
+    description: Ambient temperature
+    display: Temp
+    unit: °C
+    minimum: '-40'
+    typical: '27'
+    maximum: '130'
+  corner:
+    description: Process corner
+    display: Corner
+    minimum: ss
+    typical: tt
+    maximum: ff
+parameters:
+  hysteresis_br:
+    status: skip
+    description: Check amount of hysteresis at each trip voltage
+    display: Hysteresis (out)
+    unit: V
+    spec:
+      minimum:
+        value: '0.1'
+        fail: true
+      typical:
+        value: '0.2'
+      maximum:
+        value: '0.3'
+        fail: true
+    measure: #is this param entry supported? 
+    - tool: octave    
+      filename: hysteresis_br.m
+    conditions:
+      otrip[2:0]:
+        enumerate:
+        - 0b000
+        - 0b100
+        - 0b111
+      force_dis_rc_osc:
+        typical: '1'
+      temperature:
+        maximum: '85'
+        typical: '27'
+        minimum: '-40'
+      corner:
+        typical: tt
+    tool:
+      ngspice:
+        template: trip_up_down.sch
+        collate: otrip[2:0]
+        format: ascii
+        suffix: .data
+        variables:
+        - result
+    name: hysteresis_br
+  accuracy_br:
+    status: skip
+    description: Check absolute accuracy of trip voltages (avg of pos- and neg-ramp
+      trip voltages)
+    display: Accuracy (out)
+    unit: V
+    spec:
+      minimum:
+        value: '-0.1'
+        fail: true
+      typical:
+        value: '0'
+      maximum:
+        value: '0.1'
+        fail: true
+    measure:
+    - tool: octave
+      filename: accuracy_br.m
+    conditions:
+      otrip[2:0]:
+        enumerate:
+        - 0b000
+        - 0b100
+        - 0b111
+      force_dis_rc_osc:
+        typical: '1'
+      temperature:
+        maximum: '85'
+        typical: '27'
+        minimum: '-40'
+      corner:
+        typical: tt
+    tool:
+      ngspice:
+        template: trip_up_down.sch
+        collate: otrip[2:0]
+        format: ascii
+        suffix: .data
+        variables:
+        - result
+    name: accuracy_br
+  hysteresis_vu:
+    status: skip
+    description: Check amount of hysteresis at each trip voltage
+    display: Hysteresis (vunder)
+    unit: V
+    spec:
+      minimum:
+        value: '0.1'
+        fail: true
+      typical:
+        value: '0.2'
+      maximum:
+        value: '0.3'
+        fail: true
+    measure:
+    - tool: octave
+      filename: hysteresis_vu.m
+    conditions:
+      vtrip[2:0]:
+        enumerate:
+        - 0b000
+        - 0b100
+        - 0b111
+      force_dis_rc_osc:
+        typical: '1'
+      temperature:
+        maximum: '85'
+        typical: '27'
+        minimum: '-40'
+      corner:
+        typical: tt
+    tool:
+      ngspice:
+        template: trip_up_down.sch
+        collate: vtrip[2:0]
+        format: ascii
+        suffix: .data
+        variables:
+        - result
+    name: hysteresis_vu
+  accuracy_vu:
+    status: skip
+    description: Check absolute accuracy of trip voltages (avg of pos- and neg-ramp
+      trip voltages)
+    display: Accuracy (vunder)
+    unit: V
+    spec:
+      minimum:
+        value: '-0.1'
+        fail: true
+      typical:
+        value: '0'
+      maximum:
+        value: '0.1'
+        fail: true
+    measure:
+    - tool: octave
+      filename: accuracy_vu.m
+    conditions:
+      vtrip[2:0]:
+        enumerate:
+        - 0b000
+        - 0b100
+        - 0b111
+      force_dis_rc_osc:
+        typical: '1'
+      temperature:
+        maximum: '85'
+        typical: '27'
+        minimum: '-40'
+      corner:
+        typical: tt
+    tool:
+      ngspice:
+        template: trip_up_down.sch
+        collate: vtrip[2:0]
+        format: ascii
+        suffix: .data
+        variables:
+        - result
+    name: accuracy_vu
+  response_time_br:
+    status: skip
+    description: Check time-delay between step in avdd to out assertion (otrip=2.71V)
+    display: Response time (out)
+    unit: µs
+    spec:
+      minimum:
+        value: '10'
+        fail: true
+      typical:
+        value: '20'
+      maximum:
+        value: '50'
+        fail: true
+    measure:
+    - tool: octave
+      filename: response_time_br.m
+    conditions:
+      otrip[2:0]:
+        typical: 0b100
+      force_short_oneshot:
+        typical: '1'
+      temperature:
+        maximum: '85'
+        typical: '27'
+        minimum: '-40'
+      corner:
+        typical: tt
+    tool:
+      ngspice:
+        template: response_time.sch
+        collate: otrip[2:0]
+        format: ascii
+        suffix: .data
+        variables:
+        - result
+    name: response_time_br
+  response_time_vu:
+    status: skip
+    description: Check time-delay between step in avdd to vunder assertion (vtrip=2.71V)
+    display: Response time (vunder)
+    unit: µs
+    spec:
+      minimum:
+        value: '1'
+        fail: true
+      typical:
+        value: '2'
+      maximum:
+        value: '5'
+        fail: true
+    measure:
+    - tool: octave
+      filename: response_time_vu.m
+    conditions:
+      vtrip[2:0]:
+        typical: 0b100
+      force_short_oneshot:
+        typical: '1'
+      temperature:
+        maximum: '85'
+        typical: '27'
+        minimum: '-40'
+      corner:
+        typical: tt
+    tool:
+      ngspice:
+        template: response_time.sch
+        collate: vtrip[2:0]
+        format: ascii
+        suffix: .data
+        variables:
+        - result
+    name: response_time_vu
+  reset_active_time:
+    status: skip
+    description: Estimate reset active time by check rc oscillator period across 10
+      cycles, then multiplying by 4096.
+    display: Reset active time (est.)
+    unit: ms
+    spec:
+      minimum:
+        value: '50'
+        fail: true
+      typical:
+        value: '100'
+      maximum:
+        value: '200'
+        fail: true
+    measure:
+    - tool: octave
+      filename: response_time_osc.m
+    conditions:
+      force_short_oneshot:
+        typical: '1'
+      temperature:
+        maximum: '85'
+        typical: '27'
+        minimum: '-40'
+      corner:
+        maximum: ss
+        typical: tt
+        minimum: ff
+    tool:
+      ngspice:
+        template: response_time.sch
+        format: ascii
+        suffix: .data
+        variables:
+        - result
+    name: reset_active_time
+  supply_brown_out:
+    status: skip
+    description: Demo of a supply brown-out with test-mode force_short_oneshot enabled.
+    display: Brown-out demo (short)
+    unit: V
+    plot:
+      filename: supply_brown_out.png
+      xaxis: time
+      yaxis: result
+    variables:
+    - name: time
+      display: Time
+      unit: ms
+    - name: result
+      display: out
+      unit: V
+    - name: avdd
+      display: avdd
+      unit: V
+    - name: osc_ck
+      display: osc_ck
+      unit: V
+    conditions:
+      force_short_oneshot:
+        typical: '1'
+      temperature:
+        typical: '27'
+      corner:
+        typical: tt
+    tool:
+      ngspice:
+        template: transient.sch
+        format: ascii
+        suffix: .data
+        variables:
+        - time
+        - result
+        - avdd
+        - osc_ck
+    name: supply_brown_out
+    spec: {}
+  Idd_enabled:
+    description: Current draw through analog supply, brown-out detector enabled
+    display: Idd
+    unit: µA
+    spec:
+      Idd_enabled: 
+        minimum:
+          value: any
+        typical:
+          value: '5'
+        maximum:
+          value: '10'
+    conditions:
+      Vdvdd:
+        typical: '1.8'
+      Vavdd:
+        typical: '3.3'
+      otrip[2:0]:
+        typical: 0b100
+      vtrip[2:0]:
+        typical: 0b100
+      temperature:
+        maximum: '85'
+        typical: '27'
+        minimum: '-40'
+      corner:
+        maximum: ff
+        typical: tt
+        minimum: ss
+    tool:
+      ngspice:
+        template: dccurrent_avdd.sch
+        format: ascii
+        suffix: .data
+        variables: [null, Idd_enabled]
+ 
+  Idd_disabled:
+    description: Current draw through analog supply, brown-out detector disabled
+    display: Standby current
+    unit: µA
+    spec:
+      Idd_disabled: 
+        minimum:
+          value: any
+        typical:
+          value: '0.01'
+        maximum:
+          value: '0.1'
+    conditions:
+      Vdvdd:
+        typical: '1.8'
+      Vavdd:
+        typical: '3.3'
+      otrip[2:0]:
+        typical: 0b000
+      vtrip[2:0]:
+        typical: 0b000
+      ena:
+        typical: '0'
+      temperature:
+        maximum: '85'
+        typical: '27'
+        minimum: '-40'
+      corner:
+        maximum: ff
+        typical: tt
+        minimum: ss
+    tool:
+      ngspice:
+        template: dccurrent_avdd.sch
+        format: ascii
+        suffix: .data
+        variables: [null,Idd_disabled]
+
+  magic_area:
+    spec:
+      area:
+        display: Area
+        description: Total circuit layout area
+        unit: µm²
+        maximum:
+          value: any
+      width:
+        display: Width
+        description: Total circuit layout width
+        unit: µm
+        maximum:
+          value: any
+      height:
+        display: Height
+        description: Total circuit layout height
+        unit: µm
+        maximum:
+          value: any
+    tool:
+      magic_area
+
+  magic_drc:
+    description: Magic DRC
+    display: Magic DRC
+    spec:
+      drc_errors:
+        maximum:
+          value: 0
+    tool:
+      magic_drc
+
+  netgen_lvs:
+    description: Netgen LVS
+    display: Netgen LVS
+    spec:
+      lvs_errors:
+        maximum:
+          value: 0
+    tool:
+      netgen_lvs:
+        script: run_project_lvs.tcl
+
+  klayout_drc_full:
+    description: KLayout DRC full
+    display: KLayout DRC full
+    spec:
+      drc_errors:
+        maximum:
+          value: 0
+    tool:
+        klayout_drc:
+            args: ['-rd', 'feol=true', '-rd', 'beol=true', '-rd', 'offgrid=true']

@@ -105,24 +105,24 @@ C {devices/lab_pin.sym} 290 340 0 0 {name=p54 lab=vbg_1v2}
 C {devices/lab_pin.sym} 290 300 0 0 {name=p55 lab=ena_avdd}
 C {devices/opin.sym} 590 -250 0 0 {name=p43 lab=vin_vunder}
 C {devices/lab_wire.sym} 870 -60 0 0 {name=p59 sig_type=std_logic lab=vl}
-C {xschem/sky130_fd_pr/res_xhigh_po_1p41.sym} 1150 60 3 0 {name=R1
+C {sky130_fd_pr/res_xhigh_po_1p41.sym} 1150 60 3 0 {name=R1
 L=700
 model=res_xhigh_po_1p41
 spiceprefix=X
 mult=1}
 C {devices/lab_pin.sym} 1350 170 2 1 {name=p29 lab=dvss}
-C {xschem/sky130_fd_pr/cap_mim_m3_2.sym} 1350 120 0 0 {name=C2 model=cap_mim_m3_2 W=30 L=30 MF=6 spiceprefix=X}
+C {sky130_fd_pr/cap_mim_m3_2.sym} 1350 120 0 0 {name=C2 model=cap_mim_m3_2 W=30 L=30 MF=6 spiceprefix=X}
 C {devices/lab_wire.sym} 1320 60 0 0 {name=p56 sig_type=std_logic lab=dcomp_filt}
-C {xschem/schmitt_trigger.sym} 1570 60 0 0 {name=xIschmitt}
+C {schmitt_trigger.sym} 1570 60 0 0 {name=xIschmitt}
 C {devices/lab_pin.sym} 1420 40 0 0 {name=p57 lab=dvdd}
 C {devices/lab_pin.sym} 1420 80 0 0 {name=p58 lab=dvss}
 C {devices/lab_wire.sym} 1770 40 0 0 {name=p60 sig_type=std_logic lab=vsch}
 C {devices/opin.sym} 1980 40 0 0 {name=p40 lab=brout_filt}
-C {xschem/sky130_stdcells/inv_4.sym} 1820 40 0 0 {name=xIinv7 VGND=dvss VNB=dvss VPB=dvdd VPWR=dvdd prefix=sky130_fd_sc_hd__ }
-C {xschem/sky130_stdcells/inv_16.sym} 1940 40 0 0 {name=xIinv8 VGND=dvss VNB=dvss VPB=dvdd VPWR=dvdd prefix=sky130_fd_sc_hd__ }
+C {sky130_stdcells/inv_4.sym} 1820 40 0 0 {name=xIinv7 VGND=dvss VNB=dvss VPB=dvdd VPWR=dvdd prefix=sky130_fd_sc_hd__ }
+C {sky130_stdcells/inv_16.sym} 1940 40 0 0 {name=xIinv8 VGND=dvss VNB=dvss VPB=dvdd VPWR=dvdd prefix=sky130_fd_sc_hd__ }
 C {devices/lab_pin.sym} 1150 80 1 1 {name=p61 lab=avss}
 C {devices/lab_wire.sym} 860 260 0 0 {name=p4 sig_type=std_logic lab=vlu}
-C {xschem/sky130_fd_pr/pnp_05v5.sym} 170 80 0 0 {name=Q1
+C {sky130_fd_pr/pnp_05v5.sym} 170 80 0 0 {name=Q1
 model=pnp_05v5_W0p68L0p68
 m=1
 spiceprefix=X
@@ -131,17 +131,17 @@ C {devices/lab_pin.sym} 120 130 0 0 {name=p5 lab=avss}
 C {comparator.sym} 440 310 0 0 {name=xIcomp_vunder}
 C {devices/lab_pin.sym} 590 -200 0 1 {name=p30 lab=ibias0}
 C {sky130_fd_sc_hvl__lsbufhv2lv_1.sym} 750 260 0 0 {name=xIlvls3 LVPWR=dvdd VGND=dvss VNB=dvss VPB=avdd VPWR=avdd prefix=sky130_fd_sc_hvl__ }
-C {xschem/sky130_stdcells/inv_4.sym} 1040 260 0 0 {name=xIinv3 VGND=dvss VNB=dvss VPB=dvdd VPWR=dvdd prefix=sky130_fd_sc_hd__ }
-C {xschem/sky130_stdcells/inv_16.sym} 1160 260 0 0 {name=xIinv4 VGND=dvss VNB=dvss VPB=dvdd VPWR=dvdd prefix=sky130_fd_sc_hd__ }
+C {sky130_stdcells/inv_4.sym} 1040 260 0 0 {name=xIinv3 VGND=dvss VNB=dvss VPB=dvdd VPWR=dvdd prefix=sky130_fd_sc_hd__ }
+C {sky130_stdcells/inv_16.sym} 1160 260 0 0 {name=xIinv4 VGND=dvss VNB=dvss VPB=dvdd VPWR=dvdd prefix=sky130_fd_sc_hd__ }
 C {devices/opin.sym} 1200 260 0 0 {name=p45 lab=vunder}
-C {xschem/sky130_stdcells/inv_4.sym} 920 260 0 0 {name=xIinv2 VGND=dvss VNB=dvss VPB=dvdd VPWR=dvdd prefix=sky130_fd_sc_hd__ }
+C {sky130_stdcells/inv_4.sym} 920 260 0 0 {name=xIinv2 VGND=dvss VNB=dvss VPB=dvdd VPWR=dvdd prefix=sky130_fd_sc_hd__ }
 C {devices/lab_wire.sym} 660 260 0 0 {name=p34 sig_type=std_logic lab=dcomp3v3uv}
 C {devices/opin.sym} 1080 -60 0 0 {name=p35 lab=dcomp}
-C {xschem/sky130_stdcells/inv_4.sym} 920 -60 0 0 {name=xIinv5 VGND=dvss VNB=dvss VPB=dvdd VPWR=dvdd prefix=sky130_fd_sc_hd__ }
-C {xschem/sky130_stdcells/inv_16.sym} 1040 -60 0 0 {name=xIinv6 VGND=dvss VNB=dvss VPB=dvdd VPWR=dvdd prefix=sky130_fd_sc_hd__ }
+C {sky130_stdcells/inv_4.sym} 920 -60 0 0 {name=xIinv5 VGND=dvss VNB=dvss VPB=dvdd VPWR=dvdd prefix=sky130_fd_sc_hd__ }
+C {sky130_stdcells/inv_16.sym} 1040 -60 0 0 {name=xIinv6 VGND=dvss VNB=dvss VPB=dvdd VPWR=dvdd prefix=sky130_fd_sc_hd__ }
 C {devices/ipin.sym} -910 260 0 0 {name=p42 lab=outb_unbuf}
-C {xschem/sky130_stdcells/inv_4.sym} -850 260 0 0 {name=xIinv0 VGND=dvss VNB=dvss VPB=dvdd VPWR=dvdd prefix=sky130_fd_sc_hd__ }
-C {xschem/sky130_stdcells/inv_16.sym} -730 260 0 0 {name=xIinv1 VGND=dvss VNB=dvss VPB=dvdd VPWR=dvdd prefix=sky130_fd_sc_hd__ }
+C {sky130_stdcells/inv_4.sym} -850 260 0 0 {name=xIinv0 VGND=dvss VNB=dvss VPB=dvdd VPWR=dvdd prefix=sky130_fd_sc_hd__ }
+C {sky130_stdcells/inv_16.sym} -730 260 0 0 {name=xIinv1 VGND=dvss VNB=dvss VPB=dvdd VPWR=dvdd prefix=sky130_fd_sc_hd__ }
 C {devices/opin.sym} -370 260 0 0 {name=p44 lab=outb}
 C {devices/lab_pin.sym} 290 200 0 0 {name=p62 lab=dvss}
 C {devices/lab_pin.sym} 290 160 0 0 {name=p63 lab=dvdd}

@@ -987,7 +987,7 @@ rect -14665 644 -14104 668
 rect -14665 372 -14641 644
 rect -14369 372 -14104 644
 rect -14665 348 -14104 372
-use sky130_fd_pr__cap_mim_m3_2_LUWKLG  sky130_fd_pr__cap_mim_m3_2_LUWKLG_0 ~/chipalooza/sky130_ajc_ip__brownout/mag
+use sky130_fd_pr__cap_mim_m3_2_LUWKLG  sky130_fd_pr__cap_mim_m3_2_LUWKLG_0
 timestamp 1712463840
 transform 0 -1 4968 1 0 777
 box -3349 -19200 3371 19200
